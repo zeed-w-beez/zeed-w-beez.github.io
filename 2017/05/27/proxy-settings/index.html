@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>about | Miracle-working</title>
+  <title>proxy settings | Miracle-working</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="About me123456 __/---\__zeed-w-beez   |   |  /     \---|   |---">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://blogs.mercenaryunion.com/about/index.html">
+  <meta name="description" content="proxy settings代理是个好东西，但是… 不想多说什么
+Windows有些代理需要输入用户名和密码。在Windows下是默认是自动集成的，不需要自己输入。
+但是如果想给某些软件做配置，没有密码还不行。特别是给虚拟机里的系统配置代理的时候。
+这个时候就多绕一步。
+Fiddler 本身就是个代理软件，打开后会自动在本机8888起个端口，接手全部的请求。
+在 Fiddler 的 Rules 里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="proxy settings">
+<meta property="og:url" content="http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/index.html">
 <meta property="og:site_name" content="Miracle-working">
-<meta property="og:description" content="About me123456 __/---\__zeed-w-beez   |   |  /     \---|   |---">
-<meta property="og:updated_time" content="2017-03-10T04:51:14.000Z">
+<meta property="og:description" content="proxy settings代理是个好东西，但是… 不想多说什么
+Windows有些代理需要输入用户名和密码。在Windows下是默认是自动集成的，不需要自己输入。
+但是如果想给某些软件做配置，没有密码还不行。特别是给虚拟机里的系统配置代理的时候。
+这个时候就多绕一步。
+Fiddler 本身就是个代理软件，打开后会自动在本机8888起个端口，接手全部的请求。
+在 Fiddler 的 Rules 里">
+<meta property="og:updated_time" content="2017-05-27T04:50:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="About me123456 __/---\__zeed-w-beez   |   |  /     \---|   |---">
+<meta name="twitter:title" content="proxy settings">
+<meta name="twitter:description" content="proxy settings代理是个好东西，但是… 不想多说什么
+Windows有些代理需要输入用户名和密码。在Windows下是默认是自动集成的，不需要自己输入。
+但是如果想给某些软件做配置，没有密码还不行。特别是给虚拟机里的系统配置代理的时候。
+这个时候就多绕一步。
+Fiddler 本身就是个代理软件，打开后会自动在本机8888起个端口，接手全部的请求。
+在 Fiddler 的 Rules 里">
   
     <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
   
@@ -65,10 +80,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-proxy-settings" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/about/index.html" class="article-date">
-  <time datetime="2017-03-10T12:47:13.000Z" itemprop="datePublished">2017-03-10</time>
+    <a href="/2017/05/27/proxy-settings/" class="article-date">
+  <time datetime="2017-05-27T09:19:19.000Z" itemprop="datePublished">2017-05-27</time>
 </a>
     
   </div>
@@ -79,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      proxy settings
     </h1>
   
 
@@ -87,18 +102,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> __/---\__</div><div class="line">zeed-w-beez</div><div class="line">   |   |</div><div class="line">  /     \</div><div class="line">---|   |---</div></pre></td></tr></table></figure>
+        <h1 id="proxy-settings"><a href="#proxy-settings" class="headerlink" title="proxy settings"></a>proxy settings</h1><p>代理是个好东西，但是… 不想多说什么</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>有些代理需要输入用户名和密码。<br>在Windows下是默认是自动集成的，不需要自己输入。</p>
+<p>但是如果想给某些软件做配置，没有密码还不行。特别是给虚拟机里的系统配置代理的时候。</p>
+<p>这个时候就多绕一步。</p>
+<p>Fiddler 本身就是个代理软件，打开后会自动在本机8888起个端口，接手全部的请求。</p>
+<p>在 Fiddler 的 Rules 里面发现了一个 Automatically Authenticate 选项，可以自动做权限验证，避免了 407 Proxy Authentication Required 错误。</p>
+<p>就可以直接给需要的软件配置 Fiddler 8888 的代理。</p>
+<p>还可以当做是一层保险，不开Fiddler 的时候，虚拟机是不能访问网络的。</p>
+<p>大部分软件的代理配置都可以百度到，这里记录些不常用的：</p>
+<p>Anaconda:<br>在 User 下有个默认的配置文件 .condarc<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></div><div class="line"><span class="attr">channels:</span></div><div class="line"><span class="bullet">  -</span> anaconda-fusion</div><div class="line"><span class="bullet">  -</span> defaults</div><div class="line"></div><div class="line"><span class="attr">proxy_servers:</span></div><div class="line"><span class="attr">  http:</span> http://localhost:<span class="number">8888</span> <span class="comment"># 本机的 Fiddler 代理</span></div><div class="line"><span class="attr">  https:</span> http://localhost:<span class="number">8888</span></div><div class="line"></div><div class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></div><div class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></div><div class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></div></pre></td></tr></table></figure></p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>大部分都能网上搜到</p>
+<p>全部用户配置代理：</p>
+<p>yum proxy</p>
+<p>docker proxy</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/about/index.html" data-id="cj3gmbstb0001voldn5u2zpmu" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/" data-id="cj3gmbstc0005vold6f362q4l" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2017/05/27/tensorflow/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          tensorflow
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/06/yum-install-mysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">yum install mysql</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
