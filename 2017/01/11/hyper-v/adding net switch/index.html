@@ -5,19 +5,18 @@
   
   <title>Set up a Hyper-V Virtual Switch using a NAT Network | Miracle-working</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先要说的一点就是：你所想的各种情况都是可以实现的。Office Guide: https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network
-Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
+  <meta name="description" content="首先要说的一点就是：你所想的各种情况都是可以实现的。Office Guide: https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
+<meta name="keywords" content="hyper-v nat network">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Set up a Hyper-V Virtual Switch using a NAT Network">
 <meta property="og:url" content="http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/index.html">
 <meta property="og:site_name" content="Miracle-working">
-<meta property="og:description" content="首先要说的一点就是：你所想的各种情况都是可以实现的。Office Guide: https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network
-Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
+<meta property="og:description" content="首先要说的一点就是：你所想的各种情况都是可以实现的。Office Guide: https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-03-09T19:19:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Set up a Hyper-V Virtual Switch using a NAT Network">
-<meta name="twitter:description" content="首先要说的一点就是：你所想的各种情况都是可以实现的。Office Guide: https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network
-Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
+<meta name="twitter:description" content="首先要说的一点就是：你所想的各种情况都是可以实现的。Office Guide: https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
   
     <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
   
@@ -62,7 +61,7 @@ Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
       </div>
     </div>
   </div>
@@ -102,10 +101,12 @@ Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
 <p>参考资料：</p>
 <p><a href="http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/" target="_blank" rel="external">http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/</a></p>
 <p><a href="https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network" target="_blank" rel="external">https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network</a></p>
-<p>配置命令：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加一个 NAT 类型的 Switch，最后的 0/24 是固定的，原因自己度娘/谷哥。</span></div><div class="line">New-VMSwitch -Name <span class="string">"NATSwitch"</span> -SwitchType NAT -NATSubnetAddress <span class="number">172.29</span>.<span class="number">92.0</span>/<span class="number">24</span></div><div class="line"><span class="comment"># 为刚添加的 Switch 添加 NetNat</span></div><div class="line">New-NetNat -Name VMSwitchNat -InternalIPInterfaceAddressPrefix <span class="string">"172.29.92.0/24"</span></div><div class="line"><span class="comment"># 上面2个命令就OK了。</span></div></pre></td></tr></table></figure>
+<p>配置命令：<code>管理员身份打开 PowerShell</code> </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加一个 NAT 类型的 Switch，最后的 0/24 是固定的，原因自己度娘/谷哥。</span></div><div class="line">New-VMSwitch -Name <span class="string">"xNet"</span> -SwitchType NAT -NATSubnetAddress <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></div><div class="line"><span class="comment"># 为刚添加的 Switch 添加 NetNat</span></div><div class="line">New-NetNat -Name xNet -InternalIPInterfaceAddressPrefix <span class="string">"192.168.3.0/24"</span></div><div class="line"><span class="comment"># 上面2个命令就OK了。</span></div></pre></td></tr></table></figure>
+<p>上面的报错的话，就走一般点的步骤：<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 1. 创建一个 内部 类型的 VMSwitch。这一步可以在 Hylper-V Manager 里完成。</span></div><div class="line">New-VMSwitch –SwitchName <span class="string">"xNet"</span> –SwitchType Internal</div><div class="line"><span class="comment">#  成功后，可以用 Get-VMSwitch 看到刚刚添加的 Switch</span></div><div class="line"></div><div class="line"><span class="comment"># 2. 配置 NAT 的网关地址</span></div><div class="line"><span class="comment"># This configures the Virtual Network Adapter which was created while creating the Internal Virtual Hyper-V Switch.</span></div><div class="line">New-NetIPAddress –IPAddress <span class="number">192.168</span>.<span class="number">3.1</span> -PrefixLength <span class="number">24</span> -InterfaceAlias <span class="string">"vEthernet (xNet)"</span></div><div class="line"><span class="comment"># 最后一个参数 InterfaceAlias 可以使用 InterfaceIndex 代替的，多敲一下 Tab 键就出来了。 </span></div><div class="line"><span class="comment"># Index 可以使用 Get-NetAdapter 查看。</span></div><div class="line"><span class="comment"># Get-NetIPAddress 可以查看目前已有的 IPAddress ，多余和重复的可以使用 Remove-NetIPAddress 删除。</span></div><div class="line"></div><div class="line"><span class="comment"># 3. Now you can configure the NAT rule</span></div><div class="line">New-NetNat –Name xNetNat –InternalIPInterfaceAddressPrefix <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></div><div class="line"><span class="comment"># After that you have finally created your NAT network and you can now use that network to connect your virtual machines and use IP Address from 192.168.3.2-192.168.3.254.</span></div><div class="line"><span class="comment"># 可以使用 Get-NetNat 查看已有。</span></div></pre></td></tr></table></figure></p>
 <p>添加映射：（宿主机和NAT网络做端口映射）</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Add-NetNatStaticMapping -NatName <span class="string">"VMSwitchNat"</span> -Protocol TCP -ExternalIPAddress <span class="number">0.0</span>.<span class="number">0.0</span> -InternalIPAddress <span class="number">172.29</span>.<span class="number">92.2</span> -InternalPort <span class="number">80</span> -ExternalPort <span class="number">80</span></div><div class="line"></div><div class="line">Add-NetNatStaticMapping -NatName <span class="string">"VMSwitchNat"</span> -Protocol TCP -ExternalIPAddress <span class="number">0.0</span>.<span class="number">0.0</span> -InternalIPAddress <span class="number">172.16</span>.<span class="number">0.3</span> -InternalPort <span class="number">80</span> -ExternalPort <span class="number">82</span></div></pre></td></tr></table></figure>
+<p>其他命令：<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Get-VMSwitch</div><div class="line">Get-NetAdapter</div><div class="line">Get-NetNat</div><div class="line"><span class="comment"># 卸载 NetAdapter -&gt; 我的电脑 -&gt; 设备管理器 -&gt; 网络</span></div></pre></td></tr></table></figure></p>
 <h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><ol>
 <li><p>当主机同时处在2个局域网中时(虚拟局域网和外网)，主机发出的一个请求，怎么判断是应该送到外网，还是局域网？</p>
 </li>
@@ -115,7 +116,7 @@ Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/" data-id="cj3gmbsu7000evold8b04ujlf" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/" data-id="cj8quood2000fcg9isol3vh48" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hyper-v-nat-network/">hyper-v nat network</a></li></ul>
@@ -183,7 +184,7 @@ Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
     </div>
   </div>
 
@@ -206,6 +207,10 @@ Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
       <ul>
         
           <li>
+            <a href="/2017/09/28/https-漫谈/">https 漫谈</a>
+          </li>
+        
+          <li>
             <a href="/2017/05/27/Recently/">Recently</a>
           </li>
         
@@ -219,10 +224,6 @@ Other Blogs: http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-s">
         
           <li>
             <a href="/2017/05/06/yum-install-mysql/">yum install mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/10/hexo/page/">new page</a>
           </li>
         
       </ul>

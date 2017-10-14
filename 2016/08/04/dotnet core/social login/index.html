@@ -5,25 +5,18 @@
   
   <title>Enabling social login credentials in your web sites | Miracle-working</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Source From: https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore
-
-Enabling authentication using external providers
-Right click on the website project, and select Man">
+  <meta name="description" content="Source From: https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore  Enabling authentication using external providers Right click on the website project, and select Man">
+<meta name="keywords" content="dotnetcore">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Enabling social login credentials in your web sites">
 <meta property="og:url" content="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/index.html">
 <meta property="og:site_name" content="Miracle-working">
-<meta property="og:description" content="Source From: https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore
-
-Enabling authentication using external providers
-Right click on the website project, and select Man">
-<meta property="og:updated_time" content="2017-03-08T03:14:16.807Z">
+<meta property="og:description" content="Source From: https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore  Enabling authentication using external providers Right click on the website project, and select Man">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-14T04:56:53.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Enabling social login credentials in your web sites">
-<meta name="twitter:description" content="Source From: https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore
-
-Enabling authentication using external providers
-Right click on the website project, and select Man">
+<meta name="twitter:description" content="Source From: https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore  Enabling authentication using external providers Right click on the website project, and select Man">
   
     <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
   
@@ -68,7 +61,7 @@ Right click on the website project, and select Man">
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
       </div>
     </div>
   </div>
@@ -107,7 +100,7 @@ Right click on the website project, and select Man">
  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"dependency": &#123;</div><div class="line">    ...</div><div class="line">    "Microsoft.AspNet.Authentication.Facebook":  "1.0.0-rc1-final"</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 </li>
 <li><p>Use the Facebbok Middleware in <code>Startup.cs ==&gt; Configure</code> method.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    app.UseIdentity();</div><div class="line"></div><div class="line">    app.UseFacebookAuthentication(options =&gt;</div><div class="line">    &#123;</div><div class="line">        options.AppId = Configuration[<span class="string">"Authentication:Facebook:AppId"</span>];</div><div class="line">        options.AppSecret = Configuration[<span class="string">"Authentication:Facebook:AppSecret"</span>];</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    app.UseIdentity();</div><div class="line"></div><div class="line">    app.UseFacebookAuthentication(options =&gt;</div><div class="line">    &#123;</div><div class="line">        options.AppId = Configuration[<span class="string">"Authentication:Facebook:AppId"</span>];</div><div class="line">        options.AppSecret = Configuration[<span class="string">"Authentication:Facebook:AppSecret"</span>];</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>Tips</p>
 <ul>
@@ -121,7 +114,7 @@ Right click on the website project, and select Man">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/" data-id="cj3gmbsu7000dvold8yx18iy9" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/" data-id="cj8quoocz000dcg9iha2obbde" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnetcore/">dotnetcore</a></li></ul>
@@ -189,7 +182,7 @@ Right click on the website project, and select Man">
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
     </div>
   </div>
 
@@ -212,6 +205,10 @@ Right click on the website project, and select Man">
       <ul>
         
           <li>
+            <a href="/2017/09/28/https-漫谈/">https 漫谈</a>
+          </li>
+        
+          <li>
             <a href="/2017/05/27/Recently/">Recently</a>
           </li>
         
@@ -225,10 +222,6 @@ Right click on the website project, and select Man">
         
           <li>
             <a href="/2017/05/06/yum-install-mysql/">yum install mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/10/hexo/page/">new page</a>
           </li>
         
       </ul>

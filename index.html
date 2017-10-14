@@ -9,6 +9,7 @@
 <meta property="og:title" content="Miracle-working">
 <meta property="og:url" content="http://blogs.mercenaryunion.com/index.html">
 <meta property="og:site_name" content="Miracle-working">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Miracle-working">
   
@@ -55,13 +56,101 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-https-漫谈" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/28/https-漫谈/" class="article-date">
+  <time datetime="2017-09-28T15:08:56.000Z" itemprop="datePublished">2017-09-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/https-漫谈/">https 漫谈</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。</p>
+<blockquote>
+<p>加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。</p>
+</blockquote>
+<h2 id="https-漫谈"><a href="#https-漫谈" class="headerlink" title="https 漫谈"></a>https 漫谈</h2><h3 id="什么是https"><a href="#什么是https" class="headerlink" title="什么是https"></a>什么是https</h3><ol>
+<li><p>http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作</p>
+</li>
+<li><p>虽然https里s是在最后的，但是这个加密动作其实是在http前进行的，否则就没有意义了</p>
+</li>
+<li><p>因为http 和 s 是分开的模块，所以你可以只部署一台简单的https服务器做外壳，内部接多个普通的http应用就可以了。</p>
+</li>
+</ol>
+<h3 id="为什么要https"><a href="#为什么要https" class="headerlink" title="为什么要https"></a>为什么要https</h3><ol>
+<li>《论程序员的自我修养》</li>
+<li>有了https才能做一些其他的事情，比如~</li>
+</ol>
+<h3 id="不要那么多废话，告诉我怎么搞"><a href="#不要那么多废话，告诉我怎么搞" class="headerlink" title="不要那么多废话，告诉我怎么搞"></a>不要那么多废话，告诉我怎么搞</h3><ol>
+<li>密钥文件 - 先自己想出一个密码</li>
+<li>证书申请 - 用自己想出的密码，打造一个模具出来</li>
+<li>证书文件 - 这里就有两种选择了<ul>
+<li>权威 - 把模具交给专业的权威机构打造成密码箱</li>
+<li>我就是权威 - 自己用模具打造密码箱</li>
+</ul>
+</li>
+<li>你<strong>当然</strong>可以给不同的服务，用不同的密码打造配套的模具</li>
+</ol>
+<h3 id="然后呢"><a href="#然后呢" class="headerlink" title="然后呢"></a>然后呢</h3><blockquote>
+<p>其实部署的时候，只需要用到上面提到的2个东西</p>
+<ol>
+<li>证书文件 - 用模具打造出来的密码箱</li>
+<li>密钥文件 - 用来开密码箱的密码</li>
+</ol>
+</blockquote>
+<p>以Nginx为例，就是:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    ...</div><div class="line">    listen       443 ssl;</div><div class="line">    server_name  localhost;</div><div class="line">    ssl_certificate      /etc/CA/nginx.crt; # 证书文件的相对或者绝对路径</div><div class="line">    ssl_certificate_key  /etc/CA/nginx.key; # 密钥文件的相对或者绝对路径</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="权威和我就是权威的区别"><a href="#权威和我就是权威的区别" class="headerlink" title="权威和我就是权威的区别"></a>权威和我就是权威的区别</h3><ol>
+<li><p>根证书 - 权威机构打造模具的锤子是开过光的。直接<strong>内置</strong>在各大浏览器和操作系统里面，不可能被伪造。</p>
+</li>
+<li><p>二级根证书 - 这可是开过光的锤子，金贵的很，当然不能直接给你们用。所以我们先用这个开过光的锤子，打造一批锤子出来，再用这批锤子去打造你们的模具。</p>
+</li>
+<li><p>自签名证书 - 纯手工打造。</p>
+</li>
+<li><p>自签名根证书 - 我给我自己的锤子开光~</p>
+</li>
+</ol>
+<h3 id="权利和义务"><a href="#权利和义务" class="headerlink" title="权利和义务"></a>权利和义务</h3><blockquote>
+<p>签发出去的证书，就像身份证一样：</p>
+</blockquote>
+<ul>
+<li>正面是权利 - 机构可以证明你就是你。</li>
+<li>反面是义务 - 证是机构发的，出了事情肯定会去找机构。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blogs.mercenaryunion.com/2017/09/28/https-漫谈/" data-id="cj8quooc50004cg9il611e1a4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Recently" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -137,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/05/27/Recently/" data-id="cj3gmbst60000voldmei14jqa" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/05/27/Recently/" data-id="cj8quooc00002cg9i0xvutitw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/05/27/tensorflow/" data-id="cj3gmbstc0003voldligqeszz" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/05/27/tensorflow/" data-id="cj8quooca0007cg9iuuiv4psr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -220,7 +309,7 @@
 <p>就可以直接给需要的软件配置 Fiddler 8888 的代理。</p>
 <p>还可以当做是一层保险，不开Fiddler 的时候，虚拟机是不能访问网络的。</p>
 <p>大部分软件的代理配置都可以百度到，这里记录些不常用的：</p>
-<p>Anaconda:<br>在 User 下有个默认的配置文件 .condarc<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></div><div class="line"><span class="attr">channels:</span></div><div class="line"><span class="bullet">  -</span> anaconda-fusion</div><div class="line"><span class="bullet">  -</span> defaults</div><div class="line"></div><div class="line"><span class="attr">proxy_servers:</span></div><div class="line"><span class="attr">  http:</span> http://localhost:<span class="number">8888</span> <span class="comment"># 本机的 Fiddler 代理</span></div><div class="line"><span class="attr">  https:</span> http://localhost:<span class="number">8888</span></div><div class="line"></div><div class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></div><div class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></div><div class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></div></pre></td></tr></table></figure></p>
+<p>Anaconda:<br>在 User 下有个默认的配置文件 .condarc<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></div><div class="line"><span class="attr">channels:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">anaconda-fusion</span></div><div class="line"><span class="bullet">  -</span> <span class="string">defaults</span></div><div class="line"></div><div class="line"><span class="attr">proxy_servers:</span></div><div class="line"><span class="attr">  http:</span> <span class="attr">http://localhost:8888</span> <span class="comment"># 本机的 Fiddler 代理</span></div><div class="line"><span class="attr">  https:</span> <span class="attr">http://localhost:8888</span></div><div class="line"></div><div class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></div><div class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></div><div class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></div></pre></td></tr></table></figure></p>
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>大部分都能网上搜到</p>
 <p>全部用户配置代理：</p>
 <p>yum proxy</p>
@@ -229,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/" data-id="cj3gmbstc0005vold6f362q4l" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/" data-id="cj8quooc90006cg9im3rk3nwr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -271,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/" data-id="cj3gmbsts0008voldovr14y4k" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/" data-id="cj8quoocc0008cg9i3umnzie9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -316,7 +405,7 @@
 <li>边框</li>
 </ol>
 <p>进入themes\layout_widget目录中，创建about.ejs文件，模仿其他文件中的模版，输入以下内容：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">if</span> (site.tags.length)&#123; %&gt;</div><div class="line">  &lt;div class="widget-wrap"&gt;</div><div class="line">    &lt;h3 class="widget-title"&gt;About&lt;/h3&gt;</div><div class="line">    &lt;div class="widget"&gt;</div><div class="line">      邮箱：xxx@xxx.com&lt;br /&gt;</div><div class="line">      微博：@xxxxx</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">if</span> (site.tags.length)&#123; %&gt;</div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap"</span>&gt;</div><div class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;About&lt;<span class="regexp">/h3&gt;</span></div><div class="line"><span class="regexp">    &lt;div class="widget"&gt;</span></div><div class="line"><span class="regexp">      邮箱：xxx@xxx.com&lt;br /</span>&gt;</div><div class="line">      微博：@xxxxx</div><div class="line">    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>div&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
 <p>最后： 打开themes_config.yml，找到#Sidebar，在最后面添加- about</p>
 <ol>
 <li>底部</li>
@@ -330,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/03/10/hexo/page/" data-id="cj3gmbsu7000cvoldksk59xte" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/03/10/hexo/page/" data-id="cj8quood1000ecg9i5zrt7v79" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -365,7 +454,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><blockquote>
+<p>为什么 helloworld 还一直留着，因为这个命令我都会忘记 /(ㄒoㄒ)/~~<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure></p>
+</blockquote>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
@@ -377,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/03/08/hello-world/" data-id="cj3gmbstc0002vold4q7yl1zm" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/03/08/hello-world/" data-id="cj8quooc30003cg9iysp23zam" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello/">hello</a></li></ul>
@@ -423,10 +514,12 @@
 <p>参考资料：</p>
 <p><a href="http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/" target="_blank" rel="external">http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/</a></p>
 <p><a href="https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network" target="_blank" rel="external">https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network</a></p>
-<p>配置命令：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加一个 NAT 类型的 Switch，最后的 0/24 是固定的，原因自己度娘/谷哥。</span></div><div class="line">New-VMSwitch -Name <span class="string">"NATSwitch"</span> -SwitchType NAT -NATSubnetAddress <span class="number">172.29</span>.<span class="number">92.0</span>/<span class="number">24</span></div><div class="line"><span class="comment"># 为刚添加的 Switch 添加 NetNat</span></div><div class="line">New-NetNat -Name VMSwitchNat -InternalIPInterfaceAddressPrefix <span class="string">"172.29.92.0/24"</span></div><div class="line"><span class="comment"># 上面2个命令就OK了。</span></div></pre></td></tr></table></figure>
+<p>配置命令：<code>管理员身份打开 PowerShell</code> </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 添加一个 NAT 类型的 Switch，最后的 0/24 是固定的，原因自己度娘/谷哥。</span></div><div class="line">New-VMSwitch -Name <span class="string">"xNet"</span> -SwitchType NAT -NATSubnetAddress <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></div><div class="line"><span class="comment"># 为刚添加的 Switch 添加 NetNat</span></div><div class="line">New-NetNat -Name xNet -InternalIPInterfaceAddressPrefix <span class="string">"192.168.3.0/24"</span></div><div class="line"><span class="comment"># 上面2个命令就OK了。</span></div></pre></td></tr></table></figure>
+<p>上面的报错的话，就走一般点的步骤：<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 1. 创建一个 内部 类型的 VMSwitch。这一步可以在 Hylper-V Manager 里完成。</span></div><div class="line">New-VMSwitch –SwitchName <span class="string">"xNet"</span> –SwitchType Internal</div><div class="line"><span class="comment">#  成功后，可以用 Get-VMSwitch 看到刚刚添加的 Switch</span></div><div class="line"></div><div class="line"><span class="comment"># 2. 配置 NAT 的网关地址</span></div><div class="line"><span class="comment"># This configures the Virtual Network Adapter which was created while creating the Internal Virtual Hyper-V Switch.</span></div><div class="line">New-NetIPAddress –IPAddress <span class="number">192.168</span>.<span class="number">3.1</span> -PrefixLength <span class="number">24</span> -InterfaceAlias <span class="string">"vEthernet (xNet)"</span></div><div class="line"><span class="comment"># 最后一个参数 InterfaceAlias 可以使用 InterfaceIndex 代替的，多敲一下 Tab 键就出来了。 </span></div><div class="line"><span class="comment"># Index 可以使用 Get-NetAdapter 查看。</span></div><div class="line"><span class="comment"># Get-NetIPAddress 可以查看目前已有的 IPAddress ，多余和重复的可以使用 Remove-NetIPAddress 删除。</span></div><div class="line"></div><div class="line"><span class="comment"># 3. Now you can configure the NAT rule</span></div><div class="line">New-NetNat –Name xNetNat –InternalIPInterfaceAddressPrefix <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></div><div class="line"><span class="comment"># After that you have finally created your NAT network and you can now use that network to connect your virtual machines and use IP Address from 192.168.3.2-192.168.3.254.</span></div><div class="line"><span class="comment"># 可以使用 Get-NetNat 查看已有。</span></div></pre></td></tr></table></figure></p>
 <p>添加映射：（宿主机和NAT网络做端口映射）</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Add-NetNatStaticMapping -NatName <span class="string">"VMSwitchNat"</span> -Protocol TCP -ExternalIPAddress <span class="number">0.0</span>.<span class="number">0.0</span> -InternalIPAddress <span class="number">172.29</span>.<span class="number">92.2</span> -InternalPort <span class="number">80</span> -ExternalPort <span class="number">80</span></div><div class="line"></div><div class="line">Add-NetNatStaticMapping -NatName <span class="string">"VMSwitchNat"</span> -Protocol TCP -ExternalIPAddress <span class="number">0.0</span>.<span class="number">0.0</span> -InternalIPAddress <span class="number">172.16</span>.<span class="number">0.3</span> -InternalPort <span class="number">80</span> -ExternalPort <span class="number">82</span></div></pre></td></tr></table></figure>
+<p>其他命令：<br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Get-VMSwitch</div><div class="line">Get-NetAdapter</div><div class="line">Get-NetNat</div><div class="line"><span class="comment"># 卸载 NetAdapter -&gt; 我的电脑 -&gt; 设备管理器 -&gt; 网络</span></div></pre></td></tr></table></figure></p>
 <h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><ol>
 <li><p>当主机同时处在2个局域网中时(虚拟局域网和外网)，主机发出的一个请求，怎么判断是应该送到外网，还是局域网？</p>
 </li>
@@ -436,7 +529,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/" data-id="cj3gmbsu7000evold8b04ujlf" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/" data-id="cj8quood2000fcg9isol3vh48" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hyper-v-nat-network/">hyper-v nat network</a></li></ul>
@@ -537,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2016/08/05/shell/cmd-auto-complete/" data-id="cj3gmbsun000hvoldpqr74354" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2016/08/05/shell/cmd-auto-complete/" data-id="cj8quood3000icg9ifyufanl2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/auto-complete-command/">auto-complete command</a></li></ul>
@@ -582,7 +675,7 @@
  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"dependency": &#123;</div><div class="line">    ...</div><div class="line">    "Microsoft.AspNet.Authentication.Facebook":  "1.0.0-rc1-final"</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 </li>
 <li><p>Use the Facebbok Middleware in <code>Startup.cs ==&gt; Configure</code> method.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    app.UseIdentity();</div><div class="line"></div><div class="line">    app.UseFacebookAuthentication(options =&gt;</div><div class="line">    &#123;</div><div class="line">        options.AppId = Configuration[<span class="string">"Authentication:Facebook:AppId"</span>];</div><div class="line">        options.AppSecret = Configuration[<span class="string">"Authentication:Facebook:AppSecret"</span>];</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    app.UseIdentity();</div><div class="line"></div><div class="line">    app.UseFacebookAuthentication(options =&gt;</div><div class="line">    &#123;</div><div class="line">        options.AppId = Configuration[<span class="string">"Authentication:Facebook:AppId"</span>];</div><div class="line">        options.AppSecret = Configuration[<span class="string">"Authentication:Facebook:AppSecret"</span>];</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>Tips</p>
 <ul>
@@ -596,65 +689,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/" data-id="cj3gmbsu7000dvold8yx18iy9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnetcore/">dotnetcore</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-dotnet core/read config file" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/04/dotnet core/read config file/" class="article-date">
-  <time datetime="2016-08-04T13:17:33.000Z" itemprop="datePublished">2016-08-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/04/dotnet core/read config file/">Reading configuration from a file</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>Open the <code>Startup.cs</code> file and add a new private class field named <code>configuration</code> of type <code>IConfiguration</code>.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>In the <code>Startup</code> constructor, create a new <code>Configuration</code> object using the <code>ConfigurationBuilder</code> and assign it to the <code>configuration</code> class field that you created in the previous step.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</div><div class="line">        .Build();</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.configuration = configuration;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Open the <code>project.json</code> file and add a reference to the <code>Microsoft.Extensions.Configuration.Json</code> package in the <code>dependencies</code> node.</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"dependencies": &#123;</div><div class="line">"Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",</div><div class="line">"Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final"</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-</li>
-<li><p>Back in the <code>Startup.cs</code> file, add a call to <code>.AddJsonFile(&quot;config.json&quot;)</code> immediately after the creation of the <code>ConfigurationBuilder</code> object as a chained method.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</div><div class="line">            .AddJsonFile(<span class="string">"config.json"</span>)</div><div class="line">            .Build();</div><div class="line"></div><div class="line">        <span class="keyword">this</span>.configuration = configuration;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Add a new <code>config.json</code> file, add the new key/value pair.</p>
- <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"keyname"</span>:<span class="string">"the value"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>you can use the configuration like this.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">string</span> ValueOfConfig = <span class="keyword">this</span>.configuration[<span class="string">"keyname"</span>] ?? <span class="string">"default value"</span>;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/read config file/" data-id="cj3gmbsu70009voldbzx74zo8" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/" data-id="cj8quoocz000dcg9iha2obbde" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnetcore/">dotnetcore</a></li></ul>
@@ -708,7 +743,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
     </div>
   </div>
 
@@ -731,6 +766,10 @@
       <ul>
         
           <li>
+            <a href="/2017/09/28/https-漫谈/">https 漫谈</a>
+          </li>
+        
+          <li>
             <a href="/2017/05/27/Recently/">Recently</a>
           </li>
         
@@ -744,10 +783,6 @@
         
           <li>
             <a href="/2017/05/06/yum-install-mysql/">yum install mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/10/hexo/page/">new page</a>
           </li>
         
       </ul>

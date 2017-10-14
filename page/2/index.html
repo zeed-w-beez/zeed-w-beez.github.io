@@ -9,6 +9,7 @@
 <meta property="og:title" content="Miracle-working">
 <meta property="og:url" content="http://blogs.mercenaryunion.com/page/2/index.html">
 <meta property="og:site_name" content="Miracle-working">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Miracle-working">
   
@@ -55,13 +56,71 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-dotnet core/read config file" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/04/dotnet core/read config file/" class="article-date">
+  <time datetime="2016-08-04T13:17:33.000Z" itemprop="datePublished">2016-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/04/dotnet core/read config file/">Reading configuration from a file</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>Open the <code>Startup.cs</code> file and add a new private class field named <code>configuration</code> of type <code>IConfiguration</code>.</p>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>In the <code>Startup</code> constructor, create a new <code>Configuration</code> object using the <code>ConfigurationBuilder</code> and assign it to the <code>configuration</code> class field that you created in the previous step.</p>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</div><div class="line">        .Build();</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.configuration = configuration;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Open the <code>project.json</code> file and add a reference to the <code>Microsoft.Extensions.Configuration.Json</code> package in the <code>dependencies</code> node.</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"dependencies": &#123;</div><div class="line">"Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",</div><div class="line">"Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final"</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</li>
+<li><p>Back in the <code>Startup.cs</code> file, add a call to <code>.AddJsonFile(&quot;config.json&quot;)</code> immediately after the creation of the <code>ConfigurationBuilder</code> object as a chained method.</p>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</div><div class="line">            .AddJsonFile(<span class="string">"config.json"</span>)</div><div class="line">            .Build();</div><div class="line"></div><div class="line">        <span class="keyword">this</span>.configuration = configuration;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Add a new <code>config.json</code> file, add the new key/value pair.</p>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"keyname"</span>:<span class="string">"the value"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>you can use the configuration like this.</p>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">string</span> ValueOfConfig = <span class="keyword">this</span>.configuration[<span class="string">"keyname"</span>] ?? <span class="string">"default value"</span>;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/read config file/" data-id="cj8quoocy000bcg9ijzhsqnka" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnetcore/">dotnetcore</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-dotnet core/middleware" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -86,22 +145,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Adding-in-Stratup-cs-file-directly"><a href="#Adding-in-Stratup-cs-file-directly" class="headerlink" title="Adding in Stratup.cs file directly."></a>Adding in <code>Stratup.cs</code> file directly.</h2><p>Code snippet in <code>Configure</code> method:</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app</span>)</span></div><div class="line">&#123;</div><div class="line">    app.UseIISPlatformHandler();</div><div class="line"></div><div class="line">    app.Use((context, next) =&gt;</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// do something here...</span></div><div class="line"></div><div class="line">        <span class="comment">// Call the next delegate/middleware in the pipeline</span></div><div class="line">        <span class="keyword">return</span> next();</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    app.Run(<span class="keyword">async</span> (context) =&gt;</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">await</span> context.Response.WriteAsync(<span class="string">$"Hello World!"</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    app.UseIISPlatformHandler();</div><div class="line"></div><div class="line">    app.Use((context, next) =&gt;</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// do something here...</span></div><div class="line"></div><div class="line">        <span class="comment">// Call the next delegate/middleware in the pipeline</span></div><div class="line">        <span class="keyword">return</span> next();</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    app.Run(<span class="keyword">async</span> (context) =&gt;</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">await</span> context.Response.WriteAsync(<span class="string">$"Hello World!"</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="Moving-the-middleware-to-its-own-type"><a href="#Moving-the-middleware-to-its-own-type" class="headerlink" title="Moving the middleware to its own type."></a>Moving the middleware to its own type.</h2><ol>
 <li><p>Add a new class.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyselfMiddleware</span> </div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate next;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyselfMiddleware</span>(<span class="params">RequestDelegate next</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">this</span>.next = next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyselfMiddleware</span> </div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate next;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyselfMiddleware</span>(<span class="params">RequestDelegate next</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">this</span>.next = next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>Add the <code>Invoke</code> method to handle request.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyselfMiddleware</span> </div><div class="line">&#123;</div><div class="line">    ...</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Task <span class="title">Invoke</span>(<span class="params">HttpContext context</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// do something here...</span></div><div class="line"></div><div class="line">        <span class="comment">// Call the next delegate/middleware in the pipeline</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.next(context);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyselfMiddleware</span> </div><div class="line">&#123;</div><div class="line">    ...</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Task <span class="title">Invoke</span>(<span class="params">HttpContext context</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="comment">// do something here...</span></div><div class="line"></div><div class="line">        <span class="comment">// Call the next delegate/middleware in the pipeline</span></div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.next(context);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>Add a class that exposes the middleware via an extension method on <code>IApplicationBuilder</code>.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyselfMiddlewareMiddlewareExtensions</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IApplicationBuilder <span class="title">UseMyselfMiddleware</span>(<span class="params"><span class="keyword">this</span> IApplicationBuilder builder</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> builder.UseMiddleware&lt;MyselfMiddlewareMiddleware&gt;();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyselfMiddlewareMiddlewareExtensions</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IApplicationBuilder <span class="title">UseMyselfMiddleware</span>(<span class="params"><span class="keyword">this</span> IApplicationBuilder builder</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> builder.UseMiddleware&lt;MyselfMiddlewareMiddleware&gt;();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>you can add this code in a new class file or in the bottom of the <code>MyselfMiddleware.cs</code> file.</p>
 </blockquote>
 </li>
 <li><p>Add your self middleware to the HTTP pipeline.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app</span>)</span></div><div class="line">&#123;</div><div class="line">    app.UseIISPlatformHandler();</div><div class="line"></div><div class="line">    app.MyselfMiddleware();</div><div class="line"></div><div class="line">    app.Run(<span class="keyword">async</span> (context) =&gt;</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">await</span> context.Response.WriteAsync(<span class="string">$"Hello World!"</span>);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    app.UseIISPlatformHandler();</div><div class="line"></div><div class="line">    app.MyselfMiddleware();</div><div class="line"></div><div class="line">    app.Run(<span class="keyword">async</span> (context) =&gt;</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">await</span> context.Response.WriteAsync(<span class="string">$"Hello World!"</span>);</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="Adding-options-to-middleware"><a href="#Adding-options-to-middleware" class="headerlink" title="Adding options to middleware"></a>Adding options to middleware</h2><ol>
@@ -109,12 +168,12 @@
  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyselfOptions</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">string</span> String1 &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>Update the <code>MyselfMiddleware</code> constructor to take the <code>MyselfOptions</code> parameter.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyselfMiddleware</span> </div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate next;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> MyselfOptions options;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyselfMiddleware</span>(<span class="params">RequestDelegate next, MyselfOptions options</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">this</span>.next = next;</div><div class="line">        <span class="keyword">this</span>.options=options;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyselfMiddleware</span> </div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate next;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> MyselfOptions options;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyselfMiddleware</span>(<span class="params">RequestDelegate next, MyselfOptions options</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">this</span>.next = next;</div><div class="line">        <span class="keyword">this</span>.options=options;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>Now you can use the <code>MyselfOptions</code> in <code>Invoke</code> method.</p>
 </li>
 <li><p>Adds an overload to the <code>UseMyselfMiddleware</code> extension method that takes the <code>MyselfOptions</code>.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyselfMiddlewareMiddlewareExtensions</span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IApplicationBuilder <span class="title">UseMyselfMiddleware</span>(<span class="params"><span class="keyword">this</span> IApplicationBuilder builder, MyselfOptions options</span>)</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> builder.UseMiddleware&lt;MyselfMiddlewareMiddleware&gt;(options);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyselfMiddlewareMiddlewareExtensions</span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IApplicationBuilder <span class="title">UseMyselfMiddleware</span>(<span class="params"><span class="keyword">this</span> IApplicationBuilder builder, MyselfOptions options</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> builder.UseMiddleware&lt;MyselfMiddlewareMiddleware&gt;(options);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>Then, you can use the <code>MyselfOptions</code> like this.</p>
  <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.MyselfMiddleware(<span class="keyword">new</span> MyselfOptions</div><div class="line">&#123;</div><div class="line">    String1 = <span class="string">"balabala..."</span> <span class="comment">//Of course, you can read value from a config file.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -124,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/middleware/" data-id="cj3gmbsu7000avoldwxc7i23l" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2016/08/04/dotnet core/middleware/" data-id="cj8quoocx000acg9imng6r0d5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotnetcore-middleware/">dotnetcore middleware</a></li></ul>
@@ -178,7 +237,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
     </div>
   </div>
 
@@ -201,6 +260,10 @@
       <ul>
         
           <li>
+            <a href="/2017/09/28/https-漫谈/">https 漫谈</a>
+          </li>
+        
+          <li>
             <a href="/2017/05/27/Recently/">Recently</a>
           </li>
         
@@ -214,10 +277,6 @@
         
           <li>
             <a href="/2017/05/06/yum-install-mysql/">yum install mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2017/03/10/hexo/page/">new page</a>
           </li>
         
       </ul>
