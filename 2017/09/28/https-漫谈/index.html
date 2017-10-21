@@ -5,17 +5,17 @@
   
   <title>https 漫谈 | Miracle-working</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。  加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。  https 漫谈什么是https http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作  虽然https里s是在最后的，但是这个加密动作其实是在http前进行的，否则就没有意义了  因为http 和 s 是分开的模块，所以你可以只部">
+  <meta name="description" content="https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。  加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。  https 漫谈什么是https http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作  SSL 现在应该叫 TLS 了，二者都只是规范，很安全 而 OpenSSl 是 SSL 规范的代码实现；既然是代码，就可能存在 Bug ，只是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="https 漫谈">
 <meta property="og:url" content="http://blogs.mercenaryunion.com/2017/09/28/https-漫谈/index.html">
 <meta property="og:site_name" content="Miracle-working">
-<meta property="og:description" content="https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。  加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。  https 漫谈什么是https http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作  虽然https里s是在最后的，但是这个加密动作其实是在http前进行的，否则就没有意义了  因为http 和 s 是分开的模块，所以你可以只部">
+<meta property="og:description" content="https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。  加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。  https 漫谈什么是https http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作  SSL 现在应该叫 TLS 了，二者都只是规范，很安全 而 OpenSSl 是 SSL 规范的代码实现；既然是代码，就可能存在 Bug ，只是">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-21T01:05:04.634Z">
+<meta property="og:updated_time" content="2017-10-21T09:34:54.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="https 漫谈">
-<meta name="twitter:description" content="https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。  加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。  https 漫谈什么是https http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作  虽然https里s是在最后的，但是这个加密动作其实是在http前进行的，否则就没有意义了  因为http 和 s 是分开的模块，所以你可以只部">
+<meta name="twitter:description" content="https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。  加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。  https 漫谈什么是https http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作  SSL 现在应该叫 TLS 了，二者都只是规范，很安全 而 OpenSSl 是 SSL 规范的代码实现；既然是代码，就可能存在 Bug ，只是">
   
     <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
   
@@ -94,6 +94,10 @@
 </blockquote>
 <h2 id="https-漫谈"><a href="#https-漫谈" class="headerlink" title="https 漫谈"></a>https 漫谈</h2><h3 id="什么是https"><a href="#什么是https" class="headerlink" title="什么是https"></a>什么是https</h3><ol>
 <li><p>http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作</p>
+<ul>
+<li>SSL 现在应该叫 TLS 了，二者都只是规范，很安全</li>
+<li>而 OpenSSl 是 SSL 规范的代码实现；既然是代码，就可能存在 Bug ，只是被发现和没被发现</li>
+</ul>
 </li>
 <li><p>虽然https里s是在最后的，但是这个加密动作其实是在http前进行的，否则就没有意义了</p>
 </li>
@@ -106,6 +110,9 @@
 </ol>
 <h3 id="不要那么多废话，告诉我怎么搞"><a href="#不要那么多废话，告诉我怎么搞" class="headerlink" title="不要那么多废话，告诉我怎么搞"></a>不要那么多废话，告诉我怎么搞</h3><ol>
 <li>密钥文件 - 先自己想出一个密码</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># DES -&gt; 3DES -&gt; AES 128,192,256</span></div><div class="line">openssl genrsa --aes256 -out me.key 2048</div></pre></td></tr></table></figure>
+<ol>
 <li>证书申请 - 用自己想出的密码，打造一个模具出来</li>
 <li>证书文件 - 这里就有两种选择了<ul>
 <li>权威 - 把模具交给专业的权威机构打造成密码箱</li>
@@ -117,8 +124,8 @@
 <h3 id="然后呢"><a href="#然后呢" class="headerlink" title="然后呢"></a>然后呢</h3><blockquote>
 <p>其实部署的时候，只需要用到上面提到的2个东西</p>
 <ol>
-<li>证书文件 - 用模具打造出来的密码箱</li>
 <li>密钥文件 - 用来开密码箱的密码</li>
+<li>证书文件 - 用模具打造出来的密码箱</li>
 </ol>
 </blockquote>
 <p>以Nginx为例，就是:</p>
@@ -128,9 +135,13 @@
 </li>
 <li><p>二级根证书 - 这可是开过光的锤子，金贵的很，当然不能直接给你们用。所以我们先用这个开过光的锤子，打造一批锤子出来，再用这批锤子去打造你们的模具。</p>
 </li>
-<li><p>自签名证书 - 纯手工打造。</p>
+<li><p>自签名证书 - 纯手工打造</p>
 </li>
 <li><p>自签名根证书 - 我给我自己的锤子开光~</p>
+<ol>
+<li>openssl genrsa -out ca.key 4096</li>
+<li>openssl req -new -x509 -key ca.key -out ca.cert</li>
+</ol>
 </li>
 </ol>
 <h3 id="权利和义务"><a href="#权利和义务" class="headerlink" title="权利和义务"></a>权利和义务</h3><blockquote>
@@ -140,11 +151,42 @@
 <li>正面是权利 - 机构可以证明你就是你。</li>
 <li>反面是义务 - 证是机构发的，出了事情肯定会去找机构。</li>
 </ul>
+<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><ul>
+<li>X.509 证书标准，主要定义了证书中应该包含哪些内容</li>
+<li>编码<ul>
+<li>PEM(Privacy Enhanced Mail): 文本格式<ul>
+<li>以”—–BEGIN…”开头”—–END…”结尾，内容是BASE64编码  </li>
+<li>查看PEM格式证书的信息:openssl x509 -in certificate.pem -text -noout  </li>
+<li>Apache和*NIX服务器偏向于使用这种编码格式</li>
+</ul>
+</li>
+<li>DER(Distinguished Encoding Rules): 二进制格式<ul>
+<li>不可读  </li>
+<li>查看DER格式证书的信息:openssl x509 -in certificate.der -inform der -text -noout  </li>
+<li>Java和Windows服务器偏向于使用这种编码格式</li>
+</ul>
+</li>
+<li>二者转换:<ul>
+<li>openssl x509 -in cert.pem -outform der -out cert.der</li>
+<li>openssl x509 -in cert.pem -outform der -out cert.der</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件扩展名"><a href="#文件扩展名" class="headerlink" title="文件扩展名"></a>文件扩展名</h3><ul>
+<li>KEY 公钥或者私钥文件</li>
+<li>CSR 证书请求(Certificate Signing Request)，核心内容是一个公钥和申请人的信息</li>
+<li>CRT 证书文件，大多是PEM编码，常见于*Nix系统</li>
+<li>CRE 证书文件，大多是DER编码，常见于Windows系统</li>
+<li>PFX/P12 是PKCS#12标准(Personal Information Exchange Syntax Standard)常用的后缀名，用来存放证书和密钥的二进制文件。*NIX 服务器的 CRT 和 KEY 文件是分开在不同的文件中的，但是Windows的IIS则把他们打包进一个文件里面，使用密码进行打包/提取</li>
+<li>JKS 是Java Key Storage的缩写，是java用来存放密钥的文件。一般是用java的keytool工具进行生成</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2017/09/28/https-漫谈/" data-id="cj90mhnrl0004bu9h8hydw3w3" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/09/28/https-漫谈/" data-id="cj914p7am0004bm992kbns98w" class="article-share-link">Share</a>
       
       
     </footer>
