@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>tensorflow | Miracle-working</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="tensorflow 是个好东西，自己也接触下。Linux 上都好办，就不说了。  Windows 上有个 Python 的坑，记录下： Tensorflow 对 Windows 支持，目前是只有 Python3 .想要做 Windows 上跑，必须要Python 3，目前 Python 最新的版本是 3.6.x，但是 Tensorflow 才支持到 3.5，所以要下载 3.5.x 版本的Pyt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensorflow">
+<meta property="og:url" content="http://blogs.mercenaryunion.com/2017/10/25/tensorflow/index.html">
+<meta property="og:site_name" content="Miracle-working">
+<meta property="og:description" content="tensorflow 是个好东西，自己也接触下。Linux 上都好办，就不说了。  Windows 上有个 Python 的坑，记录下： Tensorflow 对 Windows 支持，目前是只有 Python3 .想要做 Windows 上跑，必须要Python 3，目前 Python 最新的版本是 3.6.x，但是 Tensorflow 才支持到 3.5，所以要下载 3.5.x 版本的Pyt">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://blogs.mercenaryunion.com/images/graph_vis_animation.gif">
+<meta property="og:updated_time" content="2017-10-25T06:53:17.669Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tensorflow">
+<meta name="twitter:description" content="tensorflow 是个好东西，自己也接触下。Linux 上都好办，就不说了。  Windows 上有个 Python 的坑，记录下： Tensorflow 对 Windows 支持，目前是只有 Python3 .想要做 Windows 上跑，必须要Python 3，目前 Python 最新的版本是 3.6.x，但是 Tensorflow 才支持到 3.5，所以要下载 3.5.x 版本的Pyt">
+<meta name="twitter:image" content="http://blogs.mercenaryunion.com/images/graph_vis_animation.gif">
+  
+    <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Miracle-working</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogs.mercenaryunion.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tensorflow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/25/tensorflow/" class="article-date">
+  <time datetime="2017-10-25T14:52:04.000Z" itemprop="datePublished">2017-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tensorflow
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>tensorflow 是个好东西，自己也接触下。Linux 上都好办，就不说了。</p>
+</blockquote>
+<p>Windows 上有个 Python 的坑，记录下：</p>
+<p>Tensorflow 对 Windows 支持，目前是只有 Python3 .<br>想要做 Windows 上跑，必须要Python 3，目前 Python 最新的版本是 3.6.x，但是 Tensorflow 才支持到 3.5，所以要下载 3.5.x 版本的Python 。<br>再用 pip install tensorflow 才行。<br>等以后都支持了，就不用Care这个了。</p>
+<p>当然还有其他糟心的问题。 比如 墙， 想学个新知识都这么难~</p>
+<h2 id="Tensorflow-笔记"><a href="#Tensorflow-笔记" class="headerlink" title="Tensorflow 笔记"></a>Tensorflow 笔记</h2><blockquote>
+<p><a href="https://www.tensorflow.org/get_started/get_started" target="_blank" rel="external">https://www.tensorflow.org/get_started/get_started</a><br>把数据结构化，建立合适的图；执行图，降维，执行图，循环…</p>
+</blockquote>
+<ol>
+<li>tensors 数据</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> <span class="comment"># a rank 0 tensor; this is a scalar with shape []</span></div><div class="line">[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>] <span class="comment"># a rank 1 tensor; this is a vector with shape [3]</span></div><div class="line">[[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>], [<span class="number">4.</span>, <span class="number">5.</span>, <span class="number">6.</span>]] <span class="comment"># a rank 2 tensor; a matrix with shape [2, 3]</span></div><div class="line">[[[<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>]], [[<span class="number">7.</span>, <span class="number">8.</span>, <span class="number">9.</span>]]] <span class="comment"># a rank 3 tensor with shape [2, 1, 3]</span></div></pre></td></tr></table></figure>
+<ol>
+<li>graph 图<ul>
+<li>创建图</li>
+<li>执行图</li>
+</ul>
+</li>
+</ol>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ol>
+<li>芝麻开门</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div></pre></td></tr></table></figure>
+<ol>
+<li>Tensor 实例</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">node1 = tf.constant(<span class="number">3.0</span>, dtype=tf.float32)</div><div class="line">node2 = tf.constant(<span class="number">4.0</span>) <span class="comment"># also tf.float32 implicitly</span></div><div class="line">print(node1, node2)</div><div class="line">Tensor(<span class="string">"Const:0"</span>, shape=(), dtype=float32) Tensor(<span class="string">"Const_1:0"</span>, shape=(), dtype=float32)</div></pre></td></tr></table></figure>
+<ol>
+<li>执行</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sess = tf.Session()</div><div class="line"><span class="keyword">print</span> (sess.run([node1, nod2]))</div></pre></td></tr></table></figure>
+<ol>
+<li>构建图</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这里最重要，可以使用更高级和复杂的算法去构建图</span></div><div class="line">node3 = tf.add(node1, node2)</div><div class="line">node4 = 算法<span class="number">1</span>(node3)</div><div class="line">node5 = 算法<span class="number">2</span>(node3)</div><div class="line">node6 = 算法x(node4, node5)</div><div class="line">...</div><div class="line"></div><div class="line">print(<span class="string">"node3:"</span>, node3)</div><div class="line"><span class="comment"># node3: Tensor("Add:0", shape=(), dtype=float32)</span></div><div class="line">print(<span class="string">"sess.run(node3):"</span>, sess.run(node3))</div><div class="line"><span class="comment"># sess.run(node3): 7.0</span></div></pre></td></tr></table></figure>
+<ol>
+<li>数据和图可以分开</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = tf.placeholder(tf.float32) <span class="comment"># 用给定的数据类型去构建图，在执行过程中填入真实的数据</span></div><div class="line">b = tf.placeholder(tf.float32)</div><div class="line">adder_node = a + b  <span class="comment"># + provides a shortcut for tf.add(a, b)</span></div><div class="line"></div><div class="line">print(sess.run(adder_node, &#123;a: <span class="number">3</span>, b: <span class="number">4.5</span>&#125;)) <span class="comment"># 7.5</span></div><div class="line">print(sess.run(adder_node, &#123;a: [<span class="number">1</span>, <span class="number">3</span>], b: [<span class="number">2</span>, <span class="number">4</span>]&#125;)) <span class="comment"># [3., 7.]</span></div></pre></td></tr></table></figure>
+<ol>
+<li>变量，测试数据在不同的变量下的结果，以得到最优解</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">W = tf.Variable([<span class="number">.3</span>], dtype=tf.float32)</div><div class="line">b = tf.Variable([<span class="number">-.3</span>], dtype=tf.float32)</div><div class="line">x = tf.placeholder(tf.float32)</div><div class="line">linear_model = W * x + b</div><div class="line"><span class="comment"># 初始化变量</span></div><div class="line">init = tf.global_variables_initializer()</div><div class="line">sess.run(init)</div><div class="line"><span class="comment"># 指定变量的范围</span></div><div class="line">print(sess.run(linear_model, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]&#125;))</div><div class="line"><span class="comment"># [ 0.          0.30000001  0.60000002  0.90000004]</span></div></pre></td></tr></table></figure>
+<ol>
+<li>评估</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">y = tf.placeholder(tf.float32)</div><div class="line">squared_deltas = tf.square(linear_model - y)</div><div class="line">loss = tf.reduce_sum(squared_deltas)</div><div class="line">print(sess.run(loss, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]&#125;))</div><div class="line"><span class="comment"># 23.66</span></div></pre></td></tr></table></figure>
+<ol>
+<li>纠正</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fixW = tf.assign(W, [<span class="number">-1.</span>])</div><div class="line">fixb = tf.assign(b, [<span class="number">1.</span>])</div><div class="line">sess.run([fixW, fixb])</div><div class="line">print(sess.run(loss, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]&#125;))</div><div class="line"><span class="comment"># 0.0</span></div></pre></td></tr></table></figure>
+<ol>
+<li>优化</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 使用 Tensorflow 提供的算法 进行优化，比如 梯度下降 等</span></div><div class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</div><div class="line">train = optimizer.minimize(loss)</div><div class="line">sess.run(init) <span class="comment"># reset values to incorrect defaults.</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</div><div class="line">  sess.run(train, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]&#125;)</div><div class="line">print(sess.run([W, b]))</div><div class="line"><span class="comment"># [array([-0.9999969], dtype=float32), array([ 0.99999082], dtype=float32)]</span></div></pre></td></tr></table></figure>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line"><span class="comment"># Model parameters</span></div><div class="line">W = tf.Variable([<span class="number">.3</span>], dtype=tf.float32)</div><div class="line">b = tf.Variable([<span class="number">-.3</span>], dtype=tf.float32)</div><div class="line"><span class="comment"># Model input and output</span></div><div class="line">x = tf.placeholder(tf.float32)</div><div class="line">linear_model = W * x + b</div><div class="line">y = tf.placeholder(tf.float32)</div><div class="line"></div><div class="line"><span class="comment"># loss</span></div><div class="line">loss = tf.reduce_sum(tf.square(linear_model - y)) <span class="comment"># sum of the squares</span></div><div class="line"><span class="comment"># optimizer</span></div><div class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</div><div class="line">train = optimizer.minimize(loss)</div><div class="line"></div><div class="line"><span class="comment"># training data</span></div><div class="line">x_train = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">y_train = [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]</div><div class="line"><span class="comment"># training loop</span></div><div class="line">init = tf.global_variables_initializer()</div><div class="line">sess = tf.Session()</div><div class="line">sess.run(init) <span class="comment"># reset values to wrong</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</div><div class="line">  sess.run(train, &#123;x: x_train, y: y_train&#125;)</div><div class="line"></div><div class="line"><span class="comment"># evaluate training accuracy</span></div><div class="line">curr_W, curr_b, curr_loss = sess.run([W, b, loss], &#123;x: x_train, y: y_train&#125;)</div><div class="line">print(<span class="string">"W: %s b: %s loss: %s"</span>%(curr_W, curr_b, curr_loss))</div><div class="line"><span class="comment"># W: [-0.9999969] b: [ 0.99999082] loss: 5.69997e-11</span></div></pre></td></tr></table></figure>
+<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><p><img src="/images/graph_vis_animation.gif" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blogs.mercenaryunion.com/2017/10/25/tensorflow/" data-id="cj96ooqv00007bk8zx4mcx1du" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/28/https-漫谈/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">https 漫谈</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/stone/">stone</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/auto-complete-command/">auto-complete command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnetcore/">dotnetcore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotnetcore-middleware/">dotnetcore middleware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/">hello</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hyper-v-nat-network/">hyper-v nat network</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/auto-complete-command/" style="font-size: 10px;">auto-complete command</a> <a href="/tags/dotnetcore/" style="font-size: 20px;">dotnetcore</a> <a href="/tags/dotnetcore-middleware/" style="font-size: 10px;">dotnetcore middleware</a> <a href="/tags/hello/" style="font-size: 10px;">hello</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hyper-v-nat-network/" style="font-size: 10px;">hyper-v nat network</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">About</h3>
+    <div class="widget">
+      email：xxx@xxx.com<br />
+      github: http://zeed-w-beez.github.io
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/25/tensorflow/">tensorflow</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/28/https-漫谈/">https 漫谈</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/27/Recently/">Recently</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/27/proxy-settings/">proxy settings</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/06/yum-install-mysql/">yum install mysql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zeed-w-beez Waiting for you~ <br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+<!-- Hotjar Tracking Code for https://zeed-w-beez.github.io/ -->
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:658644,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</html>
