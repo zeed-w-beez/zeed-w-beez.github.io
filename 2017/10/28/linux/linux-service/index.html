@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Enable auto complete for command | Miracle-working</title>
+  <title>linux-service | Miracle-working</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Source: CompletionCharChange the regedit key to enable auto complete1HKCU\Software\Microsoft\Command Processor    Data type Range Default value     REG_DWORD `0x0 0x1–0x1F 0x9 0x20` 0x9 (the TAB key)">
-<meta name="keywords" content="auto-complete command">
+  <meta name="description" content="systemctlLinux 上服务的管理，一般都是使用 systemctl , 因为可以方便的通过 systemctl [restart|start|stop|status] xxx.service 去起停和查看状态 配置文件的路径在 /etc/systemd/system 一般用户的普通应用程序服务，是在 multi-user.target 目录下的，可以直接用 cat 查看文件内容 举个栗子">
+<meta name="keywords" content="linux systemctl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Enable auto complete for command">
-<meta property="og:url" content="http://blogs.mercenaryunion.com/2016/08/05/shell/cmd-auto-complete/index.html">
+<meta property="og:title" content="linux-service">
+<meta property="og:url" content="http://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/index.html">
 <meta property="og:site_name" content="Miracle-working">
-<meta property="og:description" content="Source: CompletionCharChange the regedit key to enable auto complete1HKCU\Software\Microsoft\Command Processor    Data type Range Default value     REG_DWORD `0x0 0x1–0x1F 0x9 0x20` 0x9 (the TAB key)">
+<meta property="og:description" content="systemctlLinux 上服务的管理，一般都是使用 systemctl , 因为可以方便的通过 systemctl [restart|start|stop|status] xxx.service 去起停和查看状态 配置文件的路径在 /etc/systemd/system 一般用户的普通应用程序服务，是在 multi-user.target 目录下的，可以直接用 cat 查看文件内容 举个栗子">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-10-28T04:36:21.391Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Enable auto complete for command">
-<meta name="twitter:description" content="Source: CompletionCharChange the regedit key to enable auto complete1HKCU\Software\Microsoft\Command Processor    Data type Range Default value     REG_DWORD `0x0 0x1–0x1F 0x9 0x20` 0x9 (the TAB key)">
+<meta name="twitter:title" content="linux-service">
+<meta name="twitter:description" content="systemctlLinux 上服务的管理，一般都是使用 systemctl , 因为可以方便的通过 systemctl [restart|start|stop|status] xxx.service 去起停和查看状态 配置文件的路径在 /etc/systemd/system 一般用户的普通应用程序服务，是在 multi-user.target 目录下的，可以直接用 cat 查看文件内容 举个栗子">
   
     <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
   
@@ -67,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-shell/cmd-auto-complete" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-linux/linux-service" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/08/05/shell/cmd-auto-complete/" class="article-date">
-  <time datetime="2016-08-05T13:11:58.000Z" itemprop="datePublished">2016-08-05</time>
+    <a href="/2017/10/28/linux/linux-service/" class="article-date">
+  <time datetime="2017-10-28T11:19:39.000Z" itemprop="datePublished">2017-10-28</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Enable auto complete for command
+      linux-service
     </h1>
   
 
@@ -89,77 +89,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Source-CompletionChar"><a href="#Source-CompletionChar" class="headerlink" title="Source: CompletionChar"></a>Source: <a href="https://technet.microsoft.com/en-us/library/cc978715.aspx" target="_blank" rel="external">CompletionChar</a></h2><h2 id="Change-the-regedit-key-to-enable-auto-complete"><a href="#Change-the-regedit-key-to-enable-auto-complete" class="headerlink" title="Change the regedit key to enable auto complete"></a>Change the regedit key to enable auto complete</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HKCU\Software\Microsoft\Command Processor</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>Data type</th>
-<th style="text-align:center">Range</th>
-<th style="text-align:right">Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>REG_DWORD</td>
-<td style="text-align:center">`0x0</td>
-<td style="text-align:right">0x1–0x1F</td>
-<td>0x9</td>
-<td>0x20`</td>
-<td>0x9 (the TAB key)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>Specifies a character that activates the filename completion feature in the command processor (Cmd.exe).<br>To specify a character, enter the hexadecimal value of an ASCII control character other than 0x20 (space).<br>For example, 0x4 represents Ctrl+D and 0x6 represents Ctrl+F.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">0x0</td>
-<td style="text-align:left">Disables completion.</td>
-</tr>
-<tr>
-<td style="text-align:left">0x1–0x1F</td>
-<td style="text-align:left">Corresponding ASCII control character.</td>
-</tr>
-<tr>
-<td style="text-align:left">0xD</td>
-<td style="text-align:left">Disables completion.</td>
-</tr>
-<tr>
-<td style="text-align:left">0x9</td>
-<td style="text-align:left"><code>TAB</code> key.</td>
-</tr>
-<tr>
-<td style="text-align:left">0x20</td>
-<td style="text-align:left"><code>space</code> key. Disables completion.</td>
-</tr>
-<tr>
-<td style="text-align:left">0x40</td>
-<td style="text-align:left">key.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Change-method"><a href="#Change-method" class="headerlink" title="Change method"></a>Change method</h3><blockquote>
-<p>To change the completion character in Windows 2000, use a registry editor.<br>You can also change the value of this entry by using Command Processor (<code>Cmd.exe</code>), but only for the duration of that Cmd.exe’s execution.</p>
-</blockquote>
-<h4 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h4><p><code>CompletionChar</code> and <code>PathCompletionChar</code> can appear in <code>HKEY_LOCAL_MACHINE</code> and <code>HKEY_CURRENT_USER</code>.<br>If both appear in the registry, the value of the entry in <code>HKEY_CURRENT_USER</code> takes <strong>precedence over</strong> the value in <code>HKEY_LOCAL_MACHINE</code>.<br>For the original release of Windows 2000, the default value for this entry is <code>0x20</code>.<br>For Service Pack 1, the default is <code>0x9</code>.<br>Assigning the values <code>0x0</code>, <code>0xD</code>, or <code>0x20</code> to this entry disables file name completion rather than assigning a completion character.<br>The command-line switches take precedence over the registry settings while using Command Processor (<code>Cmd.exe</code>).</p>
-<h4 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h4><p>To enable or disable file name completion and directory name completion for one use of the command processor,<br>at the command prompt, type <code>CMD /F:ON</code> (enable) or <code>CMD /F:OFF</code> (disable). This command sets the completion character to CTRL+F (0x6).<br>For more information about the file name completion feature, at a command prompt, type <code>CMD /?</code></p>
-<h4 id="Related-Entries"><a href="#Related-Entries" class="headerlink" title="Related Entries"></a>Related Entries</h4><p><a href="https://technet.microsoft.com/en-us/library/cc940805.aspx" target="_blank" rel="external">PathCompletionChar</a></p>
-<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>
+        <h2 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h2><p>Linux 上服务的管理，一般都是使用 systemctl , 因为可以方便的通过 <code>systemctl [restart|start|stop|status] xxx.service</code> 去起停和查看状态</p>
+<p>配置文件的路径在 <code>/etc/systemd/system</code></p>
+<p>一般用户的普通应用程序服务，是在 multi-user.target 目录下的，可以直接用 cat 查看文件内容</p>
+<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><ol>
+<li>在 <code>/etc/systemd/system</code> 目录下新建一个文件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim webapi.service</div></pre></td></tr></table></figure>
+<ol>
+<li>文件的格式</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Linux 一直都大小写敏感</span></div><div class="line">[Unit]</div><div class="line">Description=Dotnet Core Web API Application</div><div class="line"></div><div class="line">[Service]</div><div class="line">WorkingDirectory=/application/app</div><div class="line">ExecStart=/usr/<span class="built_in">local</span>/bin /application/app/WebApplication.dll <span class="comment"># 这里可以加参数的</span></div><div class="line">Restart=always</div><div class="line">RestartSec=10  <span class="comment"># Restart service after 10 seconds if dotnet service crashes</span></div><div class="line">SyslogIdentifier=dotnetcore-webapi</div><div class="line">User=dotnet <span class="comment"># 这个是运行 service 的用户, nginx , memcached, redis, web, www, root ...</span></div><div class="line">Environment=ASPNETCORE_ENVIRONMENT=Production</div><div class="line"></div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
+<ol>
+<li>管理</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 注册：其实就是创建一个软连接，并且把文件 从 /etc/systemd/system Copy 到/etc/systemd/system/multi-user.target 目录下</span></div><div class="line">systemctl <span class="built_in">enable</span> webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 启动：注册后不会自己启动，只启也不会自己注册</span></div><div class="line">systemctl start webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 停止</span></div><div class="line">systemctl stop webapi.service</div><div class="line"><span class="comment"># 重启</span></div><div class="line">systemctl restart webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 删除</span></div><div class="line">systemctl <span class="built_in">disable</span> webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 查看状态，使用的最多的命令</span></div><div class="line">systemctl status webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 查看 这个 Unit 相关的 log</span></div><div class="line">journal -u webapi.service</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogs.mercenaryunion.com/2016/08/05/shell/cmd-auto-complete/" data-id="cj9au4dto000kc78rmpj0wl84" class="article-share-link">Share</a>
+      <a data-url="http://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/" data-id="cj9au4dtl000ic78rb0ly4bd8" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/auto-complete-command/">auto-complete command</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-systemctl/">linux systemctl</a></li></ul>
 
     </footer>
   </div>
@@ -167,19 +122,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/01/11/hyper-v/adding net switch/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Set up a Hyper-V Virtual Switch using a NAT Network
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/04/dotnet core/social login/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/10/25/tensorflow/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Enabling social login credentials in your web sites</div>
+      <div class="article-nav-title">tensorflow</div>
     </a>
   
 </nav>
