@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blogs.mercenaryunion.com/"/>
-  <updated>2017-11-01T07:41:17.165Z</updated>
-  <id>http://blogs.mercenaryunion.com/</id>
+  <link href="https://blogs.mercenaryunion.com/"/>
+  <updated>2017-11-01T08:57:47.860Z</updated>
+  <id>https://blogs.mercenaryunion.com/</id>
   
   <author>
     <name>zeed-w-beez</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>linux-service</title>
-    <link href="http://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/"/>
-    <id>http://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/"/>
+    <id>https://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/</id>
     <published>2017-10-28T11:19:39.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.860Z</updated>
     
     <summary type="html">
     
@@ -30,16 +30,16 @@
     </summary>
     
     
-      <category term="linux systemctl" scheme="http://blogs.mercenaryunion.com/tags/linux-systemctl/"/>
+      <category term="linux systemctl" scheme="https://blogs.mercenaryunion.com/tags/linux-systemctl/"/>
     
   </entry>
   
   <entry>
     <title>tensorflow</title>
-    <link href="http://blogs.mercenaryunion.com/2017/10/25/tensorflow/"/>
-    <id>http://blogs.mercenaryunion.com/2017/10/25/tensorflow/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/10/25/tensorflow/"/>
+    <id>https://blogs.mercenaryunion.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.860Z</updated>
     
     <summary type="html">
     
@@ -52,10 +52,10 @@
   
   <entry>
     <title>https 漫谈</title>
-    <link href="http://blogs.mercenaryunion.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
-    <id>http://blogs.mercenaryunion.com/2017/09/28/https-漫谈/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
+    <id>https://blogs.mercenaryunion.com/2017/09/28/https-漫谈/</id>
     <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.856Z</updated>
     
     <summary type="html">
     
@@ -67,16 +67,16 @@
     </summary>
     
     
-      <category term="https" scheme="http://blogs.mercenaryunion.com/tags/https/"/>
+      <category term="https" scheme="https://blogs.mercenaryunion.com/tags/https/"/>
     
   </entry>
   
   <entry>
     <title>Recently</title>
-    <link href="http://blogs.mercenaryunion.com/2017/05/27/Recently/"/>
-    <id>http://blogs.mercenaryunion.com/2017/05/27/Recently/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/05/27/Recently/"/>
+    <id>https://blogs.mercenaryunion.com/2017/05/27/Recently/</id>
     <published>2017-05-27T12:24:46.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.856Z</updated>
     
     <summary type="html">
     
@@ -89,10 +89,10 @@
   
   <entry>
     <title>proxy settings</title>
-    <link href="http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/"/>
-    <id>http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/"/>
+    <id>https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/</id>
     <published>2017-05-27T09:19:19.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.860Z</updated>
     
     <summary type="html">
     
@@ -105,10 +105,10 @@
   
   <entry>
     <title>yum install mysql</title>
-    <link href="http://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/"/>
-    <id>http://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/"/>
+    <id>https://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/</id>
     <published>2017-05-06T12:57:33.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.860Z</updated>
     
     <summary type="html">
     
@@ -121,8 +121,8 @@
   
   <entry>
     <title>new page</title>
-    <link href="http://blogs.mercenaryunion.com/2017/03/10/hexo/page/"/>
-    <id>http://blogs.mercenaryunion.com/2017/03/10/hexo/page/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/03/10/hexo/page/"/>
+    <id>https://blogs.mercenaryunion.com/2017/03/10/hexo/page/</id>
     <published>2017-03-10T11:25:28.000Z</published>
     <updated>2017-03-10T12:59:19.000Z</updated>
     
@@ -133,16 +133,16 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://blogs.mercenaryunion.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://blogs.mercenaryunion.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://blogs.mercenaryunion.com/2017/03/08/hello-world/"/>
-    <id>http://blogs.mercenaryunion.com/2017/03/08/hello-world/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/03/08/hello-world/"/>
+    <id>https://blogs.mercenaryunion.com/2017/03/08/hello-world/</id>
     <published>2017-03-08T00:00:00.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.856Z</updated>
     
     <summary type="html">
     
@@ -151,14 +151,14 @@
     </summary>
     
     
-      <category term="hello" scheme="http://blogs.mercenaryunion.com/tags/hello/"/>
+      <category term="hello" scheme="https://blogs.mercenaryunion.com/tags/hello/"/>
     
   </entry>
   
   <entry>
     <title>Set up a Hyper-V Virtual Switch using a NAT Network</title>
-    <link href="http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding%20net%20switch/"/>
-    <id>http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding%20net%20switch/"/>
+    <id>https://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/</id>
     <published>2017-01-11T10:00:31.000Z</published>
     <updated>2017-03-09T19:19:14.000Z</updated>
     
@@ -168,19 +168,19 @@
     
     </summary>
     
-      <category term="stone" scheme="http://blogs.mercenaryunion.com/categories/stone/"/>
+      <category term="stone" scheme="https://blogs.mercenaryunion.com/categories/stone/"/>
     
     
-      <category term="hyper-v nat network" scheme="http://blogs.mercenaryunion.com/tags/hyper-v-nat-network/"/>
+      <category term="hyper-v nat network" scheme="https://blogs.mercenaryunion.com/tags/hyper-v-nat-network/"/>
     
   </entry>
   
   <entry>
     <title>Enabling social login credentials in your web sites</title>
-    <link href="http://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/social%20login/"/>
-    <id>http://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/</id>
+    <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/social%20login/"/>
+    <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/</id>
     <published>2016-08-04T14:42:18.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.856Z</updated>
     
     <summary type="html">
     
@@ -189,16 +189,16 @@
     </summary>
     
     
-      <category term="dotnetcore" scheme="http://blogs.mercenaryunion.com/tags/dotnetcore/"/>
+      <category term="dotnetcore" scheme="https://blogs.mercenaryunion.com/tags/dotnetcore/"/>
     
   </entry>
   
   <entry>
     <title>Reading configuration from a file</title>
-    <link href="http://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/read%20config%20file/"/>
-    <id>http://blogs.mercenaryunion.com/2016/08/04/dotnet core/read config file/</id>
+    <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/read%20config%20file/"/>
+    <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/read config file/</id>
     <published>2016-08-04T13:17:33.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.856Z</updated>
     
     <summary type="html">
     
@@ -207,16 +207,16 @@
     </summary>
     
     
-      <category term="dotnetcore" scheme="http://blogs.mercenaryunion.com/tags/dotnetcore/"/>
+      <category term="dotnetcore" scheme="https://blogs.mercenaryunion.com/tags/dotnetcore/"/>
     
   </entry>
   
   <entry>
     <title>Writing custom middleware</title>
-    <link href="http://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/middleware/"/>
-    <id>http://blogs.mercenaryunion.com/2016/08/04/dotnet core/middleware/</id>
+    <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/middleware/"/>
+    <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/middleware/</id>
     <published>2016-08-04T13:03:38.000Z</published>
-    <updated>2017-11-01T07:41:17.165Z</updated>
+    <updated>2017-11-01T08:57:47.856Z</updated>
     
     <summary type="html">
     
@@ -225,7 +225,7 @@
     </summary>
     
     
-      <category term="dotnetcore middleware" scheme="http://blogs.mercenaryunion.com/tags/dotnetcore-middleware/"/>
+      <category term="dotnetcore middleware" scheme="https://blogs.mercenaryunion.com/tags/dotnetcore-middleware/"/>
     
   </entry>
   
