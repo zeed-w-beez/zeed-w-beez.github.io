@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Miracle-working</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blogs.mercenaryunion.com/"/>
+  <updated>2017-11-01T01:30:55.090Z</updated>
+  <id>http://blogs.mercenaryunion.com/</id>
+  
+  <author>
+    <name>zeed-w-beez</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux-service</title>
+    <link href="http://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/"/>
+    <id>http://blogs.mercenaryunion.com/2017/10/28/linux/linux-service/</id>
+    <published>2017-10-28T11:19:39.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      systemctl status me
+    
+    </summary>
+    
+    
+      <category term="linux systemctl" scheme="http://blogs.mercenaryunion.com/tags/linux-systemctl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tensorflow</title>
+    <link href="http://blogs.mercenaryunion.com/2017/10/25/tensorflow/"/>
+    <id>http://blogs.mercenaryunion.com/2017/10/25/tensorflow/</id>
+    <published>2017-10-25T14:52:04.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      There is no rose without a thorn.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>https 漫谈</title>
+    <link href="http://blogs.mercenaryunion.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
+    <id>http://blogs.mercenaryunion.com/2017/09/28/https-漫谈/</id>
+    <published>2017-09-28T15:08:56.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="https" scheme="http://blogs.mercenaryunion.com/tags/https/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Recently</title>
+    <link href="http://blogs.mercenaryunion.com/2017/05/27/Recently/"/>
+    <id>http://blogs.mercenaryunion.com/2017/05/27/Recently/</id>
+    <published>2017-05-27T12:24:46.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      Time and tide wait for no man.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>proxy settings</title>
+    <link href="http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/"/>
+    <id>http://blogs.mercenaryunion.com/2017/05/27/proxy-settings/</id>
+    <published>2017-05-27T09:19:19.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;proxy-settings&quot;&gt;&lt;a href=&quot;#proxy-settings&quot; class=&quot;headerlink&quot; title=&quot;proxy settings&quot;&gt;&lt;/a&gt;proxy settings&lt;/h1&gt;&lt;p&gt;代理是个好东西，但是… 不想多说什么&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>yum install mysql</title>
+    <link href="http://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/"/>
+    <id>http://blogs.mercenaryunion.com/2017/05/06/yum-install-mysql/</id>
+    <published>2017-05-06T12:57:33.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      It is not enough to be industrious, so are the ants. What are you industrious for?
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>new page</title>
+    <link href="http://blogs.mercenaryunion.com/2017/03/10/hexo/page/"/>
+    <id>http://blogs.mercenaryunion.com/2017/03/10/hexo/page/</id>
+    <published>2017-03-10T11:25:28.000Z</published>
+    <updated>2017-03-10T12:59:19.000Z</updated>
+    
+    <summary type="html">
+    
+      hexo help command
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://blogs.mercenaryunion.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://blogs.mercenaryunion.com/2017/03/08/hello-world/"/>
+    <id>http://blogs.mercenaryunion.com/2017/03/08/hello-world/</id>
+    <published>2017-03-08T00:00:00.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      A bird in the hand is worth two in the bush.
+    
+    </summary>
+    
+    
+      <category term="hello" scheme="http://blogs.mercenaryunion.com/tags/hello/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Set up a Hyper-V Virtual Switch using a NAT Network</title>
+    <link href="http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding%20net%20switch/"/>
+    <id>http://blogs.mercenaryunion.com/2017/01/11/hyper-v/adding net switch/</id>
+    <published>2017-01-11T10:00:31.000Z</published>
+    <updated>2017-03-09T19:19:14.000Z</updated>
+    
+    <summary type="html">
+    
+      One swallow does not make a summer.
+    
+    </summary>
+    
+      <category term="stone" scheme="http://blogs.mercenaryunion.com/categories/stone/"/>
+    
+    
+      <category term="hyper-v nat network" scheme="http://blogs.mercenaryunion.com/tags/hyper-v-nat-network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enabling social login credentials in your web sites</title>
+    <link href="http://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/social%20login/"/>
+    <id>http://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/</id>
+    <published>2016-08-04T14:42:18.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      use social login in dotnet core.
+    
+    </summary>
+    
+    
+      <category term="dotnetcore" scheme="http://blogs.mercenaryunion.com/tags/dotnetcore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Reading configuration from a file</title>
+    <link href="http://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/read%20config%20file/"/>
+    <id>http://blogs.mercenaryunion.com/2016/08/04/dotnet core/read config file/</id>
+    <published>2016-08-04T13:17:33.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      use configuration in dotnet core.
+    
+    </summary>
+    
+    
+      <category term="dotnetcore" scheme="http://blogs.mercenaryunion.com/tags/dotnetcore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Writing custom middleware</title>
+    <link href="http://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/middleware/"/>
+    <id>http://blogs.mercenaryunion.com/2016/08/04/dotnet core/middleware/</id>
+    <published>2016-08-04T13:03:38.000Z</published>
+    <updated>2017-11-01T01:30:55.090Z</updated>
+    
+    <summary type="html">
+    
+      use middleware in dotnet core.
+    
+    </summary>
+    
+    
+      <category term="dotnetcore middleware" scheme="http://blogs.mercenaryunion.com/tags/dotnetcore-middleware/"/>
+    
+  </entry>
+  
+</feed>
