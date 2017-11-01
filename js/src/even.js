@@ -12,6 +12,8 @@
       } else {
         $backToTop.fadeOut(1000);
       }
+      var scrollPercentage = Math.round(100 * $(window).scrollTop() / ($(window.document).height() - $(window).height()));
+      $('#back-to-top i').text(' ' + scrollPercentage + '%');
     });
 
     $backToTop.click(function () {
