@@ -257,6 +257,8 @@
 <blockquote>
 <p><a href="https://letsencrypt.org/" title="Let&#39;s Encrypt" target="_blank" rel="external">Let’s Encrypt</a> 简介： 因为各方各面的原因，反正现在使用 https 的网站越来越多了。但是现有的 CA机构 大都是<code>商人</code>，而且安全性良莠不齐，价格不一。所以领头羊们，为了推进https的伟大事业，发起了一个证书组织，就是 <a href="https://letsencrypt.org/" title="Let&#39;s Encrypt" target="_blank" rel="external">Let’s Encrypt</a> 了。保证安全，保证免费，保证稳定，还是自动化的 O(∩_∩)O哈哈~</p>
 </blockquote>
+<p>拿 Centos7 + nginx 来说，就2行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装</span></div><div class="line">sudo yum install certbot-nginx</div><div class="line"><span class="comment"># 自动生成</span></div><div class="line">sudo certbot --nginx</div></pre></td></tr></table></figure>
 
       
     </div>
