@@ -378,8 +378,7 @@ body {
   line-height: 1.5;
   color: #34495e;
   background: #fefefe;
-  scroll-behavior: smooth;
-  border-top: 3px solid #16982B; }
+  scroll-behavior: smooth; }
 
 @media screen and (max-width: 800px) {
   body {
@@ -508,6 +507,18 @@ h6 {
   .header {
     padding: 50px 0 0;
     text-align: center; } }
+
+.xxx {
+  top: 0px;
+  position: fixed;
+  z-index: 2;
+  height: 2px;
+  width: 100%;
+  background-color: #fefefe; }
+
+.xx2 {
+  width: 0%;
+  background-color: #16982B; }
 
 .posts {
   margin-bottom: 20px;
@@ -1261,7 +1272,8 @@ h6 {
   box-shadow: 0px 2px 2px #cacaca;
   text-align: center;
   transition: transform 300ms ease;
-  z-index: 99; }
+  z-index: 99;
+  margin-top: 2px; }
   .mobile-navbar.fixed-open {
     transform: translate3d(180px, 0px, 0px); }
   .mobile-navbar .mobile-header-logo {
@@ -1376,15 +1388,11 @@ h6 {
 .back-to-top {
   display: none;
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 5%;
+  bottom: 5%;
   transition-property: transform;
   transition-timing-function: ease-out;
   transition-duration: 0.3s;
   z-index: 10; }
   .back-to-top:hover {
     transform: translateY(-5px); }
-
-@media screen and (max-width: 800px) {
-  .back-to-top {
-    display: none !important; } }

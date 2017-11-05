@@ -12,8 +12,11 @@
       } else {
         $backToTop.fadeOut(1000);
       }
+
       var scrollPercentage = Math.round(100 * $(window).scrollTop() / ($(window.document).height() - $(window).height()));
-      $('#back-to-top i').text(' ' + scrollPercentage + '%');
+      // $('#back-to-top i').text(' ' + scrollPercentage + '%');
+      $('.xxx .xx2').css('width', scrollPercentage + '%');
+      
     });
 
     $backToTop.click(function () {
@@ -73,7 +76,7 @@
           'position': 'absolute',
           'top': maxScrollTop
         }
-      }
+      };
 
       $(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
@@ -85,7 +88,7 @@
         } else {
           $toc.css(tocState.process);
         }
-      })
+      });
     }
 
     var HEADERFIX = 30;
@@ -186,7 +189,7 @@
         }, function (error) {
           console.log('Error:' + error.code + " " + error.message);
         });
-      })
+      });
     }
 
     if (typeof AV === 'object') {
@@ -197,7 +200,7 @@
         showTime(Counter);
       }
     }
-  }
+  };
 
   window.Even = Even;
 })(window);
