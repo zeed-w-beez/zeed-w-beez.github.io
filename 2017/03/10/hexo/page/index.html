@@ -36,7 +36,6 @@
 
 
 
-
   <link rel="alternate" href="/atom.xml" title="Miracle-working">
 
 
@@ -78,23 +77,6 @@
 
     gtag('config', 'UA-109085701-1');
   </script>
-
-
-
-  <script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
 
@@ -231,7 +213,7 @@
         <h2 id="hexo-添加新页面"><a href="#hexo-添加新页面" class="headerlink" title="hexo 添加新页面"></a>hexo 添加新页面</h2><p>好记性不如赖笔头</p>
 <p>source: <a href="https://wizardforcel.gitbooks.io/markdown-simple-world/content/hexo-tutor-4.html" target="_blank" rel="external">https://wizardforcel.gitbooks.io/markdown-simple-world/content/hexo-tutor-4.html</a></p>
 <p>其实很简单：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page about</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
 <p>当然还有需要附属修改的东西：</p>
 <ol>
 <li>导航</li>
@@ -241,7 +223,7 @@
 <li>边框</li>
 </ol>
 <p>进入themes\layout_widget目录中，创建about.ejs文件，模仿其他文件中的模版，输入以下内容：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">if</span> (site.tags.length)&#123; %&gt;</div><div class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap"</span>&gt;</div><div class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;About&lt;<span class="regexp">/h3&gt;</span></div><div class="line"><span class="regexp">    &lt;div class="widget"&gt;</span></div><div class="line"><span class="regexp">      邮箱：xxx@xxx.com&lt;br /</span>&gt;</div><div class="line">      微博：@xxxxx</div><div class="line">    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">  &lt;/</span>div&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.tags.length)&#123; %&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;About&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="widget"&gt;</span></span><br><span class="line"><span class="regexp">      邮箱：xxx@xxx.com&lt;br /</span>&gt;</span><br><span class="line">      微博：@xxxxx</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <p>最后： 打开themes_config.yml，找到#Sidebar，在最后面添加- about</p>
 <ol>
 <li>底部</li>

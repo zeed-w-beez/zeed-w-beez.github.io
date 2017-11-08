@@ -36,7 +36,6 @@
 
 
 
-
   <link rel="alternate" href="/atom.xml" title="Miracle-working">
 
 
@@ -78,23 +77,6 @@
 
     gtag('config', 'UA-109085701-1');
   </script>
-
-
-
-  <script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
 
@@ -251,7 +233,7 @@
 </ol>
 <h2 id="不要那么多废话，告诉我怎么搞"><a href="#不要那么多废话，告诉我怎么搞" class="headerlink" title="不要那么多废话，告诉我怎么搞"></a>不要那么多废话，告诉我怎么搞</h2><ol>
 <li><p>密钥文件 - 先自己想出一个密码</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># DES -&gt; 3DES -&gt; AES 128,192,256</span></div><div class="line">openssl genrsa --aes256 -out me.key 2048</div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># DES -&gt; 3DES -&gt; AES 128,192,256</span></span><br><span class="line">openssl genrsa --aes256 -out me.key 2048</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>证书申请 - 用自己想出的密码，打造一个模具出来</p>
 </li>
@@ -268,7 +250,7 @@
 <li>证书文件 - 用模具打造出来的密码箱</li>
 </ol>
 <p>以Nginx为例，就是:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    ...</div><div class="line">    listen       443 ssl;</div><div class="line">    server_name  localhost;</div><div class="line">    ssl_certificate      /etc/CA/nginx.crt; # 证书文件的相对或者绝对路径</div><div class="line">    ssl_certificate_key  /etc/CA/nginx.key; # 密钥文件的相对或者绝对路径</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    ...</span><br><span class="line">    listen       443 ssl;</span><br><span class="line">    server_name  localhost;</span><br><span class="line">    ssl_certificate      /etc/CA/nginx.crt; # 证书文件的相对或者绝对路径</span><br><span class="line">    ssl_certificate_key  /etc/CA/nginx.key; # 密钥文件的相对或者绝对路径</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="权威和我就是权威的区别"><a href="#权威和我就是权威的区别" class="headerlink" title="权威和我就是权威的区别"></a>权威和我就是权威的区别</h2><ol>
 <li><p>根证书 - 权威机构打造模具的锤子是开过光的。直接<strong>内置</strong>在各大浏览器和操作系统里面，不可能被伪造。</p>
 </li>

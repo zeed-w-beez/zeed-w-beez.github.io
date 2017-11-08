@@ -36,7 +36,6 @@
 
 
 
-
   <link rel="alternate" href="/atom.xml" title="Miracle-working">
 
 
@@ -78,23 +77,6 @@
 
     gtag('config', 'UA-109085701-1');
   </script>
-
-
-
-  <script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
 
@@ -223,22 +205,22 @@
       
         <ol>
 <li><p>Open the <code>Startup.cs</code> file and add a new private class field named <code>configuration</code> of type <code>IConfiguration</code>.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>In the <code>Startup</code> constructor, create a new <code>Configuration</code> object using the <code>ConfigurationBuilder</code> and assign it to the <code>configuration</code> class field that you created in the previous step.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</div><div class="line">        .Build();</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.configuration = configuration;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</span><br><span class="line">        .Build();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.configuration = configuration;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Open the <code>project.json</code> file and add a reference to the <code>Microsoft.Extensions.Configuration.Json</code> package in the <code>dependencies</code> node.</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"dependencies": &#123;</div><div class="line">"Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",</div><div class="line">"Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final"</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"dependencies": &#123;</span><br><span class="line">"Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",</span><br><span class="line">"Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Back in the <code>Startup.cs</code> file, add a call to <code>.AddJsonFile(&quot;config.json&quot;)</code> immediately after the creation of the <code>ConfigurationBuilder</code> object as a chained method.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</div><div class="line">            .AddJsonFile(<span class="string">"config.json"</span>)</div><div class="line">            .Build();</div><div class="line"></div><div class="line">        <span class="keyword">this</span>.configuration = configuration;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</span><br><span class="line">            .AddJsonFile(<span class="string">"config.json"</span>)</span><br><span class="line">            .Build();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.configuration = configuration;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Add a new <code>config.json</code> file, add the new key/value pair.</p>
- <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"keyname"</span>:<span class="string">"the value"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"keyname"</span>:<span class="string">"the value"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>you can use the configuration like this.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">string</span> ValueOfConfig = <span class="keyword">this</span>.configuration[<span class="string">"keyname"</span>] ?? <span class="string">"default value"</span>;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> ValueOfConfig = <span class="keyword">this</span>.configuration[<span class="string">"keyname"</span>] ?? <span class="string">"default value"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 

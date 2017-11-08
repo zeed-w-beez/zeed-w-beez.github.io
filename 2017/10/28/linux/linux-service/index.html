@@ -36,7 +36,6 @@
 
 
 
-
   <link rel="alternate" href="/atom.xml" title="Miracle-working">
 
 
@@ -78,23 +77,6 @@
 
     gtag('config', 'UA-109085701-1');
   </script>
-
-
-
-  <script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
 
@@ -234,15 +216,15 @@
 <h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><ol>
 <li>在 <code>/etc/systemd/system</code> 目录下新建一个文件</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim webapi.service</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim webapi.service</span><br></pre></td></tr></table></figure>
 <ol>
 <li>文件的格式</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Linux 一直都大小写敏感</span></div><div class="line">[Unit]</div><div class="line">Description=Dotnet Core Web API Application</div><div class="line"></div><div class="line">[Service]</div><div class="line">WorkingDirectory=/application/app</div><div class="line">ExecStart=/usr/<span class="built_in">local</span>/bin /application/app/WebApplication.dll <span class="comment"># 这里可以加参数的</span></div><div class="line">Restart=always</div><div class="line">RestartSec=10  <span class="comment"># Restart service after 10 seconds if dotnet service crashes</span></div><div class="line">SyslogIdentifier=dotnetcore-webapi</div><div class="line">User=dotnet <span class="comment"># 这个是运行 service 的用户, nginx , memcached, redis, web, www, root ...</span></div><div class="line">Environment=ASPNETCORE_ENVIRONMENT=Production</div><div class="line"></div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Linux 一直都大小写敏感</span></span><br><span class="line">[Unit]</span><br><span class="line">Description=Dotnet Core Web API Application</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">WorkingDirectory=/application/app</span><br><span class="line">ExecStart=/usr/<span class="built_in">local</span>/bin /application/app/WebApplication.dll <span class="comment"># 这里可以加参数的</span></span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=10  <span class="comment"># Restart service after 10 seconds if dotnet service crashes</span></span><br><span class="line">SyslogIdentifier=dotnetcore-webapi</span><br><span class="line">User=dotnet <span class="comment"># 这个是运行 service 的用户, nginx , memcached, redis, web, www, root ...</span></span><br><span class="line">Environment=ASPNETCORE_ENVIRONMENT=Production</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 <ol>
 <li>管理</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 注册：其实就是创建一个软连接，并且把文件 从 /etc/systemd/system Copy 到/etc/systemd/system/multi-user.target 目录下</span></div><div class="line">systemctl <span class="built_in">enable</span> webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 启动：注册后不会自己启动，只启也不会自己注册</span></div><div class="line">systemctl start webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 停止</span></div><div class="line">systemctl stop webapi.service</div><div class="line"><span class="comment"># 重启</span></div><div class="line">systemctl restart webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 删除</span></div><div class="line">systemctl <span class="built_in">disable</span> webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 查看状态，使用的最多的命令</span></div><div class="line">systemctl status webapi.service</div><div class="line"></div><div class="line"><span class="comment"># 查看 这个 Unit 相关的 log</span></div><div class="line">journal -u webapi.service</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注册：其实就是创建一个软连接，并且把文件 从 /etc/systemd/system Copy 到/etc/systemd/system/multi-user.target 目录下</span></span><br><span class="line">systemctl <span class="built_in">enable</span> webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动：注册后不会自己启动，只启也不会自己注册</span></span><br><span class="line">systemctl start webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止</span></span><br><span class="line">systemctl stop webapi.service</span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">systemctl restart webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">systemctl <span class="built_in">disable</span> webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看状态，使用的最多的命令</span></span><br><span class="line">systemctl status webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 这个 Unit 相关的 log</span></span><br><span class="line">journal -u webapi.service</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li>
 </ol>

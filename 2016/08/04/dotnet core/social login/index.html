@@ -36,7 +36,6 @@
 
 
 
-
   <link rel="alternate" href="/atom.xml" title="Miracle-working">
 
 
@@ -78,23 +77,6 @@
 
     gtag('config', 'UA-109085701-1');
   </script>
-
-
-
-  <script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
 
 
@@ -233,13 +215,13 @@
 <h2 id="Enabling-authentication-using-external-providers"><a href="#Enabling-authentication-using-external-providers" class="headerlink" title="Enabling authentication using external providers"></a>Enabling authentication using external providers</h2><ol>
 <li>Right click on the website project, and select <code>Manage User Secrets</code>.</li>
 <li><p>In the <code>secrets.json</code> file:</p>
- <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"Authentication"</span>: &#123;</div><div class="line">        <span class="attr">"Facebook"</span>: &#123;</div><div class="line">            <span class="attr">"AppId"</span>: <span class="string">"&lt;your-app-id&gt;"</span>,</div><div class="line">            <span class="attr">"AppSecret"</span>: <span class="string">"&lt;your-app-secret&gt;"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"Authentication"</span>: &#123;</span><br><span class="line">        <span class="attr">"Facebook"</span>: &#123;</span><br><span class="line">            <span class="attr">"AppId"</span>: <span class="string">"&lt;your-app-id&gt;"</span>,</span><br><span class="line">            <span class="attr">"AppSecret"</span>: <span class="string">"&lt;your-app-secret&gt;"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Add dependency in <code>project.json</code> file.</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"dependency": &#123;</div><div class="line">    ...</div><div class="line">    "Microsoft.AspNet.Authentication.Facebook":  "1.0.0-rc1-final"</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"dependency": &#123;</span><br><span class="line">    ...</span><br><span class="line">    "Microsoft.AspNet.Authentication.Facebook":  "1.0.0-rc1-final"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Use the Facebbok Middleware in <code>Startup.cs ==&gt; Configure</code> method.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line"></div><div class="line">    app.UseIdentity();</div><div class="line"></div><div class="line">    app.UseFacebookAuthentication(options =&gt;</div><div class="line">    &#123;</div><div class="line">        options.AppId = Configuration[<span class="string">"Authentication:Facebook:AppId"</span>];</div><div class="line">        options.AppSecret = Configuration[<span class="string">"Authentication:Facebook:AppSecret"</span>];</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    app.UseIdentity();</span><br><span class="line"></span><br><span class="line">    app.UseFacebookAuthentication(options =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        options.AppId = Configuration[<span class="string">"Authentication:Facebook:AppId"</span>];</span><br><span class="line">        options.AppSecret = Configuration[<span class="string">"Authentication:Facebook:AppSecret"</span>];</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Tips</p>
 <ul>
