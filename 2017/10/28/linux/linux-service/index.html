@@ -226,7 +226,7 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注册：其实就是创建一个软连接，并且把文件 从 /etc/systemd/system Copy 到/etc/systemd/system/multi-user.target 目录下</span></span><br><span class="line">systemctl <span class="built_in">enable</span> webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动：注册后不会自己启动，只启也不会自己注册</span></span><br><span class="line">systemctl start webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止</span></span><br><span class="line">systemctl stop webapi.service</span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">systemctl restart webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">systemctl <span class="built_in">disable</span> webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看状态，使用的最多的命令</span></span><br><span class="line">systemctl status webapi.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 这个 Unit 相关的 log</span></span><br><span class="line">journal -u webapi.service</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li>
 </ol>
 
       
@@ -351,6 +351,10 @@
   <span class="theme-info">
     主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

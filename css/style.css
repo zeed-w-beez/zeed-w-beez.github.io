@@ -1025,7 +1025,8 @@ h6 {
     text-align: center;
     font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
     .footer .copyright .hexo-link,
-    .footer .copyright .theme-link {
+    .footer .copyright .theme-link,
+    .footer .copyright .netlify-link {
       color: #16982B; }
     .footer .copyright .copyright-year {
       display: block; }
