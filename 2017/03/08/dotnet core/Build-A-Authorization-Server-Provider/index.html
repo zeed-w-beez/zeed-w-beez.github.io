@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="As you do, I’m absolutely convinced that you will lay hold of a miracle-working power that will lift you up from confusion, misery, melancholy, and failure."/>
+  <meta name="description" content="Build a authorization server provider use dotnet core."/>
 
 
 
+
+  <meta name="keywords" content="Owin, OAuth 2.0, dotnet core, Miracle-working" />
 
 
 
@@ -43,7 +45,7 @@
 
 
 
-<link rel="canonical" href="https://blogs.mercenaryunion.com/archives/2016/"/>
+<link rel="canonical" href="https://blogs.mercenaryunion.com/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -84,11 +86,7 @@
 
 
 
-    <title>
-  
-    归档 - Miracle-working
-  
-</title>
+    <title> Build An Authorization Server Provider - Miracle-working </title>
   </head>
 
   <body>
@@ -183,95 +181,128 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title">
-          <span class="archive-post-counter">
-            目前共计 15 篇日志
-          </span>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Build An Authorization Server Provider
+        
+      </h1>
 
-    
-      
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-08
+        </span>
         
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2016</h2>
+          <div class="post-category">
+            
+              <a href="/categories/dotnet-core/">dotnet core</a>
+            
           </div>
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            08-04
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2016/08/04/dotnet core/social login/" class="archive-post-link">
-            Enabling social login in your web sites
-          </a>
-        </span>
+        
       </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#四种授权模式"><span class="toc-text">四种授权模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以用的轮子"><span class="toc-text">可以用的轮子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自己动手"><span class="toc-text">自己动手</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <blockquote>
+<p>最新的 OAuth 2.0 <a href="http://www.rfcreader.com/#rfc6749" target="_blank" rel="noopener">RFC 6749</a> 竟然是2012年发布的。 也从侧面说明了互联网的飞速发展。</p>
+</blockquote>
+<h2 id="四种授权模式"><a href="#四种授权模式" class="headerlink" title="四种授权模式"></a>四种授权模式</h2><ol>
+<li>授权码模式（authorization code）</li>
+<li>隐式授权模式 - 简化模式（implicit grant type）</li>
+<li>密码模式（resource owner password credentials）</li>
+<li>客户端模式（Client Credentials Grant）</li>
+</ol>
+<h2 id="可以用的轮子"><a href="#可以用的轮子" class="headerlink" title="可以用的轮子"></a>可以用的轮子</h2><p>OAuth 2.0 的规则比 1.0 精简了很多，但是真的根据规则去做代码实现的时候，还是会有点无从下手的感觉。<br>而且这些也是比较通用的东西，所以直接用 dotnet core 自家的开源实现 <a href="https://github.com/aspnet/Security" target="_blank" rel="noopener">Security</a> 就可以。<br>里面包含了完整的 认证(Authentication) 和 授权(Authorization) 两个部分，还包含一些 Google, Facebook, cookie 等 授权实现 的例子，也是可以直接拿来用的。</p>
+<h2 id="自己动手"><a href="#自己动手" class="headerlink" title="自己动手"></a>自己动手</h2><ol>
+<li>Provider</li>
+</ol>
+
+      
+    </div>
+
     
       
-        
-        
-
-        
       
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            08-04
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2016/08/04/dotnet core/read config file/" class="archive-post-link">
-            Reading configuration from a file
-          </a>
-        </span>
-      </div>
-    
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.mercenaryunion.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.mercenaryunion.com/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/">https://blogs.mercenaryunion.com/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
       
-        
-        
-
-        
       
+    </p>
+  </div>
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            08-04
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2016/08/04/dotnet core/middleware/" class="archive-post-link">
-            Writing custom middleware
-          </a>
-        </span>
-      </div>
-    
-  </section>
 
-  
-  <nav class="pagination">
+
+      
+      
     
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Owin/">Owin</a>
+            
+              <a href="/tags/OAuth-2-0/">OAuth 2.0</a>
+            
+              <a href="/tags/dotnet-core/">dotnet core</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/03/08/hello-world/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Hello World</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/01/11/hyper-v/adding net switch/">
+        <span class="next-text nav-default">Set up a Hyper-V Virtual Switch using a NAT Network</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -354,6 +385,8 @@
     </div>
 
     
+  
+
 
 
     

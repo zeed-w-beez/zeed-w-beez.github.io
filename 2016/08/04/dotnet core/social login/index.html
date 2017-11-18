@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="use social login in dotnet core."/>
+  <meta name="description" content="在dotnet core 中使用第三方登录"/>
 
 
 
 
-  <meta name="keywords" content="dotnetcore, Miracle-working" />
+  <meta name="keywords" content="OAuth 2.0, dotnet core, Miracle-working" />
 
 
 
@@ -86,7 +86,7 @@
 
 
 
-    <title> Enabling social login credentials in your web sites - Miracle-working </title>
+    <title> Enabling social login in your web sites - Miracle-working </title>
   </head>
 
   <body>
@@ -185,7 +185,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Enabling social login credentials in your web sites
+          Enabling social login in your web sites
         
       </h1>
 
@@ -193,6 +193,12 @@
         <span class="post-time">
           2016-08-04
         </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/dotnet-core/">dotnet core</a>
+            
+          </div>
         
         
       </div>
@@ -203,33 +209,20 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Enabling-authentication-using-external-providers"><span class="toc-text">Enabling authentication using external providers</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在-dotnet-core-中使用第三方登录"><span class="toc-text">在 dotnet core 中使用第三方登录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在配置文件里添加以下节点"><span class="toc-text">在配置文件里添加以下节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-nuget-包-Microsoft-AspNet-Authentication-Google"><span class="toc-text">安装 nuget 包 Microsoft.AspNet.Authentication.Google</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码也非常简单"><span class="toc-text">代码也非常简单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <p>Source From: <a href="https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore" target="_blank" rel="noopener">https://github.com/Microsoft-Build-2016/CodeLabs-WebDev/tree/master/Module2-AspNetCore</a></p>
-<hr>
-<h2 id="Enabling-authentication-using-external-providers"><a href="#Enabling-authentication-using-external-providers" class="headerlink" title="Enabling authentication using external providers"></a>Enabling authentication using external providers</h2><ol>
-<li>Right click on the website project, and select <code>Manage User Secrets</code>.</li>
-<li><p>In the <code>secrets.json</code> file:</p>
- <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"Authentication"</span>: &#123;</span><br><span class="line">        <span class="attr">"Facebook"</span>: &#123;</span><br><span class="line">            <span class="attr">"AppId"</span>: <span class="string">"&lt;your-app-id&gt;"</span>,</span><br><span class="line">            <span class="attr">"AppSecret"</span>: <span class="string">"&lt;your-app-secret&gt;"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Add dependency in <code>project.json</code> file.</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"dependency": &#123;</span><br><span class="line">    ...</span><br><span class="line">    "Microsoft.AspNet.Authentication.Facebook":  "1.0.0-rc1-final"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Use the Facebbok Middleware in <code>Startup.cs ==&gt; Configure</code> method.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    app.UseIdentity();</span><br><span class="line"></span><br><span class="line">    app.UseFacebookAuthentication(options =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        options.AppId = Configuration[<span class="string">"Authentication:Facebook:AppId"</span>];</span><br><span class="line">        options.AppSecret = Configuration[<span class="string">"Authentication:Facebook:AppSecret"</span>];</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Tips</p>
-<ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ul>
-</li>
+        <h2 id="在-dotnet-core-中使用第三方登录"><a href="#在-dotnet-core-中使用第三方登录" class="headerlink" title="在 dotnet core 中使用第三方登录"></a>在 dotnet core 中使用第三方登录</h2><p>在 dotnet core 2.0 有一个新的 Security 项目可以给我们使用。<br>里面东西很多哦！而且扩展起来也非常方便~</p>
+<h3 id="在配置文件里添加以下节点"><a href="#在配置文件里添加以下节点" class="headerlink" title="在配置文件里添加以下节点"></a>在配置文件里添加以下节点</h3><pre><code>如果只想本地使用，可以试试 `secrets.json` (Right click -&gt; Manage User Secrets)
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"Authentication"</span>: &#123;</span><br><span class="line">        <span class="attr">"Google"</span>: &#123;</span><br><span class="line">            <span class="attr">"ClientId"</span>: <span class="string">"&lt;your-client-id&gt;"</span>,</span><br><span class="line">            <span class="attr">"ClientSecret"</span>: <span class="string">"&lt;your-client-secret&gt;"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="安装-nuget-包-Microsoft-AspNet-Authentication-Google"><a href="#安装-nuget-包-Microsoft-AspNet-Authentication-Google" class="headerlink" title="安装 nuget 包 Microsoft.AspNet.Authentication.Google"></a>安装 nuget 包 <code>Microsoft.AspNet.Authentication.Google</code></h3><h3 id="代码也非常简单"><a href="#代码也非常简单" class="headerlink" title="代码也非常简单"></a>代码也非常简单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void ConfigureServices(IServiceCollection services)</span><br><span class="line">&#123;</span><br><span class="line">    // ...</span><br><span class="line">    services.AddAuthentication()</span><br><span class="line">        .AddGoogle(googleOptions =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            googleOptions.ClientId = Configuration.GetSection(&quot;Authentication&quot;)[&quot;Google:ClientId&quot;];</span><br><span class="line">            googleOptions.ClientSecret = Configuration.GetSection(&quot;Authentication&quot;)[&quot;Google:ClientSecret&quot;];</span><br><span class="line">        &#125;);</span><br><span class="line">    // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol>
+<li>ClientId 什么的是自己申请的，到对应的服务商那边申请就可以了。</li>
+<li>国内的 qq 新浪 什么的，不像自己写，可以去 github 搜索，已经有人提供了，可以直接使用的。</li>
 </ol>
 
       
@@ -266,7 +259,9 @@
         
           <div class="post-tags">
             
-              <a href="/tags/dotnetcore/">dotnetcore</a>
+              <a href="/tags/OAuth-2-0/">OAuth 2.0</a>
+            
+              <a href="/tags/dotnet-core/">dotnet core</a>
             
           </div>
         

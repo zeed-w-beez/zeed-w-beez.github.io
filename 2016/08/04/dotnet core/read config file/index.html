@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="dotnetcore, Miracle-working" />
+  <meta name="keywords" content="dotnet core, Miracle-working" />
 
 
 
@@ -194,33 +194,46 @@
           2016-08-04
         </span>
         
+          <div class="post-category">
+            
+              <a href="/categories/dotnet-core/">dotnet core</a>
+            
+          </div>
+        
         
       </div>
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注入"><span class="toc-text">注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        <ol>
-<li><p>Open the <code>Startup.cs</code> file and add a new private class field named <code>configuration</code> of type <code>IConfiguration</code>.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="注入"><a href="#注入" class="headerlink" title="注入"></a>注入</h2><p>现在都是注入了，不再是 New ConfigurationBuilder() 了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Startup&#123;</span><br><span class="line">    public IConfiguration Configuration &#123; get; &#125;</span><br><span class="line">    public Startup(IConfiguration configuration)</span><br><span class="line">    &#123;</span><br><span class="line">        Configuration = configuration;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li>直接使用</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Configuration.GetSection(&quot;ConnectionStrings&quot;)[&quot;DefaultConnection&quot;]</span><br><span class="line">// 多级节点，使用 : 获取</span><br><span class="line">Configuration.GetSection(&quot;Level1&quot;)[&quot;Levle2:Level3:Level4&quot;]</span><br><span class="line">// 数组，使用下表获取</span><br><span class="line">Configuration.GetSection(&quot;Level1&quot;)[&quot;Levle2:0:Level201&quot;]</span><br><span class="line">Configuration.GetSection(&quot;Level1&quot;)[&quot;Levle2:2:Level221&quot;]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>映射对象</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 注册</span><br><span class="line">services.Configure&lt;AppConfigOptions&gt;(Configuration.GetSection(&quot;AppConfig&quot;));</span><br><span class="line">// 然后直接在构造函数中通过注入使用</span><br><span class="line">private readonly AppConfigOptions _appConfigOptions;</span><br><span class="line">public HomeController(IOptions&lt;AppConfigOptions&gt; optionsAccessor)&#123;</span><br><span class="line">    _appConfigOptions = optionsAccessor.Value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>自定义配置文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static IWebHost BuildWebHost(string[] args) =&gt;</span><br><span class="line">    WebHost.CreateDefaultBuilder(args)</span><br><span class="line">        .ConfigureAppConfiguration((builderContext, config) =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            config.AddXmlFile(&quot;appsettings.xml&quot;, optional: true, reloadOnChange: true);</span><br><span class="line">        &#125;)</span><br><span class="line">        .UseStartup&lt;Startup&gt;()</span><br><span class="line">        .Build();</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>读取数据库里的配置</p>
 </li>
-<li><p>In the <code>Startup</code> constructor, create a new <code>Configuration</code> object using the <code>ConfigurationBuilder</code> and assign it to the <code>configuration</code> class field that you created in the previous step.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</span><br><span class="line">        .Build();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.configuration = configuration;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Open the <code>project.json</code> file and add a reference to the <code>Microsoft.Extensions.Configuration.Json</code> package in the <code>dependencies</code> node.</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"dependencies": &#123;</span><br><span class="line">"Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",</span><br><span class="line">"Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Back in the <code>Startup.cs</code> file, add a call to <code>.AddJsonFile(&quot;config.json&quot;)</code> immediately after the creation of the <code>ConfigurationBuilder</code> object as a chained method.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Startup</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> IConfiguration configuration;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Startup</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> configuration = <span class="keyword">new</span> ConfigurationBuilder()</span><br><span class="line">            .AddJsonFile(<span class="string">"config.json"</span>)</span><br><span class="line">            .Build();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.configuration = configuration;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Add a new <code>config.json</code> file, add the new key/value pair.</p>
- <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"keyname"</span>:<span class="string">"the value"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>you can use the configuration like this.</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> ValueOfConfig = <span class="keyword">this</span>.configuration[<span class="string">"keyname"</span>] ?? <span class="string">"default value"</span>;</span><br></pre></td></tr></table></figure>
+<li><p>读取配置中心的配置</p>
 </li>
 </ol>
 
@@ -258,7 +271,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/dotnetcore/">dotnetcore</a>
+              <a href="/tags/dotnet-core/">dotnet core</a>
             
           </div>
         
@@ -268,7 +281,7 @@
     
       <a class="prev" href="/2016/08/04/dotnet core/social login/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Enabling social login credentials in your web sites</span>
+        <span class="prev-text nav-default">Enabling social login in your web sites</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
