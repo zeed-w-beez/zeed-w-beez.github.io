@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="hexo help command"/>
+  <meta name="description" content="页面阅读进度条"/>
 
 
 
 
-  <meta name="keywords" content="hexo, Miracle-working" />
+  <meta name="keywords" content="UI, jQuery, Miracle-working" />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-<link rel="canonical" href="https://blogs.mercenaryunion.com/2017/03/10/hexo/page/"/>
+<link rel="canonical" href="https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -86,7 +86,7 @@
 
 
 
-    <title> new page - Miracle-working </title>
+    <title> scroll percentage - Miracle-working </title>
   </head>
 
   <body>
@@ -185,14 +185,20 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          new page
+          scroll percentage
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2017-03-10
+          2017-11-23
         </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/UI/">UI</a>
+            
+          </div>
         
         
       </div>
@@ -203,36 +209,28 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-添加新页面"><span class="toc-text">hexo 添加新页面</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加阅读进度条"><span class="toc-text">添加阅读进度条</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h2 id="hexo-添加新页面"><a href="#hexo-添加新页面" class="headerlink" title="hexo 添加新页面"></a>hexo 添加新页面</h2><p>好记性不如赖笔头</p>
-<p>source: <a href="https://wizardforcel.gitbooks.io/markdown-simple-world/content/hexo-tutor-4.html" target="_blank" rel="noopener">https://wizardforcel.gitbooks.io/markdown-simple-world/content/hexo-tutor-4.html</a></p>
-<p>其实很简单：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
-<p>当然还有需要附属修改的东西：</p>
+        <blockquote>
+<p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 的主题还是挺多的，挑了个自己喜欢的 <a href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a> 。但是觉得有点单薄，所以就开始自己乱搞了 2333~</p>
+</blockquote>
+<h2 id="添加阅读进度条"><a href="#添加阅读进度条" class="headerlink" title="添加阅读进度条"></a>添加阅读进度条</h2><p>个人觉得这应该是文章类型的页面，最简单的和用户交互的方式了。<br>第一版是和 GoTop 按钮做在一起的，后面觉得不好看，就改成带颜色的进度条了，效果还不错。</p>
 <ol>
-<li>导航</li>
+<li><p>找个合适的地方，放2个DIV占位置。起名字什么的，你管我 ╭(╯^╰)╮</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"xxx"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"xxx xx2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插件里有用到jQuery ，那就直接用吧。其实用原生的js也是可以实现的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> scrollPercentage = <span class="built_in">Math</span>.round(<span class="number">100</span> * $(<span class="built_in">window</span>).scrollTop() / ($(<span class="built_in">window</span>.document).height()- $(<span class="built_in">window</span>).height()));</span><br><span class="line">  $(<span class="string">'.xxx .xx2'</span>).css(<span class="string">'width'</span>, scrollPercentage + <span class="string">'%'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为还要适配移动端，所以样式自己调了调，非专业出身，勿喷。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.xxx</span> &#123;</span><br><span class="line"><span class="attribute">top</span>: <span class="number">0px</span>;</span><br><span class="line"><span class="attribute">position</span>: fixed;</span><br><span class="line"><span class="attribute">z-index</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">2px</span>;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#fefefe</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.xx2</span> &#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">0%</span>;</span><br><span class="line"><span class="attribute">background-color</span>: $theme-color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>打开主题中的设置文件，即themes_config.yml<br>找到menu:，在列表的末端添加 About: 关于</p>
-<ol>
-<li>边框</li>
-</ol>
-<p>进入themes\layout_widget目录中，创建about.ejs文件，模仿其他文件中的模版，输入以下内容：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (site.tags.length)&#123; %&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-wrap"</span>&gt;</span><br><span class="line">    &lt;h3 <span class="class"><span class="keyword">class</span></span>=<span class="string">"widget-title"</span>&gt;About&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="widget"&gt;</span></span><br><span class="line"><span class="regexp">      邮箱：xxx@xxx.com&lt;br /</span>&gt;</span><br><span class="line">      微博：@xxxxx</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p>最后： 打开themes_config.yml，找到#Sidebar，在最后面添加- about</p>
-<ol>
-<li>底部</li>
-</ol>
-<p>打开themes\layout_partial\footer.ejs修改</p>
-<ol>
-<li>修改Banner</li>
-</ol>
-<p>themes\source\css\images\banner.jpg</p>
 
       
     </div>
@@ -248,7 +246,7 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="https://blogs.mercenaryunion.com/2017/03/10/hexo/page/">https://blogs.mercenaryunion.com/2017/03/10/hexo/page/</a>
+      <a href="https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/">https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span>
@@ -268,7 +266,9 @@
         
           <div class="post-tags">
             
-              <a href="/tags/hexo/">hexo</a>
+              <a href="/tags/UI/">UI</a>
+            
+              <a href="/tags/jQuery/">jQuery</a>
             
           </div>
         
@@ -276,15 +276,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/05/06/linux/yum-install-mysql/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">yum install mysql</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
     
-    
-      <a class="next" href="/2017/03/08/hexo/hello-world/">
-        <span class="next-text nav-default">Hello World</span>
+      <a class="next" href="/2017/11/10/redux-study/">
+        <span class="next-text nav-default">redux study</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>

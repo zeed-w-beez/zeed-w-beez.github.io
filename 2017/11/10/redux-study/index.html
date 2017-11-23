@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="helloworld, redux, Miracle-working" />
+  <meta name="keywords" content="redux, helloworld, Miracle-working" />
 
 
 
@@ -276,7 +276,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> anyMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 你的中间件业务相关代码</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注册中间件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'Redux'</span></span><br><span class="line"><span class="keyword">const</span> AppCreateStore = applyMiddleware(thunkMiddleware, middleware1, middleware2 )(createStore)</span><br><span class="line"><span class="keyword">const</span> reducer = combineReducers(&#123; ... &#125;)</span><br><span class="line"><span class="keyword">const</span> appStore = AppCreateStore(reducer)</span><br><span class="line"></span><br><span class="line">OR</span><br><span class="line"></span><br><span class="line">cosnt appStore = createStore(</span><br><span class="line">    rootReducer,</span><br><span class="line">    applyMiddleware(thunk, middleware1, middleware2 )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'Redux'</span></span><br><span class="line"><span class="keyword">const</span> AppCreateStore = applyMiddleware(thunkMiddleware, middleware1, middleware2 )(createStore)</span><br><span class="line"><span class="keyword">const</span> reducer = combineReducers(&#123; ... &#125;)</span><br><span class="line"><span class="keyword">const</span> appStore = AppCreateStore(reducer)</span><br><span class="line"></span><br><span class="line"><span class="comment">// OR</span></span><br><span class="line"></span><br><span class="line">cosnt appStore = createStore(</span><br><span class="line">    rootReducer,</span><br><span class="line">    applyMiddleware(thunk, middleware1, middleware2 )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>为异步 action create 提供的中间件叫 thunk middleware</p>
 </li>
@@ -328,15 +328,21 @@
         
           <div class="post-tags">
             
-              <a href="/tags/helloworld/">helloworld</a>
-            
               <a href="/tags/redux/">redux</a>
+            
+              <a href="/tags/helloworld/">helloworld</a>
             
           </div>
         
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/23/UI/scroll-percentage/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">scroll percentage</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
     
     
       <a class="next" href="/2017/11/02/github-page-with-custom-domain/">
