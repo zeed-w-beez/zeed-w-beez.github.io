@@ -339,18 +339,78 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/">Build An Authorization Server Provider</a>
+          <a class="post-link" href="/2017/11/29/c#/Action-and-Func/">action-and-func.md</a>
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2017-03-08
+          2017-11-29
         </span>
         
           <div class="post-category">
             
-              <a href="/categories/dotnet-core/">dotnet core</a>
+              <a href="/categories/c/">c#</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>C# 的委托，到了 4.5+ 版本，已经发展的很友好了。</p>
+<p>不再是之前的 delegate 自己定义，已经给我们内置了几个。可以解决绝大部分需求，又让大家的代码更符合规范。</p>
+<p>总共分为 <strong>有返回值</strong> 和 <strong>没有返回值</strong> 两类。</p>
+<ol>
+<li>没有返回值，就用 <code>Action</code> 和 <code>Action&lt;T&gt;</code> 最多支持0-16个参数。</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">Action</span>(<span class="params"></span>)</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> Action&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2&gt;(T1 arg1, T2 arg2);</span><br><span class="line"><span class="comment">// 比如</span></span><br><span class="line">list.Foreach(x=&gt;&#123; x.name += <span class="string">"xx-"</span>; &#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>有返回值，使用 <code>Func&lt;T&gt;</code> 最多支持0-16个参数。最后一个是返回值。</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> TResult Func&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2, <span class="keyword">out</span> TResult&gt;(T1 arg1, T2 arg2);</span><br><span class="line"><span class="comment">// 比如</span></span><br><span class="line">list.Select(x=&gt;x.Id)</span><br><span class="line">list.Where(x=&gt;x.Id&gt;<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>还有个固定是 <code>bool</code> 类型返回值的定义 <code>Func&lt;T, bool&gt;</code> ==&gt; <code>Predicate&lt;T&gt;</code> 多用在比较器上。</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">bool</span> Predicate&lt;<span class="keyword">in</span> T&gt;(T obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例</span></span><br><span class="line">Predicate&lt;<span class="keyword">int</span>&gt; pd = val =&gt; &#123; <span class="keyword">return</span> val &gt; <span class="number">5</span>;&#125;;</span><br><span class="line"><span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> first = Array.Find(arr, pd);</span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/11/28/docker/postgres-with-pgadmin4-md/">postgres-with-pgadmin4.md</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-11-28
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/docker/">docker</a>
             
           </div>
         
@@ -369,9 +429,10 @@
         
 
         
-          <p>Build a authorization server provider use dotnet core</p>
+          <h1 id="使用-Docker-的基础配置"><a href="#使用-Docker-的基础配置" class="headerlink" title="使用 Docker 的基础配置"></a>使用 Docker 的基础配置</h1><p>学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。<br>之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。</p>
+<p>现在有了 Docker ，就都把这些交出去吧。但是，但是，但是 Docker 也是需要一些配置的！比如 镜像加速，单独的网络，单独的数据卷，再加上 Compose 和 Swam 。但是幸好这些都是一次性的，而且可以零迁移到 Production 环境。所以还是可以接受的，性价比比较高。</p>
           <div class="read-more">
-            <a href="/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/" class="read-more-link">阅读更多</a>
+            <a href="/2017/11/28/docker/postgres-with-pgadmin4-md/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -425,56 +486,6 @@
 </blockquote>
           <div class="read-more">
             <a href="/2017/11/02/github-page-with-custom-domain/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/08/04/dotnet core/read config file/">Reading configuration from a file</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-08-04
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/dotnet-core/">dotnet core</a>
-            
-          </div>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>use configuration in dotnet core.</p>
-          <div class="read-more">
-            <a href="/2016/08/04/dotnet core/read config file/" class="read-more-link">阅读更多</a>
           </div>
         
       
