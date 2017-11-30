@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="postgres-with-pgadmin4.md"/>
+  <meta name="description" content="action-and-func.md"/>
 
 
 
 
-  <meta name="keywords" content="docker, Miracle-working" />
+  <meta name="keywords" content="csharp, Miracle-working" />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-<link rel="canonical" href="https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
+<link rel="canonical" href="https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -86,7 +86,7 @@
 
 
 
-    <title> postgres-with-pgadmin4.md - Miracle-working </title>
+    <title> action-and-func.md - Miracle-working </title>
   </head>
 
   <body>
@@ -239,18 +239,18 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          postgres-with-pgadmin4.md
+          action-and-func.md
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2017-11-28
+          2017-11-29
         </span>
         
           <div class="post-category">
             
-              <a href="/categories/docker/">docker</a>
+              <a href="/categories/csharp/">csharp</a>
             
           </div>
         
@@ -260,35 +260,25 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用-Docker-的基础配置"><span class="toc-text">使用 Docker 的基础配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Docker"><span class="toc-text">安装 Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-镜像加速"><span class="toc-text">Docker 镜像加速</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-起-postgres-pgadmin4"><span class="toc-text">Docker 起 postgres + pgadmin4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他："><span class="toc-text">其他：</span></a></li></ol></li></ol>
-    </div>
-  </div>
-
 
     <div class="post-content">
       
-        <h1 id="使用-Docker-的基础配置"><a href="#使用-Docker-的基础配置" class="headerlink" title="使用 Docker 的基础配置"></a>使用 Docker 的基础配置</h1><p>学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。<br>之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。</p>
-<p>现在有了 Docker ，就都把这些交出去吧。但是，但是，但是 Docker 也是需要一些配置的！比如 镜像加速，单独的网络，单独的数据卷，再加上 Compose 和 Swam 。但是幸好这些都是一次性的，而且可以零迁移到 Production 环境。所以还是可以接受的，性价比比较高。</p>
+        <p>C# 的委托，到了 4.5+ 版本，已经发展的很友好了。</p>
+<p>不再是之前的 delegate 自己定义，已经给我们内置了几个。可以解决绝大部分需求，又让大家的代码更符合规范。</p>
 <a id="more"></a>
-<h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p>直接下载安装包安装就好了。windows 和 mac 的安装包，是包含了 docker-machine 的。Linux 上要自己单独安装。</p>
-<h2 id="Docker-镜像加速"><a href="#Docker-镜像加速" class="headerlink" title="Docker 镜像加速"></a>Docker 镜像加速</h2><p>在 Docker Daemon 里可以添加 Registry 配置，或者修改 /etc/docker/daemon.json 配置。重启生效。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Docker-起-postgres-pgadmin4"><a href="#Docker-起-postgres-pgadmin4" class="headerlink" title="Docker 起 postgres + pgadmin4"></a>Docker 起 postgres + pgadmin4</h2><p>直接去 <a href="https://hub.docker.com/_/postgres/" title="library/postgres" target="_blank" rel="noopener">docker-postgres</a> <a href="https://hub.docker.com/r/dpage/pgadmin4/" title="pgadmin4" target="_blank" rel="noopener">docker-pgadmin4</a> 上照着文档执行命令就可以了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull postgres:alpine</span><br><span class="line">docker run --name pgsql -e POSTGRES_PASSWORD=password -d postgres:alpine</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull dpage/pgadmin4</span><br><span class="line">docker run --name pgadmin -p 80:80 \</span><br><span class="line">-e "PGADMIN_DEFAULT_EMAIL=user@domain.com" \ # 登录website要使用的账号和密码</span><br><span class="line">-e "PGADMIN_DEFAULT_PASSWORD=SuperSecret" \</span><br><span class="line">-d dpage/pgadmin4</span><br></pre></td></tr></table></figure>
-<p>问题：</p>
+<p>总共分为 <strong>有返回值</strong> 和 <strong>没有返回值</strong> 两类。</p>
 <ol>
-<li>两个容器正常起来之后，添加 pgsql 到 pgadmin4 的时候，遇到了点网络问题。<br>使用localhost 和 127.0.0.1 都连不上。后来是使用 <code>docker network inspect bridge</code> 查看默认的 bridge 的网络里，pgsql container 的 IP 地址，用这个地址连接的。</li>
+<li>没有返回值，就用 <code>Action</code> 和 <code>Action&lt;T&gt;</code> 最多支持0-16个参数。</li>
 </ol>
-<h2 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h2><ol>
-<li>使用数据卷，方便数据的备份和扩展。</li>
-<li>直接使用 –link 连通多个 Docker 容器。</li>
-<li>使用 Docker 创建新的网络。</li>
-<li>使用 Docker Machine, Compose 和 Swarm。</li>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">Action</span>(<span class="params"></span>)</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> Action&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2&gt;(T1 arg1, T2 arg2);</span><br><span class="line"><span class="comment">// 比如</span></span><br><span class="line">list.Foreach(x=&gt;&#123; x.name += <span class="string">"xx-"</span>; &#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>有返回值，使用 <code>Func&lt;T&gt;</code> 最多支持0-16个参数。最后一个是返回值。</li>
 </ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> TResult Func&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2, <span class="keyword">out</span> TResult&gt;(T1 arg1, T2 arg2);</span><br><span class="line"><span class="comment">// 比如</span></span><br><span class="line">list.Select(x=&gt;x.Id)</span><br><span class="line">list.Where(x=&gt;x.Id&gt;<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>还有个固定是 <code>bool</code> 类型返回值的定义 <code>Func&lt;T, bool&gt;</code> ==&gt; <code>Predicate&lt;T&gt;</code> 多用在比较器上。</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">bool</span> Predicate&lt;<span class="keyword">in</span> T&gt;(T obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例</span></span><br><span class="line">Predicate&lt;<span class="keyword">int</span>&gt; pd = val =&gt; &#123; <span class="keyword">return</span> val &gt; <span class="number">5</span>;&#125;;</span><br><span class="line"><span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> first = Array.Find(arr, pd);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -304,7 +294,7 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/">https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/</a>
+      <a href="https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/">https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span>
@@ -324,7 +314,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/docker/">docker</a>
+              <a href="/tags/csharp/">csharp</a>
             
           </div>
         
@@ -332,15 +322,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/11/29/csharp/Action-and-Func/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">action-and-func.md</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
     
-    
-      <a class="next" href="/2017/11/23/UI/scroll-percentage/">
-        <span class="next-text nav-default">scroll percentage</span>
+      <a class="next" href="/2017/11/28/docker/postgres-with-pgadmin4-md/">
+        <span class="next-text nav-default">postgres-with-pgadmin4.md</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>

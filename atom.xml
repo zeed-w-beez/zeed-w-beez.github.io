@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.mercenaryunion.com/"/>
-  <updated>2017-11-29T10:08:13.355Z</updated>
+  <updated>2017-11-30T00:49:06.784Z</updated>
   <id>https://blogs.mercenaryunion.com/</id>
   
   <author>
@@ -18,29 +18,22 @@
   
   <entry>
     <title>action-and-func.md</title>
-    <link href="https://blogs.mercenaryunion.com/2017/11/29/c#/Action-and-Func/"/>
-    <id>https://blogs.mercenaryunion.com/2017/11/29/c#/Action-and-Func/</id>
+    <link href="https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/"/>
+    <id>https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;C# 的委托，到了 4.5+ 版本，已经发展的很友好了。&lt;/p&gt;
+      &lt;p&gt;C# 的委托，到了 4.5+ 版本，已经发展的很友好了。&lt;/p&gt;
 &lt;p&gt;不再是之前的 delegate 自己定义，已经给我们内置了几个。可以解决绝大部分需求，又让大家的代码更符合规范。&lt;/p&gt;
-&lt;p&gt;总共分为 &lt;strong&gt;有返回值&lt;/strong&gt; 和
-        
-      
     
     </summary>
     
-      <category term="c#" scheme="https://blogs.mercenaryunion.com/categories/c/"/>
+      <category term="csharp" scheme="https://blogs.mercenaryunion.com/categories/csharp/"/>
     
     
-      <category term="c#" scheme="https://blogs.mercenaryunion.com/tags/c/"/>
+      <category term="csharp" scheme="https://blogs.mercenaryunion.com/tags/csharp/"/>
     
   </entry>
   
@@ -49,7 +42,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -70,7 +63,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -92,7 +85,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/10/redux-study/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2017-11-29T10:08:13.359Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -114,7 +107,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -157,7 +150,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/10/25/tensorflow/"/>
     <id>https://blogs.mercenaryunion.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2017-11-29T10:08:13.359Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -177,7 +170,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
     <id>https://blogs.mercenaryunion.com/2017/09/28/https-漫谈/</id>
     <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -198,7 +191,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/Recently/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/Recently/</id>
     <published>2017-05-27T12:24:46.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -214,7 +207,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/</id>
     <published>2017-05-27T09:19:19.000Z</published>
-    <updated>2017-11-29T10:08:13.359Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -232,7 +225,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/</id>
     <published>2017-05-06T12:57:33.000Z</published>
-    <updated>2017-11-29T10:08:13.359Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -334,7 +327,7 @@
     <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/social%20login/"/>
     <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/</id>
     <published>2016-08-04T14:42:18.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -356,7 +349,7 @@
     <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/read%20config%20file/"/>
     <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/read config file/</id>
     <published>2016-08-04T13:17:33.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
@@ -376,7 +369,7 @@
     <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/middleware/"/>
     <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/middleware/</id>
     <published>2016-08-04T13:03:38.000Z</published>
-    <updated>2017-11-29T10:08:13.355Z</updated>
+    <updated>2017-11-30T00:49:06.784Z</updated>
     
     <summary type="html">
     
