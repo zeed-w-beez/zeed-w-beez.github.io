@@ -86,6 +86,8 @@
 
 
 
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8" ></script>
+
     <title> use-docker-swarm.md - Miracle-working </title>
   </head>
 
@@ -311,7 +313,7 @@
 <h2 id="部署服务"><a href="#部署服务" class="headerlink" title="部署服务"></a>部署服务</h2><p>docker service create –network my-swarm-net –replicas 2 –name=nginx nginx</p>
 <p>docker service ps nginx<br>docker service scale nginx=5</p>
 <h2 id="Overlay-网络"><a href="#Overlay-网络" class="headerlink" title="Overlay 网络"></a>Overlay 网络</h2><ol>
-<li><p>创建 docker network create –drive overlay my-swarm-net</p>
+<li><p>创建 docker network create –driver overlay my-swarm-net</p>
 </li>
 <li><p>查看 docker network ls / docker network inspect my-swarm-net</p>
 </li>
