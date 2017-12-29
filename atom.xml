@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.mercenaryunion.com/"/>
-  <updated>2017-12-29T00:50:02.284Z</updated>
+  <updated>2017-12-29T05:50:40.816Z</updated>
   <id>https://blogs.mercenaryunion.com/</id>
   
   <author>
@@ -17,11 +17,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>请直接挂掉销售人员的电话</title>
+    <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
+    <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
+    <published>2017-12-29T12:59:18.000Z</published>
+    <updated>2017-12-29T05:50:40.816Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;如果你对即将介绍的内容没有任何兴趣，请直接挂掉电话！&lt;br&gt;不要不好意思，不要“礼貌”的拒绝，直接挂掉就可以了！&lt;/p&gt;
+&lt;p&gt;某天你在路边偶然发现了一个老奶奶在卖东西，如果你“好心”的去买了，那位老奶奶就可能之后每天都在路边等“你”，并且风雨无阻。剩下一脸茫然的你&lt;/p&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="生活是什么" scheme="https://blogs.mercenaryunion.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+    
+      <category term="生活是什么" scheme="https://blogs.mercenaryunion.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生活是什么</title>
+    <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/生活是什么/</id>
+    <published>2017-12-29T12:59:18.000Z</published>
+    <updated>2017-12-29T05:50:40.816Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;生活着的人们一直么有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
+&lt;p&gt;生活又总是给我们出难题&lt;br&gt;让我们难以面对&lt;br&gt;让我们敬畏&lt;br&gt;让我们畏畏缩缩&lt;br&gt;让我们四顾茫然&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="生活是什么" scheme="https://blogs.mercenaryunion.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+    
+      <category term="生活是什么" scheme="https://blogs.mercenaryunion.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>use multiple sshkey</title>
     <link href="https://blogs.mercenaryunion.com/2017/12/27/use-multiple-sshkey/"/>
     <id>https://blogs.mercenaryunion.com/2017/12/27/use-multiple-sshkey/</id>
     <published>2017-12-27T15:22:32.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -43,7 +98,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/12/01/docker/use-docker-swarm/"/>
     <id>https://blogs.mercenaryunion.com/2017/12/01/docker/use-docker-swarm/</id>
     <published>2017-12-01T16:03:45.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -65,7 +120,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -86,7 +141,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -107,7 +162,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -129,7 +184,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/10/redux-study/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -151,7 +206,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -194,7 +249,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/10/25/tensorflow/"/>
     <id>https://blogs.mercenaryunion.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -214,7 +269,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
     <id>https://blogs.mercenaryunion.com/2017/09/28/https-漫谈/</id>
     <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -235,7 +290,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/Recently/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/Recently/</id>
     <published>2017-05-27T12:24:46.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -251,7 +306,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/</id>
     <published>2017-05-27T09:19:19.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -269,7 +324,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/</id>
     <published>2017-05-06T12:57:33.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -301,6 +356,28 @@
   </entry>
   
   <entry>
+    <title>Hello World</title>
+    <link href="https://blogs.mercenaryunion.com/2017/03/08/hexo/hello-world/"/>
+    <id>https://blogs.mercenaryunion.com/2017/03/08/hexo/hello-world/</id>
+    <published>2017-03-08T00:00:00.000Z</published>
+    <updated>2017-11-04T00:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      A bird in the hand is worth two in the bush.
+    
+    </summary>
+    
+      <category term="Hello" scheme="https://blogs.mercenaryunion.com/categories/Hello/"/>
+    
+    
+      <category term="helloworld" scheme="https://blogs.mercenaryunion.com/tags/helloworld/"/>
+    
+      <category term="hexo" scheme="https://blogs.mercenaryunion.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Build An Authorization Server Provider</title>
     <link href="https://blogs.mercenaryunion.com/2017/03/08/dotnet%20core/Build-A-Authorization-Server-Provider/"/>
     <id>https://blogs.mercenaryunion.com/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/</id>
@@ -321,28 +398,6 @@
       <category term="OAuth 2.0" scheme="https://blogs.mercenaryunion.com/tags/OAuth-2-0/"/>
     
       <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/tags/dotnet-core/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://blogs.mercenaryunion.com/2017/03/08/hexo/hello-world/"/>
-    <id>https://blogs.mercenaryunion.com/2017/03/08/hexo/hello-world/</id>
-    <published>2017-03-08T00:00:00.000Z</published>
-    <updated>2017-11-04T00:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      A bird in the hand is worth two in the bush.
-    
-    </summary>
-    
-      <category term="Hello" scheme="https://blogs.mercenaryunion.com/categories/Hello/"/>
-    
-    
-      <category term="helloworld" scheme="https://blogs.mercenaryunion.com/tags/helloworld/"/>
-    
-      <category term="hexo" scheme="https://blogs.mercenaryunion.com/tags/hexo/"/>
     
   </entry>
   
@@ -371,7 +426,7 @@
     <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/social%20login/"/>
     <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/</id>
     <published>2016-08-04T14:42:18.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
+    <updated>2017-12-29T05:50:40.812Z</updated>
     
     <summary type="html">
     
@@ -383,46 +438,6 @@
     
     
       <category term="OAuth 2.0" scheme="https://blogs.mercenaryunion.com/tags/OAuth-2-0/"/>
-    
-      <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/tags/dotnet-core/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Reading configuration from a file</title>
-    <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/read%20config%20file/"/>
-    <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/read config file/</id>
-    <published>2016-08-04T13:17:33.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
-    
-    <summary type="html">
-    
-      use configuration in dotnet core.
-    
-    </summary>
-    
-      <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/categories/dotnet-core/"/>
-    
-    
-      <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/tags/dotnet-core/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Writing custom middleware</title>
-    <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/middleware/"/>
-    <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/middleware/</id>
-    <published>2016-08-04T13:03:38.000Z</published>
-    <updated>2017-12-29T00:50:02.284Z</updated>
-    
-    <summary type="html">
-    
-      use middleware in dotnet core 2.
-    
-    </summary>
-    
-      <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/categories/dotnet-core/"/>
-    
     
       <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/tags/dotnet-core/"/>
     
