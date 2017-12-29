@@ -277,10 +277,9 @@
 <h2 id="1-检查是否已经存在-sshkey"><a href="#1-检查是否已经存在-sshkey" class="headerlink" title="1.检查是否已经存在 sshkey"></a>1.检查是否已经存在 sshkey</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh <span class="comment">#进入到user家目录的.ssh目录下</span></span><br><span class="line">ls <span class="comment">#列出文件</span></span><br></pre></td></tr></table></figure>
 <p>如果可以看到类似 <code>id_rsa.pub</code> <code>id_dsa.pub</code> 文件，可以跳过第二步创建。</p>
 <h2 id="2-创建SSH-Key"><a href="#2-创建SSH-Key" class="headerlink" title="2.创建SSH Key"></a>2.创建SSH Key</h2><ul>
-<li>执行命令：</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
-<ul>
+<li><p>执行命令：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>代码参数含义：</p>
 <ul>
 <li><code>-t</code> 指定密钥类型，默认是 <code>rsa</code> ，可以省略。</li>
@@ -297,10 +296,9 @@
 </ul>
 <h2 id="3-使用-config-管理多个-host-的-sshkey"><a href="#3-使用-config-管理多个-host-的-sshkey" class="headerlink" title="3. 使用 config 管理多个 host 的 sshkey"></a>3. 使用 config 管理多个 host 的 sshkey</h2><p>如果你需要在多个git host工作，就需要多个ssh key去支持，就需要在上面手动输入密钥文件的文件名了。（比如 id_rsa_github）  然后使用config文件来实现管理。</p>
 <ul>
-<li>先创建一个config文件（目录：~/.ssh/config），里面的内容和格式参考下面的示例：</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">host</span> <span class="string">mygitlab</span> <span class="comment"># 用来区分不同的host，可以随意起</span></span><br><span class="line">    <span class="string">Hostname</span> <span class="string">mygitlab</span> <span class="comment"># 需要访问的 host 的域名或者IP地址</span></span><br><span class="line">    <span class="string">User</span> <span class="string">myusername</span> <span class="comment"># 这里是ssh登录使用的用户名</span></span><br><span class="line">    <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa</span> <span class="comment"># 生成的密钥文件路径</span></span><br><span class="line"><span class="string">host</span> <span class="string">github</span></span><br><span class="line">    <span class="string">HostName</span> <span class="string">ssh.github.com</span></span><br><span class="line">    <span class="string">User</span> <span class="string">git</span></span><br><span class="line">    <span class="string">Port</span> <span class="number">443</span> <span class="comment"># ssh协议默认是22端口，但是可以使用443端口，走HTTPS更安全（需要服务器支持）。</span></span><br><span class="line">    <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa_github</span></span><br></pre></td></tr></table></figure>
-<ul>
+<li><p>先创建一个config文件（目录：~/.ssh/config），里面的内容和格式参考下面的示例：</p>
+  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">host</span> <span class="string">mygitlab</span> <span class="comment"># 用来区分不同的host，可以随意起</span></span><br><span class="line">    <span class="string">Hostname</span> <span class="string">mygitlab</span> <span class="comment"># 需要访问的 host 的域名或者IP地址</span></span><br><span class="line">    <span class="string">User</span> <span class="string">myusername</span> <span class="comment"># 这里是ssh登录使用的用户名</span></span><br><span class="line">    <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa</span> <span class="comment"># 生成的密钥文件路径</span></span><br><span class="line"><span class="string">host</span> <span class="string">github</span></span><br><span class="line">    <span class="string">HostName</span> <span class="string">ssh.github.com</span></span><br><span class="line">    <span class="string">User</span> <span class="string">git</span></span><br><span class="line">    <span class="string">Port</span> <span class="number">443</span> <span class="comment"># ssh协议默认是22端口，但是可以使用443端口，走HTTPS更安全（需要服务器支持）。</span></span><br><span class="line">    <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa_github</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>接着又会提示你输入两次密码（该密码是你push文件的时候要输入的密码）</p>
 <blockquote>
 <p>当然，你也可以不输入密码，直接按回车。那么push的时候就不需要输入密码，直接提交。</p>
@@ -317,10 +315,13 @@
 <li>把你复制的 SSH key 代码粘贴到 key 所对应的输入框中，记得 SSH key 代码的前后不要留有空格或者回车。</li>
 </ul>
 <h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h2><ul>
-<li>gitlab 上可以使用下面的命令测试：</li>
+<li><p>gitlab 上可以使用下面的命令测试：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@mygitlab</span><br><span class="line"><span class="comment"># 成功的话会有一句 `Welcome to GitLab, xxx!`</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>github 的host可以使用下面的命令测试：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@ssh.github.com</span><br><span class="line"><span class="comment"># 成功的话能看到 `Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.`</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@mygitlab</span><br></pre></td></tr></table></figure>
-<p>成功的话会有一句 <figure class="highlight plain"><figcaption><span>to GitLab, xxx!```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* github 的host可以使用下面的命令测试：</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">ssh -T git@ssh.github.com</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
