@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.mercenaryunion.com/"/>
-  <updated>2017-12-29T05:50:40.816Z</updated>
+  <updated>2018-01-02T04:59:13.193Z</updated>
   <id>https://blogs.mercenaryunion.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>memcached</title>
+    <link href="https://blogs.mercenaryunion.com/2018/01/02/linux/memcached/"/>
+    <id>https://blogs.mercenaryunion.com/2018/01/02/linux/memcached/</id>
+    <published>2018-01-02T10:15:40.000Z</published>
+    <updated>2018-01-02T04:59:13.193Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Memcached-的基本使用和权限控制&quot;&gt;&lt;a href=&quot;#Memcached-的基本使用和权限控制&quot; class=&quot;headerlink&quot; title=&quot;Memcached 的基本使用和权限控制&quot;&gt;&lt;/a&gt;Memcached 的基本使用和权限控制&lt;/h1&gt;&lt;p&gt;Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="https://blogs.mercenaryunion.com/categories/linux/"/>
+    
+    
+      <category term="memcached" scheme="https://blogs.mercenaryunion.com/tags/memcached/"/>
+    
+  </entry>
+  
+  <entry>
     <title>请直接挂掉销售人员的电话</title>
     <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
     <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2017-12-29T05:50:40.816Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -48,7 +68,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/生活是什么/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2017-12-29T05:50:40.816Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -56,9 +76,9 @@
       
         
         
-          &lt;p&gt;生活着的人们一直么有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
+          &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
 &lt;p&gt;生活又总是给我们出难题&lt;br&gt;让我们难以面对&lt;br&gt;让我们敬畏&lt;br&gt;让我们畏畏缩缩&lt;br&gt;让我们四顾茫然&lt;/p&gt;
-
+&lt;p&gt;目录：&lt;a
         
       
     
@@ -76,7 +96,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/12/27/use-multiple-sshkey/"/>
     <id>https://blogs.mercenaryunion.com/2017/12/27/use-multiple-sshkey/</id>
     <published>2017-12-27T15:22:32.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -98,7 +118,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/12/01/docker/use-docker-swarm/"/>
     <id>https://blogs.mercenaryunion.com/2017/12/01/docker/use-docker-swarm/</id>
     <published>2017-12-01T16:03:45.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.189Z</updated>
     
     <summary type="html">
     
@@ -120,7 +140,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.189Z</updated>
     
     <summary type="html">
     
@@ -141,7 +161,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.189Z</updated>
     
     <summary type="html">
     
@@ -162,7 +182,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.189Z</updated>
     
     <summary type="html">
     
@@ -184,7 +204,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/10/redux-study/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -206,7 +226,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -239,8 +259,10 @@
     
     </summary>
     
+      <category term="linux" scheme="https://blogs.mercenaryunion.com/categories/linux/"/>
     
-      <category term="linux systemctl" scheme="https://blogs.mercenaryunion.com/tags/linux-systemctl/"/>
+    
+      <category term="systemctl" scheme="https://blogs.mercenaryunion.com/tags/systemctl/"/>
     
   </entry>
   
@@ -249,7 +271,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/10/25/tensorflow/"/>
     <id>https://blogs.mercenaryunion.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -269,7 +291,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
     <id>https://blogs.mercenaryunion.com/2017/09/28/https-漫谈/</id>
     <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -290,7 +312,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/Recently/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/Recently/</id>
     <published>2017-05-27T12:24:46.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.189Z</updated>
     
     <summary type="html">
     
@@ -306,7 +328,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/</id>
     <published>2017-05-27T09:19:19.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -324,7 +346,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/</id>
     <published>2017-05-06T12:57:33.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
+    <updated>2018-01-02T04:59:13.193Z</updated>
     
     <summary type="html">
     
@@ -418,28 +440,6 @@
     
     
       <category term="hyper-v nat network" scheme="https://blogs.mercenaryunion.com/tags/hyper-v-nat-network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Enabling social login in your web sites</title>
-    <link href="https://blogs.mercenaryunion.com/2016/08/04/dotnet%20core/social%20login/"/>
-    <id>https://blogs.mercenaryunion.com/2016/08/04/dotnet core/social login/</id>
-    <published>2016-08-04T14:42:18.000Z</published>
-    <updated>2017-12-29T05:50:40.812Z</updated>
-    
-    <summary type="html">
-    
-      在dotnet core 中使用第三方登录
-    
-    </summary>
-    
-      <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/categories/dotnet-core/"/>
-    
-    
-      <category term="OAuth 2.0" scheme="https://blogs.mercenaryunion.com/tags/OAuth-2-0/"/>
-    
-      <category term="dotnet core" scheme="https://blogs.mercenaryunion.com/tags/dotnet-core/"/>
     
   </entry>
   
