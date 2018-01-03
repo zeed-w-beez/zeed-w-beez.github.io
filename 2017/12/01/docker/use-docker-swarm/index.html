@@ -327,6 +327,7 @@
 <li>垮网域的互连？</li>
 </ol>
 <p>官网上只给出了在 云服务商 创建 docker-machine 的方式。那我2个网域中的测试机器怎么互连？在创建的时候，直接指定一个都能访问到的 IP 就可以了？这个回头要试试。</p>
+<p>更新于 2018年1月2日13:14:09 ：<br>最近测试了下基于外网 IP 搭建 Swarm ，和内网一样简单。而且自带了证书，节点间的通讯都是加密的。<br>整个过程也非常简单，直接 <code>docker swarm init --advertise-addr 公网IP</code> 初始化。<br>然后再找几个能访问到外网，并且安装了 docker 和 docker swarm 的机器后，直接 join 就可以了。<br>再配合 <a href="https://portainer.io/" target="_blank" rel="noopener">https://portainer.io/</a> 这个 UI 更简单去查看和管理 swarm 集群信息。</p>
 
       
     </div>
