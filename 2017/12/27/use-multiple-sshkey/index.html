@@ -265,14 +265,14 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建和使用多个-sshkey"><span class="toc-text">创建和使用多个 sshkey</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-检查是否已经存在-sshkey"><span class="toc-text">1.检查是否已经存在 sshkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建SSH-Key"><span class="toc-text">2.创建SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用-config-管理多个-host-的-sshkey"><span class="toc-text">3. 使用 config 管理多个 host 的 sshkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-添加到-gitlab-github-上去"><span class="toc-text">4.添加到 gitlab/github 上去</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-测试"><span class="toc-text">5.测试</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-检查是否已经存在-sshkey"><span class="toc-text">1.检查是否已经存在 sshkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建SSH-Key"><span class="toc-text">2.创建SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用-config-管理多个-host-的-sshkey"><span class="toc-text">3. 使用 config 管理多个 host 的 sshkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-添加到-gitlab-github-上去"><span class="toc-text">4.添加到 gitlab/github 上去</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-测试"><span class="toc-text">5.测试</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h1 id="创建和使用多个-sshkey"><a href="#创建和使用多个-sshkey" class="headerlink" title="创建和使用多个 sshkey"></a>创建和使用多个 sshkey</h1><p>日常的工作生活中，我们可能会遇到不止一个 github/gitlab 服务器。虽然 ssh key 可以避免每次和服务器交互的时候都要输入密码，但是如果我想区分工作和生活的 ssh key 又该怎么做呢？其实只需要一个简单的 config 文件就可以了。</p>
+        <p>日常的工作生活中，我们可能会遇到不止一个 github/gitlab 服务器。虽然 ssh key 可以避免每次和服务器交互的时候都要输入密码，但是如果我想区分工作和生活的 ssh key 又该怎么做呢？其实只需要一个简单的 config 文件就可以了。</p>
 <a id="more"></a>
 <h2 id="1-检查是否已经存在-sshkey"><a href="#1-检查是否已经存在-sshkey" class="headerlink" title="1.检查是否已经存在 sshkey"></a>1.检查是否已经存在 sshkey</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh <span class="comment">#进入到user家目录的.ssh目录下</span></span><br><span class="line">ls <span class="comment">#列出文件</span></span><br></pre></td></tr></table></figure>
 <p>如果可以看到类似 <code>id_rsa.pub</code> <code>id_dsa.pub</code> 文件，可以跳过第二步创建。</p>
@@ -367,9 +367,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/12/29/生活是什么/生活是什么/">
+      <a class="prev" href="/2017/12/29/生活是什么/请直接挂掉销售人员的电话/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">生活是什么</span>
+        <span class="prev-text nav-default">请直接挂掉销售人员的电话</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
     

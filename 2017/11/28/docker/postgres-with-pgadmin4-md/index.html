@@ -265,14 +265,14 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用-Docker-的基础配置"><span class="toc-text">使用 Docker 的基础配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Docker"><span class="toc-text">安装 Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-镜像加速"><span class="toc-text">Docker 镜像加速</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-起-postgres-pgadmin4"><span class="toc-text">Docker 起 postgres + pgadmin4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他："><span class="toc-text">其他：</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-Docker"><span class="toc-text">安装 Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-镜像加速"><span class="toc-text">Docker 镜像加速</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-起-postgres-pgadmin4"><span class="toc-text">Docker 起 postgres + pgadmin4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他："><span class="toc-text">其他：</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h1 id="使用-Docker-的基础配置"><a href="#使用-Docker-的基础配置" class="headerlink" title="使用 Docker 的基础配置"></a>使用 Docker 的基础配置</h1><p>学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。<br>之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。</p>
+        <p>学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。<br>之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。</p>
 <p>现在有了 Docker ，就都把这些交出去吧。但是，但是，但是 Docker 也是需要一些配置的！比如 镜像加速，单独的网络，单独的数据卷，再加上 Compose 和 Swam 。但是幸好这些都是一次性的，而且可以零迁移到 Production 环境。所以还是可以接受的，性价比比较高。</p>
 <a id="more"></a>
 <h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p>直接下载安装包安装就好了。windows 和 mac 的安装包，是包含了 docker-machine 的。Linux 上要自己单独安装。</p>

@@ -265,14 +265,15 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#systemctl"><span class="toc-text">systemctl</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#举个栗子"><span class="toc-text">举个栗子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#举个栗子"><span class="toc-text">举个栗子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h2 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h2><p>Linux 上服务的管理，一般都是使用 systemctl , 因为可以方便的通过 <code>systemctl [restart|start|stop|status] xxx.service</code> 去起停和查看状态</p>
+        <p>Linux 上服务的管理，一般都是使用 systemctl , 因为可以方便的通过 <code>systemctl [restart|start|stop|status] xxx.service</code> 去起停和查看状态</p>
+<a id="more"></a>
 <p>配置文件的路径在 <code>/etc/systemd/system</code></p>
 <p>一般用户的普通应用程序服务，是在 multi-user.target 目录下的，可以直接用 cat 查看文件内容</p>
 <h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><ol>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.mercenaryunion.com/"/>
-  <updated>2018-01-06T01:09:52.996Z</updated>
+  <updated>2018-01-11T05:45:39.961Z</updated>
   <id>https://blogs.mercenaryunion.com/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://blogs.mercenaryunion.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.mercenaryunion.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Memcached-的基本使用和权限控制&quot;&gt;&lt;a href=&quot;#Memcached-的基本使用和权限控制&quot; class=&quot;headerlink&quot; title=&quot;Memcached 的基本使用和权限控制&quot;&gt;&lt;/a&gt;Memcached 的基本使用和权限控制&lt;/h1&gt;&lt;p&gt;Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。&lt;/p&gt;
+      &lt;p&gt;Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。&lt;/p&gt;
     
     </summary>
     
@@ -37,22 +37,15 @@
   </entry>
   
   <entry>
-    <title>请直接挂掉销售人员的电话</title>
-    <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
-    <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
+    <title>生活是什么</title>
+    <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/生活是什么/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2018-01-06T01:09:53.000Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;如果你对即将介绍的内容没有任何兴趣，请直接挂掉电话！&lt;br&gt;不要不好意思，不要“礼貌”的拒绝，直接挂掉就可以了！&lt;/p&gt;
-&lt;p&gt;某天你在路边偶然发现了一个老奶奶在卖东西，如果你“好心”的去买了，那位老奶奶就可能之后每天都在路边等“你”，并且风雨无阻。剩下一脸茫然的你&lt;/p&gt;
-        
-      
+      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
     
     </summary>
     
@@ -64,23 +57,16 @@
   </entry>
   
   <entry>
-    <title>生活是什么</title>
-    <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/生活是什么/</id>
+    <title>请直接挂掉销售人员的电话</title>
+    <link href="https://blogs.mercenaryunion.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
+    <id>https://blogs.mercenaryunion.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2018-01-06T01:09:53.000Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
-&lt;p&gt;生活又总是给我们出难题&lt;br&gt;让我们难以面对&lt;br&gt;让我们敬畏&lt;br&gt;让我们畏畏缩缩&lt;br&gt;让我们四顾茫然&lt;/p&gt;
-&lt;p&gt;目录：&lt;a
-        
-      
+      &lt;p&gt;如果你对即将介绍的内容没有任何兴趣，请直接挂掉电话！&lt;br&gt;不要不好意思，不要“礼貌”的拒绝，直接挂掉就可以了！&lt;/p&gt;
+&lt;p&gt;某天你在路边偶然发现了一个老奶奶在卖东西，如果你“好心”的去买了，那位老奶奶就可能之后每天都在路边等“你”，并且风雨无阻。剩下一脸茫然的你&lt;/p&gt;
     
     </summary>
     
@@ -96,11 +82,11 @@
     <link href="https://blogs.mercenaryunion.com/2017/12/27/use-multiple-sshkey/"/>
     <id>https://blogs.mercenaryunion.com/2017/12/27/use-multiple-sshkey/</id>
     <published>2017-12-27T15:22:32.000Z</published>
-    <updated>2018-01-06T01:09:53.000Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;创建和使用多个-sshkey&quot;&gt;&lt;a href=&quot;#创建和使用多个-sshkey&quot; class=&quot;headerlink&quot; title=&quot;创建和使用多个 sshkey&quot;&gt;&lt;/a&gt;创建和使用多个 sshkey&lt;/h1&gt;&lt;p&gt;日常的工作生活中，我们可能会遇到不止一个 github/gitlab 服务器。虽然 ssh key 可以避免每次和服务器交互的时候都要输入密码，但是如果我想区分工作和生活的 ssh key 又该怎么做呢？其实只需要一个简单的 config 文件就可以了。&lt;/p&gt;
+      &lt;p&gt;日常的工作生活中，我们可能会遇到不止一个 github/gitlab 服务器。虽然 ssh key 可以避免每次和服务器交互的时候都要输入密码，但是如果我想区分工作和生活的 ssh key 又该怎么做呢？其实只需要一个简单的 config 文件就可以了。&lt;/p&gt;
     
     </summary>
     
@@ -122,7 +108,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;使用-Docker-Swarm&quot;&gt;&lt;a href=&quot;#使用-Docker-Swarm&quot; class=&quot;headerlink&quot; title=&quot;使用 Docker Swarm&quot;&gt;&lt;/a&gt;使用 Docker Swarm&lt;/h1&gt;&lt;p&gt;使用 docker compose + swarm 来部署应用。现查&lt;a href=&quot;https://docs.docker.com/get-started/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;就够用了。&lt;/p&gt;
+      &lt;p&gt;使用 docker swarm 来部署应用，可以极大的减少开发人员在环境配置方面的精力花费。还能从应用部署层面了解下分布式，解耦相关的知识。&lt;br&gt;至于就提的操作命令和步骤，现查&lt;a href=&quot;https://docs.docker.com/get-started/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;就够用了。&lt;/p&gt;
     
     </summary>
     
@@ -140,7 +126,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.957Z</updated>
     
     <summary type="html">
     
@@ -161,11 +147,11 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.957Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;使用-Docker-的基础配置&quot;&gt;&lt;a href=&quot;#使用-Docker-的基础配置&quot; class=&quot;headerlink&quot; title=&quot;使用 Docker 的基础配置&quot;&gt;&lt;/a&gt;使用 Docker 的基础配置&lt;/h1&gt;&lt;p&gt;学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。&lt;br&gt;之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。&lt;/p&gt;
+      &lt;p&gt;学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。&lt;br&gt;之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。&lt;/p&gt;
 &lt;p&gt;现在有了 Docker ，就都把这些交出去吧。但是，但是，但是 Docker 也是需要一些配置的！比如 镜像加速，单独的网络，单独的数据卷，再加上 Compose 和 Swam 。但是幸好这些都是一次性的，而且可以零迁移到 Production 环境。所以还是可以接受的，性价比比较高。&lt;/p&gt;
     
     </summary>
@@ -182,11 +168,13 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.957Z</updated>
     
     <summary type="html">
     
-      页面阅读进度条
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt; 的主题还是挺多的，挑了个自己喜欢的 &lt;a href=&quot;https://github.com/ahonn/hexo-theme-even&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Even&lt;/a&gt; 。但是觉得有点单薄，所以就开始自己乱搞了 2333~&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -204,11 +192,14 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/10/redux-study/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
-      Redux 笔记
+      &lt;blockquote&gt;
+&lt;p&gt;redux 设计优良，且易上手。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;已经用Redux做了2个项目了，写点文档记录一些内容，方便之后回顾。&lt;/p&gt;
     
     </summary>
     
@@ -226,7 +217,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.mercenaryunion.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.957Z</updated>
     
     <summary type="html">
     
@@ -271,7 +262,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/10/25/tensorflow/"/>
     <id>https://blogs.mercenaryunion.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
@@ -291,7 +282,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
     <id>https://blogs.mercenaryunion.com/2017/09/28/https-漫谈/</id>
     <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
@@ -312,7 +303,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/Recently/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/Recently/</id>
     <published>2017-05-27T12:24:46.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.957Z</updated>
     
     <summary type="html">
     
@@ -328,11 +319,11 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/27/proxy-settings/</id>
     <published>2017-05-27T09:19:19.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;proxy-settings&quot;&gt;&lt;a href=&quot;#proxy-settings&quot; class=&quot;headerlink&quot; title=&quot;proxy settings&quot;&gt;&lt;/a&gt;proxy settings&lt;/h1&gt;&lt;p&gt;代理是个好东西，但是… 不想多说什么&lt;/p&gt;
+      &lt;p&gt;代理是个好东西，但是… 不想多说什么&lt;/p&gt;
     
     </summary>
     
@@ -346,7 +337,7 @@
     <link href="https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/"/>
     <id>https://blogs.mercenaryunion.com/2017/05/06/linux/yum-install-mysql/</id>
     <published>2017-05-06T12:57:33.000Z</published>
-    <updated>2018-01-06T01:09:52.996Z</updated>
+    <updated>2018-01-11T05:45:39.961Z</updated>
     
     <summary type="html">
     
