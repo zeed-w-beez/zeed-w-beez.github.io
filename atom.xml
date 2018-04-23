@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2018-04-21T01:16:30.451Z</updated>
+  <updated>2018-04-23T07:26:43.516Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -17,17 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>new logo</title>
+    <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
+    <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
+    <published>2018-03-31T17:40:55.000Z</published>
+    <updated>2018-04-23T07:26:43.516Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从 &lt;a href=&quot;https://material.io/icons/#ic_polymer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Material Design&lt;/a&gt; 发现了一个比较中意的图标 ，想自己再设计下，然后弄个自己的 Logo 出来。&lt;/p&gt;
+&lt;p&gt;接着就发现了这个 &lt;a href=&quot;https://www.polymer-project.org/images/logos/p-logo-192.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.polymer-project.org/images/logos/p-logo-192.png&lt;/a&gt;，确实挺好看的。&lt;br&gt;&lt;img src=&quot;/images/p-logo-192.png&quot; alt=&quot; polymer-project logo &quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
+    
+    
+      <category term="css" scheme="https://blogs.zeed.w.beez.com/tags/css/"/>
+    
+      <category term="logo" scheme="https://blogs.zeed.w.beez.com/tags/logo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Recently</title>
     <link href="https://blogs.zeed.w.beez.com/2018/01/27/Recently/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</id>
     <published>2018-01-27T17:05:23.000Z</published>
-    <updated>2018-04-21T01:16:30.451Z</updated>
+    <updated>2018-04-23T07:26:43.512Z</updated>
     
     <summary type="html">
     
       Time and tide wait for no man.
     
     </summary>
+    
+      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
     
   </entry>
@@ -37,7 +62,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
@@ -45,30 +70,10 @@
     
     </summary>
     
-      <category term="linux" scheme="https://blogs.zeed.w.beez.com/categories/linux/"/>
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
       <category term="memcached" scheme="https://blogs.zeed.w.beez.com/tags/memcached/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>生活是什么</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
-    <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    
-    
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     
   </entry>
   
@@ -77,7 +82,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
@@ -94,11 +99,31 @@
   </entry>
   
   <entry>
+    <title>生活是什么</title>
+    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
+    <published>2017-12-29T12:59:18.000Z</published>
+    <updated>2018-04-23T07:26:43.516Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+    
+      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>use multiple sshkey</title>
     <link href="https://blogs.zeed.w.beez.com/2017/12/27/use-multiple-sshkey/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/27/use-multiple-sshkey/</id>
     <published>2017-12-27T15:22:32.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
@@ -106,7 +131,7 @@
     
     </summary>
     
-      <category term="git" scheme="https://blogs.zeed.w.beez.com/categories/git/"/>
+      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
     
       <category term="git" scheme="https://blogs.zeed.w.beez.com/tags/git/"/>
@@ -128,7 +153,7 @@
     
     </summary>
     
-      <category term="docker" scheme="https://blogs.zeed.w.beez.com/categories/docker/"/>
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
       <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
@@ -142,7 +167,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2018-04-21T01:16:30.451Z</updated>
+    <updated>2018-04-23T07:26:43.512Z</updated>
     
     <summary type="html">
     
@@ -151,7 +176,7 @@
     
     </summary>
     
-      <category term="csharp" scheme="https://blogs.zeed.w.beez.com/categories/csharp/"/>
+      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
     
     
       <category term="csharp" scheme="https://blogs.zeed.w.beez.com/tags/csharp/"/>
@@ -163,7 +188,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2018-04-21T01:16:30.451Z</updated>
+    <updated>2018-04-23T07:26:43.512Z</updated>
     
     <summary type="html">
     
@@ -172,7 +197,7 @@
     
     </summary>
     
-      <category term="docker" scheme="https://blogs.zeed.w.beez.com/categories/docker/"/>
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
       <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
@@ -184,7 +209,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2018-04-21T01:16:30.451Z</updated>
+    <updated>2018-04-23T07:26:43.512Z</updated>
     
     <summary type="html">
     
@@ -194,7 +219,7 @@
     
     </summary>
     
-      <category term="UI" scheme="https://blogs.zeed.w.beez.com/categories/UI/"/>
+      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
     
       <category term="UI" scheme="https://blogs.zeed.w.beez.com/tags/UI/"/>
@@ -208,7 +233,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/10/redux-study/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
@@ -219,7 +244,7 @@
     
     </summary>
     
-      <category term="Redux" scheme="https://blogs.zeed.w.beez.com/categories/Redux/"/>
+      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
     
     
       <category term="redux" scheme="https://blogs.zeed.w.beez.com/tags/redux/"/>
@@ -233,7 +258,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2018-04-21T01:16:30.451Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
@@ -244,7 +269,7 @@
     
     </summary>
     
-      <category term="blogs" scheme="https://blogs.zeed.w.beez.com/categories/blogs/"/>
+      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
     
       <category term="github page" scheme="https://blogs.zeed.w.beez.com/tags/github-page/"/>
@@ -266,7 +291,7 @@
     
     </summary>
     
-      <category term="linux" scheme="https://blogs.zeed.w.beez.com/categories/linux/"/>
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
       <category term="systemctl" scheme="https://blogs.zeed.w.beez.com/tags/systemctl/"/>
@@ -278,7 +303,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/"/>
     <id>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
@@ -286,7 +311,7 @@
     
     </summary>
     
-      <category term="tensorflow" scheme="https://blogs.zeed.w.beez.com/categories/tensorflow/"/>
+      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
     
     
       <category term="tensorflow" scheme="https://blogs.zeed.w.beez.com/tags/tensorflow/"/>
@@ -298,7 +323,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/09/28/https-漫谈/</id>
     <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
@@ -308,6 +333,8 @@
 &lt;/blockquote&gt;
     
     </summary>
+    
+      <category term="知之为知之" scheme="https://blogs.zeed.w.beez.com/categories/%E7%9F%A5%E4%B9%8B%E4%B8%BA%E7%9F%A5%E4%B9%8B/"/>
     
     
       <category term="https" scheme="https://blogs.zeed.w.beez.com/tags/https/"/>
@@ -319,13 +346,15 @@
     <link href="https://blogs.zeed.w.beez.com/2017/05/27/proxy-settings/"/>
     <id>https://blogs.zeed.w.beez.com/2017/05/27/proxy-settings/</id>
     <published>2017-05-27T09:19:19.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;代理是个好东西，但是… 不想多说什么&lt;/p&gt;
     
     </summary>
+    
+      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
     
       <category term="proxy" scheme="https://blogs.zeed.w.beez.com/tags/proxy/"/>
@@ -337,13 +366,15 @@
     <link href="https://blogs.zeed.w.beez.com/2017/05/06/linux/yum-install-mysql/"/>
     <id>https://blogs.zeed.w.beez.com/2017/05/06/linux/yum-install-mysql/</id>
     <published>2017-05-06T12:57:33.000Z</published>
-    <updated>2018-04-21T01:16:30.455Z</updated>
+    <updated>2018-04-23T07:26:43.516Z</updated>
     
     <summary type="html">
     
       It is not enough to be industrious, so are the ants. What are you industrious for?
     
     </summary>
+    
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
       <category term="postgresql" scheme="https://blogs.zeed.w.beez.com/tags/postgresql/"/>
@@ -363,6 +394,8 @@
     
     </summary>
     
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
     
       <category term="hexo" scheme="https://blogs.zeed.w.beez.com/tags/hexo/"/>
     
@@ -381,7 +414,7 @@
     
     </summary>
     
-      <category term="Hello" scheme="https://blogs.zeed.w.beez.com/categories/Hello/"/>
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
       <category term="helloworld" scheme="https://blogs.zeed.w.beez.com/tags/helloworld/"/>
@@ -403,7 +436,7 @@
     
     </summary>
     
-      <category term="dotnet core" scheme="https://blogs.zeed.w.beez.com/categories/dotnet-core/"/>
+      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
     
     
       <category term="Owin" scheme="https://blogs.zeed.w.beez.com/tags/Owin/"/>
@@ -411,26 +444,6 @@
       <category term="OAuth 2.0" scheme="https://blogs.zeed.w.beez.com/tags/OAuth-2-0/"/>
     
       <category term="dotnet core" scheme="https://blogs.zeed.w.beez.com/tags/dotnet-core/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Set up a Hyper-V Virtual Switch using a NAT Network</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/01/11/hyper-v/adding%20net%20switch/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/01/11/hyper-v/adding net switch/</id>
-    <published>2017-01-11T10:00:31.000Z</published>
-    <updated>2017-03-09T19:19:14.000Z</updated>
-    
-    <summary type="html">
-    
-      One swallow does not make a summer.
-    
-    </summary>
-    
-      <category term="stone" scheme="https://blogs.zeed.w.beez.com/categories/stone/"/>
-    
-    
-      <category term="hyper-v nat network" scheme="https://blogs.zeed.w.beez.com/tags/hyper-v-nat-network/"/>
     
   </entry>
   
