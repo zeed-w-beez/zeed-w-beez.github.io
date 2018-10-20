@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+  <head><meta name="generator" content="Hexo 3.8.0">
     
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec" />
+<meta name="theme-color" content="#f8f5ec">
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
 
-  <meta name="description" content="Build a authorization server provider use dotnet core"/>
+  <meta name="description" content="Build a authorization server provider use dotnet core">
 
 
 
 
-  <meta name="keywords" content="Owin, OAuth 2.0, dotnet core, Miracle-working" />
+  <meta name="keywords" content="Owin, OAuth 2.0, dotnet core, Miracle-working">
 
 
 
-  <meta name="baidu-site-verification" content="dAGCCFnguk" />
+  <meta name="baidu-site-verification" content="dAGCCFnguk">
 
 
 
-  <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" />
+  <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM">
 
 
 
@@ -41,14 +41,14 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0">
 
 
 
-<link rel="canonical" href="https://blogs.zeed.w.beez.com/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/"/>
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2017/03/08/dotnet core/Build-A-Authorization-Server-Provider/">
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0">
 
 
 
@@ -86,7 +86,7 @@
 
 
 
-<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8" ></script>
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8"></script>
 
     <title> Build An Authorization Server Provider - Miracle-working </title>
   </head>
@@ -303,7 +303,7 @@
 </li>
 <li><p>自定义规则选择验证方式</p>
 <p> 目前没有想到对应的场景，但是应该会有这种奇葩的需求吧。</p>
- <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line">services.AddAuthorization(options =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    options.AddPolicy(<span class="string">"Over18"</span>, policy =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);</span><br><span class="line">        policy.RequireAuthenticatedUser();</span><br><span class="line">        policy.Requirements.Add(<span class="keyword">new</span> MinimumAgeRequirement());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">[<span class="meta">Authorize(Policy = <span class="meta-string">"Over18"</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">RegistrationController</span> : <span class="title">Controller</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// MinimumAgeRequirement 的实现，可以参考下面的代码。</span></span><br><span class="line">public class DenyAnonymousAuthorizationRequirement : AuthorizationHandler&lt;DenyAnonymousAuthorizationRequirement&gt;, IAuthorizationRequirement</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Task <span class="title">HandleRequirementAsync</span>(<span class="params">AuthorizationHandlerContext context, DenyAnonymousAuthorizationRequirement requirement</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> user = context.User;</span><br><span class="line">        <span class="keyword">var</span> userIsAnonymous = user?.Identity == <span class="literal">null</span> || !user.Identities.Any(i =&gt; i.IsAuthenticated);</span><br><span class="line">        <span class="keyword">if</span> (!userIsAnonymous)</span><br><span class="line">        &#123;</span><br><span class="line">            context.Succeed(requirement);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Task.CompletedTask;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line">services.AddAuthorization(options =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    options.AddPolicy(<span class="string">"Over18"</span>, policy =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);</span><br><span class="line">        policy.RequireAuthenticatedUser();</span><br><span class="line">        policy.Requirements.Add(<span class="keyword">new</span> MinimumAgeRequirement());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">[<span class="meta">Authorize(Policy = <span class="meta-string">"Over18"</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">RegistrationController</span> : <span class="title">Controller</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// MinimumAgeRequirement 的实现，可以参考下面的代码。</span></span><br><span class="line">public class DenyAnonymousAuthorizationRequirement : AuthorizationHandler&lt;DenyAnonymousAuthorizationRequirement&gt;, IAuthorizationRequirement</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Task <span class="title">HandleRequirementAsync</span>(<span class="params">AuthorizationHandlerContext context, DenyAnonymousAuthorizationRequirement requirement</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">var</span> user = context.User;</span><br><span class="line">        <span class="keyword">var</span> userIsAnonymous = user?.Identity == <span class="literal">null</span> || !user.Identities.Any(i =&gt; i.IsAuthenticated);</span><br><span class="line">        <span class="keyword">if</span> (!userIsAnonymous)</span><br><span class="line">        &#123;</span><br><span class="line">            context.Succeed(requirement);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Task.CompletedTask;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="自己动手"><a href="#自己动手" class="headerlink" title="自己动手"></a>自己动手</h2><ol>
