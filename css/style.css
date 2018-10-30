@@ -1056,7 +1056,25 @@ h6 {
     .footer .copyright .copyright-year {
       display: block; }
       .footer .copyright .copyright-year .heart {
-        font-size: 14px; }
+        font-size: 14px;
+        color: #b71c1b;
+        display: inline-block;
+        animation: beating 1s infinite;
+        animation-timing-function: ease-out; }
+
+@keyframes beating {
+  0% {
+    transform: scale(1); }
+  20% {
+    transform: scale(1.6); }
+  30% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.6); }
+  70% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1); } }
 
 .archive {
   margin: 2em 0px;
