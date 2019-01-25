@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2019-01-19T01:39:06.586Z</updated>
+  <updated>2019-01-25T10:42:17.843Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux-default-permission</title>
+    <link href="https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/"/>
+    <id>https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/</id>
+    <published>2019-01-25T11:22:58.000Z</published>
+    <updated>2019-01-25T10:42:17.843Z</updated>
+    
+    <summary type="html">
+    
+      permission
+    
+    </summary>
+    
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+      <category term="permission" scheme="https://blogs.zeed.w.beez.com/tags/permission/"/>
+    
+  </entry>
+  
+  <entry>
     <title>install gitlab runner</title>
     <link href="https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/"/>
     <id>https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</id>
     <published>2018-12-07T00:00:00.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -47,7 +67,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -68,7 +88,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -88,7 +108,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -109,7 +129,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -132,7 +152,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/27/Recently/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</id>
     <published>2018-01-27T17:05:23.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -150,7 +170,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -166,31 +186,11 @@
   </entry>
   
   <entry>
-    <title>生活是什么</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
-    <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    
-    
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    
-  </entry>
-  
-  <entry>
     <title>请直接挂掉销售人员的电话</title>
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -207,11 +207,31 @@
   </entry>
   
   <entry>
+    <title>生活是什么</title>
+    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
+    <published>2017-12-29T12:59:18.000Z</published>
+    <updated>2019-01-25T10:42:17.843Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+    
+      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>use multiple sshkey</title>
     <link href="https://blogs.zeed.w.beez.com/2017/12/27/use-multiple-sshkey/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/27/use-multiple-sshkey/</id>
     <published>2017-12-27T15:22:32.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -255,7 +275,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -276,7 +296,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -297,7 +317,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -321,7 +341,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/10/redux-study/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -346,7 +366,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -391,7 +411,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/"/>
     <id>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -411,7 +431,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/09/28/https-漫谈/</id>
     <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
+    <updated>2019-01-25T10:42:17.843Z</updated>
     
     <summary type="html">
     
@@ -426,26 +446,6 @@
     
     
       <category term="https" scheme="https://blogs.zeed.w.beez.com/tags/https/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>proxy settings</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/05/27/proxy-settings/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/05/27/proxy-settings/</id>
-    <published>2017-05-27T09:19:19.000Z</published>
-    <updated>2019-01-19T01:39:06.586Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;代理是个好东西，但是… 不想多说什么&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
-    
-    
-      <category term="proxy" scheme="https://blogs.zeed.w.beez.com/tags/proxy/"/>
     
   </entry>
   

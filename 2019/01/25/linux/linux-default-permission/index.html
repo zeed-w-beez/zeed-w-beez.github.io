@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="As you do, I’m absolutely convinced that you will lay hold of a miracle-working power that will lift you up from confusion, misery, melancholy, and failure.">
+  <meta name="description" content="permission">
 
 
 
+
+  <meta name="keywords" content="permission, Miracle-working">
 
 
 
@@ -43,7 +45,7 @@
 
 
 
-<link rel="canonical" href="https://blogs.zeed.w.beez.com/categories/术业有专攻/">
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0">
@@ -86,11 +88,7 @@
 
 <script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8"></script>
 
-    <title>
-  
-    术业有专攻 · Miracle-working
-  
-</title>
+    <title> linux-default-permission - Miracle-working </title>
   </head>
 
   <body>
@@ -239,163 +237,141 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title category">
-          <h2 class="archive-name">术业有专攻</h2>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          linux-default-permission
+        
+      </h1>
 
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2019-01-25
-          
+      <div class="post-meta">
+        <span class="post-time">
+          2019-01-25
         </span>
-        <span class="archive-post-title">
-          <a href="/2019/01/25/linux/linux-default-permission/" class="archive-post-link">
-            linux-default-permission
-          </a>
-        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/术业有专攻/">术业有专攻</a>
+            
+          </div>
+        
+        
       </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复的原理"><span class="toc-text">恢复的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复的步骤"><span class="toc-text">恢复的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-http-wiki-jikexueyuan-com-project-learn-linux-step-by-step-default-permissions-and-hidden-permissions-html"><span class="toc-text">参考: http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>最近在 linux 搞东西的时候，执行了 <code>chmod -R a+wrx /opt</code> 把整个文件夹的权限给搞乱了。</p>
+<p>好在这个文件夹下没有什么重要的东西。这里记录一下恢复到默认权限的过程。</p>
+<a id="more"></a>
+<h2 id="恢复的原理"><a href="#恢复的原理" class="headerlink" title="恢复的原理"></a>恢复的原理</h2><p>原理其实很简单： 文件和文件夹都有默认权限。找到默认权限，再用 <code>chmod</code> 设置一下就行了。</p>
+<p>一般情况下：</p>
+<ul>
+<li>对于文件来说默认的权限是 rw-r–r—</li>
+<li>对于目录来说默认的权限是 rwxr-xr-x</li>
+</ul>
+<p>怎么查看呢：</p>
+<ul>
+<li>查看默认权限：umask [-S]</li>
+<li>选项与参数：-S 以符号形式显示</li>
+</ul>
+<p>设置默认权限：umask 权限数</p>
+<ul>
+<li>对于目录来说最大权限是777(rwxrwxrwx)</li>
+<li>对于文件来说最大权限是666(rw-rw-rw-)</li>
+</ul>
+<p>所以默认权限是：</p>
+<ul>
+<li>当权限数为022时代表：目录权限(777-022)=755(rwxr-xr-x)</li>
+<li>当权限数为022时代表：目录权限(666-022)=644(rw-r–r—)</li>
+</ul>
+<h2 id="恢复的步骤"><a href="#恢复的步骤" class="headerlink" title="恢复的步骤"></a>恢复的步骤</h2><p>知道了默认权限后，就比较简单了:</p>
+<ul>
+<li>设置当前文件夹下的全部目录为默认权限：<code>chmod 755 $(find . -type d)</code></li>
+<li>设置当前文件夹下的全部文件为默认权限：<code>chmod 644 $(find . )</code></li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><h2 id="参考-http-wiki-jikexueyuan-com-project-learn-linux-step-by-step-default-permissions-and-hidden-permissions-html"><a href="#参考-http-wiki-jikexueyuan-com-project-learn-linux-step-by-step-default-permissions-and-hidden-permissions-html" class="headerlink" title="参考: http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html"></a>参考: <a href="http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html</a></h2>
+      
+    </div>
+
     
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-09-05
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/09/05/html-inside-markdown/" class="archive-post-link">
-            html inside markdown
-          </a>
-        </span>
-      </div>
-    
       
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-01-02
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/02/linux/memcached/" class="archive-post-link">
-            memcached
-          </a>
-        </span>
-      </div>
-    
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/">https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
       
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-12-01
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/12/01/docker/use-docker-swarm/" class="archive-post-link">
-            use-docker-swarm.md
-          </a>
-        </span>
-      </div>
-    
+
+
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-11-28
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/11/28/docker/postgres-with-pgadmin4-md/" class="archive-post-link">
-            postgres-with-pgadmin4.md
-          </a>
-        </span>
-      </div>
-    
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-10-28
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/10/28/linux/linux-service/" class="archive-post-link">
-            linux-service
-          </a>
-        </span>
-      </div>
     
-      
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-05-06
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/05/06/linux/yum-install-mysql/" class="archive-post-link">
-            yum install mysql
-          </a>
-        </span>
-      </div>
     
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-10
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/10/hexo/page/" class="archive-post-link">
-            new page
-          </a>
-        </span>
-      </div>
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/permission/">permission</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
     
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-08
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/08/hexo/hello-world/" class="archive-post-link">
-            Hello World
-          </a>
-        </span>
-      </div>
     
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/2018/12/07/autodevops/install-gitlab-runner/">
+        <span class="next-text nav-default">install gitlab runner</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
       </main>
@@ -485,9 +461,9 @@
   
   <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = '';
-        this.page.identifier = 'categories/术业有专攻/index.html';
-        this.page.title = '';
+        this.page.url = 'https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/';
+        this.page.identifier = '2019/01/25/linux/linux-default-permission/';
+        this.page.title = 'linux-default-permission';
     };
     (function() {
     var d = document, s = d.createElement('script');
