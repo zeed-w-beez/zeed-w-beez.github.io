@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="permission">
+  <meta name="description" content="linux-default-permission">
 
 
 
@@ -265,7 +265,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复的原理"><span class="toc-text">恢复的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复的步骤"><span class="toc-text">恢复的步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考-http-wiki-jikexueyuan-com-project-learn-linux-step-by-step-default-permissions-and-hidden-permissions-html"><span class="toc-text">参考: http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复的原理"><span class="toc-text">恢复的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复的步骤"><span class="toc-text">恢复的步骤</span></a></li></ol>
     </div>
   </div>
 
@@ -280,11 +280,12 @@
 <ul>
 <li>对于文件来说默认的权限是 rw-r–r—</li>
 <li>对于目录来说默认的权限是 rwxr-xr-x</li>
+<li>默认的权限分类是： u = 所属的用户, g = 所属组, o = 其他人</li>
 </ul>
 <p>怎么查看呢：</p>
 <ul>
 <li>查看默认权限：umask [-S]</li>
-<li>选项与参数：-S 以符号形式显示</li>
+<li>选项与参数：-S 以符号形式显示 (u=rwx,g=rx,o=rx)</li>
 </ul>
 <p>设置默认权限：umask 权限数</p>
 <ul>
@@ -301,7 +302,8 @@
 <li>设置当前文件夹下的全部目录为默认权限：<code>chmod 755 $(find . -type d)</code></li>
 <li>设置当前文件夹下的全部文件为默认权限：<code>chmod 644 $(find . )</code></li>
 </ul>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><h2 id="参考-http-wiki-jikexueyuan-com-project-learn-linux-step-by-step-default-permissions-and-hidden-permissions-html"><a href="#参考-http-wiki-jikexueyuan-com-project-learn-linux-step-by-step-default-permissions-and-hidden-permissions-html" class="headerlink" title="参考: http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html"></a>参考: <a href="http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html</a></h2>
+<p>参考: <a href="http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html</a></p>
+
       
     </div>
 
