@@ -274,6 +274,7 @@
       
         <p>代理是个好东西，但是… 不想多说什么</p>
 <a id="more"></a>
+
 <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>有些代理需要输入用户名和密码。<br>在Windows下是默认是自动集成的，不需要自己输入。</p>
 <p>但是如果想给某些软件做配置，没有密码还不行。特别是给虚拟机里的系统配置代理的时候。</p>
 <p>这个时候就多绕一步。</p>
@@ -284,6 +285,7 @@
 <p>大部分软件的代理配置都可以百度到，这里记录些不常用的：</p>
 <p>Anaconda:<br>在 User 下有个默认的配置文件 .condarc  </p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></span><br><span class="line"><span class="attr">channels:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">anaconda-fusion</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">defaults</span></span><br><span class="line"></span><br><span class="line"><span class="attr">proxy_servers:</span></span><br><span class="line"><span class="attr">  http:</span> <span class="attr">http://localhost:8888</span> <span class="comment"># 本机的 Fiddler 代理</span></span><br><span class="line"><span class="attr">  https:</span> <span class="attr">http://localhost:8888</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></span><br><span class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></span><br><span class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>大部分都能网上搜到</p>
 <p>全部用户配置代理：</p>
 <p>yum proxy</p>

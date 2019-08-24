@@ -277,6 +277,7 @@
 <p><a href="https://www.netlify.com/" title="www.netlify.com" target="_blank" rel="noopener">netlity</a> 简介：CI + CD + 自动去 <a href="https://letsencrypt.org/" title="Let&#39;s Encrypt" target="_blank" rel="noopener">Let’s Encrypt</a> 帮你申请当前域名的 https 证书。<br>当然不止这些，还有很多其他的内容，就像官网首页上写的 <code>Write frontend code. Push it. We handle the rest.</code>，真讨人喜欢~</p>
 </blockquote>
 <a id="more"></a>
+
 <h2 id="去仓库配置域名"><a href="#去仓库配置域名" class="headerlink" title="去仓库配置域名"></a>去仓库配置域名</h2><p>仓库的设置里面，把自己的域名，或者二级域名写进去，保存下就OK了。比如 blogs.example.com</p>
 <p>GitHub 会自动在你的仓库里，放一个 CNAME 文件，内容就是自定义域名。<br>当然， 你也可以自己提交这个文件。</p>
 <h2 id="加CNAME映射"><a href="#加CNAME映射" class="headerlink" title="加CNAME映射"></a>加CNAME映射</h2><p>这个没啥说的，域名解析的A记录是域名解析成IP，CNAME就是域名解析到域名。<br>因为我们只想提供自己的域名，具体的网站是 Host 在第三方平台上的，所以这一步是必须的。</p>
@@ -298,6 +299,7 @@
 </blockquote>
 <p>拿 Centos7 + nginx 来说，就2行命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">sudo yum install certbot-nginx</span><br><span class="line"><span class="comment"># 自动生成</span></span><br><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
+
 
       
     </div>

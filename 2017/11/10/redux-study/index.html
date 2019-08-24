@@ -277,10 +277,12 @@
 </blockquote>
 <p>已经用Redux做了2个项目了，写点文档记录一些内容，方便之后回顾。</p>
 <a id="more"></a>
+
 <h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><ol>
 <li><p>Action</p>
 <ul>
-<li>把所有能影响到 View 的动作，写成 Action 的形式。</li>
+<li><p>把所有能影响到 View 的动作，写成 Action 的形式。</p>
+</li>
 <li><p>比如 Button 的Click， 鼠标的 Hover， 键盘的 Enter, 滚动， 倒计时，甚至拖动 等等等等</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> button1ClickAction = &#123;</span><br><span class="line">    type: <span class="string">'button1_click'</span>,</span><br><span class="line">    data1: &#123;&#125;</span><br><span class="line">    data2: []</span><br><span class="line">    data3: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -288,7 +290,8 @@
 </li>
 <li><p>Reducer</p>
 <ul>
-<li>接受当前应用的 State 和被触发的 Action ，并返回新的 State 。</li>
+<li><p>接受当前应用的 State 和被触发的 Action ，并返回新的 State 。</p>
+</li>
 <li><p>纯函数，相同的输入一定会返回相同的输出。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> button1Reducer =&gt; ( state = &#123;&#125;, action )&#123;</span><br><span class="line">    <span class="keyword">if</span> ( action.type === <span class="string">'button1_click'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            ...state,</span><br><span class="line">            data: action.data</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -296,7 +299,8 @@
 </li>
 <li><p>CombineReducers</p>
 <ul>
-<li>按照业务模块拆分多个 Reducer ，提高代码可读性、可维护性。</li>
+<li><p>按照业务模块拆分多个 Reducer ，提高代码可读性、可维护性。</p>
+</li>
 <li><p>Redux 帮我合并，所以为什么不拆分呢？</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers &#125; <span class="keyword">from</span> <span class="string">'Redux'</span></span><br><span class="line"><span class="keyword">var</span> reducer = combineReducers(&#123;</span><br><span class="line">    root: rootReducer,</span><br><span class="line">    user: userReducer</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> appStore = createStore(reducer)</span><br></pre></td></tr></table></figure>
 </li>
@@ -304,8 +308,10 @@
 </li>
 <li><p>CreateStore</p>
 <ul>
-<li>创建 Redux 实例 - 整个应用的唯一的 Store 。</li>
-<li>绑定 Reducer 到 整个应用唯一的 Store 上。</li>
+<li><p>创建 Redux 实例 - 整个应用的唯一的 Store 。</p>
+</li>
+<li><p>绑定 Reducer 到 整个应用唯一的 Store 上。</p>
+</li>
 <li><p>在 Dispatch 的时候，redux 会保证去触发全部的 Reducers 。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">var</span> appStore = createStore&#123; combinedReducers &#125;;</span><br></pre></td></tr></table></figure>
 </li>
@@ -313,7 +319,8 @@
 </li>
 <li><p>Dispatch</p>
 <ul>
-<li>“dispatch” 函数本质上是 Redux 的实例属性。</li>
+<li><p>“dispatch” 函数本质上是 Redux 的实例属性。</p>
+</li>
 <li><p>会将 action 传递给每一个 reducer 。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">appStore.dispatch(&#123;</span><br><span class="line">    type:<span class="string">'AN_ACTION'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
@@ -327,8 +334,10 @@
 </li>
 <li><p>Middleware</p>
 <ul>
-<li>纯函数</li>
-<li>有严格的使用方法</li>
+<li><p>纯函数</p>
+</li>
+<li><p>有严格的使用方法</p>
+</li>
 <li><p>编码遵循以下格式</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> anyMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 你的中间件业务相关代码</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -337,7 +346,9 @@
 </li>
 <li><p>为异步 action create 提供的中间件叫 thunk middleware</p>
 </li>
-<li>代码在 <a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="noopener">https://github.com/gaearon/redux-thunk</a><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> thunkMiddleware = <span class="function"><span class="keyword">function</span> (<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log('Enter thunkMiddleware');</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">next</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// console.log('Function "next" provided:', next);</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// console.log('Handling action:', action);</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">typeof</span> action === <span class="string">'function'</span> ?</span><br><span class="line">                action(dispatch, getState) :</span><br><span class="line">                next(action)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// "curry" may come any functional programming library (lodash, ramda, etc.)</span></span><br><span class="line"><span class="keyword">var</span> thunkMiddleware = curry(</span><br><span class="line">    (&#123;dispatch, getState&#125;, next, action) =&gt; (</span><br><span class="line">        <span class="comment">// 你的中间件业务相关代码</span></span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<li><p>代码在 <a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="noopener">https://github.com/gaearon/redux-thunk</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> thunkMiddleware = <span class="function"><span class="keyword">function</span> (<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log('Enter thunkMiddleware');</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">next</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// console.log('Function "next" provided:', next);</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// console.log('Handling action:', action);</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">typeof</span> action === <span class="string">'function'</span> ?</span><br><span class="line">                action(dispatch, getState) :</span><br><span class="line">                next(action)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// "curry" may come any functional programming library (lodash, ramda, etc.)</span></span><br><span class="line"><span class="keyword">var</span> thunkMiddleware = curry(</span><br><span class="line">    (&#123;dispatch, getState&#125;, next, action) =&gt; (</span><br><span class="line">        <span class="comment">// 你的中间件业务相关代码</span></span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>

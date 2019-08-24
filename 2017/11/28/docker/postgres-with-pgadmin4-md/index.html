@@ -275,12 +275,16 @@
         <p>学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。<br>之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。</p>
 <p>现在有了 Docker ，就都把这些交出去吧。但是，但是，但是 Docker 也是需要一些配置的！比如 镜像加速，单独的网络，单独的数据卷，再加上 Compose 和 Swam 。但是幸好这些都是一次性的，而且可以零迁移到 Production 环境。所以还是可以接受的，性价比比较高。</p>
 <a id="more"></a>
+
 <h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p>直接下载安装包安装就好了。windows 和 mac 的安装包，是包含了 docker-machine 的。Linux 上要自己单独安装。</p>
 <h2 id="Docker-镜像加速"><a href="#Docker-镜像加速" class="headerlink" title="Docker 镜像加速"></a>Docker 镜像加速</h2><p>在 Docker Daemon 里可以添加 Registry 配置，或者修改 /etc/docker/daemon.json 配置。重启生效。</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="Docker-起-postgres-pgadmin4"><a href="#Docker-起-postgres-pgadmin4" class="headerlink" title="Docker 起 postgres + pgadmin4"></a>Docker 起 postgres + pgadmin4</h2><p>直接去 <a href="https://hub.docker.com/_/postgres/" title="library/postgres" target="_blank" rel="noopener">docker-postgres</a> <a href="https://hub.docker.com/r/dpage/pgadmin4/" title="pgadmin4" target="_blank" rel="noopener">docker-pgadmin4</a> 上照着文档执行命令就可以了。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull postgres:alpine</span><br><span class="line">docker run --name pgsql -e POSTGRES_PASSWORD=password -d postgres:alpine</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull dpage/pgadmin4</span><br><span class="line">docker run --name pgadmin -p 80:80 \</span><br><span class="line">-e "PGADMIN_DEFAULT_EMAIL=user@domain.com" \ # 登录website要使用的账号和密码</span><br><span class="line">-e "PGADMIN_DEFAULT_PASSWORD=SuperSecret" \</span><br><span class="line">-d dpage/pgadmin4</span><br></pre></td></tr></table></figure>
+
 <p>问题：</p>
 <ol>
 <li>两个容器正常起来之后，添加 pgsql 到 pgadmin4 的时候，遇到了点网络问题。</li>

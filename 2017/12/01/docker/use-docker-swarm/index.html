@@ -274,6 +274,7 @@
       
         <p>使用 docker swarm 来部署应用，可以极大的减少开发人员在环境配置方面的精力花费。还能从应用部署层面了解下分布式，解耦相关的知识。<br>至于就提的操作命令和步骤，现查<a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">官方文档</a>就够用了。</p>
 <a id="more"></a>
+
 <h2 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h2><ol>
 <li>使用到的端口</li>
 </ol>
@@ -286,6 +287,7 @@
 <li>创建3个节点，1个集群管理节点和2个工作节点</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker-machine create -d virtualbox manager1</span><br><span class="line">docker-machine create -d virtualbox worker1</span><br><span class="line">docker-machine create -d virtualbox worker2</span><br></pre></td></tr></table></figure>
+
 <p>查看结果 docker-machine ls</p>
 <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ol>
 <li>链接 manager1<ul>
@@ -298,8 +300,10 @@
 <li>查看集群节点状态 docker node ls</li>
 </ol>
 <h2 id="添加和管理节点"><a href="#添加和管理节点" class="headerlink" title="添加和管理节点"></a>添加和管理节点</h2><ol>
-<li>连接 worker1 : docker-machine env worker1</li>
-<li>加入 swarm : docker swarm join –token TOKEN manager1IP:2377</li>
+<li><p>连接 worker1 : docker-machine env worker1</p>
+</li>
+<li><p>加入 swarm : docker swarm join –token TOKEN manager1IP:2377</p>
+</li>
 <li><p>移除节点</p>
 <ol>
 <li>docker-machine env worker2</li>

@@ -274,22 +274,27 @@
       
         <p>Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。</p>
 <a id="more"></a>
+
 <h2 id="真·控制"><a href="#真·控制" class="headerlink" title="真·控制"></a>真·控制</h2><ol>
 <li>调用端限制</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过 IPtalbes 对 memcached 服务端口进行访问限制控制。只允许指定的IP地址。</span></span><br><span class="line">iptables -A INPUT -p tcp -s 192.168.0.2 —dport 11211 -j ACCEPT</span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>使用端限制</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果Memcached没有在公网开放的必要，可在Memcached启动时指定绑定的IP地址为 127.0.0.1 。</span></span><br><span class="line">memcached -d -m 1024 -u memcached -l 127.0.0.1 -p 11211 -c 1024 -P /tmp/memcached.pid</span><br></pre></td></tr></table></figure>
+
 <h2 id="伪·控制"><a href="#伪·控制" class="headerlink" title="伪·控制"></a>伪·控制</h2><ol>
 <li>最小化权限</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用普通权限账号运行，指定Memcached用户。例如，在Linux环境中运行以下命令来运行Memcached：</span><br><span class="line">memcached -d -m 1024 -u memcached -l 127.0.0.1 -p 11211 -c 1024 -P /tmp/memcached.pid</span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>修改默认端口</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改默认11211监听端口为11222端口。在Linux环境中运行以下命令：</span></span><br><span class="line">memcached -d -m 1024 -u memcached -l 127.0.0.1 -p 11222 -c 1024 -P /tmp/memcached.pid</span><br></pre></td></tr></table></figure>
+
 <h2 id="Memcached命令参数说明"><a href="#Memcached命令参数说明" class="headerlink" title="Memcached命令参数说明"></a>Memcached命令参数说明</h2><ul>
 <li>-d 是指启动一个守护进程。</li>
 <li>-m 是指分配给Memcached使用的内存数量，单位是MB，以上为1024MB。</li>
@@ -303,10 +308,12 @@
 <li><p>创建配置文件</p>
 <p> CentOS 下的默认地址：<code>/etc/sysconfig/memcached</code></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PORT=&quot;11211&quot;</span><br><span class="line">USER=&quot;memcached&quot;</span><br><span class="line">MAXCONN=&quot;1024&quot;</span><br><span class="line">CACHESIZE=&quot;64&quot;</span><br><span class="line">OPTIONS=&quot;&quot;</span><br></pre></td></tr></table></figure>
+
 <p> 再 Copy 出一个 memcached1 文件，端口改为 11311</p>
 </li>
 <li><p>创建对应的 Service 文件，参考： <a href="/2017/10/28/linux/linux-service/" title="linux-service">linux-service</a></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Memcached</span><br><span class="line">Before=httpd.service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">EnvironmentFile=-/etc/sysconfig/memcached</span><br><span class="line">ExecStart=/usr/bin/memcached -u <span class="variable">$USER</span> -p PORT -m <span class="variable">$CACHSIZE</span> -c <span class="variable">$MAXCONN</span> <span class="variable">$OPTIONS</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
 <p> 再 Copy 出一个 memcached1.service 文件，配置文件行改为 <code>EnvironmentFile=-/etc/sysconfig/memcached1</code></p>
 </li>
 <li><p>修改下默认的启动命令参数，加上 bind 参数</p>
