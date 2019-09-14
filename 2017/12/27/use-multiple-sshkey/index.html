@@ -333,14 +333,15 @@
 </li>
 </ul>
 <h2 id="6-确定-ssh-agent-在运行"><a href="#6-确定-ssh-agent-在运行" class="headerlink" title="6. 确定 ssh-agent 在运行"></a>6. 确定 ssh-agent 在运行</h2><ul>
-<li><p>通过执行先的命令确定 <code>ssh-agent</code> 正在运行</p>
+<li>通过执行先的命令确定 <code>ssh-agent</code> 正在运行</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># start the ssh-agent in the background</span></span><br><span class="line">$ <span class="built_in">eval</span> $(ssh-agent -s)</span><br><span class="line">&gt; Agent pid xxxx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>把新建的私钥加入到 ssh-agent</p>
+
+<ul>
+<li>把新建的私钥加入到 ssh-agent</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
 
       
     </div>
