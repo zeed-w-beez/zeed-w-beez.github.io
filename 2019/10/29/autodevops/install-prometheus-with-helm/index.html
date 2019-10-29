@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="install-prometheus-with-helm">
+
+
+
+
+  <meta name="keywords" content="autodevops, prometheus-operator, Miracle-working">
+
+
+
+  <meta name="baidu-site-verification" content="dAGCCFnguk">
+
+
+
+  <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Miracle-working">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0">
+
+
+
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0">
+
+
+
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4df28318eb843c36d3db5661c05dafff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109085701-1');
+  </script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8"></script>
+
+    <title> install-prometheus-with-helm - Miracle-working </title>
+  </head>
+
+  <body>
+    <div class="xxx"><div class="xxx xx2"></div></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/todo">
+        <li class="mobile-menu-item">
+          
+          
+            Todo
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            
+            
+              Todo
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          install-prometheus-with-helm
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-10-29
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/autodevops/">autodevops</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        <p>程序上线以后，就需要通过监控来确保程序健康和稳定的运行了。当程序异常的时候，还要有能力发出报警。一整套的监控收集、存储、报警的安装和配置是非常麻烦的。而且这套监控程序后续也需要进行维护，额外增加了很多工作量。</p>
+<p>这里记录下利用基于 Kubernetes 集群，利用 helm <strong>一键</strong>部署 Prometheus + Grafana 的方式。</p>
+<p><img src="/images/helm-prometheus.png" alt="helm-prometheus"></p>
+<a id="more"></a>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Namespaces: monitoring</span></span><br><span class="line"><span class="comment"># Chart Name: prometheus-operator</span></span><br><span class="line"><span class="comment"># Chart Version: 5.10.4</span></span><br><span class="line"><span class="comment"># Application Version: 0.29.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># helm upgrade --install prometheus-operator -f prometheus-operator-5.10.4.yaml stable/prometheus-operator --version 5.10.4 --namespace monitoring</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="attr">additionalPrometheusRules:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">alertmanager:</span></span><br><span class="line"><span class="attr">  alertmanagerSpec:</span></span><br><span class="line"><span class="attr">    additionalPeers:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    affinity:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    configMaps:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    containers:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    externalUrl:</span> <span class="literal">null</span></span><br><span class="line"><span class="attr">    image:</span></span><br><span class="line"><span class="attr">      repository:</span> <span class="string">quay.io/prometheus/alertmanager</span></span><br><span class="line"><span class="attr">      tag:</span> <span class="string">v0.17.0</span></span><br><span class="line"><span class="attr">    listenLocal:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    logLevel:</span> <span class="string">info</span></span><br><span class="line"><span class="attr">    nodeSelector:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    paused:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    podAntiAffinity:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    podAntiAffinityTopologyKey:</span> <span class="string">kubernetes.io/hostname</span></span><br><span class="line"><span class="attr">    podMetadata:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    priorityClassName:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    replicas:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">    resources:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    retention:</span> <span class="number">120</span><span class="string">h</span></span><br><span class="line"><span class="attr">    routePrefix:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">    secrets:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    securityContext:</span></span><br><span class="line"><span class="attr">      fsGroup:</span> <span class="number">2000</span></span><br><span class="line"><span class="attr">      runAsNonRoot:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      runAsUser:</span> <span class="number">1000</span></span><br><span class="line"><span class="attr">    storage:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    tolerations:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    useExistingSecret:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  config:</span></span><br><span class="line"><span class="attr">    global:</span></span><br><span class="line"><span class="attr">      resolve_timeout:</span> <span class="number">5</span><span class="string">m</span></span><br><span class="line"><span class="attr">    receivers:</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">alerta</span></span><br><span class="line"><span class="attr">      webhook_configs:</span></span><br><span class="line"><span class="attr">      - send_resolved:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        url:</span> <span class="attr">https://alerta.xxxx.org/api/webhooks/prometheus?api-key=xxxxxxx</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">rocketchat</span></span><br><span class="line"><span class="attr">      webhook_configs:</span></span><br><span class="line"><span class="attr">      - send_resolved:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        url:</span> <span class="attr">https://chat.xxxx.org/hooks/xxxx/xxxx</span></span><br><span class="line"><span class="attr">    route:</span></span><br><span class="line"><span class="attr">      group_by:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">job</span></span><br><span class="line"><span class="attr">      group_interval:</span> <span class="number">5</span><span class="string">m</span></span><br><span class="line"><span class="attr">      group_wait:</span> <span class="number">30</span><span class="string">s</span></span><br><span class="line"><span class="attr">      receiver:</span> <span class="string">alerta</span></span><br><span class="line"><span class="attr">      repeat_interval:</span> <span class="number">3</span><span class="string">h</span></span><br><span class="line"><span class="attr">      routes:</span></span><br><span class="line"><span class="attr">      - continue:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        match:</span></span><br><span class="line"><span class="attr">          severity:</span> <span class="string">critical</span></span><br><span class="line"><span class="attr">        receiver:</span> <span class="string">alerta</span></span><br><span class="line"><span class="attr">      - continue:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        match:</span></span><br><span class="line"><span class="attr">          severity:</span> <span class="string">critical</span></span><br><span class="line"><span class="attr">        receiver:</span> <span class="string">rocketchat</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  ingress:</span></span><br><span class="line"><span class="attr">    annotations:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    hosts:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">alert.xxxx.org</span></span><br><span class="line"><span class="attr">    labels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    paths:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    tls:</span></span><br><span class="line"><span class="attr">    - hosts:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">alert.xxxx.org</span></span><br><span class="line"><span class="attr">      secretName:</span> <span class="string">xxxx-tls</span></span><br><span class="line"><span class="attr">  podDisruptionBudget:</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    maxUnavailable:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    minAvailable:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    annotations:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    clusterIP:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    externalIPs:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    labels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    loadBalancerIP:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    loadBalancerSourceRanges:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    nodePort:</span> <span class="number">30903</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">ClusterIP</span></span><br><span class="line"><span class="attr">  serviceAccount:</span></span><br><span class="line"><span class="attr">    create:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    selfMonitor:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  templateFiles:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">commonLabels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">coreDns:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">9153</span></span><br><span class="line"><span class="attr">    selector:</span></span><br><span class="line"><span class="attr">      k8s-app:</span> <span class="string">kube-dns</span></span><br><span class="line"><span class="attr">    targetPort:</span> <span class="number">9153</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">defaultRules:</span></span><br><span class="line"><span class="attr">  annotations:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  create:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    environment:</span> <span class="string">aliyun</span></span><br><span class="line"><span class="attr">  rules:</span></span><br><span class="line"><span class="attr">    alertmanager:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    etcd:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    general:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    k8s:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubeApiserver:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubePrometheusNodeAlerting:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubePrometheusNodeRecording:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubeScheduler:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubernetesAbsent:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubernetesApps:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubernetesResources:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubernetesStorage:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    kubernetesSystem:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    node:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    prometheus:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    prometheusOperator:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">fullnameOverride:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">global:</span></span><br><span class="line"><span class="attr">  imagePullSecrets:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  rbac:</span></span><br><span class="line"><span class="attr">    create:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    pspEnabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">grafana:</span></span><br><span class="line"><span class="attr">  additionalDataSources:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  adminPassword:</span> <span class="string">xxxx</span></span><br><span class="line"><span class="attr">  defaultDashboardsEnabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  extraConfigmapMounts:</span> <span class="string">[]</span></span><br><span class="line">  <span class="string">grafana.ini:</span></span><br><span class="line"><span class="attr">    analytics:</span></span><br><span class="line"><span class="attr">      check_for_updates:</span> <span class="literal">true</span></span><br><span class="line">    <span class="string">auth.ldap:</span></span><br><span class="line"><span class="attr">      allow_sign_up:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      config_file:</span> <span class="string">/etc/grafana/ldap.toml</span></span><br><span class="line"><span class="attr">      enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    grafana_net:</span></span><br><span class="line"><span class="attr">      url:</span> <span class="attr">https://grafana.net</span></span><br><span class="line"><span class="attr">    log:</span></span><br><span class="line"><span class="attr">      mode:</span> <span class="string">console</span></span><br><span class="line"><span class="attr">    paths:</span></span><br><span class="line"><span class="attr">      data:</span> <span class="string">/var/lib/grafana/data</span></span><br><span class="line"><span class="attr">      logs:</span> <span class="string">/var/log/grafana</span></span><br><span class="line"><span class="attr">      plugins:</span> <span class="string">/var/lib/grafana/plugins</span></span><br><span class="line"><span class="attr">      provisioning:</span> <span class="string">/etc/grafana/provisioning</span></span><br><span class="line"><span class="attr">    smtp:</span></span><br><span class="line"><span class="attr">      enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      from_address:</span> <span class="string">grafana@xxxx.org</span></span><br><span class="line"><span class="attr">      from_name:</span> <span class="string">xxxx</span></span><br><span class="line"><span class="attr">      host:</span> <span class="attr">xxxx:25</span></span><br><span class="line"><span class="attr">      skip_verify:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  ingress:</span></span><br><span class="line"><span class="attr">    annotations:</span> <span class="literal">null</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    hosts:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">grafana.xxxx.org</span></span><br><span class="line"><span class="attr">    labels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    path:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">    tls:</span></span><br><span class="line"><span class="attr">    - hosts:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">grafana.xxxx.org</span></span><br><span class="line"><span class="attr">      secretName:</span> <span class="string">xxxx-tls</span></span><br><span class="line"><span class="attr">  ldap:</span></span><br><span class="line"><span class="attr">    existingSecret:</span> <span class="string">grafana-ldap-toml</span></span><br><span class="line"><span class="attr">  persistence:</span></span><br><span class="line"><span class="attr">    accessModes:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">ReadWriteOnce</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    size:</span> <span class="number">20</span><span class="string">Gi</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    selfMonitor:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  sidecar:</span></span><br><span class="line"><span class="attr">    dashboards:</span></span><br><span class="line"><span class="attr">      enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      label:</span> <span class="string">grafana_dashboard</span></span><br><span class="line"><span class="attr">      searchNamespace:</span> <span class="string">ALL</span></span><br><span class="line"><span class="attr">    datasources:</span></span><br><span class="line"><span class="attr">      defaultDatasourceEnabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      label:</span> <span class="string">grafana_datasource</span></span><br><span class="line"><span class="attr">      searchNamespace:</span> <span class="string">ALL</span></span><br><span class="line"><span class="attr">kube-state-metrics:</span></span><br><span class="line"><span class="attr">  podSecurityPolicy:</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  rbac:</span></span><br><span class="line"><span class="attr">    create:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">kubeApiServer:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    jobLabel:</span> <span class="string">component</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    selector:</span></span><br><span class="line"><span class="attr">      matchLabels:</span></span><br><span class="line"><span class="attr">        component:</span> <span class="string">apiserver</span></span><br><span class="line"><span class="attr">        provider:</span> <span class="string">kubernetes</span></span><br><span class="line"><span class="attr">  tlsConfig:</span></span><br><span class="line"><span class="attr">    insecureSkipVerify:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    serverName:</span> <span class="string">kubernetes</span></span><br><span class="line"><span class="attr">kubeControllerManager:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  endpoints:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">10252</span></span><br><span class="line"><span class="attr">    selector:</span></span><br><span class="line"><span class="attr">      component:</span> <span class="string">kube-controller-manager</span></span><br><span class="line"><span class="attr">    targetPort:</span> <span class="number">10252</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    https:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">kubeDns:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    selector:</span></span><br><span class="line"><span class="attr">      k8s-app:</span> <span class="string">kube-dns</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">kubeEtcd:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  endpoints:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">2379</span></span><br><span class="line"><span class="attr">    selector:</span></span><br><span class="line"><span class="attr">      k8s-app:</span> <span class="string">etcd</span></span><br><span class="line"><span class="attr">    targetPort:</span> <span class="number">2379</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    caFile:</span> <span class="string">/etc/prometheus/secrets/etcd-client-cert/etcd-ca</span></span><br><span class="line"><span class="attr">    certFile:</span> <span class="string">/etc/prometheus/secrets/etcd-client-cert/etcd-client</span></span><br><span class="line"><span class="attr">    insecureSkipVerify:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    keyFile:</span> <span class="string">/etc/prometheus/secrets/etcd-client-cert/etcd-client-key</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    scheme:</span> <span class="string">https</span></span><br><span class="line"><span class="attr">    serverName:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">kubeScheduler:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  endpoints:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    port:</span> <span class="number">10251</span></span><br><span class="line"><span class="attr">    selector:</span></span><br><span class="line"><span class="attr">      component:</span> <span class="string">kube-scheduler</span></span><br><span class="line"><span class="attr">    targetPort:</span> <span class="number">10251</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    https:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">kubeStateMetrics:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">kubelet:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">kube-system</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    cAdvisorMetricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    cAdvisorRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    https:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">nameOverride:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">nodeExporter:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  jobLabel:</span> <span class="string">jobLabel</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">prometheus:</span></span><br><span class="line"><span class="attr">  additionalServiceMonitors:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  ingress:</span></span><br><span class="line"><span class="attr">    annotations:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    hosts:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">prometheus.xxxx.org</span></span><br><span class="line"><span class="attr">    labels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    paths:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    tls:</span></span><br><span class="line"><span class="attr">    - hosts:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">prometheus.xxxx.org</span></span><br><span class="line"><span class="attr">      secretName:</span> <span class="string">xxxx-tls</span></span><br><span class="line"><span class="attr">  podDisruptionBudget:</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    maxUnavailable:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    minAvailable:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">  prometheusSpec:</span></span><br><span class="line"><span class="attr">    additionalAlertManagerConfigs:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    additionalAlertRelabelConfigs:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    additionalScrapeConfigs:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    additionalScrapeConfigsExternal:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    affinity:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    alertingEndpoints:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    configMaps:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    containers:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    enableAdminAPI:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    evaluationInterval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    externalLabels:</span></span><br><span class="line"><span class="attr">      environment:</span> <span class="string">aliyun</span></span><br><span class="line"><span class="attr">    externalUrl:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    image:</span></span><br><span class="line"><span class="attr">      repository:</span> <span class="string">quay.io/prometheus/prometheus</span></span><br><span class="line"><span class="attr">      tag:</span> <span class="string">v2.9.1</span></span><br><span class="line"><span class="attr">    listenLocal:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    logFormat:</span> <span class="string">logfmt</span></span><br><span class="line"><span class="attr">    logLevel:</span> <span class="string">info</span></span><br><span class="line"><span class="attr">    nodeSelector:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    paused:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    podAntiAffinity:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    podAntiAffinityTopologyKey:</span> <span class="string">kubernetes.io/hostname</span></span><br><span class="line"><span class="attr">    podMetadata:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    priorityClassName:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    query:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    remoteRead:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    remoteWrite:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    replicas:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">    resources:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    retention:</span> <span class="number">10</span><span class="string">d</span></span><br><span class="line"><span class="attr">    routePrefix:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">    ruleNamespaceSelector:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    ruleSelector:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    ruleSelectorNilUsesHelmValues:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    scrapeInterval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    secrets:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    securityContext:</span></span><br><span class="line"><span class="attr">      fsGroup:</span> <span class="number">2000</span></span><br><span class="line"><span class="attr">      runAsNonRoot:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      runAsUser:</span> <span class="number">1000</span></span><br><span class="line"><span class="attr">    serviceMonitorNamespaceSelector:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    serviceMonitorSelector:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    serviceMonitorSelectorNilUsesHelmValues:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    storageSpec:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    thanos:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    tolerations:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">  rbac:</span></span><br><span class="line"><span class="attr">    roleNamespaces:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">kube-system</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    annotations:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    clusterIP:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    externalIPs:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    labels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    loadBalancerIP:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    loadBalancerSourceRanges:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    nodePort:</span> <span class="number">30090</span></span><br><span class="line"><span class="attr">    sessionAffinity:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    targetPort:</span> <span class="number">9090</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">ClusterIP</span></span><br><span class="line"><span class="attr">  serviceAccount:</span></span><br><span class="line"><span class="attr">    create:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    selfMonitor:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">prometheus-node-exporter:</span></span><br><span class="line"><span class="attr">  extraArgs:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="bullet">--collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/)</span></span><br><span class="line"><span class="bullet">  -</span> <span class="bullet">--collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$</span></span><br><span class="line"><span class="attr">  podLabels:</span></span><br><span class="line"><span class="attr">    jobLabel:</span> <span class="string">node-exporter</span></span><br><span class="line"><span class="attr">prometheusOperator:</span></span><br><span class="line"><span class="attr">  affinity:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  cleanupCustomResource:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  configmapReloadImage:</span></span><br><span class="line"><span class="attr">    repository:</span> <span class="string">quay.io/coreos/configmap-reload</span></span><br><span class="line"><span class="attr">    tag:</span> <span class="string">v0.0.1</span></span><br><span class="line"><span class="attr">  crdApiGroup:</span> <span class="string">monitoring.coreos.com</span></span><br><span class="line"><span class="attr">  createCustomResource:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  hyperkubeImage:</span></span><br><span class="line"><span class="attr">    pullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line"><span class="attr">    repository:</span> <span class="string">k8s.gcr.io/hyperkube</span></span><br><span class="line"><span class="attr">    tag:</span> <span class="string">v1.12.1</span></span><br><span class="line"><span class="attr">  image:</span></span><br><span class="line"><span class="attr">    pullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line"><span class="attr">    repository:</span> <span class="string">quay.io/coreos/prometheus-operator</span></span><br><span class="line"><span class="attr">    tag:</span> <span class="string">v0.29.0</span></span><br><span class="line"><span class="attr">  kubeletService:</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    namespace:</span> <span class="string">kube-system</span></span><br><span class="line"><span class="attr">  nodeSelector:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  podAnnotations:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  podLabels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  prometheusConfigReloaderImage:</span></span><br><span class="line"><span class="attr">    repository:</span> <span class="string">quay.io/coreos/prometheus-config-reloader</span></span><br><span class="line"><span class="attr">    tag:</span> <span class="string">v0.29.0</span></span><br><span class="line"><span class="attr">  resources:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  securityContext:</span></span><br><span class="line"><span class="attr">    runAsNonRoot:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    runAsUser:</span> <span class="number">65534</span></span><br><span class="line"><span class="attr">  service:</span></span><br><span class="line"><span class="attr">    additionalPorts:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    annotations:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    clusterIP:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    externalIPs:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    labels:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">    loadBalancerIP:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    loadBalancerSourceRanges:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    nodePort:</span> <span class="number">30080</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">ClusterIP</span></span><br><span class="line"><span class="attr">  serviceAccount:</span></span><br><span class="line"><span class="attr">    create:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">  serviceMonitor:</span></span><br><span class="line"><span class="attr">    interval:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    metricRelabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    relabelings:</span> <span class="string">[]</span></span><br><span class="line"><span class="attr">    selfMonitor:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  tolerations:</span> <span class="string">[]</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/">https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/autodevops/">autodevops</a>
+            
+              <a href="/tags/prometheus-operator/">prometheus-operator</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/10/29/autodevops/kubernetes/">
+        <span class="next-text nav-default">kubernetes</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">zeed-w-beez</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/';
+        this.page.identifier = '2019/10/29/autodevops/install-prometheus-with-helm/';
+        this.page.title = 'install-prometheus-with-helm';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

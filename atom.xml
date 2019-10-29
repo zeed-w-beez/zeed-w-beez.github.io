@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2019-10-29T00:00:00.000Z</updated>
+  <updated>2019-10-29T06:52:34.236Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>install-prometheus-with-helm</title>
+    <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
+    <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
+    <published>2019-10-29T14:49:34.000Z</published>
+    <updated>2019-10-29T06:52:34.236Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;程序上线以后，就需要通过监控来确保程序健康和稳定的运行了。当程序异常的时候，还要有能力发出报警。一整套的监控收集、存储、报警的安装和配置是非常麻烦的。而且这套监控程序后续也需要进行维护，额外增加了很多工作量。&lt;/p&gt;
+&lt;p&gt;这里记录下利用基于 Kubernetes 集群，利用 helm &lt;strong&gt;一键&lt;/strong&gt;部署 Prometheus + Grafana 的方式。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/helm-prometheus.png&quot; alt=&quot;helm-prometheus&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    
+    
+      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    
+      <category term="prometheus-operator" scheme="https://blogs.zeed.w.beez.com/tags/prometheus-operator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes</title>
+    <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/"/>
+    <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/</id>
+    <published>2019-10-29T14:05:01.000Z</published>
+    <updated>2019-10-29T06:52:34.236Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kubernetes 的出现很大程度上抹平了运维工作的鸿沟，大大降低了老旧互联网企业和新兴小企业的运维成本，同时也为了转投“云”怀抱提供了可能。&lt;/p&gt;
+&lt;p&gt;Kubernetes builds upon &lt;a href=&quot;http://queue.acm.org/detail.cfm?id=2898444&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;15 years of experience of running production workloads at Google&lt;/a&gt;, combined with best-of-breed ideas and practices from the community.&lt;br&gt;Kubernetes 带着 Google 15年的生产环境运维管理经验，重新定义的容器编排的标准。原来运维也可以如此高效、优雅、让人着迷。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/kubernetes-flower.png&quot; alt=&quot;kubernetes flower&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    
+    
+      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    
+      <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
+    
+  </entry>
   
   <entry>
     <title>enable-HTTPS-on-your-website-with-letsencrypt</title>
@@ -68,7 +116,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/"/>
     <id>https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</id>
     <published>2018-12-07T00:00:00.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -95,7 +143,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -116,7 +164,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.240Z</updated>
     
     <summary type="html">
     
@@ -136,7 +184,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -157,7 +205,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.240Z</updated>
     
     <summary type="html">
     
@@ -180,7 +228,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/27/Recently/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</id>
     <published>2018-01-27T17:05:23.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -198,7 +246,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.240Z</updated>
     
     <summary type="html">
     
@@ -218,7 +266,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.240Z</updated>
     
     <summary type="html">
     
@@ -238,7 +286,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.240Z</updated>
     
     <summary type="html">
     
@@ -303,7 +351,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -324,7 +372,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -345,7 +393,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -369,7 +417,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/10/redux-study/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.240Z</updated>
     
     <summary type="html">
     
@@ -394,7 +442,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
+    <updated>2019-10-29T06:52:34.236Z</updated>
     
     <summary type="html">
     
@@ -411,46 +459,6 @@
       <category term="github page" scheme="https://blogs.zeed.w.beez.com/tags/github-page/"/>
     
       <category term="custom domain" scheme="https://blogs.zeed.w.beez.com/tags/custom-domain/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux-service</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/10/28/linux/linux-service/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/10/28/linux/linux-service/</id>
-    <published>2017-10-28T11:19:39.000Z</published>
-    <updated>2017-11-17T00:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      systemctl status me
-    
-    </summary>
-    
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
-    
-    
-      <category term="systemctl" scheme="https://blogs.zeed.w.beez.com/tags/systemctl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tensorflow</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</id>
-    <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2019-10-29T06:03:56.808Z</updated>
-    
-    <summary type="html">
-    
-      There is no rose without a thorn.
-    
-    </summary>
-    
-      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
-    
-    
-      <category term="tensorflow" scheme="https://blogs.zeed.w.beez.com/tags/tensorflow/"/>
     
   </entry>
   
