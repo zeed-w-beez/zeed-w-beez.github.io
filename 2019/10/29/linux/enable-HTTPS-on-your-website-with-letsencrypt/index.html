@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="enable-HTTPS-on-your-website-with-letsencrypt">
+
+
+
+
+  <meta name="keywords" content="https, letsencrypt, nginx, Miracle-working">
+
+
+
+  <meta name="baidu-site-verification" content="dAGCCFnguk">
+
+
+
+  <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Miracle-working">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0">
+
+
+
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0">
+
+
+
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4df28318eb843c36d3db5661c05dafff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109085701-1');
+  </script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8"></script>
+
+    <title> enable-HTTPS-on-your-website-with-letsencrypt - Miracle-working </title>
+  </head>
+
+  <body>
+    <div class="xxx"><div class="xxx xx2"></div></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/todo">
+        <li class="mobile-menu-item">
+          
+          
+            Todo
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            
+            
+              Todo
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          enable-HTTPS-on-your-website-with-letsencrypt
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-10-29
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/术业有专攻/">术业有专攻</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx-的操作"><span class="toc-text">nginx 的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-certbot-一个-Agent-用来自动生成证书"><span class="toc-text">安装 certbot: 一个 Agent 用来自动生成证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认证书有效期三个月。配置了定时任务之后，会自动续期，完全不用关心。"><span class="toc-text">默认证书有效期三个月。配置了定时任务之后，会自动续期，完全不用关心。</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。</p>
+<p>今天记录一下使用<strong>免费 开源</strong>的证书机构 <a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a> 配合 <a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot</a> 完成基于 <a href="https://nginx.org/" target="_blank" rel="noopener">nginx</a> 的 https 配置。</p>
+<p><img src="/images/letsencrypt.png" alt="Let’s Encrypt"></p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>需要有一个正式的域名，并且正常添加了对域名的解析。</li>
+<li>需要有基础的 nginx 知识。web服务器不一定是 <code>nginx</code> ，其他的很多都支持，本文以 <code>nginx</code> 为例，具体可以参考 <a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot 官网</a>。</li>
+</ol>
+<h2 id="nginx-的操作"><a href="#nginx-的操作" class="headerlink" title="nginx 的操作"></a>nginx 的操作</h2><ol>
+<li>以 <code>blogs.zeed-w-beez.com</code> 这个域名为例。</li>
+<li>在 <code>/etc/nginx/cond.d/</code> 目录下创建一个新文件 <code>blogs.zeed-w-beez.com.conf</code> 内容如下。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    server_name blogs.zeed-w-beez.com; ### 这里替换为自己的域名。</span><br><span class="line">    root         /usr/share/nginx/html; ### 这里是程序的目录。</span><br><span class="line"></span><br><span class="line">    # Load configuration files for the default server block.</span><br><span class="line">    include /etc/nginx/default.d/*.conf;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 404 /404.html;</span><br><span class="line">        location = /40x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 500 502 503 504 /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-certbot-一个-Agent-用来自动生成证书"><a href="#安装-certbot-一个-Agent-用来自动生成证书" class="headerlink" title="安装 certbot: 一个 Agent 用来自动生成证书"></a>安装 <a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot</a>: 一个 Agent 用来自动生成证书</h2><ol>
+<li>根据<a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot官网</a>提示选择Web服务器和操作系统。<br><img src="/images/certbot.png" alt="选择Web服务器和操作系统"></li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这个是 centos7+nginx 的安装文档：https://certbot.eff.org/lets-encrypt/centosrhel7-nginx</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. Enable the optional channel</span></span><br><span class="line">sudo yum -y install yum-utils</span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Install Certbot</span></span><br><span class="line">sudo yum install certbot python2-certbot-nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.1 自动扫描并导入证书。很据提示填写一些必要信息即可。</span></span><br><span class="line">sudo certbot --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 也可以只生成证书，不自动导入nginx</span></span><br><span class="line">sudo certbot certonly --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 手动重新生成证书</span></span><br><span class="line">sudo certbot renew</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 添加定时任务</span></span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">"0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' &amp;&amp; certbot renew"</span> | sudo tee -a /etc/crontab &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<h2 id="默认证书有效期三个月。配置了定时任务之后，会自动续期，完全不用关心。"><a href="#默认证书有效期三个月。配置了定时任务之后，会自动续期，完全不用关心。" class="headerlink" title="默认证书有效期三个月。配置了定时任务之后，会自动续期，完全不用关心。"></a>默认证书有效期三个月。配置了定时任务之后，会自动续期，完全不用关心。</h2>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/">https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/https/">https</a>
+            
+              <a href="/tags/letsencrypt/">letsencrypt</a>
+            
+              <a href="/tags/nginx/">nginx</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/01/25/linux/linux-default-permission/">
+        <span class="next-text nav-default">linux-default-permission</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">zeed-w-beez</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/';
+        this.page.identifier = '2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/';
+        this.page.title = 'enable-HTTPS-on-your-website-with-letsencrypt';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

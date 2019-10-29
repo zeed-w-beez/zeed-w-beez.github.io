@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2019-01-26T13:48:35.000Z</updated>
+  <updated>2019-10-29T00:00:00.000Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>enable-HTTPS-on-your-website-with-letsencrypt</title>
+    <link href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/"/>
+    <id>https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/</id>
+    <published>2019-10-29T13:53:04.000Z</published>
+    <updated>2019-10-29T00:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。&lt;/p&gt;
+&lt;p&gt;今天记录一下使用&lt;strong&gt;免费 开源&lt;/strong&gt;的证书机构 &lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt&lt;/a&gt; 配合 &lt;a href=&quot;https://certbot.eff.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;certbot&lt;/a&gt; 完成基于 &lt;a href=&quot;https://nginx.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;nginx&lt;/a&gt; 的 https 配置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/letsencrypt.png&quot; alt=&quot;Let’s Encrypt&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+      <category term="https" scheme="https://blogs.zeed.w.beez.com/tags/https/"/>
+    
+      <category term="letsencrypt" scheme="https://blogs.zeed.w.beez.com/tags/letsencrypt/"/>
+    
+      <category term="nginx" scheme="https://blogs.zeed.w.beez.com/tags/nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>linux-default-permission</title>
@@ -42,7 +68,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/"/>
     <id>https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</id>
     <published>2018-12-07T00:00:00.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.747Z</updated>
     
     <summary type="html">
     
@@ -69,7 +95,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.747Z</updated>
     
     <summary type="html">
     
@@ -90,7 +116,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
@@ -110,7 +136,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
@@ -131,7 +157,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
@@ -154,7 +180,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/27/Recently/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</id>
     <published>2018-01-27T17:05:23.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.747Z</updated>
     
     <summary type="html">
     
@@ -172,7 +198,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
@@ -188,16 +214,15 @@
   </entry>
   
   <entry>
-    <title>请直接挂掉销售人员的电话</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
+    <title>生活是什么</title>
+    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;如果你对即将介绍的内容没有任何兴趣，请直接挂掉电话！&lt;br&gt;不要不好意思，不要“礼貌”的拒绝，直接挂掉就可以了！&lt;/p&gt;
-&lt;p&gt;某天你在路边偶然发现了一个老奶奶在卖东西，如果你“好心”的去买了，那位老奶奶就可能之后每天都在路边等“你”，并且风雨无阻。剩下一脸茫然的你&lt;/p&gt;
+      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
     
     </summary>
     
@@ -209,15 +234,16 @@
   </entry>
   
   <entry>
-    <title>生活是什么</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
+    <title>请直接挂掉销售人员的电话</title>
+    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
+    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
+      &lt;p&gt;如果你对即将介绍的内容没有任何兴趣，请直接挂掉电话！&lt;br&gt;不要不好意思，不要“礼貌”的拒绝，直接挂掉就可以了！&lt;/p&gt;
+&lt;p&gt;某天你在路边偶然发现了一个老奶奶在卖东西，如果你“好心”的去买了，那位老奶奶就可能之后每天都在路边等“你”，并且风雨无阻。剩下一脸茫然的你&lt;/p&gt;
     
     </summary>
     
@@ -277,7 +303,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.747Z</updated>
     
     <summary type="html">
     
@@ -298,7 +324,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.747Z</updated>
     
     <summary type="html">
     
@@ -319,7 +345,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.747Z</updated>
     
     <summary type="html">
     
@@ -343,7 +369,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/10/redux-study/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
@@ -368,7 +394,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</id>
     <published>2017-11-02T13:07:46.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
@@ -413,7 +439,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/"/>
     <id>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</id>
     <published>2017-10-25T14:52:04.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
+    <updated>2019-10-29T06:03:08.751Z</updated>
     
     <summary type="html">
     
@@ -425,29 +451,6 @@
     
     
       <category term="tensorflow" scheme="https://blogs.zeed.w.beez.com/tags/tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>https 漫谈</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/09/28/https-漫谈/</id>
-    <published>2017-09-28T15:08:56.000Z</published>
-    <updated>2019-10-26T01:58:29.848Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="知之为知之" scheme="https://blogs.zeed.w.beez.com/categories/%E7%9F%A5%E4%B9%8B%E4%B8%BA%E7%9F%A5%E4%B9%8B/"/>
-    
-    
-      <category term="https" scheme="https://blogs.zeed.w.beez.com/tags/https/"/>
     
   </entry>
   
