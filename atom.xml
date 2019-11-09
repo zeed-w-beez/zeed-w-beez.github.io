@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2019-11-09T13:45:33.405Z</updated>
+  <updated>2019-11-09T14:57:27.959Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.959Z</updated>
     
     <summary type="html">
     
@@ -47,7 +47,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -71,7 +71,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/</id>
     <published>2019-10-29T14:05:01.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -142,7 +142,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/"/>
     <id>https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</id>
     <published>2018-12-07T00:00:00.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T00:00:00.000Z</updated>
     
     <summary type="html">
     
@@ -169,7 +169,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2019-11-09T13:45:33.401Z</updated>
+    <updated>2019-11-09T14:57:27.959Z</updated>
     
     <summary type="html">
     
@@ -190,7 +190,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -210,7 +210,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -231,7 +231,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -254,7 +254,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/27/Recently/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</id>
     <published>2018-01-27T17:05:23.000Z</published>
-    <updated>2019-11-09T13:45:33.401Z</updated>
+    <updated>2019-11-09T14:57:27.959Z</updated>
     
     <summary type="html">
     
@@ -272,7 +272,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -292,7 +292,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -313,7 +313,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -377,7 +377,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -398,7 +398,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
     <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
@@ -419,7 +419,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</id>
     <published>2017-11-23T10:48:40.000Z</published>
-    <updated>2019-11-09T13:45:33.401Z</updated>
+    <updated>2019-11-09T14:57:27.959Z</updated>
     
     <summary type="html">
     
@@ -443,7 +443,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/10/redux-study/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</id>
     <published>2017-11-10T14:04:53.000Z</published>
-    <updated>2019-11-09T13:45:33.405Z</updated>
+    <updated>2019-11-09T14:57:27.963Z</updated>
     
     <summary type="html">
     
