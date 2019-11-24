@@ -50,8 +50,7 @@
     });
 
     $('#mobile-panel').on('touchend', function () {
-      slideout.isOpen();
-      $mobileNavIcon.click();
+      slideout.isOpen() && $mobileNavIcon.click();
     });
   };
 
