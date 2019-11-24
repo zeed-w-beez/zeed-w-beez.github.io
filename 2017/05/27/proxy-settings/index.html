@@ -26,8 +26,6 @@
 
 
 
-  <meta name="baidu-site-verification" content="dAGCCFnguk">
-
 
 
   <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM">
@@ -56,16 +54,6 @@
 
 
   
-  <script id="baidu_analytics">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?4df28318eb843c36d3db5661c05dafff";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
 
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -284,7 +272,7 @@
 <p>还可以当做是一层保险，不开Fiddler 的时候，虚拟机是不能访问网络的。</p>
 <p>大部分软件的代理配置都可以百度到，这里记录些不常用的：</p>
 <p>Anaconda:<br>在 User 下有个默认的配置文件 .condarc  </p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></span><br><span class="line"><span class="attr">channels:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">anaconda-fusion</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">defaults</span></span><br><span class="line"></span><br><span class="line"><span class="attr">proxy_servers:</span></span><br><span class="line"><span class="attr">  http:</span> <span class="attr">http://localhost:8888</span> <span class="comment"># 本机的 Fiddler 代理</span></span><br><span class="line"><span class="attr">  https:</span> <span class="attr">http://localhost:8888</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></span><br><span class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></span><br><span class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></span><br><span class="line"><span class="attr">channels:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">anaconda-fusion</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">defaults</span></span><br><span class="line"></span><br><span class="line"><span class="attr">proxy_servers:</span></span><br><span class="line">  <span class="attr">http:</span> <span class="string">http://localhost:8888</span> <span class="comment"># 本机的 Fiddler 代理</span></span><br><span class="line">  <span class="attr">https:</span> <span class="string">http://localhost:8888</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></span><br><span class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></span><br><span class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>大部分都能网上搜到</p>
 <p>全部用户配置代理：</p>
@@ -437,12 +425,15 @@
       2015 - 
     
     2019
-
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">zeed-w-beez</span>
   </span>
+
+  <span id="beian">
+  </span>
+
 </div>
 
       </footer>

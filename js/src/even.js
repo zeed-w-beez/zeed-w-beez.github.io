@@ -16,7 +16,7 @@
       var scrollPercentage = Math.round(100 * $(window).scrollTop() / ($(window.document).height() - $(window).height()));
       // $('#back-to-top i').text(' ' + scrollPercentage + '%');
       $('.xxx .xx2').css('width', scrollPercentage + '%');
-      
+
     });
 
     $backToTop.click(function () {
@@ -50,14 +50,15 @@
     });
 
     $('#mobile-panel').on('touchend', function () {
-      slideout.isOpen() && $mobileNavIcon.click();
+      slideout.isOpen();
+      $mobileNavIcon.click();
     });
   };
 
   Even.toc = function () {
     var SPACING = 20;
     var $toc = $('.post-toc'),
-        $footer = $('.post-footer');
+      $footer = $('.post-footer');
 
     if ($toc.length) {
       var minScrollTop = $toc.offset().top - SPACING;
@@ -93,7 +94,7 @@
 
     var HEADERFIX = 30;
     var $toclink = $('.toc-link'),
-        $headerlink = $('.headerlink');
+      $headerlink = $('.headerlink');
 
     var headerlinkTop = $.map($headerlink, function (link) {
       return $(link).offset().top;
@@ -104,8 +105,8 @@
 
       for (var i = 0; i < $toclink.length; i++) {
         var isLastOne = i + 1 === $toclink.length,
-            currentTop = headerlinkTop[i] - HEADERFIX,
-            nextTop = isLastOne ? Infinity : headerlinkTop[i+1] - HEADERFIX;
+          currentTop = headerlinkTop[i] - HEADERFIX,
+          nextTop = isLastOne ? Infinity : headerlinkTop[i + 1] - HEADERFIX;
 
         if (currentTop < scrollTop && scrollTop <= nextTop) {
           $($toclink[i]).addClass('active');
@@ -117,7 +118,7 @@
   };
 
   Even.fancybox = function () {
-    if ($.fancybox){
+    if ($.fancybox) {
       $('.post').each(function () {
         $(this).find('img').each(function () {
           $(this).wrap('<a class="fancybox" href="' + this.src + '" title="' + this.alt + '"></a>');
@@ -125,8 +126,8 @@
       });
 
       $('.fancybox').fancybox({
-        openEffect	: 'elastic',
-        closeEffect	: 'elastic'
+        openEffect: 'elastic',
+        closeEffect: 'elastic'
       });
     }
   };
@@ -199,6 +200,13 @@
       } else {
         showTime(Counter);
       }
+    }
+  };
+
+  Even.beian = function () {
+    var l = document.getElementById('beian');
+    if (l && window && window.location.hostname === 'www.mercenaryunion.com') {
+      l.innerHTML = '<a href="http://www.beian.miit.gov.cn">豫ICP备15012164号-1</a>';
     }
   };
 
