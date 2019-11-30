@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head><meta name="generator" content="Hexo 3.9.0">
-    
-<meta charset="UTF-8">
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,72 +13,43 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="collection logs with fluent-bit on kubernetes">
-
-
-
-
-  <meta name="keywords" content="autodevops, kubernetes, fluent-bit, Miracle-working">
-
-
-
-
-
-  <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Miracle-working">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0">
-
-
-
+<meta name="description" content="collection logs with fluent-bit on kubernetes"><meta name="keywords" content="autodevops, kubernetes, fluent-bit, Miracle-working"><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM"><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/10/30/autodevops/collection-logs-with-fluent-bit-on-kubernetes/">
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
 
-
-
-
-  
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-109085701-1');
-  </script>
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8"></script>
-
-    <title> collection logs with fluent-bit on kubernetes - Miracle-working </title>
+    <title>collection logs with fluent-bit on kubernetes - Miracle-working</title>
   </head>
 
   <body>
-    <div class="xxx"><div class="xxx xx2"></div></div><div id="mobile-navbar" class="mobile-navbar">
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/." class="logo">Miracle-working</a>
   </div>
@@ -92,175 +61,81 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/archives">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            分类
-          
-        </li>
-      </a>
-    
-      <a href="/todo">
-        <li class="mobile-menu-item">
-          
-          
-            Todo
-          
-        </li>
-      </a>
-    
-      <a href="/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">Miracle-working</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            
-            
-              首页
-            
-          </a>
+            首页
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/archives">
-            
-            
-              归档
-            
-          </a>
+            归档
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            
-            
-              标签
-            
-          </a>
+            标签
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/categories">
-            
-            
-              分类
-            
-          </a>
+            分类
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/todo">
-            
-            
-              Todo
-            
-          </a>
+            Todo
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            
-            
-              关于
-            
-          </a>
+            关于
+            </a>
         </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+      </ul></nav>
+</header>
       
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          collection logs with fluent-bit on kubernetes
-        
-      </h1>
+      <h1 class="post-title">collection logs with fluent-bit on kubernetes
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2019-10-29
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/autodevops/">autodevops</a>
-            
-          </div>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/autodevops/">autodevops</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Fluentd-amp-Fluent-Bit"><span class="toc-text">Fluentd &amp; Fluent Bit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础概念"><span class="toc-text">基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Default-Config"><span class="toc-text">Default Config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Schema"><span class="toc-text">Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#配置文件支持拆分和引用"><span class="toc-text">配置文件支持拆分和引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#支持环境变量和自定义变量"><span class="toc-text">支持环境变量和自定义变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Buffering-Storage"><span class="toc-text">Buffering / Storage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Metrics"><span class="toc-text">Metrics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Upstream-Servers"><span class="toc-text">Upstream Servers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler"><span class="toc-text">Scheduler</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Plugins-Tail"><span class="toc-text">Input Plugins Tail</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parser"><span class="toc-text">Parser</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter-in-Kubernetes"><span class="toc-text">Filter in Kubernetes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kubernetes-Annotations"><span class="toc-text">Kubernetes Annotations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Workflow-of-Tail-Kubernetes-Filter"><span class="toc-text">Workflow of Tail + Kubernetes Filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Helm-Charts-and-Yaml"><span class="toc-text">Helm Charts and Yaml</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modify-Filter"><span class="toc-text">Modify Filter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Routing"><span class="toc-text">Routing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Plugins"><span class="toc-text">Output Plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Elasticsearch"><span class="toc-text">Elasticsearch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Demo"><span class="toc-text">Demo</span></a></li></ol>
-    </div>
-  </div>
-
-
-    <div class="post-content">
-      
-        <p>Kubernetes 方便的帮我们管理和运维程序，但是也带来了一些新的挑战。比如日志问题。用了Kubernetes 之后，就不能方便的登录到服务器上查看stdout日志，查看系统日志，查看程序的输出日志了。</p>
+    <div class="post-content"><p>Kubernetes 方便的帮我们管理和运维程序，但是也带来了一些新的挑战。比如日志问题。用了Kubernetes 之后，就不能方便的登录到服务器上查看stdout日志，查看系统日志，查看程序的输出日志了。</p>
 <p>但是 Kubernetes 有提供更系统化，更高效的日志处理方式。这里就 <a href="https://fluentbit.io/" target="_blank" rel="noopener">fluent-bit</a> 做一下记录。</p>
 <p><img src="/images/flb_002.png" alt="fluent-bit"></p>
 <a id="more"></a>
@@ -371,14 +246,8 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># Source: default/templates/configmap.yaml</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ConfigMap</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">zeed-flb-default</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/name:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">helm.sh/chart:</span> <span class="string">default-0.1.0</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/instance:</span> <span class="string">zeed-flb</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/version:</span> <span class="string">"1.0"</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/managed-by:</span> <span class="string">Tiller</span></span><br><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="comment"># Configuration files: server, input, filters and output</span></span><br><span class="line">  <span class="comment"># ======================================================</span></span><br><span class="line">  <span class="attr">fluent-bit.conf:</span> <span class="string">|</span></span><br><span class="line">    <span class="string">[SERVICE]</span></span><br><span class="line">        <span class="string">Flush</span>         <span class="number">5</span></span><br><span class="line">        <span class="string">Log_Level</span>     <span class="string">info</span></span><br><span class="line">        <span class="string">Daemon</span>        <span class="string">off</span></span><br><span class="line">        <span class="string">Parsers_File</span>  <span class="string">parsers.conf</span></span><br><span class="line">        <span class="string">HTTP_Server</span>   <span class="string">On</span></span><br><span class="line">        <span class="string">HTTP_Listen</span>   <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">        <span class="string">HTTP_Port</span>     <span class="number">2020</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[INPUT]</span></span><br><span class="line">        <span class="string">Name</span> <span class="string">dummy</span></span><br><span class="line">        <span class="string">Tag</span>  <span class="string">dummy.log</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[INPUT]</span></span><br><span class="line">        <span class="string">Name</span> <span class="string">tail</span></span><br><span class="line">        <span class="string">Tag</span>  <span class="string">nginx.access</span></span><br><span class="line">        <span class="string">Parser</span> <span class="string">nginx</span></span><br><span class="line">        <span class="string">Path</span> <span class="string">/app/log/nginx-access.log</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[INPUT]</span></span><br><span class="line">        <span class="string">Name</span> <span class="string">tail</span></span><br><span class="line">        <span class="string">Tag</span>  <span class="string">nginx.error</span></span><br><span class="line">        <span class="string">Parser</span> <span class="string">nginx</span></span><br><span class="line">        <span class="string">Path</span> <span class="string">/app/log/nginx-error.log</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[OUTPUT]</span></span><br><span class="line">        <span class="string">Name</span>  <span class="string">stdout</span></span><br><span class="line">        <span class="string">Match</span> <span class="string">*</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[OUTPUT]</span></span><br><span class="line">        <span class="string">Name</span>  <span class="string">es</span></span><br><span class="line">        <span class="string">Match</span> <span class="string">es.nginx.*</span></span><br><span class="line">        <span class="string">Host</span>  <span class="number">192.168</span><span class="number">.2</span><span class="number">.3</span></span><br><span class="line">        <span class="string">Port</span>  <span class="number">9200</span></span><br><span class="line">        <span class="string">Index</span> <span class="string">my_index</span></span><br><span class="line">        <span class="string">Type</span>  <span class="string">my_type</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="attr">parsers.conf:</span> <span class="string">|</span></span><br><span class="line">    <span class="string">[PARSER]</span></span><br><span class="line">        <span class="string">Name</span>   <span class="string">apache</span></span><br><span class="line">        <span class="string">Format</span> <span class="string">regex</span></span><br><span class="line">        <span class="string">Regex</span>  <span class="string">^(?&lt;host&gt;[^</span> <span class="string">]*)</span> <span class="string">[^</span> <span class="string">]*</span> <span class="string">(?&lt;user&gt;[^</span> <span class="string">]*)</span> <span class="string">\[(?&lt;time&gt;[^\]]*)\]</span> <span class="string">"(?&lt;method&gt;\S+)(?: +(?&lt;path&gt;[^\"]*?)(?: +\S*)?)?"</span> <span class="string">(?&lt;code&gt;[^</span> <span class="string">]*)</span> <span class="string">(?&lt;size&gt;[^</span> <span class="string">]*)(?:</span> <span class="string">"(?&lt;referer&gt;[^\"]*)"</span> <span class="string">"(?&lt;agent&gt;[^\"]*)"</span><span class="string">)?$</span></span><br><span class="line">        <span class="string">Time_Key</span> <span class="string">time</span></span><br><span class="line">        <span class="string">Time_Format</span> <span class="string">%d/%b/%Y:%H:%M:%S</span> <span class="string">%z</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[PARSER]</span></span><br><span class="line">        <span class="string">Name</span>   <span class="string">apache2</span></span><br><span class="line">        <span class="string">Format</span> <span class="string">regex</span></span><br><span class="line">        <span class="string">Regex</span>  <span class="string">^(?&lt;host&gt;[^</span> <span class="string">]*)</span> <span class="string">[^</span> <span class="string">]*</span> <span class="string">(?&lt;user&gt;[^</span> <span class="string">]*)</span> <span class="string">\[(?&lt;time&gt;[^\]]*)\]</span> <span class="string">"(?&lt;method&gt;\S+)(?: +(?&lt;path&gt;[^ ]*) +\S*)?"</span> <span class="string">(?&lt;code&gt;[^</span> <span class="string">]*)</span> <span class="string">(?&lt;size&gt;[^</span> <span class="string">]*)(?:</span> <span class="string">"(?&lt;referer&gt;[^\"]*)"</span> <span class="string">"(?&lt;agent&gt;[^\"]*)"</span><span class="string">)?$</span></span><br><span class="line">        <span class="string">Time_Key</span> <span class="string">time</span></span><br><span class="line">        <span class="string">Time_Format</span> <span class="string">%d/%b/%Y:%H:%M:%S</span> <span class="string">%z</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[PARSER]</span></span><br><span class="line">        <span class="string">Name</span>   <span class="string">apache_error</span></span><br><span class="line">        <span class="string">Format</span> <span class="string">regex</span></span><br><span class="line">        <span class="string">Regex</span>  <span class="string">^\[[^</span> <span class="string">]*</span> <span class="string">(?&lt;time&gt;[^\]]*)\]</span> <span class="string">\[(?&lt;level&gt;[^\]]*)\](?:</span> <span class="string">\[pid</span> <span class="string">(?&lt;pid&gt;[^\]]*)\])?(</span> <span class="string">\[client</span> <span class="string">(?&lt;client&gt;[^\]]*)\])?</span> <span class="string">(?&lt;message&gt;.*)$</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[PARSER]</span></span><br><span class="line">        <span class="string">Name</span>   <span class="string">nginx</span></span><br><span class="line">        <span class="string">Format</span> <span class="string">regex</span></span><br><span class="line">        <span class="string">Regex</span> <span class="string">^(?&lt;remote&gt;[^</span> <span class="string">]*)</span> <span class="string">(?&lt;host&gt;[^</span> <span class="string">]*)</span> <span class="string">(?&lt;user&gt;[^</span> <span class="string">]*)</span> <span class="string">\[(?&lt;time&gt;[^\]]*)\]</span> <span class="string">"(?&lt;method&gt;\S+)(?: +(?&lt;path&gt;[^\"]*?)(?: +\S*)?)?"</span> <span class="string">(?&lt;code&gt;[^</span> <span class="string">]*)</span> <span class="string">(?&lt;size&gt;[^</span> <span class="string">]*)(?:</span> <span class="string">"(?&lt;referer&gt;[^\"]*)"</span> <span class="string">"(?&lt;agent&gt;[^\"]*)"</span><span class="string">)?$</span></span><br><span class="line">        <span class="string">Time_Key</span> <span class="string">time</span></span><br><span class="line">        <span class="string">Time_Format</span> <span class="string">%d/%b/%Y:%H:%M:%S</span> <span class="string">%z</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[PARSER]</span></span><br><span class="line">        <span class="string">Name</span>   <span class="string">json</span></span><br><span class="line">        <span class="string">Format</span> <span class="string">json</span></span><br><span class="line">        <span class="string">Time_Key</span> <span class="string">time</span></span><br><span class="line">        <span class="string">Time_Format</span> <span class="string">%d/%b/%Y:%H:%M:%S</span> <span class="string">%z</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[PARSER]</span></span><br><span class="line">        <span class="string">Name</span>        <span class="string">docker</span></span><br><span class="line">        <span class="string">Format</span>      <span class="string">json</span></span><br><span class="line">        <span class="string">Time_Key</span>    <span class="string">time</span></span><br><span class="line">        <span class="string">Time_Format</span> <span class="string">%Y-%m-%dT%H:%M:%S.%L</span></span><br><span class="line">        <span class="string">Time_Keep</span>   <span class="string">On</span></span><br><span class="line"></span><br><span class="line">    <span class="string">[PARSER]</span></span><br><span class="line">        <span class="string">Name</span>        <span class="string">syslog</span></span><br><span class="line">        <span class="string">Format</span>      <span class="string">regex</span></span><br><span class="line">        <span class="string">Regex</span>       <span class="string">^\&lt;(?&lt;pri&gt;[0-9]+)\&gt;(?&lt;time&gt;[^</span> <span class="string">]*</span> <span class="string">&#123;1,2&#125;[^</span> <span class="string">]*</span> <span class="string">[^</span> <span class="string">]*)</span> <span class="string">(?&lt;host&gt;[^</span> <span class="string">]*)</span> <span class="string">(?&lt;ident&gt;[a-zA-Z0-9_\/\.\-]*)(?:\[(?&lt;pid&gt;[0-9]+)\])?(?:[^\:]*\:)?</span> <span class="string">*(?&lt;message&gt;.*)$</span></span><br><span class="line">        <span class="string">Time_Key</span>    <span class="string">time</span></span><br><span class="line">        <span class="string">Time_Format</span> <span class="string">%b</span> <span class="string">%d</span> <span class="string">%H:%M:%S</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># Source: default/templates/service.yaml</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">zeed-flb-default</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/name:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">helm.sh/chart:</span> <span class="string">default-0.1.0</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/instance:</span> <span class="string">zeed-flb</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/version:</span> <span class="string">"1.0"</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/managed-by:</span> <span class="string">Tiller</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">ClusterIP</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">      <span class="attr">targetPort:</span> <span class="string">http</span></span><br><span class="line">      <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">http</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/name:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/instance:</span> <span class="string">zeed-flb</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># Source: default/templates/deployment.yaml</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">zeed-flb-default</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/name:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">helm.sh/chart:</span> <span class="string">default-0.1.0</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/instance:</span> <span class="string">zeed-flb</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/version:</span> <span class="string">"1.0"</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/managed-by:</span> <span class="string">Tiller</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app.kubernetes.io/name:</span> <span class="string">default</span></span><br><span class="line">      <span class="attr">app.kubernetes.io/instance:</span> <span class="string">zeed-flb</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app.kubernetes.io/name:</span> <span class="string">default</span></span><br><span class="line">        <span class="attr">app.kubernetes.io/instance:</span> <span class="string">zeed-flb</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">default</span></span><br><span class="line">          <span class="attr">image:</span> <span class="string">"nginx:stable"</span></span><br><span class="line">          <span class="attr">imagePullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line">          <span class="attr">ports:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">http</span></span><br><span class="line">              <span class="attr">containerPort:</span> <span class="number">80</span></span><br><span class="line">              <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">          <span class="attr">livenessProbe:</span></span><br><span class="line">            <span class="attr">httpGet:</span></span><br><span class="line">              <span class="attr">path:</span> <span class="string">/</span></span><br><span class="line">              <span class="attr">port:</span> <span class="string">http</span></span><br><span class="line">          <span class="attr">readinessProbe:</span></span><br><span class="line">            <span class="attr">httpGet:</span></span><br><span class="line">              <span class="attr">path:</span> <span class="string">/</span></span><br><span class="line">              <span class="attr">port:</span> <span class="string">http</span></span><br><span class="line">          <span class="attr">resources:</span></span><br><span class="line">            <span class="string">&#123;&#125;</span></span><br><span class="line">          <span class="attr">volumeMounts:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">log-volume</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">/app/log/</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">default-fluentbit</span></span><br><span class="line">          <span class="attr">image:</span> <span class="string">"fluent/fluent-bit:1.3"</span></span><br><span class="line">          <span class="attr">imagePullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line">          <span class="attr">ports:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">metrics</span></span><br><span class="line">              <span class="attr">containerPort:</span> <span class="number">2020</span></span><br><span class="line">              <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">          <span class="attr">volumeMounts:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">config-volume</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">/fluent-bit/etc/</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">log-volume</span></span><br><span class="line">              <span class="attr">mountPath:</span> <span class="string">/app/log/</span></span><br><span class="line">      <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">log-volume</span></span><br><span class="line">        <span class="attr">emptyDir:</span> <span class="string">&#123;&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">config-volume</span></span><br><span class="line">        <span class="attr">configMap:</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">zeed-flb-default</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="comment"># Source: default/templates/ingress.yaml</span></span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
+      </div>
+      <div class="post-copyright">
     <p class="copyright-item">
       <span>原文作者: </span>
       <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
@@ -388,119 +257,40 @@
       <a href="https://blogs.zeed.w.beez.com/2019/10/30/autodevops/collection-logs-with-fluent-bit-on-kubernetes/">https://blogs.zeed.w.beez.com/2019/10/30/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/autodevops/">autodevops</a>
+            <a href="/tags/kubernetes/">kubernetes</a>
+            <a href="/tags/fluent-bit/">fluent-bit</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/autodevops/">autodevops</a>
-            
-              <a href="/tags/kubernetes/">kubernetes</a>
-            
-              <a href="/tags/fluent-bit/">fluent-bit</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2019/11/23/mp/写个微信小程序/">
+        <nav class="post-nav"><a class="prev" href="/2019/11/23/mp/写个微信小程序/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">写个微信小程序</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
-    
-    
-      <a class="next" href="/2019/10/29/autodevops/install-prometheus-with-helm/">
+    <a class="next" href="/2019/10/29/autodevops/install-prometheus-with-helm/">
         <span class="next-text nav-default">install-prometheus-with-helm</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
           <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
-    
-  </div>
-
-
-        </div>
+    </div></div>
       </main>
 
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
   <span class="power-by">
     由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
@@ -515,15 +305,12 @@
   </span>
 
   <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2019
+    <span>&copy;2015 - 2019</span>
+
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
+
     <span class="author">zeed-w-beez</span>
   </span>
 
@@ -531,17 +318,12 @@
   </span>
 
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
+    </div><script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'https://blogs.zeed.w.beez.com/2019/10/30/autodevops/collection-logs-with-fluent-bit-on-kubernetes/';
         this.page.identifier = '2019/10/30/autodevops/collection-logs-with-fluent-bit-on-kubernetes/';
@@ -555,29 +337,8 @@
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();  
-  </script>
-
-
-
-
-    
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
-
-  </body>
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
 </html>

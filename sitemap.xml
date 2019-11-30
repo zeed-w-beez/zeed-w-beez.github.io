@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</loc>
+    
+    <lastmod>2019-11-30T12:31:09.363Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blogs.zeed.w.beez.com/about/index.html</loc>
     
     <lastmod>2019-11-30T07:08:41.860Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</loc>
     
     <lastmod>2019-09-14T03:31:54.464Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</loc>
-    
-    <lastmod>2019-09-14T03:31:14.269Z</lastmod>
     
   </url>
   

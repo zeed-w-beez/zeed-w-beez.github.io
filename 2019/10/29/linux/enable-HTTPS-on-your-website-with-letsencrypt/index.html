@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head><meta name="generator" content="Hexo 3.9.0">
-    
-<meta charset="UTF-8">
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,72 +13,43 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="enable-HTTPS-on-your-website-with-letsencrypt">
-
-
-
-
-  <meta name="keywords" content="https, letsencrypt, nginx, Miracle-working">
-
-
-
-
-
-  <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Miracle-working">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0">
-
-
-
+<meta name="description" content="enable-HTTPS-on-your-website-with-letsencrypt"><meta name="keywords" content="https, letsencrypt, nginx, Miracle-working"><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM"><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/">
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
 
-
-
-
-  
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-109085701-1');
-  </script>
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8"></script>
-
-    <title> enable-HTTPS-on-your-website-with-letsencrypt - Miracle-working </title>
+    <title>enable-HTTPS-on-your-website-with-letsencrypt - Miracle-working</title>
   </head>
 
   <body>
-    <div class="xxx"><div class="xxx xx2"></div></div><div id="mobile-navbar" class="mobile-navbar">
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/." class="logo">Miracle-working</a>
   </div>
@@ -92,175 +61,81 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/archives">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            分类
-          
-        </li>
-      </a>
-    
-      <a href="/todo">
-        <li class="mobile-menu-item">
-          
-          
-            Todo
-          
-        </li>
-      </a>
-    
-      <a href="/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">Miracle-working</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            
-            
-              首页
-            
-          </a>
+            首页
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/archives">
-            
-            
-              归档
-            
-          </a>
+            归档
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            
-            
-              标签
-            
-          </a>
+            标签
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/categories">
-            
-            
-              分类
-            
-          </a>
+            分类
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/todo">
-            
-            
-              Todo
-            
-          </a>
+            Todo
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            
-            
-              关于
-            
-          </a>
+            关于
+            </a>
         </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+      </ul></nav>
+</header>
       
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          enable-HTTPS-on-your-website-with-letsencrypt
-        
-      </h1>
+      <h1 class="post-title">enable-HTTPS-on-your-website-with-letsencrypt
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2019-10-29
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/术业有专攻/">术业有专攻</a>
-            
-          </div>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/术业有专攻/">术业有专攻</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx-的操作"><span class="toc-text">nginx 的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-certbot-一个-Agent-用来自动生成证书"><span class="toc-text">安装 certbot: 一个 Agent 用来自动生成证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#默认证书有效期三个月。配置了定时任务之后，会自动续期"><span class="toc-text">默认证书有效期三个月。配置了定时任务之后，会自动续期</span></a></li></ol>
-    </div>
-  </div>
-
-
-    <div class="post-content">
-      
-        <p>近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。</p>
+    <div class="post-content"><p>近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。</p>
 <p>今天记录一下使用<strong>免费 开源</strong>的证书机构 <a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a> 配合 <a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot</a> 完成基于 <a href="https://nginx.org/" target="_blank" rel="noopener">nginx</a> 的 https 配置。</p>
 <p><img src="/images/letsencrypt.png" alt="Let’s Encrypt"></p>
 <a id="more"></a>
@@ -281,14 +156,8 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这个是 centos7+nginx 的安装文档：https://certbot.eff.org/lets-encrypt/centosrhel7-nginx</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. Enable the optional channel</span></span><br><span class="line">sudo yum -y install yum-utils</span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Install Certbot</span></span><br><span class="line">sudo yum install certbot python2-certbot-nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.1 自动扫描并导入证书。很据提示填写一些必要信息即可。</span></span><br><span class="line">sudo certbot --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 也可以只生成证书，不自动导入nginx</span></span><br><span class="line">sudo certbot certonly --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 手动重新生成证书</span></span><br><span class="line">sudo certbot renew</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 添加定时任务</span></span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">"0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' &amp;&amp; certbot renew"</span> | sudo tee -a /etc/crontab &gt; /dev/null</span><br></pre></td></tr></table></figure>
 
 <h2 id="默认证书有效期三个月。配置了定时任务之后，会自动续期"><a href="#默认证书有效期三个月。配置了定时任务之后，会自动续期" class="headerlink" title="默认证书有效期三个月。配置了定时任务之后，会自动续期"></a>默认证书有效期三个月。配置了定时任务之后，会自动续期</h2>
-      
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
+      </div>
+      <div class="post-copyright">
     <p class="copyright-item">
       <span>原文作者: </span>
       <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
@@ -298,119 +167,40 @@
       <a href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/">https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/https/">https</a>
+            <a href="/tags/letsencrypt/">letsencrypt</a>
+            <a href="/tags/nginx/">nginx</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/https/">https</a>
-            
-              <a href="/tags/letsencrypt/">letsencrypt</a>
-            
-              <a href="/tags/nginx/">nginx</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2019/10/29/autodevops/kubernetes/">
+        <nav class="post-nav"><a class="prev" href="/2019/10/29/autodevops/kubernetes/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">kubernetes</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
-    
-    
-      <a class="next" href="/2019/01/25/linux/linux-default-permission/">
+    <a class="next" href="/2019/01/25/linux/linux-default-permission/">
         <span class="next-text nav-default">linux-default-permission</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
           <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
-    
-  </div>
-
-
-        </div>
+    </div></div>
       </main>
 
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
   <span class="power-by">
     由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
@@ -425,15 +215,12 @@
   </span>
 
   <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2019
+    <span>&copy;2015 - 2019</span>
+
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
+
     <span class="author">zeed-w-beez</span>
   </span>
 
@@ -441,17 +228,12 @@
   </span>
 
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
+    </div><script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/';
         this.page.identifier = '2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/';
@@ -465,29 +247,8 @@
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();  
-  </script>
-
-
-
-
-    
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
-
-  </body>
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
 </html>

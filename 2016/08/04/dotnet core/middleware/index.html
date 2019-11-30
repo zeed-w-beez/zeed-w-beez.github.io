@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head><meta name="generator" content="Hexo 3.9.0">
-    
-<meta charset="UTF-8">
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,72 +13,43 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="use middleware in dotnet core 2.">
-
-
-
-
-  <meta name="keywords" content="dotnet core, Miracle-working">
-
-
-
-
-
-  <meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM">
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Miracle-working">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0">
-
-
-
+<meta name="description" content="use middleware in dotnet core 2."><meta name="keywords" content="dotnet core, Miracle-working"><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM"><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2016/08/04/dotnet core/middleware/">
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
 
-
-
-
-  
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-109085701-1');
-  </script>
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" src="https://tajs.qq.com/stats?sId=64663546" charset="UTF-8"></script>
-
-    <title> Writing custom middleware - Miracle-working </title>
+    <title>Writing custom middleware - Miracle-working</title>
   </head>
 
   <body>
-    <div class="xxx"><div class="xxx xx2"></div></div><div id="mobile-navbar" class="mobile-navbar">
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/." class="logo">Miracle-working</a>
   </div>
@@ -92,175 +61,81 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/archives">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            分类
-          
-        </li>
-      </a>
-    
-      <a href="/todo">
-        <li class="mobile-menu-item">
-          
-          
-            Todo
-          
-        </li>
-      </a>
-    
-      <a href="/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">Miracle-working</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            
-            
-              首页
-            
-          </a>
+            首页
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/archives">
-            
-            
-              归档
-            
-          </a>
+            归档
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            
-            
-              标签
-            
-          </a>
+            标签
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/categories">
-            
-            
-              分类
-            
-          </a>
+            分类
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/todo">
-            
-            
-              Todo
-            
-          </a>
+            Todo
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            
-            
-              关于
-            
-          </a>
+            关于
+            </a>
         </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+      </ul></nav>
+</header>
       
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          Writing custom middleware
-        
-      </h1>
+      <h1 class="post-title">Writing custom middleware
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2016-08-04
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/学海无涯/">学海无涯</a>
-            
-          </div>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/学海无涯/">学海无涯</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义和使用"><span class="toc-text">定义和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准模板"><span class="toc-text">标准模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol>
-    </div>
-  </div>
-
-
-    <div class="post-content">
-      
-        <blockquote>
+    <div class="post-content"><blockquote>
 <p>Middleware is software that is assembled into an application pipeline to handle requests and responses.</p>
 </blockquote>
 <a id="more"></a>
@@ -291,14 +166,8 @@
 <pre><code><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">app.Map(<span class="string">"/download"</span>, appBuilder =&gt;&#123;</span><br><span class="line">    appBuilder.UseMiddleware_Self_DownLoad_Handle();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Map 还比 MapWhen 多了一层 app.UsePathBase() 用于拆分请求路径</span></span><br><span class="line"><span class="comment">// 下面两种写法是等价的。第二种有点别扭，因为我没想到具体的适应场景~</span></span><br><span class="line">app.Map(<span class="string">"/Area"</span>, builder =&gt; &#123; <span class="comment">/* ... */</span> &#125;);</span><br><span class="line"></span><br><span class="line">app.MapWhen( context =&gt; context.Request.Path.StartsWithSegments(<span class="string">"/Area"</span>), builder =&gt; &#123;</span><br><span class="line">    builder.UsePathBase(<span class="string">"/Area"</span>); <span class="comment">/* ... */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></code></pre></li>
 </ol>
 <h2 id="标准模板"><a href="#标准模板" class="headerlink" title="标准模板"></a>标准模板</h2><pre><code><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyMiddleware</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate _next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyMiddleware</span>(<span class="params">RequestDelegate next</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        _next = next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task <span class="title">Invoke</span>(<span class="params">HttpContext httpContext, IMyService svc</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        svc.MyProperty = <span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">await</span> _next(httpContext);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyMiddlewareExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IApplicationBuilder <span class="title">UseMyMiddleware</span>(<span class="params"><span class="keyword">this</span> IApplicationBuilder builder</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> builder.UseMiddleware&lt;MyMiddleware&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    app.UseMyMiddleware();</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>
-      
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
+      </div>
+      <div class="post-copyright">
     <p class="copyright-item">
       <span>原文作者: </span>
       <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
@@ -308,109 +177,33 @@
       <a href="https://blogs.zeed.w.beez.com/2016/08/04/dotnet core/middleware/">https://blogs.zeed.w.beez.com/2016/08/04/dotnet core/middleware/</a>
     </p>
     <p class="copyright-item">
-      <span>许可协议: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/dotnet-core/">dotnet core</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/dotnet-core/">dotnet core</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/08/04/dotnet core/read config file/">
+        <nav class="post-nav"><a class="prev" href="/2016/08/04/dotnet core/read config file/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Reading configuration from a file</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
-    
-    
-  </nav>
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
           <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
-    
-  </div>
-
-
-        </div>
+    </div></div>
       </main>
 
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
   <span class="power-by">
     由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
@@ -425,15 +218,12 @@
   </span>
 
   <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2019
+    <span>&copy;2015 - 2019</span>
+
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
+
     <span class="author">zeed-w-beez</span>
   </span>
 
@@ -441,17 +231,12 @@
   </span>
 
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
+    </div><script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'https://blogs.zeed.w.beez.com/2016/08/04/dotnet core/middleware/';
         this.page.identifier = '2016/08/04/dotnet core/middleware/';
@@ -465,29 +250,8 @@
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();  
-  </script>
-
-
-
-
-    
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
-
-  </body>
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
 </html>

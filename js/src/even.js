@@ -1,32 +1,36 @@
 (function (window) {
   'use strict';
 
-  var Even = {};
+  function Even(config) {
+    this.config = config;
+  }
 
-  Even.backToTop = function () {
-    var $backToTop = $('#back-to-top');
+  Even.prototype.setup = function () {
+    var leancloud = this.config.leancloud;
 
-    $(window).scroll(function () {
-      if ($(window).scrollTop() > 100) {
-        $backToTop.fadeIn(1000);
-      } else {
-        $backToTop.fadeOut(1000);
-      }
+    this.navbar();
+    this.responsiveTable();
 
-      var scrollPercentage = Math.round(100 * $(window).scrollTop() / ($(window.document).height() - $(window).height()));
-      // $('#back-to-top i').text(' ' + scrollPercentage + '%');
-      $('.xxx .xx2').css('width', scrollPercentage + '%');
-
-    });
-
-    $backToTop.click(function () {
-      $('body,html').animate({ scrollTop: 0 });
-    });
+    if (this.config.toc) {
+      this.scrollToc();
+      this.tocFollow();
+    }
+    if (this.config.fancybox) {
+      this.fancybox();
+    }
+    if (leancloud.app_id && leancloud.app_key) {
+      this.recordReadings();
+    }
+    if (this.config.latex) {
+      this.renderLaTeX();
+    }
+    this.backToTop();
   };
 
-  Even.mobileNavbar = function () {
-    var $mobileNav = $('#mobile-navbar');
-    var $mobileNavIcon = $('.mobile-navbar-icon');
+  Even.prototype.navbar = function () {
+    var $nav = $('#mobile-navbar');
+    var $navIcon = $('.mobile-navbar-icon');
+
     var slideout = new Slideout({
       'panel': document.getElementById('mobile-panel'),
       'menu': document.getElementById('mobile-menu'),
@@ -35,29 +39,34 @@
     });
     slideout.disableTouch();
 
-    $mobileNavIcon.click(function () {
+    $navIcon.click(function () {
       slideout.toggle();
     });
 
     slideout.on('beforeopen', function () {
-      $mobileNav.addClass('fixed-open');
-      $mobileNavIcon.addClass('icon-click').removeClass('icon-out');
+      $nav.addClass('fixed-open');
+      $navIcon.addClass('icon-click').removeClass('icon-out');
     });
 
     slideout.on('beforeclose', function () {
-      $mobileNav.removeClass('fixed-open');
-      $mobileNavIcon.addClass('icon-out').removeClass('icon-click');
+      $nav.removeClass('fixed-open');
+      $navIcon.addClass('icon-out').removeClass('icon-click');
     });
 
     $('#mobile-panel').on('touchend', function () {
-      slideout.isOpen() && $mobileNavIcon.click();
+      slideout.isOpen() && $navIcon.click();
     });
   };
 
-  Even.toc = function () {
+  Even.prototype.responsiveTable = function () {
+    var tables = $('.post-content > table')
+    tables.wrap('<div class="table-responsive">')
+  };
+
+  Even.prototype.scrollToc = function () {
     var SPACING = 20;
-    var $toc = $('.post-toc'),
-      $footer = $('.post-footer');
+    var $toc = $('.post-toc');
+    var $footer = $('.post-footer');
 
     if ($toc.length) {
       var minScrollTop = $toc.offset().top - SPACING;
@@ -90,16 +99,17 @@
         }
       });
     }
+  };
 
+  Even.prototype.tocFollow = function () {
     var HEADERFIX = 30;
     var $toclink = $('.toc-link'),
       $headerlink = $('.headerlink');
 
-    var headerlinkTop = $.map($headerlink, function (link) {
-      return $(link).offset().top;
-    });
-
     $(window).scroll(function () {
+      var headerlinkTop = $.map($headerlink, function (link) {
+        return $(link).offset().top;
+      });
       var scrollTop = $(window).scrollTop();
 
       for (var i = 0; i < $toclink.length; i++) {
@@ -116,11 +126,13 @@
     });
   };
 
-  Even.fancybox = function () {
+  Even.prototype.fancybox = function () {
     if ($.fancybox) {
       $('.post').each(function () {
         $(this).find('img').each(function () {
-          $(this).wrap('<a class="fancybox" href="' + this.src + '" title="' + this.alt + '"></a>');
+          var href = 'href="' + this.src + '"';
+          var title = 'title="' + this.alt + '"';
+          $(this).wrap('<a class="fancybox" ' + href + ' ' + title + '></a>');
         });
       });
 
@@ -131,12 +143,20 @@
     }
   };
 
-  Even.visits = function () {
+  Even.prototype.recordReadings = function () {
+    if (typeof AV !== 'object') return;
+
     var $visits = $('.post-visits');
+    var Counter = AV.Object.extend('Counter');
+    if ($visits.length === 1) {
+      addCounter(Counter);
+    } else {
+      showTime(Counter);
+    }
 
     function updateVisits(dom, time) {
-      var text = dom.text() + ' ' + time;
-      dom.text(text);
+      var readText = dom.text().replace(/(\d+)/i, time)
+      dom.text(readText);
     }
 
     function addCounter(Counter) {
@@ -163,12 +183,18 @@
           newcounter.set('url', url);
           newcounter.set('time', 1);
 
-          newcounter.save().then(function (counter) {
+          var acl = new AV.ACL();
+          acl.setWriteAccess('*', true);
+          acl.setReadAccess('*', true);
+          newcounter.setACL(acl);
+
+          newcounter.save().then(function () {
             updateVisits($visits, newcounter.get('time'));
           });
         }
       }, function (error) {
-        console.log('Error:' + error.code + " " + error.message);
+        // eslint-disable-next-line
+        console.log('Error:' + error.code + ' ' + error.message);
       });
     }
 
@@ -187,27 +213,53 @@
             updateVisits($this, counter.get('time'));
           }
         }, function (error) {
-          console.log('Error:' + error.code + " " + error.message);
+          // eslint-disable-next-line
+          console.log('Error:' + error.code + ' ' + error.message);
         });
       });
     }
-
-    if (typeof AV === 'object') {
-      var Counter = AV.Object.extend('Counter');
-      if ($visits.length === 1) {
-        addCounter(Counter);
-      } else {
-        showTime(Counter);
-      }
-    }
   };
 
-  Even.beian = function () {
+  Even.prototype.backToTop = function () {
+    var $backToTop = $('#back-to-top');
+
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 100) {
+        $backToTop.fadeIn(1000);
+      } else {
+        $backToTop.fadeOut(1000);
+      }
+
+      var scrollPercentage = Math.round(100 * $(window).scrollTop() / ($(window.document).height() - $(window).height()));
+      // $('#back-to-top i').text(' ' + scrollPercentage + '%');
+      $('.scrollPercentage').css('width', scrollPercentage + '%');
+
+    });
+
+    $backToTop.click(function () {
+      $('body,html').animate({ scrollTop: 0 });
+    });
+  };
+
+  Even.prototype.renderLaTeX = function () {
+    var loopID = setInterval(function () {
+      if (window.MathJax) {
+        var jax = window.MathJax;
+        jax.Hub.Config({ tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] } });
+        jax.Hub.Queue(['Typeset', jax.Hub, $(document.body)[0]]);
+        clearInterval(loopID);
+      }
+    }, 500);
+  };
+
+  Even.prototype.beian = function () {
     var l = document.getElementById('beian');
     if (l && window && window.location.hostname === 'www.mercenaryunion.com') {
       l.innerHTML = '<a href="http://www.beian.miit.gov.cn">豫ICP备15012164号-1</a>';
     }
   };
 
-  window.Even = Even;
-})(window);
+  var config = window.config;
+  var even = new Even(config);
+  even.setup();
+}(window));
