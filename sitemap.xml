@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blogs.zeed.w.beez.com/about/index.html</loc>
+    
+    <lastmod>2019-11-30T07:08:41.860Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blogs.zeed.w.beez.com/2019/11/25/the-color/</loc>
     
     <lastmod>2019-11-29T23:36:13.000Z</lastmod>
@@ -23,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/10/28/linux/linux-service/</loc>
+    <loc>https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</loc>
     
     <lastmod>2019-11-09T00:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</loc>
+    <loc>https://blogs.zeed.w.beez.com/2017/10/28/linux/linux-service/</loc>
     
     <lastmod>2019-11-09T00:00:00.000Z</lastmod>
     
@@ -159,13 +166,6 @@
     <loc>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</loc>
     
     <lastmod>2019-09-14T03:25:22.549Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/about/index.html</loc>
-    
-    <lastmod>2019-08-25T03:32:32.782Z</lastmod>
     
   </url>
   
