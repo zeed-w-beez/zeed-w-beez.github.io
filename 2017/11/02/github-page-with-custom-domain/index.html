@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="github page with custom domain"/><meta name="keywords" content="github page, custom domain, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>github page with custom domain - Miracle-working</title>
+  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">github page with custom domain
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-11-02
+        </span><span class="post-category">
+            <a href="/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/">边边角角</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>记录一下，目前发现到的最简单的配置 github pages 使用自定义域名的方式 – <a href="https://www.netlify.com/" target="_blank" rel="noopener" title="www.netlify.com">netlify</a></p>
+<blockquote>
+<p><a href="https://www.netlify.com/" target="_blank" rel="noopener" title="www.netlify.com">netlity</a> 简介：CI + CD + 自动去 <a href="https://letsencrypt.org/" target="_blank" rel="noopener" title="Let&#39;s Encrypt">Let’s Encrypt</a> 帮你申请当前域名的 https 证书。<br>当然不止这些，还有很多其他的内容，就像官网首页上写的 <code>Write frontend code. Push it. We handle the rest.</code>，真讨人喜欢~</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="去仓库配置域名"><a href="#去仓库配置域名" class="headerlink" title="去仓库配置域名"></a>去仓库配置域名</h2><p>仓库的设置里面，把自己的域名，或者二级域名写进去，保存下就OK了。比如 blogs.example.com</p>
+<p>GitHub 会自动在你的仓库里，放一个 CNAME 文件，内容就是自定义域名。<br>当然， 你也可以自己提交这个文件。</p>
+<h2 id="加CNAME映射"><a href="#加CNAME映射" class="headerlink" title="加CNAME映射"></a>加CNAME映射</h2><p>这个没啥说的，域名解析的A记录是域名解析成IP，CNAME就是域名解析到域名。<br>因为我们只想提供自己的域名，具体的网站是 Host 在第三方平台上的，所以这一步是必须的。</p>
+<p>CNAME解析，是不需要填完整的域名的，你只需要填二级域名就够了，比如 <code>blogs --&gt; xxx.github.io</code></p>
+<p>正常情况下，到这里就OK了。但是这样是<strong>不能</strong>启用 https 的，具体的原因，就涉及到 https 以及 证书 认证 这些的原理了~</p>
+<h2 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h2><p>使用 https 有很多好处，这里就不多说了。<br>要说的是简单的办法：</p>
+<ol>
+<li><p>打开 <a href="https://www.netlify.com/" target="_blank" rel="noopener" title="www.netlify.com">netlify</a> 使用 <a href="https://letsencrypt.org/" target="_blank" rel="noopener" title="Let&#39;s Encrypt">github</a> 登录并授权。</p>
+</li>
+<li><p>把上面配置的 CNAME 解析，从 xxx.github.io 改成 xxx.netlify.com</p>
+</li>
+<li><p>在设置里，启用 https</p>
+</li>
+<li><p>手动触发一次部署</p>
+</li>
+</ol>
+<blockquote>
+<p><a href="https://letsencrypt.org/" target="_blank" rel="noopener" title="Let&#39;s Encrypt">Let’s Encrypt</a> 简介： 因为各方各面的原因，反正现在使用 https 的网站越来越多了。但是现有的 CA机构 大都是<code>商人</code>，而且安全性良莠不齐，价格不一。所以领头羊们，为了推进https的伟大事业，发起了一个证书组织，就是 <a href="https://letsencrypt.org/" target="_blank" rel="noopener" title="Let&#39;s Encrypt">Let’s Encrypt</a> 了。保证安全，保证免费，保证稳定，还是自动化的 O(∩_∩)O哈哈~</p>
+</blockquote>
+<p>拿 Centos7 + nginx 来说，就2行命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum install certbot-nginx</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 自动生成</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo certbot --nginx</span></pre></td></tr></table></figure>
+
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/">https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/github-page/">github page</a>
+            <a href="/tags/custom-domain/">custom domain</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2017/11/10/redux-study/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">redux study</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/2017/10/28/linux/linux-service/">
+        <span class="next-text nav-default">linux-service</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2019</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/';
+        this.page.identifier = '2017/11/02/github-page-with-custom-domain/';
+        this.page.title = 'github page with custom domain';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>

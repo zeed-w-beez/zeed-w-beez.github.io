@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="https 漫谈"/><meta name="keywords" content="https, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2017/09/28/https-漫谈/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>https 漫谈 - Miracle-working</title>
+  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">https 漫谈
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-09-28
+        </span><span class="post-category">
+            <a href="/categories/%E7%9F%A5%E4%B9%8B%E4%B8%BA%E7%9F%A5%E4%B9%8B/">知之为知之</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>https是个好东西，最起码不会在浏览器右下角跳出来“小红包”。</p>
+<blockquote>
+<p>加个小字是因为我遇到的都是会跳小苹果的红包，简称小红包。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="什么是https"><a href="#什么是https" class="headerlink" title="什么是https"></a>什么是https</h2><ol>
+<li><p>http还是指的http，最后的s是新东西，指的是SSL 安全套阶层，其实就是一个加密的动作</p>
+<ul>
+<li>SSL 现在应该叫 TLS 了，二者都只是规范，很安全</li>
+<li>而 OpenSSl 是 SSL 规范的代码实现；既然是代码，就可能存在 Bug ，只是被发现和没被发现</li>
+</ul>
+</li>
+<li><p>虽然https里s是在最后的，但是这个加密动作其实是在http前进行的，否则就没有意义了</p>
+</li>
+<li><p>因为http 和 s 是分开的模块，所以你可以只部署一台简单的https服务器做外壳，内部接多个普通的http应用就可以了。</p>
+</li>
+</ol>
+<h2 id="为什么要https"><a href="#为什么要https" class="headerlink" title="为什么要https"></a>为什么要https</h2><ol>
+<li>《论程序员的自我修养》</li>
+<li>有了https才能做一些其他的事情，比如~</li>
+</ol>
+<h2 id="不要那么多废话，告诉我怎么搞"><a href="#不要那么多废话，告诉我怎么搞" class="headerlink" title="不要那么多废话，告诉我怎么搞"></a>不要那么多废话，告诉我怎么搞</h2><ol>
+<li><p>密钥文件 - 先自己想出一个密码</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># DES -&gt; 3DES -&gt; AES 128,192,256</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">openssl genrsa --aes256 -out me.key 2048</span></pre></td></tr></table></figure>
+</li>
+<li><p>证书申请 - 用自己想出的密码，打造一个模具出来</p>
+</li>
+<li><p>证书文件 - 这里就有两种选择了</p>
+<ul>
+<li>权威 - 把模具交给专业的权威机构打造成密码箱</li>
+<li>我就是权威 - 自己用模具打造密码箱</li>
+</ul>
+</li>
+<li><p>你<strong>当然</strong>可以给不同的服务，用不同的密码打造配套的模具</p>
+</li>
+</ol>
+<h2 id="然后呢"><a href="#然后呢" class="headerlink" title="然后呢"></a>然后呢</h2><p>其实部署的时候，只需要用到上面提到的2个东西</p>
+<ol>
+<li>密钥文件 - 用来开密码箱的密码</li>
+<li>证书文件 - 用模具打造出来的密码箱</li>
+</ol>
+<p>以Nginx为例，就是:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">    listen       443 ssl;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    server_name  localhost;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ssl_certificate      &#x2F;etc&#x2F;CA&#x2F;nginx.crt; # 证书文件的相对或者绝对路径</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ssl_certificate_key  &#x2F;etc&#x2F;CA&#x2F;nginx.key; # 密钥文件的相对或者绝对路径</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<h2 id="权威和我就是权威的区别"><a href="#权威和我就是权威的区别" class="headerlink" title="权威和我就是权威的区别"></a>权威和我就是权威的区别</h2><ol>
+<li><p>根证书 - 权威机构打造模具的锤子是开过光的。直接<strong>内置</strong>在各大浏览器和操作系统里面，不可能被伪造。</p>
+</li>
+<li><p>二级根证书 - 这可是开过光的锤子，金贵的很，当然不能直接给你们用。所以我们先用这个开过光的锤子，打造一批锤子出来，再用这批锤子去打造你们的模具。</p>
+</li>
+<li><p>自签名证书 - 纯手工打造</p>
+</li>
+<li><p>自签名根证书 - 我给我自己的锤子开光~</p>
+<ol>
+<li>openssl genrsa -out ca.key 4096</li>
+<li>openssl req -new -x509 -key ca.key -out ca.cert</li>
+</ol>
+</li>
+</ol>
+<h2 id="权利和义务"><a href="#权利和义务" class="headerlink" title="权利和义务"></a>权利和义务</h2><blockquote>
+<p>签发出去的证书，就像身份证一样：</p>
+</blockquote>
+<ul>
+<li>正面是权利 - 机构可以证明你就是你。</li>
+<li>反面是义务 - 证是机构发的，出了事情肯定会去找机构。</li>
+</ul>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ul>
+<li>X.509 证书标准，主要定义了证书中应该包含哪些内容</li>
+<li>编码<ul>
+<li>PEM(Privacy Enhanced Mail): 文本格式<ul>
+<li>以”—–BEGIN…”开头”—–END…”结尾，内容是BASE64编码  </li>
+<li>查看PEM格式证书的信息:openssl x509 -in certificate.pem -text -noout  </li>
+<li>Apache和*NIX服务器偏向于使用这种编码格式</li>
+</ul>
+</li>
+<li>DER(Distinguished Encoding Rules): 二进制格式<ul>
+<li>不可读  </li>
+<li>查看DER格式证书的信息:openssl x509 -in certificate.der -inform der -text -noout  </li>
+<li>Java和Windows服务器偏向于使用这种编码格式</li>
+</ul>
+</li>
+<li>二者转换:<ul>
+<li>openssl x509 -in cert.pem -outform der -out cert.der</li>
+<li>openssl x509 -in cert.pem -outform der -out cert.der</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件扩展名"><a href="#文件扩展名" class="headerlink" title="文件扩展名"></a>文件扩展名</h2><ul>
+<li>KEY 公钥或者私钥文件</li>
+<li>CSR 证书请求(Certificate Signing Request)，核心内容是一个公钥和申请人的信息</li>
+<li>CRT 证书文件，大多是PEM编码，常见于*Nix系统</li>
+<li>CRE 证书文件，大多是DER编码，常见于Windows系统</li>
+<li>PFX/P12 是PKCS#12标准(Personal Information Exchange Syntax Standard)常用的后缀名，用来存放证书和密钥的二进制文件。*NIX 服务器的 CRT 和 KEY 文件是分开在不同的文件中的，但是Windows的IIS则把他们打包进一个文件里面，使用密码进行打包/提取</li>
+<li>JKS 是Java Key Storage的缩写，是java用来存放密钥的文件。一般是用java的keytool工具进行生成</li>
+</ul>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/">https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/https/">https</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2017/10/25/tensorflow/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">tensorflow</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/2017/05/27/proxy-settings/">
+        <span class="next-text nav-default">proxy settings</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2019</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/';
+        this.page.identifier = '2017/09/28/https-漫谈/';
+        this.page.title = 'https 漫谈';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>

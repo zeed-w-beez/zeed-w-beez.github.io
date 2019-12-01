@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="memcached"/><meta name="keywords" content="memcached, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>memcached - Miracle-working</title>
+  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">memcached
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-02
+        </span><span class="post-category">
+            <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。</p>
+<a id="more"></a>
+
+<h2 id="真·控制"><a href="#真·控制" class="headerlink" title="真·控制"></a>真·控制</h2><ol>
+<li>调用端限制</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过 IPtalbes 对 memcached 服务端口进行访问限制控制。只允许指定的IP地址。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">iptables -A INPUT -p tcp -s 192.168.0.2 —dport 11211 -j ACCEPT</span></pre></td></tr></table></figure>
+
+<ol>
+<li>使用端限制</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如果Memcached没有在公网开放的必要，可在Memcached启动时指定绑定的IP地址为 127.0.0.1 。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">memcached -d -m 1024 -u memcached -l 127.0.0.1 -p 11211 -c 1024 -P /tmp/memcached.pid</span></pre></td></tr></table></figure>
+
+<h2 id="伪·控制"><a href="#伪·控制" class="headerlink" title="伪·控制"></a>伪·控制</h2><ol>
+<li>最小化权限</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">使用普通权限账号运行，指定Memcached用户。例如，在Linux环境中运行以下命令来运行Memcached：</span></pre></td></tr><tr><td class="code"><pre><span class="line">memcached -d -m 1024 -u memcached -l 127.0.0.1 -p 11211 -c 1024 -P /tmp/memcached.pid</span></pre></td></tr></table></figure>
+
+<ol>
+<li>修改默认端口</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改默认11211监听端口为11222端口。在Linux环境中运行以下命令：</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">memcached -d -m 1024 -u memcached -l 127.0.0.1 -p 11222 -c 1024 -P /tmp/memcached.pid</span></pre></td></tr></table></figure>
+
+<h2 id="Memcached命令参数说明"><a href="#Memcached命令参数说明" class="headerlink" title="Memcached命令参数说明"></a>Memcached命令参数说明</h2><ul>
+<li>-d 是指启动一个守护进程。</li>
+<li>-m 是指分配给Memcached使用的内存数量，单位是MB，以上为1024MB。</li>
+<li>-u 是指运行Memcached的用户，推荐使用单独普通权限用户memcached，而不要使用root权限账户。</li>
+<li>-l 是指监听的服务器IP地址，例如指定服务器的IP地址为127.0.0.1。</li>
+<li>-p 是用来设置Memcached的监听端口，默认端口为11211。建议设置1024以上的端口。</li>
+<li>-c 是指最大运行的并发连接数，默认是1024。可按照您服务器的负载量来设定。</li>
+<li>-P 是指设置保存Memcached的pid文件，例如保存在 /tmp/memcached.pid 位置。</li>
+</ul>
+<h2 id="使用配置文件开机启动多个-Memcached-实例"><a href="#使用配置文件开机启动多个-Memcached-实例" class="headerlink" title="使用配置文件开机启动多个 Memcached 实例"></a>使用配置文件开机启动多个 Memcached 实例</h2><ol>
+<li><p>创建配置文件</p>
+<p> CentOS 下的默认地址：<code>/etc/sysconfig/memcached</code></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PORT&#x3D;&quot;11211&quot;</span></pre></td></tr><tr><td class="code"><pre><span class="line">USER&#x3D;&quot;memcached&quot;</span></pre></td></tr><tr><td class="code"><pre><span class="line">MAXCONN&#x3D;&quot;1024&quot;</span></pre></td></tr><tr><td class="code"><pre><span class="line">CACHESIZE&#x3D;&quot;64&quot;</span></pre></td></tr><tr><td class="code"><pre><span class="line">OPTIONS&#x3D;&quot;&quot;</span></pre></td></tr></table></figure>
+
+<p> 再 Copy 出一个 memcached1 文件，端口改为 11311</p>
+</li>
+<li><p>创建对应的 Service 文件，参考： <a href="/2017/10/28/linux/linux-service/" title="linux-service">linux-service</a></p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[Unit]</span></pre></td></tr><tr><td class="code"><pre><span class="line">Description=Memcached</span></pre></td></tr><tr><td class="code"><pre><span class="line">Before=httpd.service</span></pre></td></tr><tr><td class="code"><pre><span class="line">After=network.target</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">[Service]</span></pre></td></tr><tr><td class="code"><pre><span class="line">Type=simple</span></pre></td></tr><tr><td class="code"><pre><span class="line">EnvironmentFile=-/etc/sysconfig/memcached</span></pre></td></tr><tr><td class="code"><pre><span class="line">ExecStart=/usr/bin/memcached -u <span class="variable">$USER</span> -p PORT -m <span class="variable">$CACHSIZE</span> -c <span class="variable">$MAXCONN</span> <span class="variable">$OPTIONS</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">[Install]</span></pre></td></tr><tr><td class="code"><pre><span class="line">WantedBy=multi-user.target</span></pre></td></tr></table></figure>
+
+<p> 再 Copy 出一个 memcached1.service 文件，配置文件行改为 <code>EnvironmentFile=-/etc/sysconfig/memcached1</code></p>
+</li>
+<li><p>修改下默认的启动命令参数，加上 bind 参数</p>
+<p> <code>ExecStart=/usr/bin/memcached -l 127.0.0.1 -u $USER -p PORT -m $CACHSIZE -c $MAXCONN $OPTIONS</code><br> <code>ExecStart=/usr/bin/memcached1 -l 127.0.0.1 -u $USER -p PORT -m $CACHSIZE -c $MAXCONN $OPTIONS</code></p>
+</li>
+<li><p>启动和管理实例</p>
+<p> <code>systemctl stats/start/stop memcached.service</code></p>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://help.aliyun.com/knowledge_detail/37553.html" target="_blank" rel="noopener">https://help.aliyun.com/knowledge_detail/37553.html</a></li>
+<li><a href="https://serverfault.com/questions/347621/memcache-basic-configuration" target="_blank" rel="noopener">https://serverfault.com/questions/347621/memcache-basic-configuration</a></li>
+</ol>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/">https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/memcached/">memcached</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2018/01/28/Recently/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Recently</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/">
+        <span class="next-text nav-default">生活是什么</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2019</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/';
+        this.page.identifier = '2018/01/02/linux/memcached/';
+        this.page.title = 'memcached';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
