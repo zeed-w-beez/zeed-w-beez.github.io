@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2019-11-29T23:36:13.000Z</updated>
+  <updated>2019-12-01T11:58:49.831Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>use github action</title>
+    <link href="https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/"/>
+    <id>https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/</id>
+    <published>2019-12-01T19:06:18.000Z</published>
+    <updated>2019-12-01T11:58:49.831Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近把自动发布从 &lt;code&gt;travis-ci&lt;/code&gt; 换成了 &lt;code&gt;github action&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;原因有三：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;github 开放免费私有仓库了，所以把这个博客的源码转成了私有的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;travis-ci.org&lt;/code&gt; 不支持私有仓库 (travis-ci.com 是支持私有仓库的)。&lt;/li&gt;
+&lt;li&gt;github &lt;a href=&quot;https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;发布&lt;/a&gt;了自己的 actions 功能。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;/images/github-actions.png&quot; alt=&quot;github actions&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>the color</title>
@@ -27,7 +50,7 @@
     
       &lt;h2 id=&quot;DEEP-DREAM&quot;&gt;&lt;a href=&quot;#DEEP-DREAM&quot; class=&quot;headerlink&quot; title=&quot;DEEP DREAM&quot;&gt;&lt;/a&gt;DEEP DREAM&lt;/h2&gt;&lt;p&gt;The colors people see are limited by their eyes, but the real world should be more colorful.&lt;/p&gt;
 &lt;p&gt;Can you imagine the color of the radio waves, the color of the air, the color of the emotions, the color of life?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/dd.jpg&quot; alt=&quot;deep dream &quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/dd.jpg&quot; alt=&quot;deep dream&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -43,7 +66,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/写个微信小程序/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2019-12-01T10:28:13.439Z</updated>
+    <updated>2019-12-01T11:58:49.831Z</updated>
     
     <summary type="html">
     
@@ -64,7 +87,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.827Z</updated>
     
     <summary type="html">
     
@@ -90,7 +113,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.827Z</updated>
     
     <summary type="html">
     
@@ -114,7 +137,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/</id>
     <published>2019-10-29T14:05:01.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.827Z</updated>
     
     <summary type="html">
     
@@ -212,7 +235,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.827Z</updated>
     
     <summary type="html">
     
@@ -233,7 +256,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.831Z</updated>
     
     <summary type="html">
     
@@ -253,7 +276,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.831Z</updated>
     
     <summary type="html">
     
@@ -274,7 +297,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2019-12-01T10:28:13.439Z</updated>
+    <updated>2019-12-01T11:58:49.831Z</updated>
     
     <summary type="html">
     
@@ -297,7 +320,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/27/Recently/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</id>
     <published>2018-01-27T17:05:23.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.827Z</updated>
     
     <summary type="html">
     
@@ -315,7 +338,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2019-12-01T10:28:13.439Z</updated>
+    <updated>2019-12-01T11:58:49.831Z</updated>
     
     <summary type="html">
     
@@ -335,7 +358,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-12-01T10:28:13.439Z</updated>
+    <updated>2019-12-01T11:58:49.831Z</updated>
     
     <summary type="html">
     
@@ -355,7 +378,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-12-01T10:28:13.439Z</updated>
+    <updated>2019-12-01T11:58:49.831Z</updated>
     
     <summary type="html">
     
@@ -420,7 +443,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
+    <updated>2019-12-01T11:58:49.827Z</updated>
     
     <summary type="html">
     
@@ -433,27 +456,6 @@
     
     
       <category term="csharp" scheme="https://blogs.zeed.w.beez.com/tags/csharp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>postgres-with-pgadmin4.md</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/</id>
-    <published>2017-11-28T09:09:48.000Z</published>
-    <updated>2019-12-01T10:28:13.435Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;学习是程序员日常的一部分。既然是学习，就少不了写代码，搭建运行环境，部署数据库等等。&lt;br&gt;之前都是习惯了去下载安装软件，但是还是少不了要去解决一些：环境变量配置、windows 下乱七八糟的问题，等等。不但会影响进度，还影响心情。&lt;/p&gt;
-&lt;p&gt;现在有了 Docker ，就都把这些交出去吧。但是，但是，但是 Docker 也是需要一些配置的！比如 镜像加速，单独的网络，单独的数据卷，再加上 Compose 和 Swam 。但是幸好这些都是一次性的，而且可以零迁移到 Production 环境。所以还是可以接受的，性价比比较高。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
-    
-    
-      <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
     
   </entry>
   
