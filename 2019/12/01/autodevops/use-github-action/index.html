@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="use github action"/><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
-<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/"/>
+<meta name="description" content="use github action"/><meta name="keywords" content="autodevops, github actions, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/12/01/autodevops/use-github-action/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
@@ -130,7 +130,10 @@
       <div class="post-meta">
         <span class="post-time">
           2019-12-01
-        </span></div>
+        </span><span class="post-category">
+            <a href="/categories/autodevops/">autodevops</a>
+            </span>
+        </div>
     </header>
 
     <div class="post-content"><p>最近把自动发布从 <code>travis-ci</code> 换成了 <code>github action</code>。</p>
@@ -155,6 +158,8 @@
 <li>再在<strong>仓库</strong>的 <code>Settings -&gt; Secrets</code> 里添加这个 token 。</li>
 <li>然后就可以在 Actions 中通过 <code>${{secrets.some_token}}</code> 使用了。</li>
 </ol>
+<h2 id="关于-Submodule"><a href="#关于-Submodule" class="headerlink" title="关于 Submodule"></a>关于 Submodule</h2><p>用的最多的 <code>uses: actions/checkout@v1</code> 带有 submodule 功能，文档地址：<a href="https://github.com/actions/checkout" target="_blank" rel="noopener">https://github.com/actions/checkout</a><br>有一点要注意的是：<code>Private submodules must be configured via https not ssh.</code>，如果 submodule 失败，需要把 submodule 改成 https 协议。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">with:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">submodules:</span> <span class="string">"true"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">token:</span> <span class="string">$&#123;&#123;secrets.GitHub_PAT&#125;&#125;</span> <span class="comment"># APT -&gt; Personal access tokens</span></span></pre></td></tr></table></figure>
 
       </div>
       <div class="post-copyright">
@@ -164,13 +169,17 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/">https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/</a>
+      <a href="https://blogs.zeed.w.beez.com/2019/12/01/autodevops/use-github-action/">https://blogs.zeed.w.beez.com/2019/12/01/autodevops/use-github-action/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/autodevops/">autodevops</a>
+            <a href="/tags/github-actions/">github actions</a>
+            </div>
         
         <nav class="post-nav"><a class="next" href="/2019/11/24/the-color/">
         <span class="next-text nav-default">the color</span>
@@ -225,8 +234,8 @@
       </div>
     </div><script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/';
-        this.page.identifier = '2019/12/01/use-github-action/';
+        this.page.url = 'https://blogs.zeed.w.beez.com/2019/12/01/autodevops/use-github-action/';
+        this.page.identifier = '2019/12/01/autodevops/use-github-action/';
         this.page.title = 'use github action';
     };
     (function() {
