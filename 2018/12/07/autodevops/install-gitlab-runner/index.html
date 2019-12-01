@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="install gitlab runner"/><meta name="keywords" content="autodevops, gitlab runner, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>install gitlab runner - Miracle-working</title>
+  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">install gitlab runner
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-12-07
+        </span><span class="post-category">
+            <a href="/categories/autodevops/">autodevops</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><!-- 人类发明各种`工具`让我们活的更轻松，可结果却是越来越`累`。我们确实不用做什么体力活了，但是我们处理的事情却越来越多。
+
+程序员被誉为新新人类，也不是空穴来风。他们用代码创建了一个帝国，并且为了让帝国更加繁荣而尽心尽力。 -->
+
+<p>最近一年在做一个比较大的项目，在之前项目的时候，吃过多环境部署的亏，所以这次项目开始之前主动提出了要使用 AutoDevOps 。经过一段时间的接触和使用，发现AutoDevops对于开发人员来说确实是个“枕头”。</p>
+<p><img src="/images/auto-devops-stages.png" alt="stage"></p>
+<a id="more"></a>
+
+<p>基于 GitLab 的 AutoDevOps 主要是通过一个神奇的文件 <code>.gitlab-ci.yml</code>  实现的，语法也非常简单，在<a href="https://docs.gitlab.com/ee/ci/yaml/" target="_blank" rel="noopener">这里</a>。</p>
+<p>而执行这些定义好的 ci jobs 用的也是 GitLab 的同家庭组件 <code>gitlab-ruuner</code> 。官方的 gitlab 仓库默认提供了很多公共的 runner 可以直接使用，只是有次数限制。</p>
+<p>所以还是需要了解一下如何安装 gitlab-ruuner 才行。</p>
+<p>官方 gitlab-runner 的类型有很多，比较常用的有两种 <code>shell</code> 和 <code>docker-in-docker</code> 。详细安装方式可以参考官网文档，这里做一下简单记录。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker in docker</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 特点： 所有的命令都是在 docker 镜像里执行的，跟宿主机本身没有任何关系。只依赖宿主机硬件资源限制。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 需求： 宿主机需要安装了 docker ，并且可以下载镜像。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 先用 docker 生成配置文件。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo docker run --rm -t -i -v /Users/Shared/gitlab-runner/did/config/01:/etc/gitlab-runner \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --name gitlab-runner-shared gitlab/gitlab-runner register \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --non-interactive \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --executor <span class="string">"docker"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --url <span class="string">"https://xxxx/"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --registration-token <span class="string">"xxxx"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --description <span class="string">"docker-in-docker-01"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --tag-list <span class="string">"did-runner"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --docker-image <span class="string">"docker:stable"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --docker-privileged</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --locked=<span class="literal">false</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 2. 在把前面生成的配置挂载到 docker 里面去启动真正的 runner 。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo docker run -d --name gitlab-runner-shared-01 --restart always \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  -v /Users/Shared/gitlab-runner/did/config/01:/etc/gitlab-runner \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  gitlab/gitlab-runner:latest</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># ========= Docker rm stoped containers</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># ========= Docker rm stoped containers</span></span></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># shell</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 特点： 跟把命令 copy 到机器上执行效果一样。所以可以执行什么样的命令，取决于机器上安装了什么环境。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 需求： Centos 的话，需要有 root 权限，并且 yum 能正常下载包就行了。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Add GitLab's official repository:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | sudo bash</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 2. Install the latest version of GitLab Runner</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum install gitlab-runner</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 2.1 Install special version</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">yum list gitlab-runner --showduplicates | sort -r</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum install gitlab-runner-10.0.0-1</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 2.2 Update gitlab-runner</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum update</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum install gitlab-runner</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 3. Registering Runner</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo gitlab-runner register \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --non-interactive \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --url <span class="string">"http://xxx/"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --registration-token <span class="string">"xxx"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --executor <span class="string">"shell"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --docker-image alpine:latest \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --description <span class="string">"shell-01"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --tag-list <span class="string">"shell-runner"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --run-untagged \</span></pre></td></tr><tr><td class="code"><pre><span class="line">  --locked=<span class="string">"false"</span> \</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 4. Run runner</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">gitlab-runner install --user gitlab-runner</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># test</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">gitlab-runner run</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># run as service</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">gitlab-runner start</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 5. UnRegistering Runner</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo gitlab-runner list</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo gitlab-runner unregister --name name1</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 6. Uninstall Runner</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">gitlab-runner uninstall</span></pre></td></tr></table></figure>
+
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/">https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/autodevops/">autodevops</a>
+            <a href="/tags/gitlab-runner/">gitlab runner</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2019/01/25/linux/linux-default-permission/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">linux-default-permission</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/2018/10/30/UI/beating-heart/">
+        <span class="next-text nav-default">beating heart</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2019</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/';
+        this.page.identifier = '2018/12/07/autodevops/install-gitlab-runner/';
+        this.page.title = 'install gitlab runner';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
