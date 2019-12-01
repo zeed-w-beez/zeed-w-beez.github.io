@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="use github action"/><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/12/02/use-github-action/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>use github action - Miracle-working</title>
+  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">use github action
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-12-01
+        </span></div>
+    </header>
+
+    <div class="post-content"><p>最近把自动发布从 <code>travis-ci</code> 换成了 <code>github action</code>。</p>
+<p>原因有三：</p>
+<ol>
+<li>github 开放免费私有仓库了，所以把这个博客的源码转成了私有的。</li>
+<li><code>travis-ci.org</code> 不支持私有仓库 (travis-ci.com 是支持私有仓库的)。</li>
+<li>github <a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/" target="_blank" rel="noopener">发布</a>了自己的 actions 功能。</li>
+</ol>
+<p><img src="/images/github-actions.png" alt="github actions"></p>
+<a id="more"></a>
+
+<p>因为 CI/CD 服务的原理都差不多，所以迁移还是很顺利的。</p>
+<p>这里记录两个内容，以后可能会用到。</p>
+<h2 id="关于内置变量"><a href="#关于内置变量" class="headerlink" title="关于内置变量"></a>关于内置变量</h2><p>了解每个 CI/CD 程序提供的内置变量有利于写出高效、美观、简短的脚本。</p>
+<p><a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/getting-started-with-github-actions" target="_blank" rel="noopener">GitHub Actions</a> 提供的<a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions" target="_blank" rel="noopener">内置变量</a>主要分为 <code>github, job, steps, runner, secrets, strategy, matrix</code> 几个部分，官方文档还给出了一个 <code>.github\workflows\main.yml</code> 的例子，可以自行打印出这些内置变量。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">CI</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">on:</span> <span class="string">[push]</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">jobs:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">one:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">steps:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">GitHub</span> <span class="string">context</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">env:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">          <span class="attr">GITHUB_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(github)</span> <span class="string">&#125;&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$GITHUB_CONTEXT"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">job</span> <span class="string">context</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">env:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">          <span class="attr">JOB_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(job)</span> <span class="string">&#125;&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$JOB_CONTEXT"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">steps</span> <span class="string">context</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">env:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">          <span class="attr">STEPS_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(steps)</span> <span class="string">&#125;&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$STEPS_CONTEXT"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">runner</span> <span class="string">context</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">env:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">          <span class="attr">RUNNER_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(runner)</span> <span class="string">&#125;&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$RUNNER_CONTEXT"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">secrets</span> <span class="string">context</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">env:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">          <span class="attr">SECRETS_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(secrets)</span> <span class="string">&#125;&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$SECRETS_CONTEXT"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">strategy</span> <span class="string">context</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">env:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">          <span class="attr">STRATEGY_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(strategy)</span> <span class="string">&#125;&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$STRATEGY_CONTEXT"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">matrix</span> <span class="string">context</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">env:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">          <span class="attr">MATRIX_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(matrix)</span> <span class="string">&#125;&#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$MATRIX_CONTEXT"</span></span></pre></td></tr></table></figure>
+
+<h2 id="关于-token"><a href="#关于-token" class="headerlink" title="关于 token"></a>关于 token</h2><p>GitHub Actions 内置变量自带的 token 只能作用于当前仓库，如果需要操作其他仓库，就需要启用另外的 token 了。<br><a href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line" target="_blank" rel="noopener">https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line</a></p>
+<ol>
+<li>先在<strong>账号</strong>的 <code>Settings -&gt; Developer settings -&gt; Personal access tokens</code> 中创建一个新的 token 。</li>
+<li>再在<strong>仓库</strong>的 <code>Settings -&gt; Secrets</code> 里添加这个 token 。</li>
+<li>然后就可以在 Actions 中通过 <code>${{secrets.some_token}}</code> 使用了。</li>
+</ol>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2019/12/02/use-github-action/">https://blogs.zeed.w.beez.com/2019/12/02/use-github-action/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="next" href="/2019/11/25/the-color/">
+        <span class="next-text nav-default">the color</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2019</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2019/12/02/use-github-action/';
+        this.page.identifier = '2019/12/02/use-github-action/';
+        this.page.title = 'use github action';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
