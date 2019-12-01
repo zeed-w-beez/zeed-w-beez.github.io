@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2019-12-01T11:58:49.831Z</updated>
+  <updated>2019-12-01T12:36:15.903Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -14,14 +14,14 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>use github action</title>
     <link href="https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/"/>
     <id>https://blogs.zeed.w.beez.com/2019/12/01/use-github-action/</id>
     <published>2019-12-01T19:06:18.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,7 @@
 &lt;p&gt;&lt;img src=&quot;/images/github-actions.png&quot; alt=&quot;github actions&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
     
   </entry>
@@ -54,6 +55,7 @@
     
     </summary>
     
+    
       <category term="deepdream" scheme="https://blogs.zeed.w.beez.com/categories/deepdream/"/>
     
     
@@ -64,9 +66,9 @@
   <entry>
     <title>写个微信小程序</title>
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/写个微信小程序/</id>
+    <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -74,6 +76,7 @@
 &lt;p&gt;&lt;img src=&quot;/images/ssh+.png&quot; alt=&quot;ssh +&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
@@ -87,7 +90,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2019-12-01T11:58:49.827Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -96,6 +99,7 @@
 &lt;p&gt;&lt;img src=&quot;/images/flb_002.png&quot; alt=&quot;fluent-bit&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
@@ -113,7 +117,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2019-12-01T11:58:49.827Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -122,6 +126,7 @@
 &lt;p&gt;&lt;img src=&quot;/images/helm-prometheus.png&quot; alt=&quot;helm-prometheus&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
@@ -137,7 +142,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/</id>
     <published>2019-10-29T14:05:01.000Z</published>
-    <updated>2019-12-01T11:58:49.827Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -146,6 +151,7 @@
 &lt;p&gt;&lt;img src=&quot;/images/kubernetes-flower.png&quot; alt=&quot;kubernetes flower&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
@@ -170,6 +176,7 @@
 &lt;p&gt;&lt;img src=&quot;/images/letsencrypt.png&quot; alt=&quot;Let’s Encrypt&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
@@ -196,6 +203,7 @@
     
     </summary>
     
+    
       <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
@@ -221,6 +229,7 @@
     
     </summary>
     
+    
       <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
     
@@ -235,7 +244,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2019-12-01T11:58:49.827Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -243,6 +252,7 @@
 &lt;p&gt;效果在页面最下方，版权那边~&lt;/p&gt;
     
     </summary>
+    
     
       <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
@@ -256,13 +266,14 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;MarkDown 确实非常适合写博客和业务文档。语法简洁，没那么多花俏的功能。&lt;br&gt;但是有时基础语法满足不了我们的需求，就需要再知道点特别的用法了。&lt;br&gt;怎么直接写 Html 标签？ 怎么加自定义样式？&lt;/p&gt;
     
     </summary>
+    
     
       <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
@@ -274,9 +285,9 @@
   <entry>
     <title>dotnet core 2.1 identity ui</title>
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
-    <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet core/dotnet-core-2-1-identity-ui/</id>
+    <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -284,6 +295,7 @@
 &lt;p&gt;默认的文件结构：&lt;img src=&quot;/images/identity-ui-files.png&quot; alt=&quot;identity-ui-files&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
     
@@ -297,7 +309,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -305,6 +317,7 @@
 &lt;p&gt;接着就发现了这个 &lt;a href=&quot;https://www.polymer-project.org/images/logos/p-logo-192.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.polymer-project.org/images/logos/p-logo-192.png&lt;/a&gt;，确实挺好看的。&lt;br&gt;&lt;img src=&quot;/images/p-logo-192.png&quot; alt=&quot; polymer-project logo &quot;&gt;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
@@ -320,13 +333,14 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/27/Recently/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</id>
     <published>2018-01-27T17:05:23.000Z</published>
-    <updated>2019-12-01T11:58:49.827Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
       Time and tide wait for no man.
     
     </summary>
+    
     
       <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
@@ -338,13 +352,14 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。&lt;/p&gt;
     
     </summary>
+    
     
       <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
@@ -356,15 +371,16 @@
   <entry>
     <title>生活是什么</title>
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/生活是什么/</id>
+    <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
     
     </summary>
+    
     
       <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     
@@ -376,9 +392,9 @@
   <entry>
     <title>请直接挂掉销售人员的电话</title>
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/29/生活是什么/请直接挂掉销售人员的电话/</id>
+    <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2019-12-01T11:58:49.831Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -386,6 +402,7 @@
 &lt;p&gt;某天你在路边偶然发现了一个老奶奶在卖东西，如果你“好心”的去买了，那位老奶奶就可能之后每天都在路边等“你”，并且风雨无阻。剩下一脸茫然的你&lt;/p&gt;
     
     </summary>
+    
     
       <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     
@@ -406,6 +423,7 @@
       &lt;p&gt;日常的工作生活中，我们可能会遇到不止一个 github/gitlab 服务器。虽然 ssh key 可以避免每次和服务器交互的时候都要输入密码，但是如果我想区分工作和生活的 ssh key 又该怎么做呢？其实只需要一个简单的 config 文件就可以了。&lt;/p&gt;
     
     </summary>
+    
     
       <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
@@ -429,6 +447,7 @@
     
     </summary>
     
+    
       <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
@@ -443,7 +462,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/"/>
     <id>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</id>
     <published>2017-11-29T09:09:48.000Z</published>
-    <updated>2019-12-01T11:58:49.827Z</updated>
+    <updated>2019-12-01T12:36:15.903Z</updated>
     
     <summary type="html">
     
@@ -451,6 +470,7 @@
 &lt;p&gt;不再是之前的 delegate 自己定义，已经给我们内置了几个。可以解决绝大部分需求，又让大家的代码更符合规范。&lt;/p&gt;
     
     </summary>
+    
     
       <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
     
