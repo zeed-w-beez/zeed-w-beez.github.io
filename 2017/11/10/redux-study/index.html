@@ -46,7 +46,7 @@
 </script>
 
     <title>redux study - Miracle-working</title>
-  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
 </head>
 
   <body>
@@ -148,7 +148,7 @@
 <li><p>把所有能影响到 View 的动作，写成 Action 的形式。</p>
 </li>
 <li><p>比如 Button 的Click， 鼠标的 Hover， 键盘的 Enter, 滚动， 倒计时，甚至拖动 等等等等</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> button1ClickAction = &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    type: <span class="string">'button1_click'</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    data1: &#123;&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    data2: []</span></pre></td></tr><tr><td class="code"><pre><span class="line">    data3: <span class="literal">true</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> button1ClickAction = &#123;</span><br><span class="line">    type: <span class="string">'button1_click'</span>,</span><br><span class="line">    data1: &#123;&#125;</span><br><span class="line">    data2: []</span><br><span class="line">    data3: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -157,7 +157,7 @@
 <li><p>接受当前应用的 State 和被触发的 Action ，并返回新的 State 。</p>
 </li>
 <li><p>纯函数，相同的输入一定会返回相同的输出。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> button1Reducer =&gt; ( state = &#123;&#125;, action )&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> ( action.type === <span class="string">'button1_click'</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            ...state,</span></pre></td></tr><tr><td class="code"><pre><span class="line">            data: action.data</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> state;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> button1Reducer =&gt; ( state = &#123;&#125;, action )&#123;</span><br><span class="line">    <span class="keyword">if</span> ( action.type === <span class="string">'button1_click'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            ...state,</span><br><span class="line">            data: action.data</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -166,7 +166,7 @@
 <li><p>按照业务模块拆分多个 Reducer ，提高代码可读性、可维护性。</p>
 </li>
 <li><p>Redux 帮我合并，所以为什么不拆分呢？</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers &#125; <span class="keyword">from</span> <span class="string">'Redux'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> reducer = combineReducers(&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    root: rootReducer,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    user: userReducer</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> appStore = createStore(reducer)</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers &#125; <span class="keyword">from</span> <span class="string">'Redux'</span></span><br><span class="line"><span class="keyword">var</span> reducer = combineReducers(&#123;</span><br><span class="line">    root: rootReducer,</span><br><span class="line">    user: userReducer</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> appStore = createStore(reducer)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -177,7 +177,7 @@
 <li><p>绑定 Reducer 到 整个应用唯一的 Store 上。</p>
 </li>
 <li><p>在 Dispatch 的时候，redux 会保证去触发全部的 Reducers 。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> appStore = createStore&#123; combinedReducers &#125;;</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"><span class="keyword">var</span> appStore = createStore&#123; combinedReducers &#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -186,14 +186,14 @@
 <li><p>“dispatch” 函数本质上是 Redux 的实例属性。</p>
 </li>
 <li><p>会将 action 传递给每一个 reducer 。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">appStore.dispatch(&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    type:<span class="string">'AN_ACTION'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">appStore.dispatch(&#123;</span><br><span class="line">    type:<span class="string">'AN_ACTION'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>DispathcAsync</p>
 <ul>
 <li><p>分发操作是即时的??，所以<code>异步</code>只能从异步 ActionCreater 下手了</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> asyncSayActionCreator_1 = <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            dispatch(&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                type: <span class="string">'SAY'</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">                message</span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;, <span class="number">2000</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> asyncSayActionCreator_1 = <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">dispatch</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            dispatch(&#123;</span><br><span class="line">                type: <span class="string">'SAY'</span>,</span><br><span class="line">                message</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;, <span class="number">2000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -204,15 +204,15 @@
 <li><p>有严格的使用方法</p>
 </li>
 <li><p>编码遵循以下格式</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> anyMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// 你的中间件业务相关代码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> anyMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">next</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 你的中间件业务相关代码</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注册中间件</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'Redux'</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> AppCreateStore = applyMiddleware(thunkMiddleware, middleware1, middleware2 )(createStore)</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = combineReducers(&#123; ... &#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> appStore = AppCreateStore(reducer)</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// OR</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">cosnt appStore = createStore(</span></pre></td></tr><tr><td class="code"><pre><span class="line">    rootReducer,</span></pre></td></tr><tr><td class="code"><pre><span class="line">    applyMiddleware(thunk, middleware1, middleware2 )</span></pre></td></tr><tr><td class="code"><pre><span class="line">)</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'Redux'</span></span><br><span class="line"><span class="keyword">const</span> AppCreateStore = applyMiddleware(thunkMiddleware, middleware1, middleware2 )(createStore)</span><br><span class="line"><span class="keyword">const</span> reducer = combineReducers(&#123; ... &#125;)</span><br><span class="line"><span class="keyword">const</span> appStore = AppCreateStore(reducer)</span><br><span class="line"></span><br><span class="line"><span class="comment">// OR</span></span><br><span class="line"></span><br><span class="line">cosnt appStore = createStore(</span><br><span class="line">    rootReducer,</span><br><span class="line">    applyMiddleware(thunk, middleware1, middleware2 )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>为异步 action create 提供的中间件叫 thunk middleware</p>
 </li>
 <li><p>代码在 <a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="noopener">https://github.com/gaearon/redux-thunk</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> thunkMiddleware = <span class="function"><span class="keyword">function</span> (<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// console.log('Enter thunkMiddleware');</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">next</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">// console.log('Function "next" provided:', next);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// console.log('Handling action:', action);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">return</span> <span class="keyword">typeof</span> action === <span class="string">'function'</span> ?</span></pre></td></tr><tr><td class="code"><pre><span class="line">                action(dispatch, getState) :</span></pre></td></tr><tr><td class="code"><pre><span class="line">                next(action)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// "curry" may come any functional programming library (lodash, ramda, etc.)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> thunkMiddleware = curry(</span></pre></td></tr><tr><td class="code"><pre><span class="line">    (&#123;dispatch, getState&#125;, next, action) =&gt; (</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">// 你的中间件业务相关代码</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    )</span></pre></td></tr><tr><td class="code"><pre><span class="line">);</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> thunkMiddleware = <span class="function"><span class="keyword">function</span> (<span class="params">&#123; dispatch, getState &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log('Enter thunkMiddleware');</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">next</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// console.log('Function "next" provided:', next);</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// console.log('Handling action:', action);</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">typeof</span> action === <span class="string">'function'</span> ?</span><br><span class="line">                action(dispatch, getState) :</span><br><span class="line">                next(action)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// "curry" may come any functional programming library (lodash, ramda, etc.)</span></span><br><span class="line"><span class="keyword">var</span> thunkMiddleware = curry(</span><br><span class="line">    (&#123;dispatch, getState&#125;, next, action) =&gt; (</span><br><span class="line">        <span class="comment">// 你的中间件业务相关代码</span></span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -261,13 +261,13 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
@@ -285,7 +285,7 @@
   </span>
 
   <span class="copyright-year">
-    <span>&copy;2015 - 2019</span>
+    <span>&copy;2015 - 2020</span>
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

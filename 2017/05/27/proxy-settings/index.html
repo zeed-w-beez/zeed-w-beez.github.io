@@ -46,7 +46,7 @@
 </script>
 
     <title>proxy settings - Miracle-working</title>
-  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
 </head>
 
   <body>
@@ -148,7 +148,7 @@
 <p>还可以当做是一层保险，不开Fiddler 的时候，虚拟机是不能访问网络的。</p>
 <p>大部分软件的代理配置都可以百度到，这里记录些不常用的：</p>
 <p>Anaconda:<br>在 User 下有个默认的配置文件 .condarc  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">channels:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="bullet">-</span> <span class="string">anaconda-fusion</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="bullet">-</span> <span class="string">defaults</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">proxy_servers:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">http:</span> <span class="string">http://localhost:8888</span> <span class="comment"># 本机的 Fiddler 代理</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">https:</span> <span class="string">http://localhost:8888</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></span></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">ssl_verify:</span> <span class="literal">false</span> <span class="comment"># 这个默认是True，也可以先关掉</span></span><br><span class="line"><span class="attr">channels:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">anaconda-fusion</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">defaults</span></span><br><span class="line"></span><br><span class="line"><span class="attr">proxy_servers:</span></span><br><span class="line">  <span class="attr">http:</span> <span class="string">http://localhost:8888</span> <span class="comment"># 本机的 Fiddler 代理</span></span><br><span class="line">  <span class="attr">https:</span> <span class="string">http://localhost:8888</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Show channel URLs when displaying what is going to be downloaded and</span></span><br><span class="line"><span class="attr">show_channel_urls:</span> <span class="literal">True</span></span><br><span class="line"><span class="attr">allow_other_channels:</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>大部分都能网上搜到</p>
 <p>全部用户配置代理：</p>
@@ -188,13 +188,13 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
@@ -212,7 +212,7 @@
   </span>
 
   <span class="copyright-year">
-    <span>&copy;2015 - 2019</span>
+    <span>&copy;2015 - 2020</span>
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

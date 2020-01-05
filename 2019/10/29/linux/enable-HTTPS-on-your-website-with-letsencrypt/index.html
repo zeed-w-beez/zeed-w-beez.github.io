@@ -46,7 +46,7 @@
 </script>
 
     <title>enable-HTTPS-on-your-website-with-letsencrypt - Miracle-working</title>
-  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
 </head>
 
   <body>
@@ -149,12 +149,12 @@
 <li>以 <code>blogs.zeed-w-beez.com</code> 这个域名为例。</li>
 <li>在 <code>/etc/nginx/cond.d/</code> 目录下创建一个新文件 <code>blogs.zeed-w-beez.com.conf</code> 内容如下。</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    server_name blogs.zeed-w-beez.com; ### 这里替换为自己的域名。</span></pre></td></tr><tr><td class="code"><pre><span class="line">    root         &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html; ### 这里是程序的目录。</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    # Load configuration files for the default server block.</span></pre></td></tr><tr><td class="code"><pre><span class="line">    include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    location &#x2F; &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    error_page 404 &#x2F;404.html;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        location &#x3D; &#x2F;40x.html &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    error_page 500 502 503 504 &#x2F;50x.html;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        location &#x3D; &#x2F;50x.html &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    server_name blogs.zeed-w-beez.com; ### 这里替换为自己的域名。</span><br><span class="line">    root         &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html; ### 这里是程序的目录。</span><br><span class="line"></span><br><span class="line">    # Load configuration files for the default server block.</span><br><span class="line">    include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 404 &#x2F;404.html;</span><br><span class="line">        location &#x3D; &#x2F;40x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 500 502 503 504 &#x2F;50x.html;</span><br><span class="line">        location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="安装-certbot-一个-Agent-用来自动生成证书"><a href="#安装-certbot-一个-Agent-用来自动生成证书" class="headerlink" title="安装 certbot: 一个 Agent 用来自动生成证书"></a>安装 <a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot</a>: 一个 Agent 用来自动生成证书</h2><ol>
 <li>根据<a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot官网</a>提示选择Web服务器和操作系统。<br><img src="/images/certbot.png" alt="选择Web服务器和操作系统"></li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这个是 centos7+nginx 的安装文档：https://certbot.eff.org/lets-encrypt/centosrhel7-nginx</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 1. Enable the optional channel</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum -y install yum-utils</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 2. Install Certbot</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo yum install certbot python2-certbot-nginx</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 3.1 自动扫描并导入证书。很据提示填写一些必要信息即可。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo certbot --nginx</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 3.2 也可以只生成证书，不自动导入nginx</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo certbot certonly --nginx</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 4. 手动重新生成证书</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo certbot renew</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># 5. 添加定时任务</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo <span class="built_in">echo</span> <span class="string">"0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' &amp;&amp; certbot renew"</span> | sudo tee -a /etc/crontab &gt; /dev/null</span></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这个是 centos7+nginx 的安装文档：https://certbot.eff.org/lets-encrypt/centosrhel7-nginx</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. Enable the optional channel</span></span><br><span class="line">sudo yum -y install yum-utils</span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Install Certbot</span></span><br><span class="line">sudo yum install certbot python2-certbot-nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.1 自动扫描并导入证书。很据提示填写一些必要信息即可。</span></span><br><span class="line">sudo certbot --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 也可以只生成证书，不自动导入nginx</span></span><br><span class="line">sudo certbot certonly --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 手动重新生成证书</span></span><br><span class="line">sudo certbot renew</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 添加定时任务</span></span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">"0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' &amp;&amp; certbot renew"</span> | sudo tee -a /etc/crontab &gt; /dev/null</span><br></pre></td></tr></table></figure>
 
 <h2 id="默认证书有效期三个月。配置了定时任务之后，会自动续期"><a href="#默认证书有效期三个月。配置了定时任务之后，会自动续期" class="headerlink" title="默认证书有效期三个月。配置了定时任务之后，会自动续期"></a>默认证书有效期三个月。配置了定时任务之后，会自动续期</h2>
       </div>
@@ -192,13 +192,13 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
@@ -216,7 +216,7 @@
   </span>
 
   <span class="copyright-year">
-    <span>&copy;2015 - 2019</span>
+    <span>&copy;2015 - 2020</span>
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

@@ -46,7 +46,7 @@
 </script>
 
     <title>https 漫谈 - Miracle-working</title>
-  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
 </head>
 
   <body>
@@ -160,7 +160,7 @@
 </ol>
 <h2 id="不要那么多废话，告诉我怎么搞"><a href="#不要那么多废话，告诉我怎么搞" class="headerlink" title="不要那么多废话，告诉我怎么搞"></a>不要那么多废话，告诉我怎么搞</h2><ol>
 <li><p>密钥文件 - 先自己想出一个密码</p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># DES -&gt; 3DES -&gt; AES 128,192,256</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">openssl genrsa --aes256 -out me.key 2048</span></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># DES -&gt; 3DES -&gt; AES 128,192,256</span></span><br><span class="line">openssl genrsa --aes256 -out me.key 2048</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>证书申请 - 用自己想出的密码，打造一个模具出来</p>
 </li>
@@ -179,7 +179,7 @@
 <li>证书文件 - 用模具打造出来的密码箱</li>
 </ol>
 <p>以Nginx为例，就是:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">    listen       443 ssl;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    server_name  localhost;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ssl_certificate      &#x2F;etc&#x2F;CA&#x2F;nginx.crt; # 证书文件的相对或者绝对路径</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ssl_certificate_key  &#x2F;etc&#x2F;CA&#x2F;nginx.key; # 密钥文件的相对或者绝对路径</span></pre></td></tr><tr><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    ...</span><br><span class="line">    listen       443 ssl;</span><br><span class="line">    server_name  localhost;</span><br><span class="line">    ssl_certificate      &#x2F;etc&#x2F;CA&#x2F;nginx.crt; # 证书文件的相对或者绝对路径</span><br><span class="line">    ssl_certificate_key  &#x2F;etc&#x2F;CA&#x2F;nginx.key; # 密钥文件的相对或者绝对路径</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="权威和我就是权威的区别"><a href="#权威和我就是权威的区别" class="headerlink" title="权威和我就是权威的区别"></a>权威和我就是权威的区别</h2><ol>
 <li><p>根证书 - 权威机构打造模具的锤子是开过光的。直接<strong>内置</strong>在各大浏览器和操作系统里面，不可能被伪造。</p>
@@ -267,13 +267,13 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
@@ -291,7 +291,7 @@
   </span>
 
   <span class="copyright-year">
-    <span>&copy;2015 - 2019</span>
+    <span>&copy;2015 - 2020</span>
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

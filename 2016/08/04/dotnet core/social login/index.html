@@ -46,7 +46,7 @@
 </script>
 
     <title>Enabling social login in your web sites - Miracle-working</title>
-  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
 </head>
 
   <body>
@@ -140,7 +140,7 @@
 <a id="more"></a>
 
 <h2 id="在配置文件里添加以下节点"><a href="#在配置文件里添加以下节点" class="headerlink" title="在配置文件里添加以下节点"></a>在配置文件里添加以下节点</h2><pre><code>如果只想本地使用，可以试试 `secrets.json` (Right click -&gt; Manage User Secrets)
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">"Authentication"</span>: &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="attr">"Google"</span>: &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="attr">"ClientId"</span>: <span class="string">"&lt;your-client-id&gt;"</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="attr">"ClientSecret"</span>: <span class="string">"&lt;your-client-secret&gt;"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></code></pre><h2 id="安装-nuget-包-Microsoft-AspNet-Authentication-Google"><a href="#安装-nuget-包-Microsoft-AspNet-Authentication-Google" class="headerlink" title="安装 nuget 包 Microsoft.AspNet.Authentication.Google"></a>安装 nuget 包 <code>Microsoft.AspNet.Authentication.Google</code></h2><h2 id="代码也非常简单"><a href="#代码也非常简单" class="headerlink" title="代码也非常简单"></a>代码也非常简单</h2><pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ConfigureServices</span>(<span class="params">IServiceCollection services</span>)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// ...</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    services.AddAuthentication()</span></pre></td></tr><tr><td class="code"><pre><span class="line">        .AddGoogle(googleOptions =&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            googleOptions.ClientId = Configuration.GetSection(<span class="string">"Authentication"</span>)[<span class="string">"Google:ClientId"</span>];</span></pre></td></tr><tr><td class="code"><pre><span class="line">            googleOptions.ClientSecret = Configuration.GetSection(<span class="string">"Authentication"</span>)[<span class="string">"Google:ClientSecret"</span>];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// ...</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"Authentication"</span>: &#123;</span><br><span class="line">        <span class="attr">"Google"</span>: &#123;</span><br><span class="line">            <span class="attr">"ClientId"</span>: <span class="string">"&lt;your-client-id&gt;"</span>,</span><br><span class="line">            <span class="attr">"ClientSecret"</span>: <span class="string">"&lt;your-client-secret&gt;"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2 id="安装-nuget-包-Microsoft-AspNet-Authentication-Google"><a href="#安装-nuget-包-Microsoft-AspNet-Authentication-Google" class="headerlink" title="安装 nuget 包 Microsoft.AspNet.Authentication.Google"></a>安装 nuget 包 <code>Microsoft.AspNet.Authentication.Google</code></h2><h2 id="代码也非常简单"><a href="#代码也非常简单" class="headerlink" title="代码也非常简单"></a>代码也非常简单</h2><pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ConfigureServices</span>(<span class="params">IServiceCollection services</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    services.AddAuthentication()</span><br><span class="line">        .AddGoogle(googleOptions =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            googleOptions.ClientId = Configuration.GetSection(<span class="string">"Authentication"</span>)[<span class="string">"Google:ClientId"</span>];</span><br><span class="line">            googleOptions.ClientSecret = Configuration.GetSection(<span class="string">"Authentication"</span>)[<span class="string">"Google:ClientSecret"</span>];</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
 <li>ClientId 什么的是自己申请的，到对应的服务商那边申请就可以了。</li>
 <li>国内的 qq 新浪 什么的，不想自己写，可以去 github 搜索，已经有人提供了，可以直接使用的。</li>
 </ol>
@@ -179,13 +179,13 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
@@ -203,7 +203,7 @@
   </span>
 
   <span class="copyright-year">
-    <span>&copy;2015 - 2019</span>
+    <span>&copy;2015 - 2020</span>
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

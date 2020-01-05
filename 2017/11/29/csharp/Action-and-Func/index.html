@@ -46,7 +46,7 @@
 </script>
 
     <title>action-and-func.md - Miracle-working</title>
-  <link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
 </head>
 
   <body>
@@ -144,17 +144,17 @@
 <ol>
 <li>没有返回值，就用 <code>Action</code> 和 <code>Action&lt;T&gt;</code> 最多支持0-16个参数。</li>
 </ol>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">Action</span>(<span class="params"></span>)</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> Action&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2&gt;(T1 arg1, T2 arg2);</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 比如</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">list.Foreach(x=&gt;&#123; x.name += <span class="string">"xx-"</span>; &#125;)</span></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">Action</span>(<span class="params"></span>)</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> Action&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2&gt;(T1 arg1, T2 arg2);</span><br><span class="line"><span class="comment">// 比如</span></span><br><span class="line">list.Foreach(x=&gt;&#123; x.name += <span class="string">"xx-"</span>; &#125;)</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>有返回值，使用 <code>Func&lt;T&gt;</code> 最多支持0-16个参数。最后一个是返回值。</li>
 </ol>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> TResult Func&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2, <span class="keyword">out</span> TResult&gt;(T1 arg1, T2 arg2);</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 比如</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">list.Select(x=&gt;x.Id)</span></pre></td></tr><tr><td class="code"><pre><span class="line">list.Where(x=&gt;x.Id&gt;<span class="number">100</span>)</span></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> TResult Func&lt;<span class="keyword">in</span> T1, <span class="keyword">in</span> T2, <span class="keyword">out</span> TResult&gt;(T1 arg1, T2 arg2);</span><br><span class="line"><span class="comment">// 比如</span></span><br><span class="line">list.Select(x=&gt;x.Id)</span><br><span class="line">list.Where(x=&gt;x.Id&gt;<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>还有个固定是 <code>bool</code> 类型返回值的定义 <code>Func&lt;T, bool&gt;</code> ==&gt; <code>Predicate&lt;T&gt;</code> 多用在比较器上。</li>
 </ol>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">bool</span> Predicate&lt;<span class="keyword">in</span> T&gt;(T obj);</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// 实例</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">Predicate&lt;<span class="keyword">int</span>&gt; pd = val =&gt; &#123; <span class="keyword">return</span> val &gt; <span class="number">5</span>;&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span> &#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> first = Array.Find(arr, pd);</span></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">bool</span> Predicate&lt;<span class="keyword">in</span> T&gt;(T obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例</span></span><br><span class="line">Predicate&lt;<span class="keyword">int</span>&gt; pd = val =&gt; &#123; <span class="keyword">return</span> val &gt; <span class="number">5</span>;&#125;;</span><br><span class="line"><span class="keyword">int</span>[] arr = &#123; <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> first = Array.Find(arr, pd);</span><br></pre></td></tr></table></figure>
 
       </div>
       <div class="post-copyright">
@@ -189,13 +189,13 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" target="_blank" rel="noopener" class="iconfont icon-email" title="email"></a>
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
         <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
@@ -213,7 +213,7 @@
   </span>
 
   <span class="copyright-year">
-    <span>&copy;2015 - 2019</span>
+    <span>&copy;2015 - 2020</span>
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>
