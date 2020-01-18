@@ -141,7 +141,63 @@
 <p><img src="/images/kubernetes-flower.png" alt="kubernetes flower"></p>
 <a id="more"></a>
 
-<h2 id="容器抽象了服务器和程序运行环境"><a href="#容器抽象了服务器和程序运行环境" class="headerlink" title="容器抽象了服务器和程序运行环境"></a>容器抽象了服务器和程序运行环境</h2><h2 id="Kubernetes-抽象了服务器集群和程序集群"><a href="#Kubernetes-抽象了服务器集群和程序集群" class="headerlink" title="Kubernetes 抽象了服务器集群和程序集群"></a>Kubernetes 抽象了服务器集群和程序集群</h2>
+<h2 id="容器抽象了服务器和程序运行环境"><a href="#容器抽象了服务器和程序运行环境" class="headerlink" title="容器抽象了服务器和程序运行环境"></a>容器抽象了服务器和程序运行环境</h2><h2 id="Kubernetes-抽象了服务器集群和程序集群"><a href="#Kubernetes-抽象了服务器集群和程序集群" class="headerlink" title="Kubernetes 抽象了服务器集群和程序集群"></a>Kubernetes 抽象了服务器集群和程序集群</h2><h2 id="Kubernetes-学习路线"><a href="#Kubernetes-学习路线" class="headerlink" title="Kubernetes 学习路线"></a>Kubernetes 学习路线</h2><blockquote>
+<p>Kubernetes 是一个产品，所以绝大多数情况只需要“会用”就可以了。不需要去“懂”。</p>
+</blockquote>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>要想用 Kubernetes，你需要先有一个 Kubernetes 集群。</p>
+<ul>
+<li><p>如果是个人学习，最简单就是云服务商直接创建一个集群出来。腾讯云上只包含 2 个 2Core 4G 节点的托管集群，一个小时只需要大概 0.7 元（记得带宽选按量付费）。阿里云也差不多。即用即创建，用完即删。我这里有 <a href="https://url.cn/53bq3F6" target="_blank" rel="noopener">腾讯云</a> 和 <a href="https://www.aliyun.com/minisite/goods?userCode=q7hv2bn9" target="_blank" rel="noopener">阿里云</a> 的返利链接，从这个链接进去买服务器大概能返总花费的 20% 可以联系我，退给你。<br><img src="/images/tke.png" alt="腾讯云 TKE 计费"></p>
+</li>
+<li><p>如果是企业要用，就要花时间去研究下如何部署了。但是不需要太担心，网上部署文档很多，而且社区一直在简化部署。</p>
+</li>
+<li><p>如果是创业公司，或者小公司，建议直接使用云服务。更稳定，而且性价比<strong>最高</strong>。</p>
+</li>
+<li><p>说明：自己部署的 Kubernetes 版本，和云服务提供的版本，是<strong>没有差异</strong>的。不用担心 Kubernetes 功能被阉割，一般只会增强。</p>
+</li>
+</ul>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>不论你通过何种方式，现在已经有了一个正在运行的集群。</p>
+<ol>
+<li><p>UI 界面</p>
+<ul>
+<li><p>如果你是用的云服务商，你还有一个UI界面给你操作，简单了解 Kubernetes 的各个组件。</p>
+</li>
+<li><p>如果是自己部署的，你可以安装官方提供的 Dashboard 组件，也可以给你提供一个UI操作界面。护额安装，请参考下面的 kubeclt 命令。</p>
+</li>
+</ul>
+</li>
+<li><p>Kubectl 必须要</p>
+<ul>
+<li><p>kubectl 是一个命令行工具。类似于 linux 系统的 ls 程序，windows 系统上的 cmd.exe 程序。只不过是专门用来和 Kubernetes 打交道的。</p>
+</li>
+<li><p>kubectl 安装在 Linux 上比较简单。windows 上稍微麻烦一点，本质上只需要想办法下载一个 kubectl.exe 文件，并在 PATH 里加上文件所在路径就可以了。</p>
+</li>
+<li><p>kubectl 的配置。Linux 和 windows 都一样的。在家目录创建一个 .kube 的文件夹，里面放一个无后缀的 config 文件，文件的内容，一般的云厂商都提供下载。</p>
+</li>
+<li><p>第一个命令：<code>kubectl get node</code> 可以查看集群的 worker-node 个数。如果能成功返回结果，说明上面的步骤都 OK 了。开始真正开始了解和使用 Kubernetes 了。如果失败，一般都是网络问题，或者云厂商需要先添加白名单等等，自行发挥去解决吧。</p>
+</li>
+</ul>
+</li>
+<li><p>kubectl 基础知识</p>
+<ul>
+<li><p>kubectl get xxxx 快速了解 Kubernetes 的过程。</p>
+</li>
+<li><p>kubectl describe xxxx 帮你了解 yaml 的格式、语法等。</p>
+</li>
+</ul>
+</li>
+<li><p>helm 基础知识</p>
+<blockquote>
+<p>因为生产环境不可能只部署 hello-world 这样的简单程序。所以正常的应用，都包含很多个 yaml 文件，如何有效的管理和组织，并方便复用和分发，就属于 Helm 的范围了。<br>helm 本身只是一个模板引擎，另外再配上基于版本号的打包功能，再加上提供的包仓库。就最简单的实现了上面提到的几个目标。</p>
+</blockquote>
+<ul>
+<li><p>helm install xxxx</p>
+</li>
+<li><p>helm install xxxx 和 helm template xxxx 先生成 yaml 文件 + 使用 kubectl apply -f xxxx 部署，效果是一样的。只是 Helm install 提供的额外的生命周期管理。</p>
+</li>
+</ul>
+</li>
+</ol>
+
       </div>
       <div class="post-copyright">
     <p class="copyright-item">
