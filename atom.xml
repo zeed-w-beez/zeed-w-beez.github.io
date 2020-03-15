@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2020-03-08T13:29:07.368Z</updated>
+  <updated>2020-03-15T11:24:40.175Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>create blazor app</title>
+    <link href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/"/>
+    <id>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</id>
+    <published>2020-03-15T15:22:44.000Z</published>
+    <updated>2020-03-15T11:24:40.175Z</updated>
+    
+    <summary type="html">
+    
+      create blazor app use dotnet core command line step by step.
+    
+    </summary>
+    
+    
+      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    
+    
+      <category term="dotnet core" scheme="https://blogs.zeed.w.beez.com/tags/dotnet-core/"/>
+    
+      <category term="blazorapp" scheme="https://blogs.zeed.w.beez.com/tags/blazorapp/"/>
+    
+      <category term="dotnet create" scheme="https://blogs.zeed.w.beez.com/tags/dotnet-create/"/>
+    
+  </entry>
+  
+  <entry>
     <title>windows sub linux</title>
     <link href="https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</id>
     <published>2020-03-08T21:12:06.000Z</published>
-    <updated>2020-03-08T13:29:07.368Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -95,7 +120,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2020-03-08T13:29:07.368Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -117,7 +142,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2020-03-08T13:29:07.364Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -144,7 +169,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2020-03-08T13:29:07.364Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -271,7 +296,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2020-03-08T13:29:07.364Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -293,7 +318,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2020-03-08T13:29:07.368Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -314,7 +339,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2020-03-08T13:29:07.364Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -336,7 +361,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2020-03-08T13:29:07.368Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -379,7 +404,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2020-03-08T13:29:07.368Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -400,7 +425,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2020-03-08T13:29:07.368Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -422,7 +447,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2020-03-08T13:29:07.368Z</updated>
+    <updated>2020-03-15T11:24:40.175Z</updated>
     
     <summary type="html">
     
@@ -458,29 +483,6 @@
       <category term="git" scheme="https://blogs.zeed.w.beez.com/tags/git/"/>
     
       <category term="ssh key" scheme="https://blogs.zeed.w.beez.com/tags/ssh-key/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>use-docker-swarm.md</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/12/01/docker/use-docker-swarm/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/01/docker/use-docker-swarm/</id>
-    <published>2017-12-01T16:03:45.000Z</published>
-    <updated>2018-01-02T13:14:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用 docker swarm 来部署应用，可以极大的减少开发人员在环境配置方面的精力花费。还能从应用部署层面了解下分布式，解耦相关的知识。&lt;br&gt;至于就提的操作命令和步骤，现查&lt;a href=&quot;https://docs.docker.com/get-started/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;就够用了。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
-    
-    
-      <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
-    
-      <category term="swarm" scheme="https://blogs.zeed.w.beez.com/tags/swarm/"/>
     
   </entry>
   

@@ -142,7 +142,7 @@
 
 <h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><p>直接下载安装包安装就好了。windows 和 mac 的安装包，是包含了 docker-machine 的。Linux 上要自己单独安装。</p>
 <h2 id="Docker-镜像加速"><a href="#Docker-镜像加速" class="headerlink" title="Docker 镜像加速"></a>Docker 镜像加速</h2><p>在 Docker Daemon 里可以添加 Registry 配置，或者修改 /etc/docker/daemon.json 配置。重启生效。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"registry-mirrors"</span>: [<span class="string">"https://dockerhub.azk8s.cn/"</span>,<span class="string">"https://registry.docker-cn.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Docker-起-postgres-pgadmin4"><a href="#Docker-起-postgres-pgadmin4" class="headerlink" title="Docker 起 postgres + pgadmin4"></a>Docker 起 postgres + pgadmin4</h2><p>直接去 <a href="https://hub.docker.com/_/postgres/" target="_blank" rel="noopener" title="library/postgres">docker-postgres</a> <a href="https://hub.docker.com/r/dpage/pgadmin4/" target="_blank" rel="noopener" title="pgadmin4">docker-pgadmin4</a> 上照着文档执行命令就可以了。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull postgres:alpine</span><br><span class="line">docker run --name pgsql -e POSTGRES_PASSWORD=password -d postgres:alpine</span><br></pre></td></tr></table></figure>
@@ -155,11 +155,21 @@
 </ol>
 <p>使用localhost 和 127.0.0.1 都连不上。后来是使用 <code>docker network inspect bridge</code> 查看默认的 bridge 的网络里，pgsql container 的 IP 地址，用这个地址连接的。</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
-<li>使用数据卷，方便数据的备份和扩展。</li>
-<li>直接使用 –link 连通多个 Docker 容器。</li>
-<li>使用 Docker 创建新的网络。</li>
-<li>使用 Docker Machine, Compose 和 Swarm。</li>
+<li><p>使用数据卷，方便数据的备份和扩展。</p>
+</li>
+<li><p>直接使用 –link 连通多个 Docker 容器。</p>
+</li>
+<li><p>使用 Docker 创建新的网络。</p>
+</li>
+<li><p>使用 Docker Machine, Compose 和 Swarm。</p>
+</li>
+<li><p>更新于 2020年3月15日14:36:11 </p>
+</li>
 </ol>
+<p><a href="https://hub.docker.com/_/postgres/" target="_blank" rel="noopener" title="library/postgres">docker-postgres</a> 官方推荐使用 <code>postgres</code> + <code>adminer</code></p>
+<p>使用如下 <code>stack.yml</code> 文件</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动命令 docker stack deploy postgres -c stack.yml</span></span><br><span class="line"><span class="comment"># 执行的时候可能会需要先执行 `docker swarm init`</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问 localhost:8080</span></span><br><span class="line"><span class="comment"># user/password 是 postgres/postgres</span></span><br><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="string">'3.7'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">postgres:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">postgres</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">"5432"</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">POSTGRES_PASSWORD:</span> <span class="string">postgres</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">"postgres-data:/var/lib/postgresql/data"</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">app_net</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">adminer:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">adminer</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">app_net</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">app_net:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">postgres-data:</span></span><br></pre></td></tr></table></figure>
+
 
       </div>
       <div class="post-copyright">

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="create blazor app use dotnet core command line step by step."/><meta name="keywords" content="dotnet core, blazorapp, dotnet create, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet core/create-blazor-app/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>create blazor app - Miracle-working</title>
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">create blazor app
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-03-15
+        </span><span class="post-category">
+            <a href="/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/">学海无涯</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>大部分情况下，开发人员遇到的都是<code>维护</code>工作：在现有的代码下，进行维护和新的业务功能开发。<br>比较少有需要自己全新创建整个 Solution 的情况，所以很多基础的 Dotnet 命令会比较生疏，都是先用先查。</p>
+<p>dotnet core 3.1 已经 Release 了，今天尝试一下 BlazorApp 模板，并结合使用 EntityFramework 和 Postgresql + Sqlite 两种 DB。记录一下 dotnet 的系列命令。</p>
+<a id="more"></a>
+
+<h2 id="需求计划"><a href="#需求计划" class="headerlink" title="需求计划"></a>需求计划</h2><ol>
+<li><p>创建标准的 Solution 目录结构。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">BlazorApp2</span><br><span class="line">  --src&#x2F;BlazorApp</span><br><span class="line">  --test&#x2F;BlazorApp.UnitTest</span><br><span class="line">  --BlazorApp2.sln</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 Dapper 从 Postgresql 读取数据，并实时显示日志信息。</p>
+</li>
+<li><p>使用 CodeFirst 创建 Sqlite DB。 并完成数据的 增删改查 功能。</p>
+</li>
+</ol>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li><p>Postgresql 环境，使用 Docker stack 搭建。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动命令 docker stack deploy postgres -c stack.yml</span></span><br><span class="line"><span class="comment"># 执行的时候可能会需要先执行 `docker swarm init`</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问 localhost:8080</span></span><br><span class="line"><span class="comment"># user/password 是 postgres/postgres</span></span><br><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="string">"3.7"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">postgres:</span></span><br><span class="line">  <span class="attr">image:</span> <span class="string">postgres</span></span><br><span class="line">  <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">"5432"</span></span><br><span class="line">  <span class="attr">environment:</span></span><br><span class="line">  <span class="attr">POSTGRES_PASSWORD:</span> <span class="string">postgres</span></span><br><span class="line">  <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">"postgres-data:/var/lib/postgresql/data"</span></span><br><span class="line">  <span class="attr">networks:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">app_net</span></span><br><span class="line"></span><br><span class="line"><span class="attr">adminer:</span></span><br><span class="line">  <span class="attr">image:</span> <span class="string">adminer</span></span><br><span class="line">  <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">  <span class="attr">networks:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">app_net</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line"><span class="attr">app_net:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="attr">postgres-data:</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="创建标准-Solution-目录结构"><a href="#创建标准-Solution-目录结构" class="headerlink" title="创建标准 Solution 目录结构"></a>创建标准 Solution 目录结构</h2><ol>
+<li><p>mkdir BlazorApp2</p>
+</li>
+<li><p>dotnet new sln</p>
+</li>
+<li><p>mkdir src</p>
+</li>
+<li><p>dotnet new blazorserver -o src/BlazorApp</p>
+</li>
+<li><p>dotnet sln BlazorApp2.sln add src/BlazorApp/BlazorApp.csproj</p>
+</li>
+<li><p>mkdir test</p>
+</li>
+<li><p>dotnet new mstest -o test/BlazorApp.UnitTest</p>
+</li>
+<li><p>dotnet sln BlazorApp2.sln add test/BlazorApp.UnitTest/BlazorApp.UnitTest.csproj</p>
+</li>
+<li><p>add unittest to UnitTest1 Class.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void TestMethod1()</span><br><span class="line">&#123;</span><br><span class="line">    Assert.IsTrue(true);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>代码覆盖率报告怎么加？</p>
+</li>
+<li><p>dotnet build</p>
+</li>
+<li><p>dotnet test</p>
+</li>
+<li><p>dotnet run –project src/BlazorApp/BlazorApp.csproj</p>
+</li>
+</ol>
+<h2 id="Dapper-读取-Porstgresql-数据"><a href="#Dapper-读取-Porstgresql-数据" class="headerlink" title="Dapper 读取 Porstgresql 数据"></a>Dapper 读取 Porstgresql 数据</h2><ol>
+<li><p>cd src/BlazorApp</p>
+</li>
+<li><p>dotnet add package Dapper –version 2.0.30</p>
+</li>
+<li><p>dotnet add package Npgsql</p>
+</li>
+<li><p>add <code>ConnectionStrings</code> in appsettings.json</p>
+</li>
+<li><p>add <code>Data/SyncDataService.cs</code></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using Dapper;</span><br><span class="line">using Npgsql;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using Microsoft.Extensions.Configuration;</span><br><span class="line"></span><br><span class="line">namespace BlazorApp.Data</span><br><span class="line">&#123;</span><br><span class="line">    public class Report</span><br><span class="line">    &#123;</span><br><span class="line">        public int id &#123; get; set; &#125;</span><br><span class="line">        public string report &#123; get; set; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public class SyncDataService</span><br><span class="line">    &#123;</span><br><span class="line">        private readonly IConfiguration _configuration;</span><br><span class="line"></span><br><span class="line">        public List&lt;string&gt; TraceInfo &#123; get; set; &#125;</span><br><span class="line">        public List&lt;Report&gt; Reports &#123; get; set; &#125;</span><br><span class="line"></span><br><span class="line">        public SyncDataService(IConfiguration configuration)</span><br><span class="line">        &#123;</span><br><span class="line">            _configuration &#x3D; configuration;</span><br><span class="line"></span><br><span class="line">            TraceInfo &#x3D; new List&lt;string&gt;();</span><br><span class="line">            Reports &#x3D; new List&lt;Report&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void SyncData()</span><br><span class="line">        &#123;</span><br><span class="line">            string connStr &#x3D; _configuration.GetConnectionString(&quot;ReportDB&quot;);</span><br><span class="line">            using (NpgsqlConnection conn &#x3D; new NpgsqlConnection(connStr))</span><br><span class="line">            &#123;</span><br><span class="line">                conn.Open();</span><br><span class="line">                TraceInfo.Add(&quot;Connected to Npsql.&quot;);</span><br><span class="line"></span><br><span class="line">                string sql &#x3D; &quot;select id, report from  report limit 5&quot;;</span><br><span class="line">                var res &#x3D; conn.Query&lt;Report&gt;(sql);</span><br><span class="line">                if (res !&#x3D; null &amp;&amp; res.Any())</span><br><span class="line">                &#123;</span><br><span class="line">                    Reports.AddRange(res);</span><br><span class="line">                    TraceInfo.Add(string.Format(&quot;Get &#123;0&#125; rows data.&quot;, Reports.Count, Environment.NewLine));</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    TraceInfo.Add(&quot;Get 0 rows data.&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                conn.Close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>add <code>Pages/SyncData.razor</code></p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@page &quot;&#x2F;SyncData&quot;</span><br><span class="line"></span><br><span class="line">@using BlazorApp.Data</span><br><span class="line">@inject SyncDataService _syncDataService</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;SyncData&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Sync report data from Postgresql Database.&lt;&#x2F;p&gt;</span><br><span class="line">@if (_syncDataService.TraceInfo !&#x3D; null &amp;&amp; _syncDataService.TraceInfo.Any())</span><br><span class="line">&#123;</span><br><span class="line">    @foreach (var t in _syncDataService.TraceInfo)</span><br><span class="line">    &#123;</span><br><span class="line">        &lt;p&gt;&lt;em&gt;@t&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;button class&#x3D;&quot;btn btn-primary&quot; @onclick&#x3D;&quot;_syncDataService.SyncData&quot;&gt;Sync Data&lt;&#x2F;button&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">@if (_syncDataService.Reports !&#x3D; null &amp;&amp; _syncDataService.Reports.Any())</span><br><span class="line">&#123;</span><br><span class="line">    &lt;table class&#x3D;&quot;table&quot;&gt;</span><br><span class="line">        &lt;thead&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;th&gt;Id&lt;&#x2F;th&gt;</span><br><span class="line">                &lt;th&gt;Report&lt;&#x2F;th&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">        &lt;&#x2F;thead&gt;</span><br><span class="line">        &lt;tbody&gt;</span><br><span class="line">            @foreach (var r in _syncDataService.Reports)</span><br><span class="line">            &#123;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;@r.id&lt;&#x2F;td&gt;</span><br><span class="line">                    &lt;td&gt;@r.report&lt;&#x2F;td&gt;</span><br><span class="line">                &lt;&#x2F;tr&gt;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;&#x2F;tbody&gt;</span><br><span class="line">    &lt;&#x2F;table&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@code &#123;</span><br><span class="line">    protected override Task OnInitializedAsync()</span><br><span class="line">    &#123;</span><br><span class="line">        return base.OnInitializedAsync();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Registry service <code>services.AddScoped&lt;SyncDataService&gt;();</code> in Startup.ConfigureServices</p>
+</li>
+<li><p>Update <code>Shared/NavMenu.razor</code> file.</p>
+</li>
+<li><p>dotnet run</p>
+</li>
+</ol>
+<h2 id="Code-First-with-Sqlite"><a href="#Code-First-with-Sqlite" class="headerlink" title="Code First with Sqlite"></a>Code First with Sqlite</h2>
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/">https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/dotnet-core/">dotnet core</a>
+            <a href="/tags/blazorapp/">blazorapp</a>
+            <a href="/tags/dotnet-create/">dotnet create</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2020/03/08/linux/windows-sub-linux/">
+        <span class="next-text nav-default">windows sub linux</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2020</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/';
+        this.page.identifier = '2020/03/15/dotnet core/create-blazor-app/';
+        this.page.title = 'create blazor app';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
