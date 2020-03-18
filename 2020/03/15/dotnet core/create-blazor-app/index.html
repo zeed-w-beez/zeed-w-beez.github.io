@@ -205,7 +205,27 @@
 <li><p>dotnet run</p>
 </li>
 </ol>
-<h2 id="Code-First-with-Sqlite"><a href="#Code-First-with-Sqlite" class="headerlink" title="Code First with Sqlite"></a>Code First with Sqlite</h2>
+<h2 id="Code-First-with-Sqlite"><a href="#Code-First-with-Sqlite" class="headerlink" title="Code First with Sqlite"></a>Code First with Sqlite</h2><ol>
+<li><p>dotnet add package Microsoft.EntityFrameworkCore</p>
+</li>
+<li><p>dotnet add package Microsoft.EntityFrameworkCore.Design</p>
+</li>
+<li><p>dotnet add package Microsoft.EntityFrameworkCore.Tools</p>
+</li>
+<li><p>dotnet add package Microsoft.EntityFrameworkCore.Sqlite</p>
+</li>
+<li><p>dotnet tool install –global dotnet-ef</p>
+</li>
+<li><p>dotnet ef migrations add InitMigration</p>
+</li>
+<li><p>dotnet ef database update</p>
+</li>
+</ol>
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><ol>
+<li><a href="https://www.npgsql.org/efcore/" target="_blank" rel="noopener">https://www.npgsql.org/efcore/</a></li>
+<li><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet</a></li>
+</ol>
+
       </div>
       <div class="post-copyright">
     <p class="copyright-item">
