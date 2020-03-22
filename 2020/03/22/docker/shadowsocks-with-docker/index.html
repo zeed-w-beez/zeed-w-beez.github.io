@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="shadowsocks with docker"/><meta name="keywords" content="docker, shadowsocks, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109085701-1');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>shadowsocks with docker - Miracle-working</title>
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+</head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">shadowsocks with docker
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-03-22
+        </span><span class="post-category">
+            <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>记录一下 Shadowsocks 的部署和配置。并使用 Dockerfile 做成标准镜像，方便使用。<br>注意：此文章仅作为作者整理知识所用，请勿用于非法用途。作者保留所有权利。</p>
+<a id="more"></a>
+
+<h2 id="普通服务器部署方式"><a href="#普通服务器部署方式" class="headerlink" title="普通服务器部署方式"></a>普通服务器部署方式</h2><blockquote>
+<p>本文以 CentOS 7 为例。</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 用 dnf 安装 shadowsocks</span></span><br><span class="line">yum install epel-release -y</span><br><span class="line">yum makecache fast</span><br><span class="line">yum update -y</span><br><span class="line"></span><br><span class="line">yum install dnf -y</span><br><span class="line">dnf install <span class="string">'dnf-command(copr)'</span> -y</span><br><span class="line">dnf copr <span class="built_in">enable</span> librehat/shadowsocks -y</span><br><span class="line">dnf update</span><br><span class="line">yum install shadowsocks-libev -y</span><br><span class="line"><span class="comment"># ss-server -h</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 更新配置文件</span></span><br><span class="line">vim /etc/shadowsocks-libev/config.json</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">    <span class="string">"server_port"</span>:8388,</span><br><span class="line">    <span class="string">"local_port"</span>:1080,</span><br><span class="line">    <span class="string">"password"</span>:<span class="string">"password!"</span>,</span><br><span class="line">    <span class="string">"timeout"</span>:30,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"chacha20-ietf-poly1305"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.1 可以自己编译安装 v2ray-plugin 插件</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/shadowsocks/v2ray-plugin.git</span><br><span class="line"><span class="built_in">cd</span> v2ray-plugin/</span><br><span class="line">yum install golang -y</span><br><span class="line">go version</span><br><span class="line">go build</span><br><span class="line">cp v2ray-plugin /usr/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 也可以直接下载 Release 文件包</span></span><br><span class="line">wget <span class="string">"https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.0/v2ray-plugin-linux-amd64-v1.3.0.tar.gz"</span></span><br><span class="line"><span class="comment"># sha1sum: a8496d00e6dc117be37f1688e87a34eb05ab9729</span></span><br><span class="line">cp v2ray-plugin /usr/bin/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.1 启动测试</span></span><br><span class="line">ss-server -c /etc/shadowsocks-libev/config.json -p 8388 --plugin v2ray-plugin --plugin-opts <span class="string">"server"</span></span><br><span class="line"><span class="comment"># netstat -nultp 能看到端口号就说明正常的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.2 客户端测试</span></span><br><span class="line"><span class="comment"># IP 端口 加密 信息 参考上面的配置文件。</span></span><br><span class="line"><span class="comment"># 插件程序填 v2ray-plugin 。需要下载(重命名) v2ray-plugin.exe 程序，放到和 Shadowsocks.exe 同一个目录下。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 做成系统服务，记得修改端口号。</span></span><br><span class="line">cat &lt;&lt; EOF &gt; /etc/systemd/system/ss.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=ss service</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/usr/bin/ss-server <span class="string">"-c"</span> <span class="string">"/etc/shadowsocks-libev/config.json"</span> <span class="string">"-p"</span> <span class="string">"8388"</span> <span class="string">"--plugin"</span> <span class="string">"v2ray-plugin"</span> <span class="string">"--plugin-opts"</span> <span class="string">"server"</span></span><br><span class="line">Restart=always</span><br><span class="line">KillMode=process</span><br><span class="line">RestartSec=1</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 开机启动 + 状态管理</span></span><br><span class="line">systemctl <span class="built_in">enable</span> ss.service</span><br><span class="line">systemctl start ss.service</span><br><span class="line">systemctl status ss.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 查看日志</span></span><br><span class="line">journal -u ss.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 多做几个配置文件，可以启动多份</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/">https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/docker/">docker</a>
+            <a href="/tags/shadowsocks/">shadowsocks</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2020/03/15/dotnet%20core/create-blazor-app/">
+        <span class="next-text nav-default">create blazor app</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2020</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/';
+        this.page.identifier = '2020/03/22/docker/shadowsocks-with-docker/';
+        this.page.title = 'shadowsocks with docker';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
