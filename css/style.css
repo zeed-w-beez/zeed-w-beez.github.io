@@ -891,7 +891,8 @@ h6 {
           text-decoration: none;
           border: 0; }
     .post .post-content .highlight .code pre {
-      margin: 0; }
+      margin: 0;
+      padding: 30px 10px 10px; }
     .post .post-content .highlight .gutter {
       width: 10px;
       color: #cacaca; }
