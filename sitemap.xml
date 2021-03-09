@@ -4,302 +4,663 @@
   <url>
     <loc>https://blogs.zeed.w.beez.com/todo/index.html</loc>
     
-    <lastmod>2020-07-13T02:16:29.955Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/tags/index.html</loc>
     
-    <lastmod>2020-07-13T02:16:29.955Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2018/03/31/logo/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/05/27/proxy-settings/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/categories/index.html</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/about/index.html</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/05/06/linux/yum-install-mysql/</loc>
     
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</loc>
-    
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</loc>
-    
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/social%20login/</loc>
-    
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/read%20config%20file/</loc>
-    
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/middleware/</loc>
-    
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</loc>
-    
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</loc>
-    
-    <lastmod>2020-07-13T02:16:29.927Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/11/29/csharp/Action-and-Func/</loc>
     
-    <lastmod>2020-07-13T02:16:29.923Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</loc>
+    
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</loc>
     
-    <lastmod>2020-07-13T02:16:29.923Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</loc>
+    
+    <lastmod>2021-03-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/social%20login/</loc>
+    
+    <lastmod>2021-03-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</loc>
+    
+    <lastmod>2021-03-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</loc>
+    
+    <lastmod>2021-03-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/middleware/</loc>
+    
+    <lastmod>2021-03-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/read%20config%20file/</loc>
+    
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</loc>
     
-    <lastmod>2020-07-13T02:16:29.923Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</loc>
     
-    <lastmod>2020-07-13T02:16:29.923Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</loc>
     
-    <lastmod>2020-07-13T02:16:29.923Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/11/23/UI/scroll-percentage/</loc>
     
-    <lastmod>2020-07-13T02:16:29.923Z</lastmod>
+    <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/11/28/docker/postgres-with-pgadmin4-md/</loc>
     
-    <lastmod>2020-03-15T14:32:32.000Z</lastmod>
+    <lastmod>2020-03-15</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/kubernetes/</loc>
     
-    <lastmod>2020-01-18T15:14:21.000Z</lastmod>
+    <lastmod>2020-01-18</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2018/01/27/Recently/</loc>
     
-    <lastmod>2020-01-18T13:55:49.000Z</lastmod>
+    <lastmod>2020-01-18</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/12/01/autodevops/use-github-action/</loc>
     
-    <lastmod>2019-12-04T19:46:52.000Z</lastmod>
+    <lastmod>2019-12-04</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/11/24/the-color/</loc>
     
-    <lastmod>2019-11-29T23:36:13.000Z</lastmod>
+    <lastmod>2019-11-29</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/10/28/linux/linux-service/</loc>
     
-    <lastmod>2019-11-09T00:00:00.000Z</lastmod>
+    <lastmod>2019-11-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2018/12/07/autodevops/install-gitlab-runner/</loc>
     
-    <lastmod>2019-11-09T00:00:00.000Z</lastmod>
+    <lastmod>2019-11-09</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/</loc>
     
-    <lastmod>2019-10-29T00:00:00.000Z</lastmod>
+    <lastmod>2019-10-29</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/12/27/use-multiple-sshkey/</loc>
     
-    <lastmod>2019-07-07T12:22:53.000Z</lastmod>
+    <lastmod>2019-07-07</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/</loc>
     
-    <lastmod>2019-01-26T13:48:35.000Z</lastmod>
+    <lastmod>2019-01-26</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/12/01/docker/use-docker-swarm/</loc>
     
-    <lastmod>2018-01-02T13:14:23.000Z</lastmod>
+    <lastmod>2018-01-02</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/03/08/dotnet%20core/Build-A-Authorization-Server-Provider/</loc>
     
-    <lastmod>2017-11-22T10:44:16.000Z</lastmod>
+    <lastmod>2017-11-22</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/03/08/hexo/hello-world/</loc>
     
-    <lastmod>2017-11-04T00:00:00.000Z</lastmod>
+    <lastmod>2017-11-04</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/03/10/hexo/page/</loc>
     
-    <lastmod>2017-03-10T12:59:19.000Z</lastmod>
+    <lastmod>2017-03-10</lastmod>
     
   </url>
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/01/11/hyper-v/adding%20net%20switch/</loc>
     
-    <lastmod>2017-03-09T19:19:14.000Z</lastmod>
+    <lastmod>2017-03-09</lastmod>
     
+  </url>
+  
+
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/autodevops/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/github-page/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/custom-domain/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/markdown/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/https/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/css/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/logo/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/proxy/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/redux/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/helloworld/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/tensorflow/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/deepdream/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/git/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/ssh-key/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/UI/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/jQuery/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/gitlab-runner/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/kubernetes/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/github-actions/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/csharp/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/docker/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/shadowsocks/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/swarm/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/Owin/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/OAuth-2-0/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/dotnet-core/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/blazorapp/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/dotnet-create/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/Identity-UI/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/hexo/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/hyper-v-nat-network/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/letsencrypt/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/nginx/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/permission/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/systemctl/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/memcached/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/linux/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/postgresql/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/prometheus-operator/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/tags/fluent-bit/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/%E7%9F%A5%E4%B9%8B%E4%B8%BA%E7%9F%A5%E4%B9%8B/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/deepdream/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/autodevops/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/%E4%BB%96%E5%B1%B1%E4%B9%8B%E7%9F%B3/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
+    <lastmod>2021-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
 </urlset>
