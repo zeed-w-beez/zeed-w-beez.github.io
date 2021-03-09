@@ -252,13 +252,6 @@
     }, 500);
   };
 
-  Even.prototype.beian = function () {
-    var l = document.getElementById('beian');
-    if (l && window && window.location.hostname === 'www.mercenaryunion.com') {
-      l.innerHTML = '<a href="http://www.beian.miit.gov.cn">豫ICP备15012164号-1</a>';
-    }
-  };
-
   var config = window.config;
   var even = new Even(config);
   even.setup();
