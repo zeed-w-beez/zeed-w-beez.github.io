@@ -1,9 +1,9 @@
 $(document).ready(function () {
-//   Even.backToTop();
-//   Even.mobileNavbar();
-//   Even.toc();
-//   Even.fancybox();
-//   Even.visits();
+  Even.backToTop();
+  Even.mobileNavbar();
+  Even.toc();
+  Even.fancybox();
+  Even.visits();
   
   
   var beian = function () {

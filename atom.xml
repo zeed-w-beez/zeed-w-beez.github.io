@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2021-03-09T09:53:32.895Z</updated>
+  <updated>2022-07-03T14:27:17.000Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>prometheus-stack</title>
+    <link href="https://blogs.zeed.w.beez.com/2022/07/03/docker/prometheus-stack/"/>
+    <id>https://blogs.zeed.w.beez.com/2022/07/03/docker/prometheus-stack/</id>
+    <published>2022-07-03T14:27:17.000Z</published>
+    <updated>2022-07-03T14:27:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目前 &lt;code&gt;Prometheus&lt;/code&gt; 监控体系越来越流行，这里也记录一下相关用法。内容除了说明下基本的 Prometheus + Grafana 安装之外，重点介绍下如何监控&lt;code&gt;主机&lt;/code&gt;和 &lt;code&gt;Docker 容器&lt;/code&gt;。主要参考&lt;a href=&quot;https://prometheus.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+      <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
+    
+      <category term="prometheus" scheme="https://blogs.zeed.w.beez.com/tags/prometheus/"/>
+    
+  </entry>
+  
+  <entry>
     <title>shadowsocks with docker</title>
     <link href="https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</id>
     <published>2020-03-22T17:42:46.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -44,7 +67,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</id>
     <published>2020-03-15T15:22:44.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -69,7 +92,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</id>
     <published>2020-03-08T21:12:06.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -143,7 +166,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -165,7 +188,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -192,7 +215,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -319,7 +342,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -341,7 +364,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -362,7 +385,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -384,7 +407,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -427,7 +450,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2021-03-09T09:53:32.895Z</updated>
+    <updated>2022-07-03T09:13:29.500Z</updated>
     
     <summary type="html">
     
@@ -444,33 +467,11 @@
   </entry>
   
   <entry>
-    <title>请直接挂掉销售人员的电话</title>
-    <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/"/>
-    <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E8%AF%B7%E7%9B%B4%E6%8E%A5%E6%8C%82%E6%8E%89%E9%94%80%E5%94%AE%E4%BA%BA%E5%91%98%E7%9A%84%E7%94%B5%E8%AF%9D/</id>
-    <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2021-03-09T09:53:32.899Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如果你对即将介绍的内容没有任何兴趣，请直接挂掉电话！&lt;br&gt;不要不好意思，不要“礼貌”的拒绝，直接挂掉就可以了！&lt;/p&gt;
-&lt;p&gt;某天你在路边偶然发现了一个老奶奶在卖东西，如果你“好心”的去买了，那位老奶奶就可能之后每天都在路边等“你”，并且风雨无阻。剩下一脸茫然的你&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    
-    
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
-    
-  </entry>
-  
-  <entry>
     <title>生活是什么</title>
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2021-03-09T09:53:32.899Z</updated>
+    <updated>2022-07-03T09:13:29.504Z</updated>
     
     <summary type="html">
     
