@@ -20,6 +20,33 @@
   </url>
   
   <url>
+    <loc>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blogs.zeed.w.beez.com/2018/03/31/logo/</loc>
     
     <lastmod>2022-07-18</lastmod>
@@ -48,6 +75,51 @@
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/middleware/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/read%20config%20file/</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/social%20login/</loc>
     
     <lastmod>2022-07-18</lastmod>
     
@@ -128,33 +200,6 @@
   </url>
   
   <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/11/02/github-page-with-custom-domain/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</loc>
     
     <lastmod>2022-07-18</lastmod>
@@ -201,51 +246,6 @@
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/middleware/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/read%20config%20file/</loc>
-    
-    <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/social%20login/</loc>
     
     <lastmod>2022-07-18</lastmod>
     
