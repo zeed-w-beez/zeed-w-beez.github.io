@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="linux-default-permission"/><meta name="keywords" content="permission, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="linux-default-permission"/><meta name="keywords" content="permission, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/01/25/linux/linux-default-permission/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>linux-default-permission - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -138,19 +115,19 @@
 
     <div class="post-content"><p>最近在 linux 搞东西的时候，执行了 <code>chmod -R a+wrx /opt</code> 把整个文件夹的权限给搞乱了。</p>
 <p>好在这个文件夹下没有什么重要的东西。这里记录一下恢复到默认权限的过程。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="恢复的原理"><a href="#恢复的原理" class="headerlink" title="恢复的原理"></a>恢复的原理</h2><p>原理其实很简单： 文件和文件夹都有默认权限。找到默认权限，再用 <code>chmod</code> 设置一下就行了。</p>
 <p>一般情况下：</p>
 <ul>
 <li>对于文件来说默认的权限是 rw-r–r—</li>
 <li>对于目录来说默认的权限是 rwxr-xr-x</li>
-<li>默认的权限分类是： u = 所属的用户, g = 所属组, o = 其他人</li>
+<li>默认的权限分类是： u &#x3D; 所属的用户, g &#x3D; 所属组, o &#x3D; 其他人</li>
 </ul>
 <p>怎么查看呢：</p>
 <ul>
 <li>查看默认权限：umask [-S]</li>
-<li>选项与参数：-S 以符号形式显示 (u=rwx,g=rx,o=rx)</li>
+<li>选项与参数：-S 以符号形式显示 (u&#x3D;rwx,g&#x3D;rx,o&#x3D;rx)</li>
 </ul>
 <p>设置默认权限：umask 权限数</p>
 <ul>
@@ -159,15 +136,15 @@
 </ul>
 <p>所以默认权限是：</p>
 <ul>
-<li>当权限数为022时代表：目录权限(777-022)=755(rwxr-xr-x)</li>
-<li>当权限数为022时代表：目录权限(666-022)=644(rw-r–r—)</li>
+<li>当权限数为022时代表：目录权限(777-022)&#x3D;755(rwxr-xr-x)</li>
+<li>当权限数为022时代表：目录权限(666-022)&#x3D;644(rw-r–r—)</li>
 </ul>
 <h2 id="恢复的步骤"><a href="#恢复的步骤" class="headerlink" title="恢复的步骤"></a>恢复的步骤</h2><p>知道了默认权限后，就比较简单了:</p>
 <ul>
 <li>设置当前文件夹下的全部目录为默认权限：<code>chmod 755 $(find . -type d)</code></li>
 <li>设置当前文件夹下的全部文件为默认权限：<code>chmod 644 $(find . )</code></li>
 </ul>
-<p>参考: <a href="http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html</a></p>
+<p>参考: <a target="_blank" rel="noopener" href="http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html">http://wiki.jikexueyuan.com/project/learn-linux-step-by-step/default-permissions-and-hidden-permissions.html</a></p>
 
       </div>
       <div class="post-copyright">
@@ -202,27 +179,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

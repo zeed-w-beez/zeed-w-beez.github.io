@@ -70,32 +70,36 @@
 
     if ($toc.length) {
       var minScrollTop = $toc.offset().top - SPACING;
-      var maxScrollTop = $footer.offset().top - $toc.height() - SPACING;
-
-      var tocState = {
-        start: {
-          'position': 'absolute',
-          'top': minScrollTop
-        },
-        process: {
-          'position': 'fixed',
-          'top': SPACING
-        },
-        end: {
-          'position': 'absolute',
-          'top': maxScrollTop
-        }
-      };
-
       $(window).scroll(function () {
+        var tocState = {
+          start: {
+            'position': 'absolute',
+            'top': minScrollTop
+          },
+          process: {
+            'position': 'fixed',
+            'top': SPACING
+          }
+        }
         var scrollTop = $(window).scrollTop();
-
         if (scrollTop < minScrollTop) {
           $toc.css(tocState.start);
-        } else if (scrollTop > maxScrollTop) {
-          $toc.css(tocState.end);
         } else {
           $toc.css(tocState.process);
+          
+          if($(".post-toc").css("display") != "none"){
+            var maxTocTop = $footer.offset().top - $toc.height() - SPACING;
+            var tocCenterThreshold = document.documentElement.scrollTop + window.innerHeight / 2;
+            if ($(".toc-link.active").offset() != undefined && $(".toc-link.active").offset().top > tocCenterThreshold) {
+              var distanceBetween = $(".post-toc").offset().top - $(".toc-link.active").offset().top;
+              $(".post-toc").offset({
+                  top: Math.min(maxTocTop, tocCenterThreshold + distanceBetween),
+              });
+            }
+            if (maxTocTop < $(".post-toc").offset().top) {
+              $(".post-toc").offset({ top: maxTocTop });
+            }
+          }
         }
       });
     }
@@ -199,24 +203,28 @@
     }
 
     function showTime(Counter) {
+      let index = 0;
       $visits.each(function () {
         var $this = $(this);
-        var query = new AV.Query(Counter);
-        var url = $this.data('url').trim();
-
-        query.equalTo('url', url);
-        query.find().then(function (results) {
-          if (results.length === 0) {
-            updateVisits($this, 0);
-          } else {
-            var counter = results[0];
-            updateVisits($this, counter.get('time'));
-          }
-        }, function (error) {
-          // eslint-disable-next-line
-          console.log('Error:' + error.code + ' ' + error.message);
-        });
-      });
+        setTimeout(
+          function() {
+            var query = new AV.Query(Counter);
+            var url = $this.data('url').trim();
+    
+            query.equalTo('url', url);
+            query.find().then(function (results) {
+              if (results.length === 0) {
+                updateVisits($this, 0);
+              } else {
+                var counter = results[0];
+                updateVisits($this, counter.get('time'));
+              }
+            }, function (error) {
+              // eslint-disable-next-line
+              console.log('Error:' + error.code + ' ' + error.message);
+            });
+          }, 100*(index++));     
+      })
     }
   };
 

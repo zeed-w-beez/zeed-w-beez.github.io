@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="There is no rose without a thorn."/><meta name="keywords" content="tensorflow, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="There is no rose without a thorn."/><meta name="keywords" content="tensorflow, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>tensorflow - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -137,13 +114,13 @@
     </header>
 
     <div class="post-content"><p>tensorflow 是个好东西，自己也接触下。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>Linux 上都好办，就不说了。Windows 上有个 Python 的坑，记录下：</p>
 <p>Tensorflow 对 Windows 支持，目前是只有 Python3 .<br>想要做 Windows 上跑，必须要Python 3，目前 Python 最新的版本是 3.6.x，但是 Tensorflow 才支持到 3.5，所以要下载 3.5.x 版本的Python 。<br>再用 pip install tensorflow 才行。<br>等以后都支持了，就不用Care这个了。</p>
 <p>当然还有其他糟心的问题。 比如 墙， 想学个新知识都这么难~</p>
 <h2 id="Tensorflow-笔记"><a href="#Tensorflow-笔记" class="headerlink" title="Tensorflow 笔记"></a>Tensorflow 笔记</h2><blockquote>
-<p><a href="https://www.tensorflow.org/get_started/get_started" target="_blank" rel="noopener">https://www.tensorflow.org/get_started/get_started</a><br>把数据结构化，建立合适的图；执行图，降维，执行图，循环…</p>
+<p><a target="_blank" rel="noopener" href="https://www.tensorflow.org/get_started/get_started">https://www.tensorflow.org/get_started/get_started</a><br>把数据结构化，建立合适的图；执行图，降维，执行图，循环…</p>
 </blockquote>
 <ol>
 <li>tensors 数据</li>
@@ -165,44 +142,44 @@
 <ol>
 <li>Tensor 实例</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node1 = tf.constant(<span class="number">3.0</span>, dtype=tf.float32)</span><br><span class="line">node2 = tf.constant(<span class="number">4.0</span>) <span class="comment"># also tf.float32 implicitly</span></span><br><span class="line">print(node1, node2)</span><br><span class="line">Tensor(<span class="string">"Const:0"</span>, shape=(), dtype=float32) Tensor(<span class="string">"Const_1:0"</span>, shape=(), dtype=float32)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node1 = tf.constant(<span class="number">3.0</span>, dtype=tf.float32)</span><br><span class="line">node2 = tf.constant(<span class="number">4.0</span>) <span class="comment"># also tf.float32 implicitly</span></span><br><span class="line"><span class="built_in">print</span>(node1, node2)</span><br><span class="line">Tensor(<span class="string">&quot;Const:0&quot;</span>, shape=(), dtype=float32) Tensor(<span class="string">&quot;Const_1:0&quot;</span>, shape=(), dtype=float32)</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>执行</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sess = tf.Session()</span><br><span class="line"><span class="keyword">print</span> (sess.run([node1, nod2]))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sess = tf.Session()</span><br><span class="line"><span class="built_in">print</span> (sess.run([node1, nod2]))</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>构建图</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这里最重要，可以使用更高级和复杂的算法去构建图</span></span><br><span class="line">node3 = tf.add(node1, node2)</span><br><span class="line">node4 = 算法<span class="number">1</span>(node3)</span><br><span class="line">node5 = 算法<span class="number">2</span>(node3)</span><br><span class="line">node6 = 算法x(node4, node5)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">print(<span class="string">"node3:"</span>, node3)</span><br><span class="line"><span class="comment"># node3: Tensor("Add:0", shape=(), dtype=float32)</span></span><br><span class="line">print(<span class="string">"sess.run(node3):"</span>, sess.run(node3))</span><br><span class="line"><span class="comment"># sess.run(node3): 7.0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这里最重要，可以使用更高级和复杂的算法去构建图</span></span><br><span class="line">node3 = tf.add(node1, node2)</span><br><span class="line">node4 = 算法<span class="number">1</span>(node3)</span><br><span class="line">node5 = 算法<span class="number">2</span>(node3)</span><br><span class="line">node6 = 算法x(node4, node5)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;node3:&quot;</span>, node3)</span><br><span class="line"><span class="comment"># node3: Tensor(&quot;Add:0&quot;, shape=(), dtype=float32)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;sess.run(node3):&quot;</span>, sess.run(node3))</span><br><span class="line"><span class="comment"># sess.run(node3): 7.0</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>数据和图可以分开</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = tf.placeholder(tf.float32) <span class="comment"># 用给定的数据类型去构建图，在执行过程中填入真实的数据</span></span><br><span class="line">b = tf.placeholder(tf.float32)</span><br><span class="line">adder_node = a + b  <span class="comment"># + provides a shortcut for tf.add(a, b)</span></span><br><span class="line"></span><br><span class="line">print(sess.run(adder_node, &#123;a: <span class="number">3</span>, b: <span class="number">4.5</span>&#125;)) <span class="comment"># 7.5</span></span><br><span class="line">print(sess.run(adder_node, &#123;a: [<span class="number">1</span>, <span class="number">3</span>], b: [<span class="number">2</span>, <span class="number">4</span>]&#125;)) <span class="comment"># [3., 7.]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = tf.placeholder(tf.float32) <span class="comment"># 用给定的数据类型去构建图，在执行过程中填入真实的数据</span></span><br><span class="line">b = tf.placeholder(tf.float32)</span><br><span class="line">adder_node = a + b  <span class="comment"># + provides a shortcut for tf.add(a, b)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sess.run(adder_node, &#123;a: <span class="number">3</span>, b: <span class="number">4.5</span>&#125;)) <span class="comment"># 7.5</span></span><br><span class="line"><span class="built_in">print</span>(sess.run(adder_node, &#123;a: [<span class="number">1</span>, <span class="number">3</span>], b: [<span class="number">2</span>, <span class="number">4</span>]&#125;)) <span class="comment"># [3., 7.]</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>变量，测试数据在不同的变量下的结果，以得到最优解</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W = tf.Variable([<span class="number">.3</span>], dtype=tf.float32)</span><br><span class="line">b = tf.Variable([<span class="number">-.3</span>], dtype=tf.float32)</span><br><span class="line">x = tf.placeholder(tf.float32)</span><br><span class="line">linear_model = W * x + b</span><br><span class="line"><span class="comment"># 初始化变量</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"><span class="comment"># 指定变量的范围</span></span><br><span class="line">print(sess.run(linear_model, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]&#125;))</span><br><span class="line"><span class="comment"># [ 0.          0.30000001  0.60000002  0.90000004]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">W = tf.Variable([<span class="number">.3</span>], dtype=tf.float32)</span><br><span class="line">b = tf.Variable([-<span class="number">.3</span>], dtype=tf.float32)</span><br><span class="line">x = tf.placeholder(tf.float32)</span><br><span class="line">linear_model = W * x + b</span><br><span class="line"><span class="comment"># 初始化变量</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"><span class="comment"># 指定变量的范围</span></span><br><span class="line"><span class="built_in">print</span>(sess.run(linear_model, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]&#125;))</span><br><span class="line"><span class="comment"># [ 0.          0.30000001  0.60000002  0.90000004]</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>评估</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y = tf.placeholder(tf.float32)</span><br><span class="line">squared_deltas = tf.square(linear_model - y)</span><br><span class="line">loss = tf.reduce_sum(squared_deltas)</span><br><span class="line">print(sess.run(loss, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]&#125;))</span><br><span class="line"><span class="comment"># 23.66</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y = tf.placeholder(tf.float32)</span><br><span class="line">squared_deltas = tf.square(linear_model - y)</span><br><span class="line">loss = tf.reduce_sum(squared_deltas)</span><br><span class="line"><span class="built_in">print</span>(sess.run(loss, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>]&#125;))</span><br><span class="line"><span class="comment"># 23.66</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>纠正</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fixW = tf.assign(W, [<span class="number">-1.</span>])</span><br><span class="line">fixb = tf.assign(b, [<span class="number">1.</span>])</span><br><span class="line">sess.run([fixW, fixb])</span><br><span class="line">print(sess.run(loss, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]&#125;))</span><br><span class="line"><span class="comment"># 0.0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fixW = tf.assign(W, [-<span class="number">1.</span>])</span><br><span class="line">fixb = tf.assign(b, [<span class="number">1.</span>])</span><br><span class="line">sess.run([fixW, fixb])</span><br><span class="line"><span class="built_in">print</span>(sess.run(loss, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>]&#125;))</span><br><span class="line"><span class="comment"># 0.0</span></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>优化</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 Tensorflow 提供的算法 进行优化，比如 梯度下降 等</span></span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line">sess.run(init) <span class="comment"># reset values to incorrect defaults.</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">  sess.run(train, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]&#125;)</span><br><span class="line">print(sess.run([W, b]))</span><br><span class="line"><span class="comment"># [array([-0.9999969], dtype=float32), array([ 0.99999082], dtype=float32)]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 Tensorflow 提供的算法 进行优化，比如 梯度下降 等</span></span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line">sess.run(init) <span class="comment"># reset values to incorrect defaults.</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">  sess.run(train, &#123;x: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], y: [<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>]&#125;)</span><br><span class="line"><span class="built_in">print</span>(sess.run([W, b]))</span><br><span class="line"><span class="comment"># [array([-0.9999969], dtype=float32), array([ 0.99999082], dtype=float32)]</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Model parameters</span></span><br><span class="line">W = tf.Variable([<span class="number">.3</span>], dtype=tf.float32)</span><br><span class="line">b = tf.Variable([<span class="number">-.3</span>], dtype=tf.float32)</span><br><span class="line"><span class="comment"># Model input and output</span></span><br><span class="line">x = tf.placeholder(tf.float32)</span><br><span class="line">linear_model = W * x + b</span><br><span class="line">y = tf.placeholder(tf.float32)</span><br><span class="line"></span><br><span class="line"><span class="comment"># loss</span></span><br><span class="line">loss = tf.reduce_sum(tf.square(linear_model - y)) <span class="comment"># sum of the squares</span></span><br><span class="line"><span class="comment"># optimizer</span></span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="comment"># training data</span></span><br><span class="line">x_train = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">y_train = [<span class="number">0</span>, <span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>]</span><br><span class="line"><span class="comment"># training loop</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line">sess = tf.Session()</span><br><span class="line">sess.run(init) <span class="comment"># reset values to wrong</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">  sess.run(train, &#123;x: x_train, y: y_train&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># evaluate training accuracy</span></span><br><span class="line">curr_W, curr_b, curr_loss = sess.run([W, b, loss], &#123;x: x_train, y: y_train&#125;)</span><br><span class="line">print(<span class="string">"W: %s b: %s loss: %s"</span>%(curr_W, curr_b, curr_loss))</span><br><span class="line"><span class="comment"># W: [-0.9999969] b: [ 0.99999082] loss: 5.69997e-11</span></span><br></pre></td></tr></table></figure>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Model parameters</span></span><br><span class="line">W = tf.Variable([<span class="number">.3</span>], dtype=tf.float32)</span><br><span class="line">b = tf.Variable([-<span class="number">.3</span>], dtype=tf.float32)</span><br><span class="line"><span class="comment"># Model input and output</span></span><br><span class="line">x = tf.placeholder(tf.float32)</span><br><span class="line">linear_model = W * x + b</span><br><span class="line">y = tf.placeholder(tf.float32)</span><br><span class="line"></span><br><span class="line"><span class="comment"># loss</span></span><br><span class="line">loss = tf.reduce_sum(tf.square(linear_model - y)) <span class="comment"># sum of the squares</span></span><br><span class="line"><span class="comment"># optimizer</span></span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="comment"># training data</span></span><br><span class="line">x_train = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">y_train = [<span class="number">0</span>, -<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">3</span>]</span><br><span class="line"><span class="comment"># training loop</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line">sess = tf.Session()</span><br><span class="line">sess.run(init) <span class="comment"># reset values to wrong</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>):</span><br><span class="line">  sess.run(train, &#123;x: x_train, y: y_train&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># evaluate training accuracy</span></span><br><span class="line">curr_W, curr_b, curr_loss = sess.run([W, b, loss], &#123;x: x_train, y: y_train&#125;)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;W: %s b: %s loss: %s&quot;</span>%(curr_W, curr_b, curr_loss))</span><br><span class="line"><span class="comment"># W: [-0.9999969] b: [ 0.99999082] loss: 5.69997e-11</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><p><img src="/images/graph_vis_animation.gif" alt="tensorflow graph annimation"></p>
 
@@ -239,27 +216,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

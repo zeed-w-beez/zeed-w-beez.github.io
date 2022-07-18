@@ -3,7 +3,7 @@
   <title>Miracle-working</title>
   
   <subtitle>Stay Hungry. Stay Foolish.</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="https://blogs.zeed.w.beez.com/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
   <updated>2022-07-03T14:27:17.000Z</updated>
@@ -23,19 +23,17 @@
     <published>2022-07-03T14:27:17.000Z</published>
     <updated>2022-07-03T14:27:17.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;目前 &lt;code&gt;Prometheus&lt;/code&gt; 监控体系越来越流行，这里也记录一下相关用法。内容除了说明下基本的 Prometheus + Grafana 安装之外，重点介绍下如何监控&lt;code&gt;主机&lt;/code&gt;和 &lt;code&gt;Docker 容器&lt;/code&gt;。主要参考&lt;a href=&quot;https://prometheus.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;目前 &lt;code&gt;Prometheus&lt;/code&gt; 监控体系越来越流行，这里也记录一下相关用法。内容除了说明下基本的 Prometheus + Grafana 安装之外，重点介绍下如何监控&lt;code&gt;主机&lt;/code&gt;和 &lt;code&gt;Docker 容器&lt;/code&gt;。主要参考&lt;a href=&quot;https://prometheus.io/&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;</summary>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
-      <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
+    <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
     
-      <category term="prometheus" scheme="https://blogs.zeed.w.beez.com/tags/prometheus/"/>
+    <category term="prometheus" scheme="https://blogs.zeed.w.beez.com/tags/prometheus/"/>
     
   </entry>
   
@@ -44,21 +42,19 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</id>
     <published>2020-03-22T17:42:46.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;记录一下 Shadowsocks 的部署和配置。并使用 Dockerfile 做成标准镜像，方便使用。&lt;br&gt;注意：此文章仅作为作者整理知识所用，请勿用于非法用途。作者保留所有权利。&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.239Z</updated>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    <summary type="html">&lt;p&gt;记录一下 Shadowsocks 的部署和配置。并使用 Dockerfile 做成标准镜像，方便使用。&lt;br&gt;注意：此文章仅作为作者整理知识所用，请勿用于非法用途。作者保留所有权利。&lt;/p&gt;</summary>
     
     
-      <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
     
-      <category term="shadowsocks" scheme="https://blogs.zeed.w.beez.com/tags/shadowsocks/"/>
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+    <category term="docker" scheme="https://blogs.zeed.w.beez.com/tags/docker/"/>
+    
+    <category term="shadowsocks" scheme="https://blogs.zeed.w.beez.com/tags/shadowsocks/"/>
     
   </entry>
   
@@ -67,23 +63,21 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</id>
     <published>2020-03-15T15:22:44.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      create blazor app use dotnet core command line step by step.
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.239Z</updated>
     
     
-      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    <summary type="html">create blazor app use dotnet core command line step by step.</summary>
     
     
-      <category term="dotnet core" scheme="https://blogs.zeed.w.beez.com/tags/dotnet-core/"/>
     
-      <category term="blazorapp" scheme="https://blogs.zeed.w.beez.com/tags/blazorapp/"/>
+    <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
     
-      <category term="dotnet create" scheme="https://blogs.zeed.w.beez.com/tags/dotnet-create/"/>
+    
+    <category term="dotnet core" scheme="https://blogs.zeed.w.beez.com/tags/dotnet-core/"/>
+    
+    <category term="blazorapp" scheme="https://blogs.zeed.w.beez.com/tags/blazorapp/"/>
+    
+    <category term="dotnet create" scheme="https://blogs.zeed.w.beez.com/tags/dotnet-create/"/>
     
   </entry>
   
@@ -92,19 +86,17 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</id>
     <published>2020-03-08T21:12:06.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;新版本的 Windows 10 自带了 Windows Sub Linux 功能。可以更方便的使用 linux 系统了。&lt;br&gt;&lt;img src=&quot;/images/wsl.jpg&quot; alt=&quot;wsl&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.243Z</updated>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    <summary type="html">&lt;p&gt;新版本的 Windows 10 自带了 Windows Sub Linux 功能。可以更方便的使用 linux 系统了。&lt;br&gt;&lt;img src=&quot;/images/wsl.jpg&quot; alt=&quot;wsl&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="linux" scheme="https://blogs.zeed.w.beez.com/tags/linux/"/>
+    
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+    <category term="linux" scheme="https://blogs.zeed.w.beez.com/tags/linux/"/>
     
   </entry>
   
@@ -115,26 +107,24 @@
     <published>2019-12-01T19:06:18.000Z</published>
     <updated>2019-12-04T19:46:52.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;最近把自动发布从 &lt;code&gt;travis-ci&lt;/code&gt; 换成了 &lt;code&gt;github action&lt;/code&gt;。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;最近把自动发布从 &lt;code&gt;travis-ci&lt;/code&gt; 换成了 &lt;code&gt;github action&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;原因有三：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;github 开放免费私有仓库了，所以把这个博客的源码转成了私有的。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;travis-ci.org&lt;/code&gt; 不支持私有仓库 (travis-ci.com 是支持私有仓库的)。&lt;/li&gt;
-&lt;li&gt;github &lt;a href=&quot;https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;发布&lt;/a&gt;了自己的 actions 功能。&lt;/li&gt;
+&lt;li&gt;github &lt;a href=&quot;https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/&quot;&gt;发布&lt;/a&gt;了自己的 actions 功能。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;/images/github-actions.png&quot; alt=&quot;github actions&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+&lt;p&gt;&lt;img src=&quot;/images/github-actions.png&quot; alt=&quot;github actions&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
     
-      <category term="github actions" scheme="https://blogs.zeed.w.beez.com/tags/github-actions/"/>
+    <category term="github actions" scheme="https://blogs.zeed.w.beez.com/tags/github-actions/"/>
     
   </entry>
   
@@ -145,19 +135,17 @@
     <published>2019-11-24T18:47:10.000Z</published>
     <updated>2019-11-29T23:36:13.000Z</updated>
     
-    <summary type="html">
     
-      &lt;h2 id=&quot;DEEP-DREAM&quot;&gt;&lt;a href=&quot;#DEEP-DREAM&quot; class=&quot;headerlink&quot; title=&quot;DEEP DREAM&quot;&gt;&lt;/a&gt;DEEP DREAM&lt;/h2&gt;&lt;p&gt;The colors people see are limited by their eyes, but the real world should be more colorful.&lt;/p&gt;
+    <summary type="html">&lt;h2 id=&quot;DEEP-DREAM&quot;&gt;&lt;a href=&quot;#DEEP-DREAM&quot; class=&quot;headerlink&quot; title=&quot;DEEP DREAM&quot;&gt;&lt;/a&gt;DEEP DREAM&lt;/h2&gt;&lt;p&gt;The colors people see are limited by their eyes, but the real world should be more colorful.&lt;/p&gt;
 &lt;p&gt;Can you imagine the color of the radio waves, the color of the air, the color of the emotions, the color of life?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/dd.jpg&quot; alt=&quot;deep dream&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+&lt;p&gt;&lt;img src=&quot;/images/dd.jpg&quot; alt=&quot;deep dream&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="deepdream" scheme="https://blogs.zeed.w.beez.com/categories/deepdream/"/>
+    
+    <category term="deepdream" scheme="https://blogs.zeed.w.beez.com/categories/deepdream/"/>
     
     
-      <category term="deepdream" scheme="https://blogs.zeed.w.beez.com/tags/deepdream/"/>
+    <category term="deepdream" scheme="https://blogs.zeed.w.beez.com/tags/deepdream/"/>
     
   </entry>
   
@@ -166,20 +154,18 @@
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前一段时间参加 QConf 10 周年。里面有几场是介绍微信生态的，比如小程序什么的。回头看视频的时候，发现蛮有意思的，所以想着自己做个小程序玩玩。然后就去注册了一个“SSH+”，准备尝试一下。顺便做了一个 Logo，因为必须要提供。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/ssh+.png&quot; alt=&quot;ssh +&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.243Z</updated>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    <summary type="html">&lt;p&gt;前一段时间参加 QConf 10 周年。里面有几场是介绍微信生态的，比如小程序什么的。回头看视频的时候，发现蛮有意思的，所以想着自己做个小程序玩玩。然后就去注册了一个“SSH+”，准备尝试一下。顺便做了一个 Logo，因为必须要提供。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/ssh+.png&quot; alt=&quot;ssh +&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="微信小程序" scheme="https://blogs.zeed.w.beez.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+    <category term="微信小程序" scheme="https://blogs.zeed.w.beez.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
@@ -188,25 +174,23 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Kubernetes 方便的帮我们管理和运维程序，但是也带来了一些新的挑战。比如日志问题。用了Kubernetes 之后，就不能方便的登录到服务器上查看stdout日志，查看系统日志，查看程序的输出日志了。&lt;/p&gt;
-&lt;p&gt;但是 Kubernetes 有提供更系统化，更高效的日志处理方式。这里就 &lt;a href=&quot;https://fluentbit.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;fluent-bit&lt;/a&gt; 做一下记录。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/flb_002.png&quot; alt=&quot;fluent-bit&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.239Z</updated>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    <summary type="html">&lt;p&gt;Kubernetes 方便的帮我们管理和运维程序，但是也带来了一些新的挑战。比如日志问题。用了Kubernetes 之后，就不能方便的登录到服务器上查看stdout日志，查看系统日志，查看程序的输出日志了。&lt;/p&gt;
+&lt;p&gt;但是 Kubernetes 有提供更系统化，更高效的日志处理方式。这里就 &lt;a href=&quot;https://fluentbit.io/&quot;&gt;fluent-bit&lt;/a&gt; 做一下记录。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/flb_002.png&quot; alt=&quot;fluent-bit&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
     
-      <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
-      <category term="fluent-bit" scheme="https://blogs.zeed.w.beez.com/tags/fluent-bit/"/>
+    
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    
+    <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
+    
+    <category term="fluent-bit" scheme="https://blogs.zeed.w.beez.com/tags/fluent-bit/"/>
     
   </entry>
   
@@ -215,23 +199,21 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
+    <updated>2022-07-18T09:14:36.239Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;程序上线以后，就需要通过监控来确保程序健康和稳定的运行了。当程序异常的时候，还要有能力发出报警。一整套的监控收集、存储、报警的安装和配置是非常麻烦的。而且这套监控程序后续也需要进行维护，额外增加了很多工作量。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;程序上线以后，就需要通过监控来确保程序健康和稳定的运行了。当程序异常的时候，还要有能力发出报警。一整套的监控收集、存储、报警的安装和配置是非常麻烦的。而且这套监控程序后续也需要进行维护，额外增加了很多工作量。&lt;/p&gt;
 &lt;p&gt;这里记录下利用基于 Kubernetes 集群，利用 helm &lt;strong&gt;一键&lt;/strong&gt;部署 Prometheus + Grafana 的方式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/helm-prometheus.png&quot; alt=&quot;helm-prometheus&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+&lt;p&gt;&lt;img src=&quot;/images/helm-prometheus.png&quot; alt=&quot;helm-prometheus&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
     
-      <category term="prometheus-operator" scheme="https://blogs.zeed.w.beez.com/tags/prometheus-operator/"/>
+    <category term="prometheus-operator" scheme="https://blogs.zeed.w.beez.com/tags/prometheus-operator/"/>
     
   </entry>
   
@@ -242,21 +224,19 @@
     <published>2019-10-29T14:05:01.000Z</published>
     <updated>2020-01-18T15:14:21.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;Kubernetes 的出现很大程度上抹平了运维工作的鸿沟，大大降低了老旧互联网企业和新兴小企业的运维成本，同时也为了转投“云”怀抱提供了可能。&lt;/p&gt;
-&lt;p&gt;Kubernetes builds upon &lt;a href=&quot;http://queue.acm.org/detail.cfm?id=2898444&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;15 years of experience of running production workloads at Google&lt;/a&gt;, combined with best-of-breed ideas and practices from the community.&lt;br&gt;Kubernetes 带着 Google 15年的生产环境运维管理经验，重新定义的容器编排的标准。原来运维也可以如此高效、优雅、让人着迷。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/kubernetes-flower.png&quot; alt=&quot;kubernetes flower&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;Kubernetes 的出现很大程度上抹平了运维工作的鸿沟，大大降低了老旧互联网企业和新兴小企业的运维成本，同时也为了转投“云”怀抱提供了可能。&lt;/p&gt;
+&lt;p&gt;Kubernetes builds upon &lt;a href=&quot;http://queue.acm.org/detail.cfm?id=2898444&quot;&gt;15 years of experience of running production workloads at Google&lt;/a&gt;, combined with best-of-breed ideas and practices from the community.&lt;br&gt;Kubernetes 带着 Google 15年的生产环境运维管理经验，重新定义的容器编排的标准。原来运维也可以如此高效、优雅、让人着迷。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/kubernetes-flower.png&quot; alt=&quot;kubernetes flower&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
     
-      <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
+    <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
     
   </entry>
   
@@ -267,23 +247,21 @@
     <published>2019-10-29T13:53:04.000Z</published>
     <updated>2019-10-29T00:00:00.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。&lt;/p&gt;
-&lt;p&gt;今天记录一下使用&lt;strong&gt;免费 开源&lt;/strong&gt;的证书机构 &lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt&lt;/a&gt; 配合 &lt;a href=&quot;https://certbot.eff.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;certbot&lt;/a&gt; 完成基于 &lt;a href=&quot;https://nginx.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;nginx&lt;/a&gt; 的 https 配置。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/letsencrypt.png&quot; alt=&quot;Let’s Encrypt&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。&lt;/p&gt;
+&lt;p&gt;今天记录一下使用&lt;strong&gt;免费 开源&lt;/strong&gt;的证书机构 &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt; 配合 &lt;a href=&quot;https://certbot.eff.org/&quot;&gt;certbot&lt;/a&gt; 完成基于 &lt;a href=&quot;https://nginx.org/&quot;&gt;nginx&lt;/a&gt; 的 https 配置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/letsencrypt.png&quot; alt=&quot;Let’s Encrypt&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
-      <category term="https" scheme="https://blogs.zeed.w.beez.com/tags/https/"/>
+    <category term="https" scheme="https://blogs.zeed.w.beez.com/tags/https/"/>
     
-      <category term="letsencrypt" scheme="https://blogs.zeed.w.beez.com/tags/letsencrypt/"/>
+    <category term="letsencrypt" scheme="https://blogs.zeed.w.beez.com/tags/letsencrypt/"/>
     
-      <category term="nginx" scheme="https://blogs.zeed.w.beez.com/tags/nginx/"/>
+    <category term="nginx" scheme="https://blogs.zeed.w.beez.com/tags/nginx/"/>
     
   </entry>
   
@@ -294,18 +272,16 @@
     <published>2019-01-25T11:22:58.000Z</published>
     <updated>2019-01-26T13:48:35.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;最近在 linux 搞东西的时候，执行了 &lt;code&gt;chmod -R a+wrx /opt&lt;/code&gt; 把整个文件夹的权限给搞乱了。&lt;/p&gt;
-&lt;p&gt;好在这个文件夹下没有什么重要的东西。这里记录一下恢复到默认权限的过程。&lt;/p&gt;
-    
-    </summary>
+    <summary type="html">&lt;p&gt;最近在 linux 搞东西的时候，执行了 &lt;code&gt;chmod -R a+wrx /opt&lt;/code&gt; 把整个文件夹的权限给搞乱了。&lt;/p&gt;
+&lt;p&gt;好在这个文件夹下没有什么重要的东西。这里记录一下恢复到默认权限的过程。&lt;/p&gt;</summary>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
     
     
-      <category term="permission" scheme="https://blogs.zeed.w.beez.com/tags/permission/"/>
+    <category term="permission" scheme="https://blogs.zeed.w.beez.com/tags/permission/"/>
     
   </entry>
   
@@ -316,24 +292,22 @@
     <published>2018-12-07T00:00:00.000Z</published>
     <updated>2019-11-09T00:00:00.000Z</updated>
     
-    <summary type="html">
     
-      &lt;!-- 人类发明各种`工具`让我们活的更轻松，可结果却是越来越`累`。我们确实不用做什么体力活了，但是我们处理的事情却越来越多。
+    <summary type="html">&lt;!-- 人类发明各种`工具`让我们活的更轻松，可结果却是越来越`累`。我们确实不用做什么体力活了，但是我们处理的事情却越来越多。
 
 程序员被誉为新新人类，也不是空穴来风。他们用代码创建了一个帝国，并且为了让帝国更加繁荣而尽心尽力。 --&gt;
 
 &lt;p&gt;最近一年在做一个比较大的项目，在之前项目的时候，吃过多环境部署的亏，所以这次项目开始之前主动提出了要使用 AutoDevOps 。经过一段时间的接触和使用，发现AutoDevops对于开发人员来说确实是个“枕头”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/auto-devops-stages.png&quot; alt=&quot;stage&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+&lt;p&gt;&lt;img src=&quot;/images/auto-devops-stages.png&quot; alt=&quot;stage&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
     
     
-      <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
     
-      <category term="gitlab runner" scheme="https://blogs.zeed.w.beez.com/tags/gitlab-runner/"/>
+    <category term="gitlab runner" scheme="https://blogs.zeed.w.beez.com/tags/gitlab-runner/"/>
     
   </entry>
   
@@ -342,20 +316,18 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;偶然发现一个 “跳动的红心” 的样式很有感觉，所以抄袭一下~&lt;/p&gt;
-&lt;p&gt;效果在页面最下方，版权那边~&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.239Z</updated>
     
     
-      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
+    <summary type="html">&lt;p&gt;偶然发现一个 “跳动的红心” 的样式很有感觉，所以抄袭一下~&lt;/p&gt;
+&lt;p&gt;效果在页面最下方，版权那边~&lt;/p&gt;</summary>
     
     
-      <category term="UI" scheme="https://blogs.zeed.w.beez.com/tags/UI/"/>
+    
+    <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
+    
+    
+    <category term="UI" scheme="https://blogs.zeed.w.beez.com/tags/UI/"/>
     
   </entry>
   
@@ -364,19 +336,17 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;MarkDown 确实非常适合写博客和业务文档。语法简洁，没那么多花俏的功能。&lt;br&gt;但是有时基础语法满足不了我们的需求，就需要再知道点特别的用法了。&lt;br&gt;怎么直接写 Html 标签？ 怎么加自定义样式？&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.239Z</updated>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    <summary type="html">&lt;p&gt;MarkDown 确实非常适合写博客和业务文档。语法简洁，没那么多花俏的功能。&lt;br&gt;但是有时基础语法满足不了我们的需求，就需要再知道点特别的用法了。&lt;br&gt;怎么直接写 Html 标签？ 怎么加自定义样式？&lt;/p&gt;</summary>
     
     
-      <category term="markdown" scheme="https://blogs.zeed.w.beez.com/tags/markdown/"/>
+    
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+    <category term="markdown" scheme="https://blogs.zeed.w.beez.com/tags/markdown/"/>
     
   </entry>
   
@@ -385,20 +355,18 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;dotnet core 2.1 版本的 Identity 对 Views 做了层封装，默认 Template 创建出来的项目只有一个视图文件了。如果想自定义修改，还需要先把视图文件都创建出来才行。&lt;/p&gt;
-&lt;p&gt;默认的文件结构：&lt;img src=&quot;/images/identity-ui-files.png&quot; alt=&quot;identity-ui-files&quot;&gt;&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.239Z</updated>
     
     
-      <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    <summary type="html">&lt;p&gt;dotnet core 2.1 版本的 Identity 对 Views 做了层封装，默认 Template 创建出来的项目只有一个视图文件了。如果想自定义修改，还需要先把视图文件都创建出来才行。&lt;/p&gt;
+&lt;p&gt;默认的文件结构：&lt;img src=&quot;/images/identity-ui-files.png&quot; alt=&quot;identity-ui-files&quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="Identity UI" scheme="https://blogs.zeed.w.beez.com/tags/Identity-UI/"/>
+    
+    <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
+    
+    
+    <category term="Identity UI" scheme="https://blogs.zeed.w.beez.com/tags/Identity-UI/"/>
     
   </entry>
   
@@ -407,22 +375,20 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;从 &lt;a href=&quot;https://material.io/icons/#ic_polymer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Material Design&lt;/a&gt; 发现了一个比较中意的图标 ，想自己再设计下，然后弄个自己的 Logo 出来。&lt;/p&gt;
-&lt;p&gt;接着就发现了这个 &lt;a href=&quot;https://www.polymer-project.org/images/logos/p-logo-192.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.polymer-project.org/images/logos/p-logo-192.png&lt;/a&gt;，确实挺好看的。&lt;br&gt;&lt;img src=&quot;/images/p-logo-192.png&quot; alt=&quot; polymer-project logo &quot;&gt;&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.243Z</updated>
     
     
-      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
+    <summary type="html">&lt;p&gt;从 &lt;a href=&quot;https://material.io/icons/#ic_polymer&quot;&gt;Material Design&lt;/a&gt; 发现了一个比较中意的图标 ，想自己再设计下，然后弄个自己的 Logo 出来。&lt;/p&gt;
+&lt;p&gt;接着就发现了这个 &lt;a href=&quot;https://www.polymer-project.org/images/logos/p-logo-192.png&quot;&gt;https://www.polymer-project.org/images/logos/p-logo-192.png&lt;/a&gt;，确实挺好看的。&lt;br&gt;&lt;img src=&quot;/images/p-logo-192.png&quot; alt=&quot; polymer-project logo &quot;&gt;&lt;/p&gt;</summary>
     
     
-      <category term="css" scheme="https://blogs.zeed.w.beez.com/tags/css/"/>
     
-      <category term="logo" scheme="https://blogs.zeed.w.beez.com/tags/logo/"/>
+    <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
+    
+    
+    <category term="css" scheme="https://blogs.zeed.w.beez.com/tags/css/"/>
+    
+    <category term="logo" scheme="https://blogs.zeed.w.beez.com/tags/logo/"/>
     
   </entry>
   
@@ -433,14 +399,12 @@
     <published>2018-01-27T17:05:23.000Z</published>
     <updated>2020-01-18T13:55:49.000Z</updated>
     
-    <summary type="html">
     
-      Time and tide wait for no man.
-    
-    </summary>
+    <summary type="html">Time and tide wait for no man.</summary>
     
     
-      <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
+    
+    <category term="边边角角" scheme="https://blogs.zeed.w.beez.com/categories/%E8%BE%B9%E8%BE%B9%E8%A7%92%E8%A7%92/"/>
     
     
   </entry>
@@ -450,19 +414,17 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2022-07-03T09:13:29.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.243Z</updated>
     
     
-      <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    <summary type="html">&lt;p&gt;Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。&lt;/p&gt;</summary>
     
     
-      <category term="memcached" scheme="https://blogs.zeed.w.beez.com/tags/memcached/"/>
+    
+    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
+    
+    
+    <category term="memcached" scheme="https://blogs.zeed.w.beez.com/tags/memcached/"/>
     
   </entry>
   
@@ -471,19 +433,17 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2022-07-03T09:13:29.504Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;
-    
-    </summary>
+    <updated>2022-07-18T09:14:36.243Z</updated>
     
     
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <summary type="html">&lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;</summary>
     
     
-      <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+    <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/categories/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    
+    
+    <category term="生活是什么" scheme="https://blogs.zeed.w.beez.com/tags/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     
   </entry>
   

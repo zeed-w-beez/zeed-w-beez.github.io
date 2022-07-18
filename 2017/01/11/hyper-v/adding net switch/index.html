@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="One swallow does not make a summer."/><meta name="keywords" content="hyper-v nat network, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="One swallow does not make a summer."/><meta name="keywords" content="hyper-v nat network, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2017/01/11/hyper-v/adding net switch/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>Set up a Hyper-V Virtual Switch using a NAT Network - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -137,24 +114,24 @@
     </header>
 
     <div class="post-content"><p>首先要说的一点就是：你所想的各种情况都是可以实现的。</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<p>Office Guide: <a href="https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network</a></p>
-<p>Other Blogs: <a href="http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/" target="_blank" rel="noopener">http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/</a></p>
+<p>Office Guide: <a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network">https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network</a></p>
+<p>Other Blogs: <a target="_blank" rel="noopener" href="http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/">http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/</a></p>
 <blockquote>
 <p>在 Windows 10 Build 10585 版本 和 Windows Server 2016 Technical Preview 4 版本其实已经添加了新的NAT类型的网络模型。<br>但是现在还不支持UI，不过可以用PowerShell去创建。</p>
 </blockquote>
 <p>参考资料：</p>
-<p><a href="http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/" target="_blank" rel="noopener">http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/</a></p>
-<p><a href="https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/">http://www.thomasmaurer.ch/2015/11/hyper-v-virtual-switch-using-nat-configuration/</a></p>
+<p><a target="_blank" rel="noopener" href="https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network">https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/setup_nat_network</a></p>
 <p>配置命令：<code>管理员身份打开 PowerShell</code></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加一个 NAT 类型的 Switch，最后的 0/24 是固定的，原因自己度娘/谷哥。</span></span><br><span class="line"><span class="built_in">New-VMSwitch</span> <span class="literal">-Name</span> <span class="string">"xNet"</span> <span class="literal">-SwitchType</span> NAT <span class="literal">-NATSubnetAddress</span> <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></span><br><span class="line"><span class="comment"># 为刚添加的 Switch 添加 NetNat</span></span><br><span class="line"><span class="built_in">New-NetNat</span> <span class="literal">-Name</span> xNet <span class="literal">-InternalIPInterfaceAddressPrefix</span> <span class="string">"192.168.3.0/24"</span></span><br><span class="line"><span class="comment"># 上面2个命令就OK了。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加一个 NAT 类型的 Switch，最后的 0/24 是固定的，原因自己度娘/谷哥。</span></span><br><span class="line"><span class="built_in">New-VMSwitch</span> <span class="literal">-Name</span> <span class="string">&quot;xNet&quot;</span> <span class="literal">-SwitchType</span> NAT <span class="literal">-NATSubnetAddress</span> <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></span><br><span class="line"><span class="comment"># 为刚添加的 Switch 添加 NetNat</span></span><br><span class="line"><span class="built_in">New-NetNat</span> <span class="literal">-Name</span> xNet <span class="literal">-InternalIPInterfaceAddressPrefix</span> <span class="string">&quot;192.168.3.0/24&quot;</span></span><br><span class="line"><span class="comment"># 上面2个命令就OK了。</span></span><br></pre></td></tr></table></figure>
 
 <p>上面的报错的话，就走一般点的步骤：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 创建一个 内部 类型的 VMSwitch。这一步可以在 Hylper-V Manager 里完成。</span></span><br><span class="line"><span class="built_in">New-VMSwitch</span> –SwitchName <span class="string">"xNet"</span> –SwitchType Internal</span><br><span class="line"><span class="comment">#  成功后，可以用 Get-VMSwitch 看到刚刚添加的 Switch</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 配置 NAT 的网关地址</span></span><br><span class="line"><span class="comment"># This configures the Virtual Network Adapter which was created while creating the Internal Virtual Hyper-V Switch.</span></span><br><span class="line"><span class="built_in">New-NetIPAddress</span> –IPAddress <span class="number">192.168</span>.<span class="number">3.1</span> <span class="literal">-PrefixLength</span> <span class="number">24</span> <span class="literal">-InterfaceAlias</span> <span class="string">"vEthernet (xNet)"</span></span><br><span class="line"><span class="comment"># 最后一个参数 InterfaceAlias 可以使用 InterfaceIndex 代替的，多敲一下 Tab 键就出来了。</span></span><br><span class="line"><span class="comment"># Index 可以使用 Get-NetAdapter 查看。</span></span><br><span class="line"><span class="comment"># Get-NetIPAddress 可以查看目前已有的 IPAddress ，多余和重复的可以使用 Remove-NetIPAddress 删除。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Now you can configure the NAT rule</span></span><br><span class="line"><span class="built_in">New-NetNat</span> –Name xNetNat –InternalIPInterfaceAddressPrefix <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></span><br><span class="line"><span class="comment"># After that you have finally created your NAT network and you can now use that network to connect your virtual machines and use IP Address from 192.168.3.2-192.168.3.254.</span></span><br><span class="line"><span class="comment"># 可以使用 Get-NetNat 查看已有。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 创建一个 内部 类型的 VMSwitch。这一步可以在 Hylper-V Manager 里完成。</span></span><br><span class="line"><span class="built_in">New-VMSwitch</span> –SwitchName <span class="string">&quot;xNet&quot;</span> –SwitchType Internal</span><br><span class="line"><span class="comment">#  成功后，可以用 Get-VMSwitch 看到刚刚添加的 Switch</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 配置 NAT 的网关地址</span></span><br><span class="line"><span class="comment"># This configures the Virtual Network Adapter which was created while creating the Internal Virtual Hyper-V Switch.</span></span><br><span class="line"><span class="built_in">New-NetIPAddress</span> –IPAddress <span class="number">192.168</span>.<span class="number">3.1</span> <span class="literal">-PrefixLength</span> <span class="number">24</span> <span class="literal">-InterfaceAlias</span> <span class="string">&quot;vEthernet (xNet)&quot;</span></span><br><span class="line"><span class="comment"># 最后一个参数 InterfaceAlias 可以使用 InterfaceIndex 代替的，多敲一下 Tab 键就出来了。</span></span><br><span class="line"><span class="comment"># Index 可以使用 Get-NetAdapter 查看。</span></span><br><span class="line"><span class="comment"># Get-NetIPAddress 可以查看目前已有的 IPAddress ，多余和重复的可以使用 Remove-NetIPAddress 删除。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Now you can configure the NAT rule</span></span><br><span class="line"><span class="built_in">New-NetNat</span> –Name xNetNat –InternalIPInterfaceAddressPrefix <span class="number">192.168</span>.<span class="number">3.0</span>/<span class="number">24</span></span><br><span class="line"><span class="comment"># After that you have finally created your NAT network and you can now use that network to connect your virtual machines and use IP Address from 192.168.3.2-192.168.3.254.</span></span><br><span class="line"><span class="comment"># 可以使用 Get-NetNat 查看已有。</span></span><br></pre></td></tr></table></figure>
 
 <p>添加映射：（宿主机和NAT网络做端口映射）</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Add-NetNatStaticMapping</span> <span class="literal">-NatName</span> <span class="string">"VMSwitchNat"</span> <span class="literal">-Protocol</span> TCP <span class="literal">-ExternalIPAddress</span> <span class="number">0.0</span>.<span class="number">0.0</span> <span class="literal">-InternalIPAddress</span> <span class="number">172.29</span>.<span class="number">92.2</span> <span class="literal">-InternalPort</span> <span class="number">80</span> <span class="literal">-ExternalPort</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Add-NetNatStaticMapping</span> <span class="literal">-NatName</span> <span class="string">"VMSwitchNat"</span> <span class="literal">-Protocol</span> TCP <span class="literal">-ExternalIPAddress</span> <span class="number">0.0</span>.<span class="number">0.0</span> <span class="literal">-InternalIPAddress</span> <span class="number">172.16</span>.<span class="number">0.3</span> <span class="literal">-InternalPort</span> <span class="number">80</span> <span class="literal">-ExternalPort</span> <span class="number">82</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Add-NetNatStaticMapping</span> <span class="literal">-NatName</span> <span class="string">&quot;VMSwitchNat&quot;</span> <span class="literal">-Protocol</span> TCP <span class="literal">-ExternalIPAddress</span> <span class="number">0.0</span>.<span class="number">0.0</span> <span class="literal">-InternalIPAddress</span> <span class="number">172.29</span>.<span class="number">92.2</span> <span class="literal">-InternalPort</span> <span class="number">80</span> <span class="literal">-ExternalPort</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Add-NetNatStaticMapping</span> <span class="literal">-NatName</span> <span class="string">&quot;VMSwitchNat&quot;</span> <span class="literal">-Protocol</span> TCP <span class="literal">-ExternalIPAddress</span> <span class="number">0.0</span>.<span class="number">0.0</span> <span class="literal">-InternalIPAddress</span> <span class="number">172.16</span>.<span class="number">0.3</span> <span class="literal">-InternalPort</span> <span class="number">80</span> <span class="literal">-ExternalPort</span> <span class="number">82</span></span><br></pre></td></tr></table></figure>
 
 <p>其他命令：</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-VMSwitch</span></span><br><span class="line"><span class="built_in">Get-NetAdapter</span></span><br><span class="line"><span class="built_in">Get-NetNat</span></span><br><span class="line"><span class="comment"># 卸载 NetAdapter -&gt; 我的电脑 -&gt; 设备管理器 -&gt; 网络</span></span><br></pre></td></tr></table></figure>
@@ -171,7 +148,7 @@
 <ol>
 <li>多个虚拟内网如何区分？</li>
 </ol>
-<p>每个虚拟网卡的 IP/子网掩码 是不一样的。</p>
+<p>每个虚拟网卡的 IP&#x2F;子网掩码 是不一样的。</p>
 
       </div>
       <div class="post-copyright">
@@ -206,27 +183,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

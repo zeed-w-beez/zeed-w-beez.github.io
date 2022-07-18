@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="use middleware in dotnet core 2."/><meta name="keywords" content="dotnet core, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="use middleware in dotnet core 2."/><meta name="keywords" content="dotnet core, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2016/08/04/dotnet core/middleware/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>Writing custom middleware - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -139,16 +116,22 @@
     <div class="post-content"><blockquote>
 <p>Middleware is software that is assembled into an application pipeline to handle requests and responses.</p>
 </blockquote>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="定义和使用"><a href="#定义和使用" class="headerlink" title="定义和使用"></a>定义和使用</h2><pre><code>简单来说就是像单链表那样，使用 `(current, next)` 去串起来使用。
 
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> IApplicationBuilder <span class="title">Use</span>(<span class="params">Func&lt;RequestDelegate, RequestDelegate&gt; middleware</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    _components.Add(middleware);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><ol>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> IApplicationBuilder <span class="title">Use</span>(<span class="params">Func&lt;RequestDelegate, RequestDelegate&gt; middleware</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    _components.Add(middleware);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<ol>
 <li><p>具体使用：</p>
-<pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.Use(next =&gt; &#123;</span><br><span class="line">    <span class="comment">// _log("Use middleware xxx.");</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">async</span> context =&gt; &#123;</span><br><span class="line">        <span class="comment">// 在这里处理 Request</span></span><br><span class="line">        <span class="keyword">await</span> next(context);</span><br><span class="line">        <span class="comment">// 在这里处理 Response</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 还有个写法的扩展</span></span><br><span class="line">app.Use(<span class="keyword">async</span> (context, next) =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">await</span> next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></code></pre></li>
+<pre><code> <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.Use(next =&gt; &#123;</span><br><span class="line">    <span class="comment">// _log(&quot;Use middleware xxx.&quot;);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">async</span> context =&gt; &#123;</span><br><span class="line">        <span class="comment">// 在这里处理 Request</span></span><br><span class="line">        <span class="keyword">await</span> next(context);</span><br><span class="line">        <span class="comment">// 在这里处理 Response</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 还有个写法的扩展</span></span><br><span class="line">app.Use(<span class="keyword">async</span> (context, next) =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">await</span> next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
 <li><p>头 和 尾</p>
 <p> 头和尾在程序集内已经给我们提供了，在 Hosting 的启动中，通过 Build 方法创建了一个 RequestDelegate 就是了：</p>
-<pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RequestDelegate <span class="title">Build</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 这个是默认的404中间件</span></span><br><span class="line">    RequestDelegate app = context =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        context.Response.StatusCode = <span class="number">404</span>;</span><br><span class="line">        <span class="keyword">return</span> Task.CompletedTask;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 在这里把这个默认的404中间件放在所以的最后，所以即有头又有尾了。</span></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> component <span class="keyword">in</span> _components.Reverse()) &#123; app = component(app); &#125;</span><br><span class="line">    <span class="keyword">return</span> app;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre></li>
+<pre><code> <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> RequestDelegate <span class="title">Build</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 这个是默认的404中间件</span></span><br><span class="line">    RequestDelegate app = context =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        context.Response.StatusCode = <span class="number">404</span>;</span><br><span class="line">        <span class="keyword">return</span> Task.CompletedTask;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 在这里把这个默认的404中间件放在所以的最后，所以即有头又有尾了。</span></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> component <span class="keyword">in</span> _components.Reverse()) &#123; app = component(app); &#125;</span><br><span class="line">    <span class="keyword">return</span> app;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
 <li><p>自己中止中间件的链路</p>
 </li>
 </ol>
@@ -156,17 +139,27 @@
 <li><p>在自己的中间件里面，不调用 <code>next(context)</code> 就可以了。</p>
 </li>
 <li><p>或者使用官方提供的 <code>Run()</code> 方法。</p>
-<pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.Run(<span class="keyword">async</span> context =&gt; &#123; <span class="keyword">await</span> context.Response.WriteAsync(<span class="string">"Response end!"</span>); &#125;);</span><br></pre></td></tr></table></figure></code></pre></li>
+<pre><code>  <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.Run(<span class="keyword">async</span> context =&gt; &#123; <span class="keyword">await</span> context.Response.WriteAsync(<span class="string">&quot;Response end!&quot;</span>); &#125;);</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
 </ul>
 <ol>
 <li><p>针对特定场景的中间件</p>
-<pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.UseWhen(context =&gt; context.Request.Path.StartsWithSegments(<span class="string">"/api"</span>), appBuilder =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    appBuilder.UseMiddleware_API_Handle();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></code></pre></li>
+<pre><code> <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.UseWhen(context =&gt; context.Request.Path.StartsWithSegments(<span class="string">&quot;/api&quot;</span>), appBuilder =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    appBuilder.UseMiddleware_API_Handle();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
 <li><p>中间件分支</p>
-<pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这里注册的 Middleware a, b, c 还是会执行的。</span></span><br><span class="line">app.MapWhen(context =&gt; context.Request.Path.StartsWithSegments(<span class="string">"/download"</span>), appBuilder =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    appBuilder.UseMiddleware_Self_DownLoad_Handle();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 和上面 UseWhen 不一样的是：这里的 Middleware x, y, z 就不会再继续执行了。</span></span><br><span class="line"><span class="comment">// 而是基于当前的状态，克隆出一个新的分支。</span></span><br></pre></td></tr></table></figure></code></pre></li>
+<pre><code> <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这里注册的 Middleware a, b, c 还是会执行的。</span></span><br><span class="line">app.MapWhen(context =&gt; context.Request.Path.StartsWithSegments(<span class="string">&quot;/download&quot;</span>), appBuilder =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    appBuilder.UseMiddleware_Self_DownLoad_Handle();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 和上面 UseWhen 不一样的是：这里的 Middleware x, y, z 就不会再继续执行了。</span></span><br><span class="line"><span class="comment">// 而是基于当前的状态，克隆出一个新的分支。</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
 <li><p>基于路由的中间件分支功能，支持嵌套</p>
-<pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.Map(<span class="string">"/download"</span>, appBuilder =&gt;&#123;</span><br><span class="line">    appBuilder.UseMiddleware_Self_DownLoad_Handle();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Map 还比 MapWhen 多了一层 app.UsePathBase() 用于拆分请求路径</span></span><br><span class="line"><span class="comment">// 下面两种写法是等价的。第二种有点别扭，因为我没想到具体的适应场景~</span></span><br><span class="line">app.Map(<span class="string">"/Area"</span>, builder =&gt; &#123; <span class="comment">/* ... */</span> &#125;);</span><br><span class="line"></span><br><span class="line">app.MapWhen( context =&gt; context.Request.Path.StartsWithSegments(<span class="string">"/Area"</span>), builder =&gt; &#123;</span><br><span class="line">    builder.UsePathBase(<span class="string">"/Area"</span>); <span class="comment">/* ... */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></code></pre></li>
+<pre><code> <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">app.Map(<span class="string">&quot;/download&quot;</span>, appBuilder =&gt;&#123;</span><br><span class="line">    appBuilder.UseMiddleware_Self_DownLoad_Handle();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Map 还比 MapWhen 多了一层 app.UsePathBase() 用于拆分请求路径</span></span><br><span class="line"><span class="comment">// 下面两种写法是等价的。第二种有点别扭，因为我没想到具体的适应场景~</span></span><br><span class="line">app.Map(<span class="string">&quot;/Area&quot;</span>, builder =&gt; &#123; <span class="comment">/* ... */</span> &#125;);</span><br><span class="line"></span><br><span class="line">app.MapWhen( context =&gt; context.Request.Path.StartsWithSegments(<span class="string">&quot;/Area&quot;</span>), builder =&gt; &#123;</span><br><span class="line">    builder.UsePathBase(<span class="string">&quot;/Area&quot;</span>); <span class="comment">/* ... */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
 </ol>
-<h2 id="标准模板"><a href="#标准模板" class="headerlink" title="标准模板"></a>标准模板</h2><pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyMiddleware</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate _next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyMiddleware</span>(<span class="params">RequestDelegate next</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        _next = next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task <span class="title">Invoke</span>(<span class="params">HttpContext httpContext, IMyService svc</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        svc.MyProperty = <span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">await</span> _next(httpContext);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyMiddlewareExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IApplicationBuilder <span class="title">UseMyMiddleware</span>(<span class="params"><span class="keyword">this</span> IApplicationBuilder builder</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> builder.UseMiddleware&lt;MyMiddleware&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    app.UseMyMiddleware();</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>
+<h2 id="标准模板"><a href="#标准模板" class="headerlink" title="标准模板"></a>标准模板</h2><pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyMiddleware</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">readonly</span> RequestDelegate _next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyMiddleware</span>(<span class="params">RequestDelegate next</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        _next = next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task <span class="title">Invoke</span>(<span class="params">HttpContext httpContext, IMyService svc</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        svc.MyProperty = <span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">await</span> _next(httpContext);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyMiddlewareExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IApplicationBuilder <span class="title">UseMyMiddleware</span>(<span class="params"><span class="keyword">this</span> IApplicationBuilder builder</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> builder.UseMiddleware&lt;MyMiddleware&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Configure</span>(<span class="params">IApplicationBuilder app</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    app.UseMyMiddleware();</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>
       </div>
       <div class="post-copyright">
     <p class="copyright-item">
@@ -195,27 +188,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

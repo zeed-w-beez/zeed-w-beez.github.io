@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="use multiple sshkey"/><meta name="keywords" content="git, ssh key, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="use multiple sshkey"/><meta name="keywords" content="git, ssh key, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2017/12/27/use-multiple-sshkey/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>use multiple sshkey - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -136,15 +113,15 @@
         </div>
     </header>
 
-    <div class="post-content"><p>日常的工作生活中，我们可能会遇到不止一个 github/gitlab 服务器。虽然 ssh key 可以避免每次和服务器交互的时候都要输入密码，但是如果我想区分工作和生活的 ssh key 又该怎么做呢？其实只需要一个简单的 config 文件就可以了。</p>
-<a id="more"></a>
+    <div class="post-content"><p>日常的工作生活中，我们可能会遇到不止一个 github&#x2F;gitlab 服务器。虽然 ssh key 可以避免每次和服务器交互的时候都要输入密码，但是如果我想区分工作和生活的 ssh key 又该怎么做呢？其实只需要一个简单的 config 文件就可以了。</p>
+<span id="more"></span>
 
-<h2 id="1-检查是否已经存在-sshkey"><a href="#1-检查是否已经存在-sshkey" class="headerlink" title="1.检查是否已经存在 sshkey"></a>1.检查是否已经存在 sshkey</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh <span class="comment">#进入到user家目录的.ssh目录下</span></span><br><span class="line">ls <span class="comment">#列出文件</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-检查是否已经存在-sshkey"><a href="#1-检查是否已经存在-sshkey" class="headerlink" title="1.检查是否已经存在 sshkey"></a>1.检查是否已经存在 sshkey</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh <span class="comment">#进入到user家目录的.ssh目录下</span></span><br><span class="line"><span class="built_in">ls</span> <span class="comment">#列出文件</span></span><br></pre></td></tr></table></figure>
 
 <p>如果可以看到类似 <code>id_rsa.pub</code> <code>id_dsa.pub</code> 文件，可以跳过第二步创建。</p>
 <h2 id="2-创建SSH-Key"><a href="#2-创建SSH-Key" class="headerlink" title="2.创建SSH Key"></a>2.创建SSH Key</h2><ul>
 <li><p>执行命令：</p>
-  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>代码参数含义：</p>
 <ul>
@@ -167,22 +144,20 @@
 </ul>
 <h2 id="3-使用-config-管理多个-host-的-sshkey"><a href="#3-使用-config-管理多个-host-的-sshkey" class="headerlink" title="3. 使用 config 管理多个 host 的 sshkey"></a>3. 使用 config 管理多个 host 的 sshkey</h2><p>如果你需要在多个git host工作，就需要多个ssh key去支持，就需要在上面手动输入密钥文件的文件名了。（比如 id_rsa_github）  然后使用config文件来实现管理。</p>
 <ul>
-<li><p>先创建一个config文件（目录：~/.ssh/config），里面的内容和格式参考下面的示例：</p>
+<li><p>先创建一个config文件（目录：~&#x2F;.ssh&#x2F;config），里面的内容和格式参考下面的示例：</p>
   <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="string">host</span> <span class="string">mygitlab</span> <span class="comment"># 用来区分不同的host，可以随意起</span></span><br><span class="line">    <span class="string">Hostname</span> <span class="string">mygitlab</span> <span class="comment"># 需要访问的 host 的域名或者IP地址</span></span><br><span class="line">    <span class="string">User</span> <span class="string">myusername</span> <span class="comment"># 这里是ssh登录使用的用户名</span></span><br><span class="line">    <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa</span> <span class="comment"># 生成的密钥文件路径</span></span><br><span class="line"><span class="string">Host</span> <span class="string">gitlab.com</span></span><br><span class="line">    <span class="string">Hostname</span> <span class="string">altssh.gitlab.com</span></span><br><span class="line">    <span class="string">User</span> <span class="string">git</span></span><br><span class="line">    <span class="string">Port</span> <span class="number">443</span></span><br><span class="line">    <span class="string">PreferredAuthentications</span> <span class="string">publickey</span></span><br><span class="line">    <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa_gitlab</span></span><br><span class="line"><span class="string">host</span> <span class="string">github</span></span><br><span class="line">    <span class="string">HostName</span> <span class="string">ssh.github.com</span></span><br><span class="line">    <span class="string">User</span> <span class="string">git</span></span><br><span class="line">    <span class="string">Port</span> <span class="number">443</span> <span class="comment"># ssh协议默认是22端口，但是可以使用443端口，走HTTPS更安全（需要服务器支持）。</span></span><br><span class="line">    <span class="string">IdentityFile</span> <span class="string">~/.ssh/id_rsa_github</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>接着又会提示你输入两次密码（该密码是你push文件的时候要输入的密码）</p>
 <blockquote>
 <p>当然，你也可以不输入密码，直接按回车。那么push的时候就不需要输入密码，直接提交。</p>
 </blockquote>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line"><span class="comment"># Enter same passphrase again:</span></span><br></pre></td></tr></table></figure>
-
-</li>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line"><span class="comment"># Enter same passphrase again:</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="4-添加到-gitlab-github-上去"><a href="#4-添加到-gitlab-github-上去" class="headerlink" title="4.添加到 gitlab/github 上去"></a>4.添加到 gitlab/github 上去</h2><ul>
+<h2 id="4-添加到-gitlab-x2F-github-上去"><a href="#4-添加到-gitlab-x2F-github-上去" class="headerlink" title="4.添加到 gitlab&#x2F;github 上去"></a>4.添加到 gitlab&#x2F;github 上去</h2><ul>
 <li><p>首先你需要拷贝 id_rsa.pub 文件的内容，你可以用编辑器打开文件复制，也可以用git命令复制该文件的内容，如：</p>
   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>进入到 gitlab/github 的用户设置页面。然后点击菜单栏的 SSH key 进入页面添加 SSH key。</p>
+<li><p>进入到 gitlab&#x2F;github 的用户设置页面。然后点击菜单栏的 SSH key 进入页面添加 SSH key。</p>
 </li>
 <li><p>把你复制的 SSH key 代码粘贴到 key 所对应的输入框中，记得 SSH key 代码的前后不要留有空格或者回车。</p>
 </li>
@@ -192,9 +167,7 @@
   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@mygitlab</span><br><span class="line"><span class="comment"># 成功的话会有一句 `Welcome to GitLab, xxx!`</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>github 的host可以使用下面的命令测试：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="comment"># 成功的话能看到 `Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.`</span></span><br></pre></td></tr></table></figure>
-
-</li>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line"><span class="comment"># 成功的话能看到 `Hi xxx! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.`</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="6-确定-ssh-agent-在运行"><a href="#6-确定-ssh-agent-在运行" class="headerlink" title="6. 确定 ssh-agent 在运行"></a>6. 确定 ssh-agent 在运行</h2><ul>
 <li>通过执行先的命令确定 <code>ssh-agent</code> 正在运行</li>
@@ -240,27 +213,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="在dotnet core 中使用第三方登录"/><meta name="keywords" content="OAuth 2.0, dotnet core, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="在dotnet core 中使用第三方登录"/><meta name="keywords" content="OAuth 2.0, dotnet core, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2016/08/04/dotnet core/social login/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>Enabling social login in your web sites - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -137,10 +114,14 @@
     </header>
 
     <div class="post-content"><p>在 dotnet core 2.0 有一个新的 Security 项目可以给我们使用。<br>里面东西很多哦！而且扩展起来也非常方便~</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="在配置文件里添加以下节点"><a href="#在配置文件里添加以下节点" class="headerlink" title="在配置文件里添加以下节点"></a>在配置文件里添加以下节点</h2><pre><code>如果只想本地使用，可以试试 `secrets.json` (Right click -&gt; Manage User Secrets)
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"Authentication"</span>: &#123;</span><br><span class="line">        <span class="attr">"Google"</span>: &#123;</span><br><span class="line">            <span class="attr">"ClientId"</span>: <span class="string">"&lt;your-client-id&gt;"</span>,</span><br><span class="line">            <span class="attr">"ClientSecret"</span>: <span class="string">"&lt;your-client-secret&gt;"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2 id="安装-nuget-包-Microsoft-AspNet-Authentication-Google"><a href="#安装-nuget-包-Microsoft-AspNet-Authentication-Google" class="headerlink" title="安装 nuget 包 Microsoft.AspNet.Authentication.Google"></a>安装 nuget 包 <code>Microsoft.AspNet.Authentication.Google</code></h2><h2 id="代码也非常简单"><a href="#代码也非常简单" class="headerlink" title="代码也非常简单"></a>代码也非常简单</h2><pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ConfigureServices</span>(<span class="params">IServiceCollection services</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    services.AddAuthentication()</span><br><span class="line">        .AddGoogle(googleOptions =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            googleOptions.ClientId = Configuration.GetSection(<span class="string">"Authentication"</span>)[<span class="string">"Google:ClientId"</span>];</span><br><span class="line">            googleOptions.ClientSecret = Configuration.GetSection(<span class="string">"Authentication"</span>)[<span class="string">"Google:ClientSecret"</span>];</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Authentication&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;Google&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;ClientId&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&lt;your-client-id&gt;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;ClientSecret&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&lt;your-client-secret&gt;&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="安装-nuget-包-Microsoft-AspNet-Authentication-Google"><a href="#安装-nuget-包-Microsoft-AspNet-Authentication-Google" class="headerlink" title="安装 nuget 包 Microsoft.AspNet.Authentication.Google"></a>安装 nuget 包 <code>Microsoft.AspNet.Authentication.Google</code></h2><h2 id="代码也非常简单"><a href="#代码也非常简单" class="headerlink" title="代码也非常简单"></a>代码也非常简单</h2><pre><code><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ConfigureServices</span>(<span class="params">IServiceCollection services</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    services.AddAuthentication()</span><br><span class="line">        .AddGoogle(googleOptions =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            googleOptions.ClientId = Configuration.GetSection(<span class="string">&quot;Authentication&quot;</span>)[<span class="string">&quot;Google:ClientId&quot;</span>];</span><br><span class="line">            googleOptions.ClientSecret = Configuration.GetSection(<span class="string">&quot;Authentication&quot;</span>)[<span class="string">&quot;Google:ClientSecret&quot;</span>];</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
 <li>ClientId 什么的是自己申请的，到对应的服务商那边申请就可以了。</li>
 <li>国内的 qq 新浪 什么的，不想自己写，可以去 github 搜索，已经有人提供了，可以直接使用的。</li>
 </ol>
@@ -179,27 +160,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

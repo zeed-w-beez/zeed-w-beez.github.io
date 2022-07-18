@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="prometheus-stack"/><meta name="keywords" content="docker, prometheus, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="prometheus-stack"/><meta name="keywords" content="docker, prometheus, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2022/07/03/docker/prometheus-stack/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>prometheus-stack - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -136,14 +113,14 @@
         </div>
     </header>
 
-    <div class="post-content"><p>目前 <code>Prometheus</code> 监控体系越来越流行，这里也记录一下相关用法。内容除了说明下基本的 Prometheus + Grafana 安装之外，重点介绍下如何监控<code>主机</code>和 <code>Docker 容器</code>。主要参考<a href="https://prometheus.io/" target="_blank" rel="noopener">官网</a></p>
-<a id="more"></a>
+    <div class="post-content"><p>目前 <code>Prometheus</code> 监控体系越来越流行，这里也记录一下相关用法。内容除了说明下基本的 Prometheus + Grafana 安装之外，重点介绍下如何监控<code>主机</code>和 <code>Docker 容器</code>。主要参考<a target="_blank" rel="noopener" href="https://prometheus.io/">官网</a></p>
+<span id="more"></span>
 
 <h2 id="Prometheus-和-Grafana-的安装"><a href="#Prometheus-和-Grafana-的安装" class="headerlink" title="Prometheus 和 Grafana 的安装"></a>Prometheus 和 Grafana 的安装</h2><p>基本安装不多说，网络文档很多。这里简单记录。</p>
 <ol>
 <li>创建 Prometheus 配置文件</li>
 </ol>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># vim /etc/prometheus/prometheus.yml</span></span><br><span class="line"><span class="attr">global:</span></span><br><span class="line">  <span class="attr">scrape_interval:</span> <span class="string">15s</span></span><br><span class="line"></span><br><span class="line"><span class="attr">scrape_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">"prometheus"</span></span><br><span class="line">    <span class="attr">scrape_interval:</span> <span class="string">5s</span></span><br><span class="line">    <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span> <span class="string">["localhost:9090"]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># vim /etc/prometheus/prometheus.yml</span></span><br><span class="line"><span class="attr">global:</span></span><br><span class="line">  <span class="attr">scrape_interval:</span> <span class="string">15s</span></span><br><span class="line"></span><br><span class="line"><span class="attr">scrape_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">&quot;prometheus&quot;</span></span><br><span class="line">    <span class="attr">scrape_interval:</span> <span class="string">5s</span></span><br><span class="line">    <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span> [<span class="string">&quot;localhost:9090&quot;</span>]</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>启动 Prometheus</li>
@@ -163,22 +140,22 @@
 <li>安装时开启了 <code>--web.enable-lifecycle</code> 的，也可以直接通过 <code>curl -X POST http://localhost:9090/-/reload</code> 请求触发 Reload</li>
 </ul>
 </li>
-<li>Grafana 默认账号密码是 admin/admin</li>
+<li>Grafana 默认账号密码是 admin&#x2F;admin</li>
 <li>Grafana 遇到 “origin not allowed” 错误，可以修改下 Nginx 配置增加<code>proxy_set_header Host example.com;</code> 跳过同源限制。</li>
 <li>Grafana 配置可以去网上找</li>
 </ol>
-<h2 id="通过-node-exporter-监控主机"><a href="#通过-node-exporter-监控主机" class="headerlink" title="通过 node_exporter 监控主机"></a>通过 node_exporter 监控主机</h2><p>这里使用 Prometheus 官方团队提供的 <a href="https://github.com/prometheus/node_exporter" target="_blank" rel="noopener">node_exporter</a> 来实现。主流系统都支持。</p>
+<h2 id="通过-node-exporter-监控主机"><a href="#通过-node-exporter-监控主机" class="headerlink" title="通过 node_exporter 监控主机"></a>通过 node_exporter 监控主机</h2><p>这里使用 Prometheus 官方团队提供的 <a target="_blank" rel="noopener" href="https://github.com/prometheus/node_exporter">node_exporter</a> 来实现。主流系统都支持。</p>
 <p><code>node_exporter</code> 也有 Docker 版，但是监视内容不完整，需要设置很多特殊参数才行。官方建议直接使用二进制文件安装到系统上。</p>
-<h3 id="安装-node-exporter"><a href="#安装-node-exporter" class="headerlink" title="安装 node_exporter"></a>安装 node_exporter</h3><p>主要参考官网文档：<a href="https://prometheus.io/docs/guides/node-exporter/" target="_blank" rel="noopener">https://prometheus.io/docs/guides/node-exporter/</a></p>
+<h3 id="安装-node-exporter"><a href="#安装-node-exporter" class="headerlink" title="安装 node_exporter"></a>安装 node_exporter</h3><p>主要参考官网文档：<a target="_blank" rel="noopener" href="https://prometheus.io/docs/guides/node-exporter/">https://prometheus.io/docs/guides/node-exporter/</a></p>
 <ol>
 <li>从官网下载二进制文件</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=1.3.1</span><br><span class="line">wget <span class="string">"https://github.com/prometheus/node_exporter/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/node_exporter-<span class="variable">$&#123;VERSION&#125;</span>.linux-amd64.tar.gz"</span></span><br><span class="line">tar xvfz node_exporter-<span class="variable">$&#123;VERSION&#125;</span>.linux-amd64.tar.gz</span><br><span class="line"><span class="comment"># 目标目录根据自己需要进行修改</span></span><br><span class="line">mv node_exporter-<span class="variable">$&#123;VERSION&#125;</span>.linux-amd64 /usr/<span class="built_in">local</span>/node_exporter</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=1.3.1</span><br><span class="line">wget <span class="string">&quot;https://github.com/prometheus/node_exporter/releases/download/v<span class="variable">$&#123;VERSION&#125;</span>/node_exporter-<span class="variable">$&#123;VERSION&#125;</span>.linux-amd64.tar.gz&quot;</span></span><br><span class="line">tar xvfz node_exporter-<span class="variable">$&#123;VERSION&#125;</span>.linux-amd64.tar.gz</span><br><span class="line"><span class="comment"># 目标目录根据自己需要进行修改</span></span><br><span class="line"><span class="built_in">mv</span> node_exporter-<span class="variable">$&#123;VERSION&#125;</span>.linux-amd64 /usr/local/node_exporter</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>创建 <code>systemd</code> 服务</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/systemd/system/node_exporter.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=node_exporter</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Restart=always</span><br><span class="line">Type=simple</span><br><span class="line">KillMode=process</span><br><span class="line">RestartSec=10</span><br><span class="line">ExecStart=/usr/<span class="built_in">local</span>/node_exporter/node_exporter</span><br><span class="line">Restart=on-failure</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/systemd/system/node_exporter.service</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=node_exporter</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Restart=always</span><br><span class="line">Type=simple</span><br><span class="line">KillMode=process</span><br><span class="line">RestartSec=10</span><br><span class="line">ExecStart=/usr/local/node_exporter/node_exporter</span><br><span class="line">Restart=on-failure</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>启动 node_exporter</li>
@@ -186,22 +163,22 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl start node_exporter</span><br><span class="line"><span class="comment"># 默认监听 `9100` 端口，注意端口冲突</span></span><br><span class="line">systemctl status node_exporter</span><br><span class="line">systemctl <span class="built_in">enable</span> node_exporter</span><br></pre></td></tr></table></figure>
 
 <h3 id="配置-Prometheus-Scrap"><a href="#配置-Prometheus-Scrap" class="headerlink" title="配置 Prometheus Scrap"></a>配置 Prometheus Scrap</h3><p>编辑 prometheus.yml 文件，添加内容</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">scrape_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">'node'</span></span><br><span class="line">      <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span> <span class="string">['localhost:9100']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">scrape_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">&#x27;node&#x27;</span></span><br><span class="line">      <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span> [<span class="string">&#x27;localhost:9100&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
-<h2 id="通过-cadvisor-监控-Docker-Container"><a href="#通过-cadvisor-监控-Docker-Container" class="headerlink" title="通过 cadvisor 监控 Docker Container"></a>通过 cadvisor 监控 Docker Container</h2><p>Docker 本身有提供 <a href="https://docs.docker.com/config/daemon/prometheus/" target="_blank" rel="noopener">Metrics 功能</a>，但是只能监控 Docker 本身的状态，无法监控运行的 Container 的状态。<br><img src="/images/docker-metrics.png" alt=""></p>
-<p>需要借助 Google 开源的 <a href="https://github.com/google/cadvisor" target="_blank" rel="noopener">cadvisor</a> 来实现。</p>
+<h2 id="通过-cadvisor-监控-Docker-Container"><a href="#通过-cadvisor-监控-Docker-Container" class="headerlink" title="通过 cadvisor 监控 Docker Container"></a>通过 cadvisor 监控 Docker Container</h2><p>Docker 本身有提供 <a target="_blank" rel="noopener" href="https://docs.docker.com/config/daemon/prometheus/">Metrics 功能</a>，但是只能监控 Docker 本身的状态，无法监控运行的 Container 的状态。<br><img src="/images/docker-metrics.png"></p>
+<p>需要借助 Google 开源的 <a target="_blank" rel="noopener" href="https://github.com/google/cadvisor">cadvisor</a> 来实现。</p>
 <h3 id="启动非常简单-github-上有完整命令"><a href="#启动非常简单-github-上有完整命令" class="headerlink" title="启动非常简单 github 上有完整命令"></a>启动非常简单 github 上有完整命令</h3><ul>
 <li>版本改成最新的就可以直接启动了。</li>
 <li>注意端口有没有冲突，有的话修改下冒号左边的端口号为其他端口号。</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">VERSION=v0.39.3 <span class="comment"># use the latest release version from https://github.com/google/cadvisor/releases</span></span><br><span class="line">sudo docker run \</span><br><span class="line">  --volume=/:/rootfs:ro \</span><br><span class="line">  --volume=/var/run:/var/run:ro \</span><br><span class="line">  --volume=/sys:/sys:ro \</span><br><span class="line">  --volume=/var/lib/docker/:/var/lib/docker:ro \</span><br><span class="line">  --volume=/dev/disk/:/dev/disk:ro \</span><br><span class="line">  --publish=8080:8080 \</span><br><span class="line">  --detach=<span class="literal">true</span> \</span><br><span class="line">  --name=cadvisor \</span><br><span class="line">  --privileged \</span><br><span class="line">  --device=/dev/kmsg \</span><br><span class="line">  gcr.io/cadvisor/cadvisor:<span class="variable">$VERSION</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="配置-Prometheus-Scrap-1"><a href="#配置-Prometheus-Scrap-1" class="headerlink" title="配置 Prometheus Scrap"></a>配置 Prometheus Scrap</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">scrape_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">cadvisor</span></span><br><span class="line">    <span class="attr">scrape_interval:</span> <span class="string">5s</span></span><br><span class="line">    <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span> <span class="string">["localhost:8080"]</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置-Prometheus-Scrap-1"><a href="#配置-Prometheus-Scrap-1" class="headerlink" title="配置 Prometheus Scrap"></a>配置 Prometheus Scrap</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">scrape_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">cadvisor</span></span><br><span class="line">    <span class="attr">scrape_interval:</span> <span class="string">5s</span></span><br><span class="line">    <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span> [<span class="string">&quot;localhost:8080&quot;</span>]</span><br></pre></td></tr></table></figure>
 
 <h2 id="不错的-Grafana-Dashboard"><a href="#不错的-Grafana-Dashboard" class="headerlink" title="不错的 Grafana Dashboard"></a>不错的 Grafana Dashboard</h2><ul>
-<li>Node Exporter Full: <a href="https://grafana.com/grafana/dashboards/12486" target="_blank" rel="noopener">https://grafana.com/grafana/dashboards/12486</a></li>
-<li>cadvisor(Docker): <a href="https://grafana.com/grafana/dashboards/14282" target="_blank" rel="noopener">https://grafana.com/grafana/dashboards/14282</a></li>
-<li>Prometheus: <a href="https://grafana.com/grafana/dashboards/3662" target="_blank" rel="noopener">https://grafana.com/grafana/dashboards/3662</a></li>
+<li>Node Exporter Full: <a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/12486">https://grafana.com/grafana/dashboards/12486</a></li>
+<li>cadvisor(Docker): <a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/14282">https://grafana.com/grafana/dashboards/14282</a></li>
+<li>Prometheus: <a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/3662">https://grafana.com/grafana/dashboards/3662</a></li>
 </ul>
 
       </div>
@@ -233,27 +210,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">

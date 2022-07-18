@@ -13,41 +13,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="use github action"/><meta name="keywords" content="autodevops, github actions, Miracle-working" /><meta name="google-site-verification" content="UbNkzWjJwlu0hdjVZnA_NkcGv6boCLQrnZ0hsjzJ7cM" /><link rel="alternate" href="/atom.xml" title="Miracle-working"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<meta name="description" content="use github action"/><meta name="keywords" content="autodevops, github actions, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
 <link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/12/01/autodevops/use-github-action/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109085701-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109085701-1');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 <script>
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
     <title>use github action - Miracle-working</title>
-  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
-</head>
+  <meta name="generator" content="Hexo 6.2.0"></head>
 
   <body>
     <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
@@ -141,25 +118,25 @@
 <ol>
 <li>github 开放免费私有仓库了，所以把这个博客的源码转成了私有的。</li>
 <li><code>travis-ci.org</code> 不支持私有仓库 (travis-ci.com 是支持私有仓库的)。</li>
-<li>github <a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/" target="_blank" rel="noopener">发布</a>了自己的 actions 功能。</li>
+<li>github <a target="_blank" rel="noopener" href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/">发布</a>了自己的 actions 功能。</li>
 </ol>
 <p><img src="/images/github-actions.png" alt="github actions"></p>
-<a id="more"></a>
+<span id="more"></span>
 
-<p>因为 CI/CD 服务的原理都差不多，所以迁移还是很顺利的。</p>
+<p>因为 CI&#x2F;CD 服务的原理都差不多，所以迁移还是很顺利的。</p>
 <p>这里记录几个内容，以后可能会用到。</p>
-<h2 id="关于内置变量"><a href="#关于内置变量" class="headerlink" title="关于内置变量"></a>关于内置变量</h2><p>了解每个 CI/CD 程序提供的内置变量有利于写出高效、美观、简短的脚本。</p>
-<p><a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/getting-started-with-github-actions" target="_blank" rel="noopener">GitHub Actions</a> 提供的<a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions" target="_blank" rel="noopener">内置变量</a>主要分为 <code>github, job, steps, runner, secrets, strategy, matrix</code> 几个部分，官方文档还给出了一个 <code>.github\workflows\main.yml</code> 的例子，可以自行打印出这些内置变量。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">CI</span></span><br><span class="line"><span class="attr">on:</span> <span class="string">[push]</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">one:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">GitHub</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">GITHUB_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(github)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$GITHUB_CONTEXT"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">job</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">JOB_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(job)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$JOB_CONTEXT"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">steps</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">STEPS_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(steps)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$STEPS_CONTEXT"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">runner</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">RUNNER_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(runner)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$RUNNER_CONTEXT"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">secrets</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">SECRETS_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(secrets)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$SECRETS_CONTEXT"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">strategy</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">STRATEGY_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(strategy)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$STRATEGY_CONTEXT"</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">matrix</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">MATRIX_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(matrix)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">"$MATRIX_CONTEXT"</span></span><br></pre></td></tr></table></figure>
+<h2 id="关于内置变量"><a href="#关于内置变量" class="headerlink" title="关于内置变量"></a>关于内置变量</h2><p>了解每个 CI&#x2F;CD 程序提供的内置变量有利于写出高效、美观、简短的脚本。</p>
+<p><a target="_blank" rel="noopener" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/getting-started-with-github-actions">GitHub Actions</a> 提供的<a target="_blank" rel="noopener" href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions">内置变量</a>主要分为 <code>github, job, steps, runner, secrets, strategy, matrix</code> 几个部分，官方文档还给出了一个 <code>.github\workflows\main.yml</code> 的例子，可以自行打印出这些内置变量。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">CI</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>]</span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">one:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">GitHub</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">GITHUB_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(github)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;$GITHUB_CONTEXT&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">job</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">JOB_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(job)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;$JOB_CONTEXT&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">steps</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">STEPS_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(steps)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;$STEPS_CONTEXT&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">runner</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">RUNNER_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(runner)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;$RUNNER_CONTEXT&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">secrets</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">SECRETS_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(secrets)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;$SECRETS_CONTEXT&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">strategy</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">STRATEGY_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(strategy)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;$STRATEGY_CONTEXT&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Dump</span> <span class="string">matrix</span> <span class="string">context</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">MATRIX_CONTEXT:</span> <span class="string">$&#123;&#123;</span> <span class="string">toJson(matrix)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;$MATRIX_CONTEXT&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="关于-token"><a href="#关于-token" class="headerlink" title="关于 token"></a>关于 token</h2><p>GitHub Actions 内置变量自带的 token 只能作用于当前仓库，如果需要操作其他仓库，就需要启用另外的 token 了。<br><a href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line" target="_blank" rel="noopener">https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line</a></p>
+<h2 id="关于-token"><a href="#关于-token" class="headerlink" title="关于 token"></a>关于 token</h2><p>GitHub Actions 内置变量自带的 token 只能作用于当前仓库，如果需要操作其他仓库，就需要启用另外的 token 了。<br><a target="_blank" rel="noopener" href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line">https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line</a></p>
 <ol>
 <li>先在<strong>账号</strong>的 <code>Settings -&gt; Developer settings -&gt; Personal access tokens</code> 中创建一个新的 token 。</li>
 <li>再在<strong>仓库</strong>的 <code>Settings -&gt; Secrets</code> 里添加这个 token 。</li>
 <li>然后就可以在 Actions 中通过 <code>${{secrets.some_token}}</code> 使用了。</li>
 </ol>
-<h2 id="关于-Submodule"><a href="#关于-Submodule" class="headerlink" title="关于 Submodule"></a>关于 Submodule</h2><p>用的最多的 <code>uses: actions/checkout@v1</code> 带有 submodule 功能，文档地址：<a href="https://github.com/actions/checkout" target="_blank" rel="noopener">https://github.com/actions/checkout</a><br>有一点要注意的是：<code>Private submodules must be configured via https not ssh.</code>，如果 submodule 失败，需要把 submodule 改成 https 协议。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v1</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">    <span class="attr">submodules:</span> <span class="string">"true"</span></span><br><span class="line">    <span class="attr">token:</span> <span class="string">$&#123;&#123;secrets.GitHub_PAT&#125;&#125;</span> <span class="comment"># APT -&gt; Personal access tokens</span></span><br></pre></td></tr></table></figure>
+<h2 id="关于-Submodule"><a href="#关于-Submodule" class="headerlink" title="关于 Submodule"></a>关于 Submodule</h2><p>用的最多的 <code>uses: actions/checkout@v1</code> 带有 submodule 功能，文档地址：<a target="_blank" rel="noopener" href="https://github.com/actions/checkout">https://github.com/actions/checkout</a><br>有一点要注意的是：<code>Private submodules must be configured via https not ssh.</code>，如果 submodule 失败，需要把 submodule 改成 https 协议。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v1</span></span><br><span class="line">  <span class="attr">with:</span></span><br><span class="line">    <span class="attr">submodules:</span> <span class="string">&quot;true&quot;</span></span><br><span class="line">    <span class="attr">token:</span> <span class="string">$&#123;&#123;secrets.GitHub_PAT&#125;&#125;</span> <span class="comment"># APT -&gt; Personal access tokens</span></span><br></pre></td></tr></table></figure>
 
       </div>
       <div class="post-copyright">
@@ -195,27 +172,27 @@
     </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/zeed-w-beez" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
         <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     </div><div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
   <span class="hosting-info">
-    由 <a class="netlify-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify</a> 自动托管
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
   </span>
 
   <span class="copyright-year">
