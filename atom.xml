@@ -42,7 +42,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</id>
     <published>2020-03-22T17:42:46.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录一下 Shadowsocks 的部署和配置。并使用 Dockerfile 做成标准镜像，方便使用。&lt;br&gt;注意：此文章仅作为作者整理知识所用，请勿用于非法用途。作者保留所有权利。&lt;/p&gt;</summary>
@@ -63,7 +63,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</id>
     <published>2020-03-15T15:22:44.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">create blazor app use dotnet core command line step by step.</summary>
@@ -86,7 +86,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</id>
     <published>2020-03-08T21:12:06.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;新版本的 Windows 10 自带了 Windows Sub Linux 功能。可以更方便的使用 linux 系统了。&lt;br&gt;&lt;img src=&quot;/images/wsl.jpg&quot; alt=&quot;wsl&quot;&gt;&lt;/p&gt;</summary>
@@ -154,7 +154,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;前一段时间参加 QConf 10 周年。里面有几场是介绍微信生态的，比如小程序什么的。回头看视频的时候，发现蛮有意思的，所以想着自己做个小程序玩玩。然后就去注册了一个“SSH+”，准备尝试一下。顺便做了一个 Logo，因为必须要提供。&lt;/p&gt;
@@ -174,7 +174,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;Kubernetes 方便的帮我们管理和运维程序，但是也带来了一些新的挑战。比如日志问题。用了Kubernetes 之后，就不能方便的登录到服务器上查看stdout日志，查看系统日志，查看程序的输出日志了。&lt;/p&gt;
@@ -199,7 +199,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;程序上线以后，就需要通过监控来确保程序健康和稳定的运行了。当程序异常的时候，还要有能力发出报警。一整套的监控收集、存储、报警的安装和配置是非常麻烦的。而且这套监控程序后续也需要进行维护，额外增加了很多工作量。&lt;/p&gt;
@@ -316,7 +316,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;偶然发现一个 “跳动的红心” 的样式很有感觉，所以抄袭一下~&lt;/p&gt;
@@ -336,7 +336,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
     <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;MarkDown 确实非常适合写博客和业务文档。语法简洁，没那么多花俏的功能。&lt;br&gt;但是有时基础语法满足不了我们的需求，就需要再知道点特别的用法了。&lt;br&gt;怎么直接写 Html 标签？ 怎么加自定义样式？&lt;/p&gt;</summary>
@@ -355,7 +355,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
     <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</id>
     <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;dotnet core 2.1 版本的 Identity 对 Views 做了层封装，默认 Template 创建出来的项目只有一个视图文件了。如果想自定义修改，还需要先把视图文件都创建出来才行。&lt;/p&gt;
@@ -375,7 +375,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/03/31/logo/"/>
     <id>https://blogs.zeed.w.beez.com/2018/03/31/logo/</id>
     <published>2018-03-31T17:40:55.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;从 &lt;a href=&quot;https://material.io/icons/#ic_polymer&quot;&gt;Material Design&lt;/a&gt; 发现了一个比较中意的图标 ，想自己再设计下，然后弄个自己的 Logo 出来。&lt;/p&gt;
@@ -414,7 +414,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/"/>
     <id>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</id>
     <published>2018-01-02T10:15:40.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;Memcached是一套常用的key-value缓存系统，由于它本身没有权限控制模块，所以对公网开放的Memcache服务很容易被攻击者扫描发现，攻击者通过命令交互可直接读取Memcached中的敏感信息。&lt;/p&gt;</summary>
@@ -433,7 +433,7 @@
     <link href="https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/"/>
     <id>https://blogs.zeed.w.beez.com/2017/12/29/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/%E7%94%9F%E6%B4%BB%E6%98%AF%E4%BB%80%E4%B9%88/</id>
     <published>2017-12-29T12:59:18.000Z</published>
-    <updated>2022-07-18T09:28:36.283Z</updated>
+    <updated>2022-08-07T14:07:56.027Z</updated>
     
     
     <summary type="html">&lt;p&gt;生活着的人们一直没有停止过思考&lt;br&gt;思考人为什么活着&lt;br&gt;思考如何更好的活着&lt;br&gt;思考如何更好的生活&lt;/p&gt;</summary>
