@@ -56,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</loc>
-    
-    <lastmod>2022-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</loc>
     
     <lastmod>2022-08-21</lastmod>
@@ -255,6 +246,15 @@
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2016/08/04/dotnet%20core/social%20login/</loc>
+    
+    <lastmod>2022-08-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2018/01/02/linux/memcached/</loc>
     
     <lastmod>2022-08-21</lastmod>
     
