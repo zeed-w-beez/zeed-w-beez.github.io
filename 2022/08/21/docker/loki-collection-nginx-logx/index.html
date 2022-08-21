@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="loki collection nginx logs"/><meta name="keywords" content="Loki, Promtail, docker, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+</script>
+
+    <title>loki collection nginx logs - Miracle-working</title>
+  <meta name="generator" content="Hexo 6.2.0"></head>
+
+  <body>
+    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/todo">
+        <li class="mobile-menu-item">Todo
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Miracle-working</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/todo">
+            Todo
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+      
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">loki collection nginx logs
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2022-08-21
+        </span><span class="post-category">
+            <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><p>之前日志服务用的较多的一般是 ELK ，但是对于小规模的使用 elk 则显得太重了，于是尝试用 loki+Promtail+grafana 来实现。</p>
+<p>这里的 <code>Loki</code> 类似 <code>elasticsearch</code> ，用于存储；<code>Promtail</code> 类似 Logstash 或者 Fluent，用于收集；Grafana 类似 Kibana，用于展示。</p>
+<p>Loki 受到了 <code>prometheus</code> 启发，对日志进行打标签的方式而非全文索引的方，而且也可以跟 kubernetes 集成。</p>
+<p><code>Like Prometheus, but for logs!</code></p>
+<span id="more"></span>
+
+<blockquote>
+<p>为了减少 Promtail 的额外配置，先把 nginx 日志改成 JSON 的方式输出。如果需要收集之前的日志，可以修改 Promtail 配置，自己添加正则解析。</p>
+</blockquote>
+<h3 id="nginx-log-改为-JSON-format"><a href="#nginx-log-改为-JSON-format" class="headerlink" title="nginx log 改为 JSON format"></a>nginx log 改为 JSON format</h3><ol>
+<li><p>修改 Nginx 日志为 json 格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">log_format json_analysis escape=json &#x27;&#123;&#x27;</span><br><span class="line">                            &#x27;&quot;msec&quot;: &quot;$msec&quot;, &#x27; # request unixtime in seconds with a milliseconds resolution</span><br><span class="line">                            &#x27;&quot;connection&quot;: &quot;$connection&quot;, &#x27; # connection serial number</span><br><span class="line">                            &#x27;&quot;connection_requests&quot;: &quot;$connection_requests&quot;, &#x27; # number of requests made in connection</span><br><span class="line">                            &#x27;&quot;pid&quot;: &quot;$pid&quot;, &#x27; # process pid</span><br><span class="line">                            &#x27;&quot;request_id&quot;: &quot;$request_id&quot;, &#x27; # the unique request id</span><br><span class="line">                            &#x27;&quot;request_length&quot;: &quot;$request_length&quot;, &#x27; # request length (including headers and body)</span><br><span class="line">                            &#x27;&quot;remote_addr&quot;: &quot;$remote_addr&quot;, &#x27; # client IP</span><br><span class="line">                            &#x27;&quot;remote_user&quot;: &quot;$remote_user&quot;, &#x27; # client HTTP username</span><br><span class="line">                            &#x27;&quot;remote_port&quot;: &quot;$remote_port&quot;, &#x27; # client port</span><br><span class="line">                            &#x27;&quot;time_local&quot;: &quot;$time_local&quot;, &#x27;</span><br><span class="line">                            &#x27;&quot;time_iso8601&quot;: &quot;$time_iso8601&quot;, &#x27; # local time in the ISO 8601 standard format</span><br><span class="line">                            &#x27;&quot;request&quot;: &quot;$request&quot;, &#x27; # full path no arguments if the request</span><br><span class="line">                            &#x27;&quot;request_uri&quot;: &quot;$request_uri&quot;, &#x27; # full path and arguments if the request</span><br><span class="line">                            &#x27;&quot;args&quot;: &quot;$args&quot;, &#x27; # args</span><br><span class="line">                            &#x27;&quot;status&quot;: &quot;$status&quot;, &#x27; # response status code</span><br><span class="line">                            &#x27;&quot;body_bytes_sent&quot;: &quot;$body_bytes_sent&quot;, &#x27; # the number of body bytes exclude headers sent to a client</span><br><span class="line">                            &#x27;&quot;bytes_sent&quot;: &quot;$bytes_sent&quot;, &#x27; # the number of bytes sent to a client</span><br><span class="line">                            &#x27;&quot;http_referer&quot;: &quot;$http_referer&quot;, &#x27; # HTTP referer</span><br><span class="line">                            &#x27;&quot;http_user_agent&quot;: &quot;$http_user_agent&quot;, &#x27; # user agent</span><br><span class="line">                            &#x27;&quot;http_x_forwarded_for&quot;: &quot;$http_x_forwarded_for&quot;, &#x27; # http_x_forwarded_for</span><br><span class="line">                            &#x27;&quot;http_host&quot;: &quot;$http_host&quot;, &#x27; # the request Host: header</span><br><span class="line">                            &#x27;&quot;server_name&quot;: &quot;$server_name&quot;, &#x27; # the name of the vhost serving the request</span><br><span class="line">                            &#x27;&quot;request_time&quot;: &quot;$request_time&quot;, &#x27; # request processing time in seconds with msec resolution</span><br><span class="line">                            &#x27;&quot;upstream&quot;: &quot;$upstream_addr&quot;, &#x27; # upstream backend server for proxied requests</span><br><span class="line">                            &#x27;&quot;upstream_connect_time&quot;: &quot;$upstream_connect_time&quot;, &#x27; # upstream handshake time incl. TLS</span><br><span class="line">                            &#x27;&quot;upstream_header_time&quot;: &quot;$upstream_header_time&quot;, &#x27; # time spent receiving upstream headers</span><br><span class="line">                            &#x27;&quot;upstream_response_time&quot;: &quot;$upstream_response_time&quot;, &#x27; # time spend receiving upstream body</span><br><span class="line">                            &#x27;&quot;upstream_response_length&quot;: &quot;$upstream_response_length&quot;, &#x27; # upstream response length</span><br><span class="line">                            &#x27;&quot;upstream_cache_status&quot;: &quot;$upstream_cache_status&quot;, &#x27; # cache HIT/MISS where applicable</span><br><span class="line">                            &#x27;&quot;ssl_protocol&quot;: &quot;$ssl_protocol&quot;, &#x27; # TLS protocol</span><br><span class="line">                            &#x27;&quot;ssl_cipher&quot;: &quot;$ssl_cipher&quot;, &#x27; # TLS cipher</span><br><span class="line">                            &#x27;&quot;scheme&quot;: &quot;$scheme&quot;, &#x27; # http or https</span><br><span class="line">                            &#x27;&quot;request_method&quot;: &quot;$request_method&quot;, &#x27; # request method</span><br><span class="line">                            &#x27;&quot;server_protocol&quot;: &quot;$server_protocol&quot;, &#x27; # request protocol, like HTTP/1.1 or HTTP/2.0</span><br><span class="line">                            &#x27;&quot;pipe&quot;: &quot;$pipe&quot;, &#x27; # &quot;p&quot; if request was pipelined, &quot;.&quot; otherwise</span><br><span class="line">                            &#x27;&quot;gzip_ratio&quot;: &quot;$gzip_ratio&quot;, &#x27;</span><br><span class="line">                            &#x27;&quot;http_cf_ray&quot;: &quot;$http_cf_ray&quot;&#x27;</span><br><span class="line">                            &#x27;&#125;&#x27;;</span><br><span class="line"></span><br><span class="line">  access_log  /var/log/nginx/json_access.log json_analysis;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启 nginx -s reload</p>
+</li>
+</ol>
+<h3 id="Loki-部署"><a href="#Loki-部署" class="headerlink" title="Loki 部署"></a>Loki 部署</h3><p>截止到发稿，当前最新的 Loki 版本是 2.6.1</p>
+<ol>
+<li><p>准备 Loki 配置文件</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># wget https://raw.githubusercontent.com/grafana/loki/v2.6.1/cmd/loki/loki-local-config.yaml -O /etc/loki/local-config.yaml</span></span><br><span class="line"><span class="attr">auth_enabled:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">http_listen_port:</span> <span class="number">3100</span></span><br><span class="line">  <span class="attr">grpc_listen_port:</span> <span class="number">9096</span></span><br><span class="line"></span><br><span class="line"><span class="attr">common:</span></span><br><span class="line">  <span class="attr">path_prefix:</span> <span class="string">/data/loki</span></span><br><span class="line">  <span class="attr">storage:</span></span><br><span class="line">    <span class="attr">filesystem:</span></span><br><span class="line">      <span class="comment"># 指定存储的目录，可以在启动 Docker 时挂载出来，持久化保存在机器上</span></span><br><span class="line">      <span class="attr">chunks_directory:</span> <span class="string">/data/loki/chunks</span></span><br><span class="line">      <span class="attr">rules_directory:</span> <span class="string">/data/loki/rules</span></span><br><span class="line">  <span class="attr">replication_factor:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">ring:</span></span><br><span class="line">    <span class="attr">instance_addr:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">    <span class="attr">kvstore:</span></span><br><span class="line">      <span class="attr">store:</span> <span class="string">inmemory</span></span><br><span class="line"></span><br><span class="line"><span class="attr">schema_config:</span></span><br><span class="line">  <span class="attr">configs:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">from:</span> <span class="number">2020-10-24</span></span><br><span class="line">      <span class="attr">store:</span> <span class="string">boltdb-shipper</span></span><br><span class="line">      <span class="attr">object_store:</span> <span class="string">filesystem</span></span><br><span class="line">      <span class="attr">schema:</span> <span class="string">v11</span></span><br><span class="line">      <span class="attr">index:</span></span><br><span class="line">        <span class="attr">prefix:</span> <span class="string">index_</span></span><br><span class="line">        <span class="attr">period:</span> <span class="string">24h</span></span><br><span class="line"></span><br><span class="line"><span class="attr">ruler:</span></span><br><span class="line">  <span class="attr">alertmanager_url:</span> <span class="string">http://localhost:9093</span></span><br><span class="line"></span><br><span class="line"><span class="attr">analytics:</span></span><br><span class="line">  <span class="attr">reporting_enabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Docker 运行 Loki</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name loki \</span><br><span class="line">  -d \</span><br><span class="line">  -v /etc/loki:/etc/loki \</span><br><span class="line">  -v /data/loki:/data/loki \</span><br><span class="line">  -p 3100:3100 \</span><br><span class="line">  grafana/loki:2.6.1 \</span><br><span class="line">  -config.file=/etc/loki/local-config.yaml</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Promtail-部署"><a href="#Promtail-部署" class="headerlink" title="Promtail 部署"></a>Promtail 部署</h3><ol>
+<li><p>准备 Promtail 配置文件</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># wget https://raw.githubusercontent.com/grafana/loki/v2.6.1/clients/cmd/promtail/promtail-docker-config.yaml -O /etc/promtail/config.yaml</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">http_listen_port:</span> <span class="number">9080</span></span><br><span class="line">  <span class="attr">grpc_listen_port:</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="attr">positions:</span></span><br><span class="line">  <span class="attr">filename:</span> <span class="string">/tmp/positions.yaml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">clients:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">url:</span> <span class="string">http://loki:3100/loki/api/v1/push</span></span><br><span class="line"></span><br><span class="line"><span class="attr">scrape_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">static_configs:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">targets:</span></span><br><span class="line">          <span class="bullet">-</span> <span class="string">localhost</span></span><br><span class="line">        <span class="attr">labels:</span></span><br><span class="line">          <span class="attr">job:</span> <span class="string">nginx_access_log</span></span><br><span class="line">          <span class="attr">__path__:</span> <span class="string">/var/log/nginx/json_access.log</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Docker 运行 Promtail</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name promtail \</span><br><span class="line">  -d \</span><br><span class="line">  -v /etc/promtail:/etc/promtail \</span><br><span class="line">  -v /var/log:/var/log \</span><br><span class="line">  -v /usr/local/nginx/logs:/usr/local/nginx/logs \</span><br><span class="line">  --<span class="built_in">link</span> loki \</span><br><span class="line">  grafana/promtail:2.6.1 \</span><br><span class="line">  -config.file=/etc/promtail/config.yaml</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Grafana-部署"><a href="#Grafana-部署" class="headerlink" title="Grafana 部署"></a>Grafana 部署</h3><p>Grafana 部署步骤这里忽略，可以参考前面的博文。</p>
+<p>在 Grafana 数据源里添加 Loki 数据源，配置 URL 为：<a target="_blank" rel="noopener" href="http://localhost:3100/">http://localhost:3100/</a> 即可。如果 Loki 是用 Docker 启动的，需要先查看下 Loki 的 IP，然后把 localhost 改为 Loki IP 即可。</p>
+<p>常用 Dashboard：12559</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>ELK 是一套针对日志数据做解决方案的框架，分别代表了三款产品：</p>
+<ul>
+<li>E: ElasticSearch（ES），负责日志的存储和检索；</li>
+<li>L：Logstash，负责日志的收集，过滤和格式化；（因为 Logstash 占用资源较多，后续又出现了 Fluent, Fluent-bit 等 C 写的更低资源占用，更高性能的替代品，也就是 EFK 方案里的 F）</li>
+<li>K：Kibana，负责日志的展示统计和数据可视化；</li>
+</ul>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/">https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Loki/">Loki</a>
+            <a href="/tags/Promtail/">Promtail</a>
+            <a href="/tags/docker/">docker</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2022/07/03/docker/prometheus-stack/">
+        <span class="next-text nav-default">prometheus-stack</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/zeed-w-beez/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>&copy;2015 - 2022</span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/';
+        this.page.identifier = '2022/08/21/docker/loki-collection-nginx-logx/';
+        this.page.title = 'loki collection nginx logs';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
