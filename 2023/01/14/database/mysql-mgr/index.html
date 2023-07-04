@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="ef core things"/><meta name="keywords" content="Entity Framework, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
-<link rel="canonical" href="https://blogs.zeed.w.beez.com/2022/10/01/dotnet core/ef-core-things/"/>
+<meta name="description" content="mysql-mgr"/><meta name="keywords" content="devops, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
@@ -23,7 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
-    <title>ef core things - Miracle-working</title>
+    <title>mysql-mgr - Miracle-working</title>
   <meta name="generator" content="Hexo 6.3.0"></head>
 
   <body>
@@ -101,37 +101,19 @@
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">ef core things
+      <h1 class="post-title">mysql-mgr
         </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2022-10-01
+          2023-01-14
         </span><span class="post-category">
-            <a href="/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/">学海无涯</a>
+            <a href="/categories/autodevops/">autodevops</a>
             </span>
         </div>
     </header>
 
-    <div class="post-content"><p>最近需要写个小应用，就用了 dotnet core 6.0 的 MVC WebApplication 模板实现了下，这里记录一下期间遇到的问题。</p>
-<span id="more"></span>
-
-<h3 id="EF-Core-和-EF6-的区别"><a href="#EF-Core-和-EF6-的区别" class="headerlink" title="EF Core 和 EF6 的区别"></a>EF Core 和 EF6 的区别</h3><ul>
-<li><p>EF: 它是适用于.NET 的对象关系映射程序 (ORM)，现在的 EF6 从 EF4， EF5 发展而来，已经是久经沙场。EF7 会在 2022 年 11 月发布。</p>
-</li>
-<li><p>EF Core: 是更现代、可扩展的轻量级实体框架版本，与 EF6 的功能和优点非常相似。 EF Core 则完全进行了重写，包含许多 EF6 没有的新功能，但还是缺少 EF6 中最高级的一些映射功能。</p>
-</li>
-<li><p>该用 EF 还是 EF Core：如果 EF Core 能满足需求，可以优先考虑使用 EF Core。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/ef/efcore-and-ef6/">比较 EF Core 和 EF6</a> 中更详细地讨论二者的差异。</p>
-</li>
-</ul>
-<h3 id="EF-Core-nvarchar-max-类型不支持"><a href="#EF-Core-nvarchar-max-类型不支持" class="headerlink" title="EF Core nvarchar(max) 类型不支持"></a>EF Core nvarchar(max) 类型不支持</h3><p>因为应用比较小，就使用了 Sqlite 作为 DB。 在执行 初始化 DB 表的时候，遇到了第一个问题：sqlite 不支持 <code>nvarchar(max)</code> 类型。</p>
-<ul>
-<li><p>解决办法也比较简单，修改成支持的类型就行了。比如 nvarchar(4000)，或者直接使用 Text 类型。另外 SqlServer 的 nvarchar(max) 类型最大可以存储 2G，Sqlite 的 string 类型最大值是 1 billion。</p>
-</li>
-<li><p>在<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/ef/core/">官网文档</a>里有特意提到这个注意事项：<code>nvarchar(max)</code> 和 <code>decimal(18, 2)</code> 是 EF Core 的默认值，但大多数情况下都不是最合适的选项。<br><img src="/ef-considerations-nvarchar-max.png" alt="&quot;nvarchar(max)&quot;"></p>
-</li>
-</ul>
-
+    <div class="post-content"><h1 id="Mysql-Manager"><a href="#Mysql-Manager" class="headerlink" title="Mysql Manager"></a>Mysql Manager</h1>
       </div>
       <div class="post-copyright">
     <p class="copyright-item">
@@ -140,7 +122,7 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="https://blogs.zeed.w.beez.com/2022/10/01/dotnet%20core/ef-core-things/">https://blogs.zeed.w.beez.com/2022/10/01/dotnet%20core/ef-core-things/</a>
+      <a href="https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/">https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
@@ -148,16 +130,16 @@
   </div>
       <footer class="post-footer">
         <div class="post-tags">
-            <a href="/tags/Entity-Framework/">Entity Framework</a>
+            <a href="/tags/devops/">devops</a>
             </div>
         
-        <nav class="post-nav"><a class="prev" href="/2023/01/14/database/mysql-mgr/">
+        <nav class="post-nav"><a class="prev" href="/2023/01/14/autodevops/what-is-devops/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">mysql-mgr</span>
+        <span class="prev-text nav-default">what-is-devops</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
-    <a class="next" href="/2022/09/16/%E4%B8%AD%E5%8C%BB/%E6%B1%89%E5%94%90100%E6%96%B9/">
-        <span class="next-text nav-default">汉唐100方</span>
+    <a class="next" href="/2022/10/01/dotnet%20core/ef-core-things/">
+        <span class="next-text nav-default">ef core things</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
@@ -209,9 +191,9 @@
       </div>
     </div><script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://blogs.zeed.w.beez.com/2022/10/01/dotnet%20core/ef-core-things/';
-        this.page.identifier = '2022/10/01/dotnet core/ef-core-things/';
-        this.page.title = 'ef core things';
+        this.page.url = 'https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/';
+        this.page.identifier = '2023/01/14/database/mysql-mgr/';
+        this.page.title = 'mysql-mgr';
     };
     (function() {
     var d = document, s = d.createElement('script');

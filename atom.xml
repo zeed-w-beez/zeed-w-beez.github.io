@@ -6,7 +6,7 @@
   <link href="https://blogs.zeed.w.beez.com/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2023-01-14T07:12:41.910Z</updated>
+  <updated>2023-07-04T05:32:00.154Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>wsl2</title>
+    <link href="https://blogs.zeed.w.beez.com/2023/07/04/windows/wsl2/"/>
+    <id>https://blogs.zeed.w.beez.com/2023/07/04/windows/wsl2/</id>
+    <published>2023-07-04T13:25:20.000Z</published>
+    <updated>2023-07-04T05:32:00.154Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;wsl2-磁盘清理&quot;&gt;&lt;a href=&quot;#wsl2-磁盘清理&quot; class=&quot;headerlink&quot; title=&quot;wsl2 磁盘清理&quot;&gt;&lt;/a&gt;wsl2 磁盘清理&lt;/h1&gt;&lt;p&gt;wsl2 默认使用的是 ext4.vhdx 虚拟磁盘格式，特定是可以自动扩容，但是不会自动缩容。&lt;/p&gt;
+&lt;p&gt;拿 wsl2 跑 Docker 用起来很方便，但是时间长了，磁盘空间会越来越大，导致 C 盘都快满了。这里记录一下如何使用 DISKPART 清理。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="windows" scheme="https://blogs.zeed.w.beez.com/categories/windows/"/>
+    
+    
+    <category term="wsl2" scheme="https://blogs.zeed.w.beez.com/tags/wsl2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>what-is-devops</title>
     <link href="https://blogs.zeed.w.beez.com/2023/01/14/autodevops/what-is-devops/"/>
     <id>https://blogs.zeed.w.beez.com/2023/01/14/autodevops/what-is-devops/</id>
     <published>2023-01-14T14:27:34.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.150Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近几年一直在做 DevOps 领域的事情，总结一下自己的一些想法。&lt;/p&gt;
@@ -37,11 +57,36 @@
   </entry>
   
   <entry>
+    <title>mysql-mgr</title>
+    <link href="https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/"/>
+    <id>https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/</id>
+    <published>2023-01-14T14:27:34.000Z</published>
+    <updated>2023-07-04T05:32:00.150Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Mysql-Manager&quot;&gt;&lt;a href=&quot;#Mysql-Manager&quot; class=&quot;headerlink&quot; title=&quot;Mysql Manager&quot;&gt;&lt;/a&gt;Mysql</summary>
+        
+      
+    
+    
+    
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    
+    
+    <category term="devops" scheme="https://blogs.zeed.w.beez.com/tags/devops/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ef core things</title>
     <link href="https://blogs.zeed.w.beez.com/2022/10/01/dotnet%20core/ef-core-things/"/>
     <id>https://blogs.zeed.w.beez.com/2022/10/01/dotnet%20core/ef-core-things/</id>
     <published>2022-10-01T00:00:00.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.154Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近需要写个小应用，就用了 dotnet core 6.0 的 MVC WebApplication 模板实现了下，这里记录一下期间遇到的问题。&lt;/p&gt;</summary>
@@ -60,7 +105,7 @@
     <link href="https://blogs.zeed.w.beez.com/2022/09/16/%E4%B8%AD%E5%8C%BB/%E6%B1%89%E5%94%90100%E6%96%B9/"/>
     <id>https://blogs.zeed.w.beez.com/2022/09/16/%E4%B8%AD%E5%8C%BB/%E6%B1%89%E5%94%90100%E6%96%B9/</id>
     <published>2022-09-16T09:55:03.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.154Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近偶然刷到了&lt;code&gt;倪师&lt;/code&gt;(倪海厦) 的中医教学视频，感觉这才是我心中中医该有的样子。&lt;br&gt;而且因为人到中年，开始慢慢遇到身体上的问题，自己也&lt;code&gt;偷师&lt;/code&gt;学艺，希望能帮助自己和亲朋好友，不做大用。&lt;/p&gt;
@@ -82,7 +127,7 @@
     <link href="https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/"/>
     <id>https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/</id>
     <published>2022-08-21T00:00:00.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.154Z</updated>
     
     
     <summary type="html">&lt;p&gt;之前日志服务用的较多的一般是 ELK ，但是对于小规模的使用 elk 则显得太重了，于是尝试用 loki+Promtail+grafana 来实现。&lt;/p&gt;
@@ -131,7 +176,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</id>
     <published>2020-03-22T17:42:46.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.154Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录一下 Shadowsocks 的部署和配置。并使用 Dockerfile 做成标准镜像，方便使用。&lt;br&gt;注意：此文章仅作为作者整理知识所用，请勿用于非法用途。作者保留所有权利。&lt;/p&gt;</summary>
@@ -152,7 +197,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</id>
     <published>2020-03-15T15:22:44.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.154Z</updated>
     
     
     <summary type="html">create blazor app use dotnet core command line step by step.</summary>
@@ -175,7 +220,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</id>
     <published>2020-03-08T21:12:06.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.154Z</updated>
     
     
     <summary type="html">&lt;p&gt;新版本的 Windows 10 自带了 Windows Sub Linux 功能。可以更方便的使用 linux 系统了。&lt;br&gt;&lt;img src=&quot;/images/wsl.jpg&quot; alt=&quot;wsl&quot;&gt;&lt;/p&gt;</summary>
@@ -243,7 +288,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.154Z</updated>
     
     
     <summary type="html">&lt;p&gt;前一段时间参加 QConf 10 周年。里面有几场是介绍微信生态的，比如小程序什么的。回头看视频的时候，发现蛮有意思的，所以想着自己做个小程序玩玩。然后就去注册了一个“SSH+”，准备尝试一下。顺便做了一个 Logo，因为必须要提供。&lt;/p&gt;
@@ -263,7 +308,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.150Z</updated>
     
     
     <summary type="html">&lt;p&gt;Kubernetes 方便的帮我们管理和运维程序，但是也带来了一些新的挑战。比如日志问题。用了Kubernetes 之后，就不能方便的登录到服务器上查看stdout日志，查看系统日志，查看程序的输出日志了。&lt;/p&gt;
@@ -288,7 +333,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.150Z</updated>
     
     
     <summary type="html">&lt;p&gt;程序上线以后，就需要通过监控来确保程序健康和稳定的运行了。当程序异常的时候，还要有能力发出报警。一整套的监控收集、存储、报警的安装和配置是非常麻烦的。而且这套监控程序后续也需要进行维护，额外增加了很多工作量。&lt;/p&gt;
@@ -405,7 +450,7 @@
     <link href="https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/"/>
     <id>https://blogs.zeed.w.beez.com/2018/10/30/UI/beating-heart/</id>
     <published>2018-10-30T10:22:32.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
+    <updated>2023-07-04T05:32:00.150Z</updated>
     
     
     <summary type="html">&lt;p&gt;偶然发现一个 “跳动的红心” 的样式很有感觉，所以抄袭一下~&lt;/p&gt;
@@ -417,45 +462,6 @@
     
     
     <category term="UI" scheme="https://blogs.zeed.w.beez.com/tags/UI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html inside markdown</title>
-    <link href="https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/"/>
-    <id>https://blogs.zeed.w.beez.com/2018/09/05/html-inside-markdown/</id>
-    <published>2018-09-05T11:23:54.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;MarkDown 确实非常适合写博客和业务文档。语法简洁，没那么多花俏的功能。&lt;br&gt;但是有时基础语法满足不了我们的需求，就需要再知道点特别的用法了。&lt;br&gt;怎么直接写 Html 标签？ 怎么加自定义样式？&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="术业有专攻" scheme="https://blogs.zeed.w.beez.com/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/"/>
-    
-    
-    <category term="markdown" scheme="https://blogs.zeed.w.beez.com/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>dotnet core 2.1 identity ui</title>
-    <link href="https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/"/>
-    <id>https://blogs.zeed.w.beez.com/2018/09/01/dotnet%20core/dotnet-core-2-1-identity-ui/</id>
-    <published>2018-09-01T00:00:00.000Z</published>
-    <updated>2023-01-14T07:12:41.910Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;dotnet core 2.1 版本的 Identity 对 Views 做了层封装，默认 Template 创建出来的项目只有一个视图文件了。如果想自定义修改，还需要先把视图文件都创建出来才行。&lt;/p&gt;
-&lt;p&gt;默认的文件结构：&lt;img src=&quot;/images/identity-ui-files.png&quot; alt=&quot;identity-ui-files&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="学海无涯" scheme="https://blogs.zeed.w.beez.com/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/"/>
-    
-    
-    <category term="Identity UI" scheme="https://blogs.zeed.w.beez.com/tags/Identity-UI/"/>
     
   </entry>
   
