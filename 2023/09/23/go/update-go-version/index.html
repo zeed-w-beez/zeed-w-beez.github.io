@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="As you do, I’m absolutely convinced that you will lay hold of a miracle-working power that will lift you up from confusion, misery, melancholy, and failure."/><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
-<link rel="canonical" href="https://blogs.zeed.w.beez.com/"/>
+<meta name="description" content="update-go-version"/><meta name="keywords" content="golang, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2023/09/23/go/update-go-version/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
@@ -23,7 +23,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
 </script>
 
-    <title>Miracle-working</title>
+    <title>update-go-version - Miracle-working</title>
   <meta name="generator" content="Hexo 6.3.0"></head>
 
   <body>
@@ -99,9 +99,9 @@
       
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="posts" class="posts"><article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/09/23/go/update-go-version/">update-go-version</a>
+      <h1 class="post-title">update-go-version
         </h1>
 
       <div class="post-meta">
@@ -115,90 +115,56 @@
 
     <div class="post-content"><p>golang 的<a target="_blank" rel="noopener" href="https://go.dev/doc/devel/release">发布策略</a>是支持到最新的 2 个主版本发布。目前的发布周期是大概每年会发布 2 个主版本，所以基本上每年都要升级一下主版本。<br><img src="/images/golang-release.png" alt="&quot;golang release&quot;"></p>
 <p>这里记录一下如何安全的升级到新版本。</p>
-          <div class="read-more">
-            <a href="/2023/09/23/go/update-go-version/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/07/04/windows/wsl2/">wsl2</a>
-        </h1>
+<span id="more"></span>
 
-      <div class="post-meta">
-        <span class="post-time">
-          2023-07-04
-        </span><span class="post-category">
-            <a href="/categories/windows/">windows</a>
-            </span>
-        </div>
-    </header>
+<ol>
+<li><p>先安装新的版本</p>
+<p>这个没什么好说的，正常下载安装就行了。</p>
+</li>
+<li><p>升级</p>
+<p>go 使用 go.mod 文件管理依赖，所以主要修改这个文件就行了。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 第一行是模块名</span></span><br><span class="line">module xxxx</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二行是版本，改成新的就行</span></span><br><span class="line"><span class="keyword">go</span> <span class="number">1.18</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 后面是具体依赖，一般都是自动生成和修改</span></span><br><span class="line">require xxxx</span><br></pre></td></tr></table></figure>
 
-    <div class="post-content"><h1 id="wsl2-磁盘清理"><a href="#wsl2-磁盘清理" class="headerlink" title="wsl2 磁盘清理"></a>wsl2 磁盘清理</h1><p>wsl2 默认使用的是 ext4.vhdx 虚拟磁盘格式，特定是可以自动扩容，但是不会自动缩容。</p>
-<p>拿 wsl2 跑 Docker 用起来很方便，但是时间长了，磁盘空间会越来越大，导致 C 盘都快满了。这里记录一下如何使用 DISKPART 清理。</p>
-          <div class="read-more">
-            <a href="/2023/07/04/windows/wsl2/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/01/14/autodevops/what-is-devops/">what-is-devops</a>
-        </h1>
+<p>修改完版本之后，使用以下两个命令更新依赖：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">go get -u</span><br><span class="line">go mod tidy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<p>确保你的项目可以正常运行。</p>
+</li>
+</ol>
 
-      <div class="post-meta">
-        <span class="post-time">
-          2023-01-14
-        </span><span class="post-category">
-            <a href="/categories/autodevops/">autodevops</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>最近几年一直在做 DevOps 领域的事情，总结一下自己的一些想法。</p>
-<p><img src="/images/devops.png" alt="What is DevOps"></p>
-          <div class="read-more">
-            <a href="/2023/01/14/autodevops/what-is-devops/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2023/01/14/database/mysql-mgr/">mysql-mgr</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2023-01-14
-        </span><span class="post-category">
-            <a href="/categories/autodevops/">autodevops</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h1 id="Mysql-Manager"><a href="#Mysql-Manager" class="headerlink" title="Mysql Manager"></a>Mysql Manager</h1>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2022/10/01/dotnet%20core/ef-core-things/">ef core things</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2022-10-01
-        </span><span class="post-category">
-            <a href="/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/">学海无涯</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>最近需要写个小应用，就用了 dotnet core 6.0 的 MVC WebApplication 模板实现了下，这里记录一下期间遇到的问题。</p>
-          <div class="read-more">
-            <a href="/2022/10/01/dotnet%20core/ef-core-things/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <nav class="pagination"><a class="next" href="/page/2/">
-        <span class="next-text">下一页</span>
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://blogs.zeed.w.beez.com/2023/09/23/go/update-go-version/">https://blogs.zeed.w.beez.com/2023/09/23/go/update-go-version/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/golang/">golang</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2023/07/04/windows/wsl2/">
+        <span class="next-text nav-default">wsl2</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
-    </nav></section></div></div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
@@ -237,7 +203,21 @@
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://blogs.zeed.w.beez.com/2023/09/23/go/update-go-version/';
+        this.page.identifier = '2023/09/23/go/update-go-version/';
+        this.page.title = 'update-go-version';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
   <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
 </body>
