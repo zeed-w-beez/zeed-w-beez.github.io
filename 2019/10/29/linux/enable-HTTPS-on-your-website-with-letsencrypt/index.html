@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head><meta charset="UTF-8"/>
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-
+<!-- Disable transformation -->
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -13,21 +16,61 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="enable-HTTPS-on-your-website-with-letsencrypt"/><meta name="keywords" content="https, letsencrypt, nginx, Miracle-working" /><link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
-<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/"/>
+<!-- Website description -->
+
+<meta name="description" content="enable-HTTPS-on-your-website-with-letsencrypt" />
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+<!-- Website keywords -->
+
+<meta name="keywords" content="https, letsencrypt, nginx, Miracle-working" />
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.1" />
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/" />
+
+<!-- Fancybox styling -->
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"pjax":"","latex":false};
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"latex":false};
 </script>
+  
+  <title>enable-HTTPS-on-your-website-with-letsencrypt - Miracle-working</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-    <title>enable-HTTPS-on-your-website-with-letsencrypt - Miracle-working</title>
-  <meta name="generator" content="Hexo 6.3.0"></head>
-
-  <body>
-    <div class="scrollPercentage"></div><div id="mobile-navbar" class="mobile-navbar">
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/." class="logo">Miracle-working</a>
   </div>
@@ -39,81 +82,154 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list"><a href="/">
-        <li class="mobile-menu-item">首页
-          </li>
-      </a><a href="/archives">
-        <li class="mobile-menu-item">归档
-          </li>
-      </a><a href="/tags">
-        <li class="mobile-menu-item">标签
-          </li>
-      </a><a href="/categories">
-        <li class="mobile-menu-item">分类
-          </li>
-      </a><a href="/todo">
-        <li class="mobile-menu-item">Todo
-          </li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">关于
-          </li>
-      </a></ul>
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        首页              </li>
+    </a>
+    
+    <a href="/archives">
+      <li class="mobile-menu-item">
+        
+        
+        归档              </li>
+    </a>
+    
+    <a href="/tags">
+      <li class="mobile-menu-item">
+        
+        
+        标签              </li>
+    </a>
+    
+    <a href="/categories">
+      <li class="mobile-menu-item">
+        
+        
+        分类              </li>
+    </a>
+    
+    <a href="/todo">
+      <li class="mobile-menu-item">
+        
+        
+        Todo              </li>
+    </a>
+    
+    <a href="/about">
+      <li class="mobile-menu-item">
+        
+        
+        关于              </li>
+    </a>
+    
+  </ul>
 </nav>
-<div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">Miracle-working</a>
-</div>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Miracle-working</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              首页  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives">  
+              
+              
+              归档  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags">  
+              
+              
+              标签  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories">  
+              
+              
+              分类  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/todo">  
+              
+              
+              Todo  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about">  
+              
+              
+              关于  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
 
-<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
-          <a class="menu-item-link" href="/">
-            首页
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/archives">
-            归档
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            标签
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            分类
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/todo">
-            Todo
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/about">
-            关于
-            </a>
-        </li>
-      </ul></nav>
-</header>
-      
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content"><article class="post">
-    <header class="post-header">
-      <h1 class="post-title">enable-HTTPS-on-your-website-with-letsencrypt
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-10-29
-        </span><span class="post-category">
-            <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
-            </span>
-        </div>
     </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      enable-HTTPS-on-your-website-with-letsencrypt
+      
+    </h1>
 
-    <div class="post-content"><p>近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。</p>
+    <div class="post-meta">
+      <span class="post-time">
+        2019-10-29
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+    
+
+
+  <div class="post-content">
+    
+    <p>近两年互联网安全越来越多的进入到人们的视线。Google，Mozilla 等大厂也一直在持续推进 https ，目前来看，成效显著。</p>
 <p>今天记录一下使用<strong>免费 开源</strong>的证书机构 <a target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a> 配合 <a target="_blank" rel="noopener" href="https://certbot.eff.org/">certbot</a> 完成基于 <a target="_blank" rel="noopener" href="https://nginx.org/">nginx</a> 的 https 配置。</p>
 <p><img src="/images/letsencrypt.png" alt="Let’s Encrypt"></p>
 <span id="more"></span>
@@ -134,57 +250,143 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这个是 centos7+nginx 的安装文档：https://certbot.eff.org/lets-encrypt/centosrhel7-nginx</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. Enable the optional channel</span></span><br><span class="line">sudo yum -y install yum-utils</span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Install Certbot</span></span><br><span class="line">sudo yum install certbot python2-certbot-nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.1 自动扫描并导入证书。很据提示填写一些必要信息即可。</span></span><br><span class="line">sudo certbot --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 也可以只生成证书，不自动导入nginx</span></span><br><span class="line">sudo certbot certonly --nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 手动重新生成证书</span></span><br><span class="line">sudo certbot renew</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 添加定时任务</span></span><br><span class="line">sudo <span class="built_in">echo</span> <span class="string">&quot;0 0,12 * * * root python -c &#x27;import random; import time; time.sleep(random.random() * 3600)&#x27; &amp;&amp; certbot renew&quot;</span> | sudo <span class="built_in">tee</span> -a /etc/crontab &gt; /dev/null</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="默认证书有效期三个月。配置了定时任务之后，会自动续期"><a href="#默认证书有效期三个月。配置了定时任务之后，会自动续期" class="headerlink" title="默认证书有效期三个月。配置了定时任务之后，会自动续期"></a>默认证书有效期三个月。配置了定时任务之后，会自动续期</h2>
-      </div>
-      <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/">https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/</a>
-    </p>
-    <p class="copyright-item">
-      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
+    
   </div>
-      <footer class="post-footer">
-        <div class="post-tags">
-            <a href="/tags/https/">https</a>
-            <a href="/tags/letsencrypt/">letsencrypt</a>
-            <a href="/tags/nginx/">nginx</a>
-            </div>
-        
-        <nav class="post-nav"><a class="prev" href="/2019/10/29/autodevops/kubernetes/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">kubernetes</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
-    <a class="next" href="/2019/01/25/linux/linux-default-permission/">
-        <span class="next-text nav-default">linux-default-permission</span>
-        <span class="prev-text nav-mobile">下一篇</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    </nav></footer>
-    </article></div><div class="comments" id="comments"><div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div></div>
-      </main>
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
-        <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
-        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    </div><div class="copyright">
+  
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>原文作者: </span>
+    <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+  </p>
+  <p class="copyright-item">
+    <span>原文链接: </span>
+    <a href="https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/">https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/</a>
+  </p>
+  <p class="copyright-item">
+    <span>许可协议: </span>
+    
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+  </p>
+</div>
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+    <div class="post-tags">
+      
+      <a href="/tags/https/">https</a>
+      
+      <a href="/tags/letsencrypt/">letsencrypt</a>
+      
+      <a href="/tags/nginx/">nginx</a>
+      
+    </div>
+    
+      
+  <nav class="post-nav">  
+      
+      <a class="prev" href="/2019/10/29/autodevops/kubernetes/">  
+        <i class="iconfont icon-left"></i>  
+        <span class="prev-text nav-default">kubernetes</span>  
+        <span class="prev-text nav-mobile">上一篇</span>  
+      </a>  
+      
+      
+      <a class="next" href="/2019/01/25/linux/linux-default-permission/">  
+        <span class="next-text nav-default">linux-default-permission</span>  
+        <span class="prev-text nav-mobile">下一篇</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+  
+</div>
+
+
+<div class="copyright">
   <span class="power-by">
     由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    主题 -
     <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/zeed-w-beez/hexo-theme-even">Even</a>
   </span>
   <span class="division">|</span>
@@ -193,7 +395,12 @@
   </span>
 
   <span class="copyright-year">
-    <span>&copy;2015 - 2023</span>
+    <span>
+      
+      &copy;
+      
+      2015 - 2023      
+    </span>
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>
@@ -206,27 +413,23 @@
   </span>
 
 </div>
-</footer>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+    
+    
+    
+    
+    
+    
+    
+  
 
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
-    </div><script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://blogs.zeed.w.beez.com/2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/';
-        this.page.identifier = '2019/10/29/linux/enable-HTTPS-on-your-website-with-letsencrypt/';
-        this.page.title = 'enable-HTTPS-on-your-website-with-letsencrypt';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
+  <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
 
-    s.src = '//zeed-w-beez.disqus.com/embed.js';
 
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
 </body>
+
 </html>

@@ -203,7 +203,7 @@
     }
 
     function showTime(Counter) {
-      let index = 0;
+      var index = 0;
       $visits.each(function () {
         var $this = $(this);
         setTimeout(
