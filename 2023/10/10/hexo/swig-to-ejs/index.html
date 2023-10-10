@@ -242,13 +242,13 @@
 <h2 id="use-ejs-instead-of-swig"><a href="#use-ejs-instead-of-swig" class="headerlink" title="use ejs instead of swig"></a>use ejs instead of swig</h2><h3 id="先使用-ChatGPT-把-swig-转换为-ejs-格式，效果棒棒哒"><a href="#先使用-ChatGPT-把-swig-转换为-ejs-格式，效果棒棒哒" class="headerlink" title="先使用 ChatGPT 把 swig 转换为 ejs 格式，效果棒棒哒"></a>先使用 ChatGPT 把 <code>swig</code> 转换为 <code>ejs</code> 格式，效果棒棒哒</h3><h3 id="再批量修改一下文件后缀和引用"><a href="#再批量修改一下文件后缀和引用" class="headerlink" title="再批量修改一下文件后缀和引用"></a>再批量修改一下文件后缀和引用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd layout</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rename template file extension:</span></span><br><span class="line">find . -type f -name &quot;*.swig&quot; -exec sh -c &#x27;mv &quot;$0&quot; &quot;$&#123;0%.swig&#125;.ejs&quot;&#x27; &#123;&#125; \;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">replate template file reference:</span></span><br><span class="line">find . -type f -exec sed -i &#x27;s/\.swig/\.ejs/g&#x27; &#123;&#125; \;</span><br></pre></td></tr></table></figure>
 
 <h3 id="有些问题需要手动修复一下"><a href="#有些问题需要手动修复一下" class="headerlink" title="有些问题需要手动修复一下"></a>有些问题需要手动修复一下</h3><p>转换完肯定是不能直接运行的，还有一些地方需要手动修改下</p>
-<ul>
+<ol>
 <li><code>&#123;%- block content -%&#125;&#123;%- endblock -%&#125;</code> 改为 <code>&lt;%- body %&gt;</code></li>
 <li><code>date(post.date, &#39;YYYY&#39;)</code> 改为 <code>post.date.year()</code></li>
 <li>如果输出的是转义后的 HTML，需要把 ejs 标签 <code>&lt;%=</code> 改为 <code>&lt;%-</code>，具体看下面的标签说明（但是像 <code>page.description</code> 这样的字段，最好还是保留转义）</li>
 <li>转换之后有一些 <code>partial(&quot;xxx.ejs&quot;)</code> 引用是用的变量模式，会报错说找不到，改成直接引用就好了</li>
 <li>开发的时候 <code>hexo s</code> 会有缓存，遇到没效果的，可以先执行一下 <code>hexo clean</code></li>
-</ul>
+</ol>
 <h3 id="EJS-标签含义"><a href="#EJS-标签含义" class="headerlink" title="EJS 标签含义"></a>EJS 标签含义</h3><ul>
 <li><code>&lt;%</code> ‘脚本’ 标签，用于流程控制，无输出。</li>
 <li><code>&lt;%_</code> 删除其前面的空格符</li>
