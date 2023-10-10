@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="swig to ejs" />
+
+
+<!-- Website keywords -->
+
+<meta name="keywords" content="hexo, Miracle-working" />
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.1" />
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2023/10/10/hexo/swig-to-ejs/" />
+
+<!-- Fancybox styling -->
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"latex":false};
+</script>
+  
+  <title>swig to ejs - Miracle-working</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        首页              </li>
+    </a>
+    
+    <a href="/archives">
+      <li class="mobile-menu-item">
+        
+        
+        归档              </li>
+    </a>
+    
+    <a href="/tags">
+      <li class="mobile-menu-item">
+        
+        
+        标签              </li>
+    </a>
+    
+    <a href="/categories">
+      <li class="mobile-menu-item">
+        
+        
+        分类              </li>
+    </a>
+    
+    <a href="/todo">
+      <li class="mobile-menu-item">
+        
+        
+        Todo              </li>
+    </a>
+    
+    <a href="/about">
+      <li class="mobile-menu-item">
+        
+        
+        关于              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Miracle-working</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              首页  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives">  
+              
+              
+              归档  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags">  
+              
+              
+              标签  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories">  
+              
+              
+              分类  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/todo">  
+              
+              
+              Todo  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about">  
+              
+              
+              关于  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      swig to ejs
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2023-10-10
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+    
+
+
+  <div class="post-content">
+    
+    <p>最近把博客使用的 <code>hexo-theme-even</code> 模板引擎从 <code>Swig</code> 换成了 <code>ejs</code>，主要原因是 <code>Swig</code> 相关的依赖扫描出了很多安全问题。</p>
+<p>顺便把 <code>node-sass</code> 换成了 <code>dartsass</code>，<code>node-sass</code> 在大陆的使用体验太差了，差评！</p>
+<p>全部弄好以后是这样的，看着舒服多了：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm i</span></span><br><span class="line"></span><br><span class="line">removed 17 packages, and audited 227 packages in 1s</span><br><span class="line"></span><br><span class="line">19 packages are looking for funding</span><br><span class="line">  run `npm fund` for details</span><br><span class="line"></span><br><span class="line">found 0 vulnerabilities</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>仓库地址是：<a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez/hexo-theme-even">https://github.com/zeed-w-beez/hexo-theme-even</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-ejs hexo-renderer-dartsass --save</span><br><span class="line">git clone https://github.com/zeed-w-beez/hexo-theme-even themes/even</span><br><span class="line">cp themes/even/_config.yml.example themes/even/_config.yml</span><br></pre></td></tr></table></figure>
+
+<h2 id="use-ejs-instead-of-swig"><a href="#use-ejs-instead-of-swig" class="headerlink" title="use ejs instead of swig"></a>use ejs instead of swig</h2><h3 id="先使用-ChatGPT-把-swig-转换为-ejs-格式，效果棒棒哒"><a href="#先使用-ChatGPT-把-swig-转换为-ejs-格式，效果棒棒哒" class="headerlink" title="先使用 ChatGPT 把 swig 转换为 ejs 格式，效果棒棒哒"></a>先使用 ChatGPT 把 <code>swig</code> 转换为 <code>ejs</code> 格式，效果棒棒哒</h3><h3 id="再批量修改一下文件后缀和引用"><a href="#再批量修改一下文件后缀和引用" class="headerlink" title="再批量修改一下文件后缀和引用"></a>再批量修改一下文件后缀和引用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd layout</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rename template file extension:</span></span><br><span class="line">find . -type f -name &quot;*.swig&quot; -exec sh -c &#x27;mv &quot;$0&quot; &quot;$&#123;0%.swig&#125;.ejs&quot;&#x27; &#123;&#125; \;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">replate template file reference:</span></span><br><span class="line">find . -type f -exec sed -i &#x27;s/\.swig/\.ejs/g&#x27; &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<h3 id="有些问题需要手动修复一下"><a href="#有些问题需要手动修复一下" class="headerlink" title="有些问题需要手动修复一下"></a>有些问题需要手动修复一下</h3><p>转换完肯定是不能直接运行的，还有一些地方需要手动修改下</p>
+<ul>
+<li><code>&#123;%- block content -%&#125;&#123;%- endblock -%&#125;</code> 改为 <code>&lt;%- body %&gt;</code></li>
+<li><code>date(post.date, &#39;YYYY&#39;)</code> 改为 <code>post.date.year()</code></li>
+<li>如果输出的是转义后的 HTML，需要把 ejs 标签 <code>&lt;%=</code> 改为 <code>&lt;%-</code>，具体看下面的标签说明（但是像 <code>page.description</code> 这样的字段，最好还是保留转义）</li>
+<li>转换之后有一些 <code>partial(&quot;xxx.ejs&quot;)</code> 引用是用的变量模式，会报错说找不到，改成直接引用就好了</li>
+<li>开发的时候 <code>hexo s</code> 会有缓存，遇到没效果的，可以先执行一下 <code>hexo clean</code></li>
+</ul>
+<h3 id="EJS-标签含义"><a href="#EJS-标签含义" class="headerlink" title="EJS 标签含义"></a>EJS 标签含义</h3><ul>
+<li><code>&lt;%</code> ‘脚本’ 标签，用于流程控制，无输出。</li>
+<li><code>&lt;%_</code> 删除其前面的空格符</li>
+<li><code>&lt;%=</code> 输出数据到模板（输出是转义 HTML 标签）</li>
+<li><code>&lt;%-</code> 输出非转义的数据到模板</li>
+<li><code>&lt;%#</code> 注释标签，不执行、不输出内容</li>
+<li><code>&lt;%%</code> 输出字符串 ‘&lt;%’</li>
+<li><code>%&gt;</code> 一般结束标签</li>
+<li><code>-%&gt;</code> 删除紧随其后的换行符</li>
+<li><code>_%&gt;</code> 将结束标签后面的空格符删除</li>
+<li>其他语法可以参考<a target="_blank" rel="noopener" href="https://ejs.bootcss.com/#docs">官方文档</a></li>
+</ul>
+<h2 id="use-nunjucks-instead-of-swig"><a href="#use-nunjucks-instead-of-swig" class="headerlink" title="use nunjucks instead of swig"></a>use nunjucks instead of swig</h2><p>最开始打算是换成 <code>nunjucks</code> 的，但是没成功。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd layout</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">rename template file extension:</span></span><br><span class="line">find . -type f -name &quot;*.swig&quot; -exec sh -c &#x27;mv &quot;$0&quot; &quot;$&#123;0%.swig&#125;.njk&quot;&#x27; &#123;&#125; \;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">replate template file reference:</span></span><br><span class="line">find . -type f -exec sed -i &#x27;s/\.swig/\.njk/g&#x27; &#123;&#125; \;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">replate extends with include <span class="keyword">in</span> njk files</span></span><br><span class="line">find . -type f -name &quot;*.njk&quot; -exec sed -i &#x27;s/extends/include/g&#x27; &#123;&#125; \;</span><br><span class="line">find . -type f -name &quot;*.njk&quot; -exec sed -i &#x27;s/||/or/g&#x27; &#123;&#125; \;</span><br><span class="line">find . -type f -name &quot;*.njk&quot; -exec sed -i &#x27;s/&amp;&amp;/and/g&#x27; &#123;&#125; \;</span><br><span class="line">find . -type f -name &quot;*.njk&quot; -exec sed -i &#x27;s/===/==/g&#x27; &#123;&#125; \;</span><br><span class="line">find . -type f -name &quot;*.njk&quot; -exec sed -i &#x27;s/!==/!=/g&#x27; &#123;&#125; \;</span><br><span class="line"></span><br><span class="line">find . -type f -name &quot;*.njk&quot; -exec sed -i &#x27;s/&#123;%-/&#123;%/g&#x27; &#123;&#125; \;</span><br><span class="line">find . -type f -name &quot;*.njk&quot; -exec sed -i &#x27;s/-%&#125;/%&#125;/g&#x27; &#123;&#125; \;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Template render error: (unknown path) Error: template not found: _layout.njk</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">搞不定这个错误 ε=(´ο｀*)))唉</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">而且 (hexo-renderer-nunjucks)[https://github.com/hexojs/hexo-renderer-nunjucks] has been archived by the owner on Jul 29, 2023。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">放弃了，改用 EJS。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>原文作者: </span>
+    <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+  </p>
+  <p class="copyright-item">
+    <span>原文链接: </span>
+    <a href="https://blogs.zeed.w.beez.com/2023/10/10/hexo/swig-to-ejs/">https://blogs.zeed.w.beez.com/2023/10/10/hexo/swig-to-ejs/</a>
+  </p>
+  <p class="copyright-item">
+    <span>许可协议: </span>
+    
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+  </p>
+</div>
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+    <div class="post-tags">
+      
+      <a href="/tags/hexo/">hexo</a>
+      
+    </div>
+    
+      
+  <nav class="post-nav">  
+      
+      
+      <a class="next" href="/2023/09/26/windows/outlook2016-can-not-open-link/">  
+        <span class="next-text nav-default">outlook2016-can-not-open-link</span>  
+        <span class="prev-text nav-mobile">下一篇</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+  
+</div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/zeed-w-beez/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>
+      
+      &copy;
+      
+      2015 - 2023      
+    </span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+
+</html>
