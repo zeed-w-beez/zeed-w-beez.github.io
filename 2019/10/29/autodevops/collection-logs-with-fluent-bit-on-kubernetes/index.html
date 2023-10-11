@@ -235,7 +235,7 @@
 <p><img src="/images/flb_002.png" alt="fluent-bit"></p>
 <span id="more"></span>
 
-<h2 id="Fluentd-amp-Fluent-Bit"><a href="#Fluentd-amp-Fluent-Bit" class="headerlink" title="Fluentd &amp; Fluent Bit"></a>Fluentd &amp; Fluent Bit</h2><p>二者都是同一家公司的两个产品，后者更适合向“云”环境。</p>
+<h2 id="Fluentd-Fluent-Bit"><a href="#Fluentd-Fluent-Bit" class="headerlink" title="Fluentd &amp; Fluent Bit"></a>Fluentd &amp; Fluent Bit</h2><p>二者都是同一家公司的两个产品，后者更适合向“云”环境。</p>
 <ul>
 <li>Fluentd is a log collector, processor, and aggregator.</li>
 <li>Fluent Bit is a log collector and processor (it doesn’t have strong aggregation features like Fluentd).</li>
@@ -272,7 +272,7 @@
 </ol>
 <h4 id="支持环境变量和自定义变量"><a href="#支持环境变量和自定义变量" class="headerlink" title="支持环境变量和自定义变量"></a>支持环境变量和自定义变量</h4><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="comment"># export MY_OUTPUT=stdout</span></span><br><span class="line">@SET <span class="attr">my_input</span>=cpu</span><br><span class="line">@SET <span class="attr">my_output</span>=stdout</span><br><span class="line"></span><br><span class="line"><span class="section">[SERVICE]</span></span><br><span class="line">    Name  $&#123;MY_OUTPUT&#125;</span><br><span class="line">    Match *</span><br><span class="line">    Flush 1</span><br><span class="line"></span><br><span class="line"><span class="section">[INPUT]</span></span><br><span class="line">    Name $&#123;my_input&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">[OUTPUT]</span></span><br><span class="line">    Name $&#123;my_output&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Buffering-x2F-Storage"><a href="#Buffering-x2F-Storage" class="headerlink" title="Buffering &#x2F; Storage"></a>Buffering &#x2F; Storage</h3><ul>
+<h3 id="Buffering-Storage"><a href="#Buffering-Storage" class="headerlink" title="Buffering &#x2F; Storage"></a>Buffering &#x2F; Storage</h3><ul>
 <li>that configuration configure an optional buffering mechanism where it root for data is &#x2F;var&#x2F;log&#x2F;flb-storage&#x2F;, it will use normal synchronization mode, without checksum and up to a maximum of 5MB of memory when processing backlog data.</li>
 </ul>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[SERVICE]</span></span><br><span class="line">    flush                     1</span><br><span class="line">    log_Level                 info</span><br><span class="line">    storage.path              /var/log/flb-storage/</span><br><span class="line">    storage.sync              normal</span><br><span class="line">    storage.checksum          off</span><br><span class="line">    storage.backlog.mem_limit 5M</span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the buffering mechanism to use. It can be memory or filesystem.</span></span><br><span class="line"><span class="section">[INPUT]</span></span><br><span class="line">    name          cpu</span><br><span class="line">    storage.type  filesystem</span><br><span class="line"></span><br><span class="line"><span class="section">[INPUT]</span></span><br><span class="line">    name          mem</span><br><span class="line">    storage.type  memory</span><br></pre></td></tr></table></figure>
