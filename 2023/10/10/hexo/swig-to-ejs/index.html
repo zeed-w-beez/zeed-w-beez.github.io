@@ -66,6 +66,7 @@
 </script>
   
   <title>swig to ejs - Miracle-working</title>
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
@@ -244,7 +245,6 @@
 <h3 id="有些问题需要手动修复一下"><a href="#有些问题需要手动修复一下" class="headerlink" title="有些问题需要手动修复一下"></a>有些问题需要手动修复一下</h3><p>转换完肯定是不能直接运行的，还有一些地方需要手动修改下</p>
 <ol>
 <li><code>&#123;%- block content -%&#125;&#123;%- endblock -%&#125;</code> 改为 <code>&lt;%- body %&gt;</code></li>
-<li><code>date(post.date, &#39;YYYY&#39;)</code> 改为 <code>post.date.year()</code></li>
 <li>如果输出的是转义后的 HTML，需要把 ejs 标签 <code>&lt;%=</code> 改为 <code>&lt;%-</code>，具体看下面的标签说明（但是像 <code>page.description</code> 这样的字段，最好还是保留转义）</li>
 <li>转换之后有一些 <code>partial(&quot;xxx.ejs&quot;)</code> 引用是用的变量模式，会报错说找不到，改成直接引用就好了</li>
 <li>开发的时候 <code>hexo s</code> 会有缓存，遇到没效果的，可以先执行一下 <code>hexo clean</code></li>
