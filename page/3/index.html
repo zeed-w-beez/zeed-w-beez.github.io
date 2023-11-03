@@ -207,6 +207,59 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/2022/08/21/docker/loki-collection-nginx-logx/">loki collection nginx logs</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2022-08-21
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+    
+
+
+  <div class="post-content">
+    
+    
+    
+    
+    
+
+    
+    <p>之前日志服务用的较多的一般是 ELK ，但是对于小规模的使用 elk 则显得太重了，于是尝试用 loki+Promtail+grafana 来实现。</p>
+<p>这里的 <code>Loki</code> 类似 <code>elasticsearch</code> ，用于存储；<code>Promtail</code> 类似 Logstash 或者 Fluent，用于收集；Grafana 类似 Kibana，用于展示。</p>
+<p>Loki 受到了 <code>prometheus</code> 启发，对日志进行打标签的方式而非全文索引的方，而且也可以跟 kubernetes 集成。</p>
+<p><code>Like Prometheus, but for logs!</code></p>
+<p><img src="/images/loki-nginx-dashboard.png" alt="loki nginx dashboard"></p>
+    <div class="read-more">
+      <a href="/2022/08/21/docker/loki-collection-nginx-logx/" class="read-more-link">阅读更多</a>
+    </div>
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/2022/07/03/docker/prometheus-stack/">prometheus-stack</a>
       
     </h1>
@@ -389,62 +442,6 @@
     <p>新版本的 Windows 10 自带了 Windows Sub Linux 功能。可以更方便的使用 linux 系统了。<br><img src="/images/wsl.jpg" alt="wsl"></p>
     <div class="read-more">
       <a href="/2020/03/08/linux/windows-sub-linux/" class="read-more-link">阅读更多</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2019/12/01/autodevops/use-github-action/">use github action</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2019-12-01
-      </span>
-      
-      
-      <span class="post-category">
-        
-        <a href="/categories/autodevops/">autodevops</a>
-        
-      </span>
-      
-      
-    </div>
-  </header>
-
-    
-
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <p>最近把自动发布从 <code>travis-ci</code> 换成了 <code>github action</code>。</p>
-<p>原因有三：</p>
-<ol>
-<li>github 开放免费私有仓库了，所以把这个博客的源码转成了私有的。</li>
-<li><code>travis-ci.org</code> 不支持私有仓库 (travis-ci.com 是支持私有仓库的)。</li>
-<li>github <a target="_blank" rel="noopener" href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/">发布</a>了自己的 actions 功能。</li>
-</ol>
-<p><img src="/images/github-actions.png" alt="github actions"></p>
-    <div class="read-more">
-      <a href="/2019/12/01/autodevops/use-github-action/" class="read-more-link">阅读更多</a>
     </div>
     
     
