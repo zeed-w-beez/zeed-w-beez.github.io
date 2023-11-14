@@ -6,7 +6,7 @@
   <link href="https://blogs.zeed.w.beez.com/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2023-11-14T08:21:43.682Z</updated>
+  <updated>2023-11-14T10:17:20.532Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/11/03/linux/linux-install-date/"/>
     <id>https://blogs.zeed.w.beez.com/2023/11/03/linux/linux-install-date/</id>
     <published>2023-11-03T13:59:43.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;Linux 里一切皆文件，所以有一些很&lt;strong&gt;意想不到&lt;/strong&gt;的操作。&lt;/p&gt;
@@ -42,7 +42,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/10/12/deepdream/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8F%E5%AD%90%E6%8A%80%E6%9C%AF%E5%BE%88%E9%87%8D%E8%A6%81/"/>
     <id>https://blogs.zeed.w.beez.com/2023/10/12/deepdream/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8F%E5%AD%90%E6%8A%80%E6%9C%AF%E5%BE%88%E9%87%8D%E8%A6%81/</id>
     <published>2023-10-12T10:01:21.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近在看一些天文宇宙方面的东西，记录一下感想&lt;/p&gt;
@@ -64,7 +64,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/10/10/hexo/swig-to-ejs/"/>
     <id>https://blogs.zeed.w.beez.com/2023/10/10/hexo/swig-to-ejs/</id>
     <published>2023-10-10T20:49:20.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近把博客使用的 &lt;code&gt;hexo-theme-even&lt;/code&gt; 模板引擎从 &lt;code&gt;Swig&lt;/code&gt; 换成了 &lt;code&gt;ejs&lt;/code&gt;，主要原因是 &lt;code&gt;Swig&lt;/code&gt; 相关的依赖扫描出了很多安全问题。&lt;/p&gt;
@@ -86,7 +86,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/09/26/windows/outlook2016-can-not-open-link/"/>
     <id>https://blogs.zeed.w.beez.com/2023/09/26/windows/outlook2016-can-not-open-link/</id>
     <published>2023-09-26T17:26:01.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;使用 Outlook2016 点击邮件里面的链接会被阻止，提示：受组织策略阻止。只能手动复制到浏览器打开使用，但是问了其他人都是正常的。&lt;/p&gt;
@@ -106,7 +106,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/09/23/go/update-go-version/"/>
     <id>https://blogs.zeed.w.beez.com/2023/09/23/go/update-go-version/</id>
     <published>2023-09-23T11:14:21.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;golang 的&lt;a href=&quot;https://go.dev/doc/devel/release&quot;&gt;发布策略&lt;/a&gt;是支持到最新的 2 个主版本发布。目前的发布周期是大概每年会发布 2 个主版本，所以基本上每年都要升级一下主版本。&lt;br&gt;&lt;img src=&quot;/images/golang-release.png&quot; alt=&quot;&amp;quot;golang release&amp;quot;&quot;&gt;&lt;/p&gt;
@@ -126,7 +126,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/07/04/windows/wsl2/"/>
     <id>https://blogs.zeed.w.beez.com/2023/07/04/windows/wsl2/</id>
     <published>2023-07-04T13:25:20.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;wsl2-磁盘清理&quot;&gt;&lt;a href=&quot;#wsl2-磁盘清理&quot; class=&quot;headerlink&quot; title=&quot;wsl2 磁盘清理&quot;&gt;&lt;/a&gt;wsl2 磁盘清理&lt;/h1&gt;&lt;p&gt;wsl2 默认使用的是 ext4.vhdx 虚拟磁盘格式，特定是可以自动扩容，但是不会自动缩容。&lt;/p&gt;
@@ -146,7 +146,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/01/14/autodevops/what-is-devops/"/>
     <id>https://blogs.zeed.w.beez.com/2023/01/14/autodevops/what-is-devops/</id>
     <published>2023-01-14T14:27:34.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近几年一直在做 DevOps 领域的事情，总结一下自己的一些想法。&lt;/p&gt;
@@ -166,7 +166,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/"/>
     <id>https://blogs.zeed.w.beez.com/2023/01/14/database/mysql-mgr/</id>
     <published>2023-01-14T14:27:34.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
       
@@ -191,7 +191,7 @@
     <link href="https://blogs.zeed.w.beez.com/2022/10/01/dotnet%20core/ef-core-things/"/>
     <id>https://blogs.zeed.w.beez.com/2022/10/01/dotnet%20core/ef-core-things/</id>
     <published>2022-10-01T00:00:00.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近需要写个小应用，就用了 dotnet core 6.0 的 MVC WebApplication 模板实现了下，这里记录一下期间遇到的问题。&lt;/p&gt;</summary>
@@ -210,7 +210,7 @@
     <link href="https://blogs.zeed.w.beez.com/2022/09/16/%E4%B8%AD%E5%8C%BB/%E6%B1%89%E5%94%90100%E6%96%B9/"/>
     <id>https://blogs.zeed.w.beez.com/2022/09/16/%E4%B8%AD%E5%8C%BB/%E6%B1%89%E5%94%90100%E6%96%B9/</id>
     <published>2022-09-16T09:55:03.000Z</published>
-    <updated>2023-11-14T08:21:43.686Z</updated>
+    <updated>2023-11-14T10:17:20.536Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近偶然刷到了&lt;code&gt;倪师&lt;/code&gt;(倪海厦) 的中医教学视频，感觉这才是我心中中医该有的样子。&lt;br&gt;而且因为人到中年，开始慢慢遇到身体上的问题，自己也&lt;code&gt;偷师&lt;/code&gt;学艺，希望能帮助自己和亲朋好友，不做大用。&lt;/p&gt;
@@ -232,7 +232,7 @@
     <link href="https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/"/>
     <id>https://blogs.zeed.w.beez.com/2022/08/21/docker/loki-collection-nginx-logx/</id>
     <published>2022-08-21T00:00:00.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;之前日志服务用的较多的一般是 ELK ，但是对于小规模的使用 elk 则显得太重了，于是尝试用 loki+Promtail+grafana 来实现。&lt;/p&gt;
@@ -281,7 +281,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/22/docker/shadowsocks-with-docker/</id>
     <published>2020-03-22T17:42:46.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录一下 Shadowsocks 的部署和配置。并使用 Dockerfile 做成标准镜像，方便使用。&lt;br&gt;注意：此文章仅作为作者整理知识所用，请勿用于非法用途。作者保留所有权利。&lt;/p&gt;</summary>
@@ -302,7 +302,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/15/dotnet%20core/create-blazor-app/</id>
     <published>2020-03-15T15:22:44.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">create blazor app use dotnet core command line step by step.</summary>
@@ -325,7 +325,7 @@
     <link href="https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/"/>
     <id>https://blogs.zeed.w.beez.com/2020/03/08/linux/windows-sub-linux/</id>
     <published>2020-03-08T21:12:06.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;新版本的 Windows 10 自带了 Windows Sub Linux 功能。可以更方便的使用 linux 系统了。&lt;br&gt;&lt;img src=&quot;/images/wsl.jpg&quot; alt=&quot;wsl&quot;&gt;&lt;/p&gt;</summary>
@@ -395,7 +395,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</id>
     <published>2019-11-23T15:09:06.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;前一段时间参加 QConf 10 周年。里面有几场是介绍微信生态的，比如小程序什么的。回头看视频的时候，发现蛮有意思的，所以想着自己做个小程序玩玩。然后就去注册了一个“SSH+”，准备尝试一下。顺便做了一个 Logo，因为必须要提供。&lt;/p&gt;
@@ -415,7 +415,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/</id>
     <published>2019-10-29T19:33:30.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;Kubernetes 方便的帮我们管理和运维程序，但是也带来了一些新的挑战。比如日志问题。用了Kubernetes 之后，就不能方便的登录到服务器上查看stdout日志，查看系统日志，查看程序的输出日志了。&lt;/p&gt;
@@ -440,7 +440,7 @@
     <link href="https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/"/>
     <id>https://blogs.zeed.w.beez.com/2019/10/29/autodevops/install-prometheus-with-helm/</id>
     <published>2019-10-29T14:49:34.000Z</published>
-    <updated>2023-11-14T08:21:43.682Z</updated>
+    <updated>2023-11-14T10:17:20.532Z</updated>
     
     
     <summary type="html">&lt;p&gt;程序上线以后，就需要通过监控来确保程序健康和稳定的运行了。当程序异常的时候，还要有能力发出报警。一整套的监控收集、存储、报警的安装和配置是非常麻烦的。而且这套监控程序后续也需要进行维护，额外增加了很多工作量。&lt;/p&gt;
