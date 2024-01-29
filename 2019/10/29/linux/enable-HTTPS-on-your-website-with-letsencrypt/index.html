@@ -62,7 +62,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"latex":false};
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":{"class":"toc","list_number":false,"min_depth":1,"max_depth":6},"fancybox":false,"latex":false};
 </script>
   
   <title>enable-HTTPS-on-your-website-with-letsencrypt - Miracle-working</title>
@@ -225,8 +225,14 @@
     </div>
   </header>
 
-    
-
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx-%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">nginx 的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-certbot-%E4%B8%80%E4%B8%AA-Agent-%E7%94%A8%E6%9D%A5%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%AF%81%E4%B9%A6"><span class="toc-text">安装 certbot: 一个 Agent 用来自动生成证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E8%AF%81%E4%B9%A6%E6%9C%89%E6%95%88%E6%9C%9F%E4%B8%89%E4%B8%AA%E6%9C%88%E3%80%82%E9%85%8D%E7%BD%AE%E4%BA%86%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E4%B9%8B%E5%90%8E%EF%BC%8C%E4%BC%9A%E8%87%AA%E5%8A%A8%E7%BB%AD%E6%9C%9F"><span class="toc-text">默认证书有效期三个月。配置了定时任务之后，会自动续期</span></a></li></ol>
+    </div>
+  </div>
+  
 
   <div class="post-content">
     

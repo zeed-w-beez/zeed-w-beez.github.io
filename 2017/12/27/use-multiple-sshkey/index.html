@@ -62,7 +62,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"latex":false};
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":{"class":"toc","list_number":false,"min_depth":1,"max_depth":6},"fancybox":false,"latex":false};
 </script>
   
   <title>use multiple sshkey - Miracle-working</title>
@@ -225,8 +225,14 @@
     </div>
   </header>
 
-    
-
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8-sshkey"><span class="toc-text">1.检查是否已经存在 sshkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BASSH-Key"><span class="toc-text">2.创建SSH Key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8-config-%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA-host-%E7%9A%84-sshkey"><span class="toc-text">3. 使用 config 管理多个 host 的 sshkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B7%BB%E5%8A%A0%E5%88%B0-gitlab-github-%E4%B8%8A%E5%8E%BB"><span class="toc-text">4.添加到 gitlab&#x2F;github 上去</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95"><span class="toc-text">5.测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%A1%AE%E5%AE%9A-ssh-agent-%E5%9C%A8%E8%BF%90%E8%A1%8C"><span class="toc-text">6. 确定 ssh-agent 在运行</span></a></li></ol>
+    </div>
+  </div>
+  
 
   <div class="post-content">
     

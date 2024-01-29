@@ -62,7 +62,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":false,"fancybox":false,"latex":false};
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":{"class":"toc","list_number":false,"min_depth":1,"max_depth":6},"fancybox":false,"latex":false};
 </script>
   
   <title>create blazor app - Miracle-working</title>
@@ -225,8 +225,14 @@
     </div>
   </header>
 
-    
-
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E8%AE%A1%E5%88%92"><span class="toc-text">需求计划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%87%E5%87%86-Solution-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">创建标准 Solution 目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dapper-%E8%AF%BB%E5%8F%96-Porstgresql-%E6%95%B0%E6%8D%AE"><span class="toc-text">Dapper 读取 Porstgresql 数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DBFirst-with-Porstgresql"><span class="toc-text">DBFirst with Porstgresql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-First-with-Sqlite"><span class="toc-text">Code First with Sqlite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-MemoryCache"><span class="toc-text">Using MemoryCache</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3"><span class="toc-text">文档</span></a></li></ol>
+    </div>
+  </div>
+  
 
   <div class="post-content">
     
