@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/</loc>
     
     <lastmod>2024-07-10</lastmod>
@@ -119,6 +110,15 @@
   </url>
   
   <url>
+    <loc>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blogs.zeed.w.beez.com/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/</loc>
     
     <lastmod>2024-07-10</lastmod>
@@ -137,15 +137,6 @@
   </url>
   
   <url>
-    <loc>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%9F%B3%E5%AE%A4%E7%A7%98%E5%BD%95/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blogs.zeed.w.beez.com/2022/09/16/%E4%B8%AD%E5%8C%BB/%E6%B1%89%E5%94%90100%E6%96%B9/</loc>
     
     <lastmod>2024-07-10</lastmod>
@@ -156,6 +147,15 @@
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E6%9C%AC%E8%8D%89%E6%96%B0%E7%BC%96/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%9F%B3%E5%AE%A4%E7%A7%98%E5%BD%95/</loc>
     
     <lastmod>2024-07-10</lastmod>
     
@@ -183,87 +183,6 @@
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2023/12/21/%E4%B8%AD%E5%8C%BB/%E5%8C%BB%E5%AD%A6%E8%A1%B7%E4%B8%AD%E5%8F%82%E8%A5%BF%E5%BD%95/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2018/03/31/logo/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/05/27/proxy-settings/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2023/09/26/windows/outlook2016-can-not-open-link/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2023/07/04/windows/wsl2/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2023/11/30/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/</loc>
-    
-    <lastmod>2024-07-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/</loc>
     
     <lastmod>2024-07-10</lastmod>
     
@@ -300,6 +219,42 @@
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/09/28/https-%E6%BC%AB%E8%B0%88/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2018/03/31/logo/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2017/05/27/proxy-settings/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2017/11/10/redux-study/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2017/10/25/tensorflow/</loc>
     
     <lastmod>2024-07-10</lastmod>
     
@@ -507,6 +462,51 @@
   
   <url>
     <loc>https://blogs.zeed.w.beez.com/2017/05/06/linux/yum-install-mysql/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2019/11/23/mp/%E5%86%99%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2023/09/26/windows/outlook2016-can-not-open-link/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2023/07/04/windows/wsl2/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2023/11/30/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2024-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/</loc>
     
     <lastmod>2024-07-10</lastmod>
     
