@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="build k8s on vpn" />
+
+
+<!-- Website keywords -->
+
+<meta name="keywords" content="autodevops, kubernetes, Miracle-working" />
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.1" />
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/" />
+
+<!-- Fancybox styling -->
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":{"class":"toc","list_number":false,"min_depth":1,"max_depth":6},"fancybox":false,"latex":false};
+</script>
+  
+  <title>build k8s on vpn - Miracle-working</title>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        首页              </li>
+    </a>
+    
+    <a href="/archives">
+      <li class="mobile-menu-item">
+        
+        
+        归档              </li>
+    </a>
+    
+    <a href="/tags">
+      <li class="mobile-menu-item">
+        
+        
+        标签              </li>
+    </a>
+    
+    <a href="/categories">
+      <li class="mobile-menu-item">
+        
+        
+        分类              </li>
+    </a>
+    
+    <a href="/todo">
+      <li class="mobile-menu-item">
+        
+        
+        Todo              </li>
+    </a>
+    
+    <a href="/about">
+      <li class="mobile-menu-item">
+        
+        
+        关于              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Miracle-working</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              首页  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives">  
+              
+              
+              归档  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags">  
+              
+              
+              标签  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories">  
+              
+              
+              分类  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/todo">  
+              
+              
+              Todo  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about">  
+              
+              
+              关于  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      build k8s on vpn
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2024-08-10
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/autodevops/">autodevops</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Wireguard-VPN"><span class="toc-text">Wireguard VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%8D%95%E7%82%B9%E7%BB%93%E6%9E%84"><span class="toc-text">配置单点结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%8A%B6%E7%BB%93%E6%9E%84"><span class="toc-text">配置网状结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setup-K8S"><span class="toc-text">Setup K8S</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%92%8C%E9%AA%8C%E8%AF%81"><span class="toc-text">测试和验证</span></a></li></ol>
+    </div>
+  </div>
+  
+
+  <div class="post-content">
+    
+    <p>最近接触到一个走公网组 K8S 集群的需求，做了一些技术调研，这里做下总结和记录。</p>
+<p>实现方案是：先用 Wireguard VPN 软件把节点的网络打通，再正常安装 K8S 集群。</p>
+<p>这种做的优点是 Wireguard 组网之后，节点间的通讯就是加密的了，而且性能也不差。<br>还有就是如果多个节点都拥有公网 IP，可以组成网状 VPN，可用性和稳定性方面都有优势。</p>
+<p><img src="/images/wireguard-performance.png" alt="&quot;wireguard performance&quot;"></p>
+<span id="more"></span>
+
+<p>方案的要求：</p>
+<ol>
+<li>必须有至少一个公网 IP 才行（用于 VPN 组网和通讯）。</li>
+<li>CNI 我用的是 Cilium，其他方案没测试过。但是理论上应该是没问题的。</li>
+<li>其他的基本要求</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 0. 系统 Ubuntu 22.04+ （因为 CGroupV2 要求内核是 5.10+）</span></span><br><span class="line"><span class="comment"># 1. 关闭 swap</span></span><br><span class="line"><span class="built_in">sudo</span> swapoff -a</span><br><span class="line"><span class="comment"># vi /etc/fstab 注释掉 swap 的行。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 设置网络功能</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/modules-load.d/k8s.conf</span></span><br><span class="line"><span class="string">overlay</span></span><br><span class="line"><span class="string">br_netfilter</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="built_in">sudo</span> modprobe overlay</span><br><span class="line"><span class="built_in">sudo</span> modprobe br_netfilter</span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee /etc/sysctl.d/k8s.conf</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-iptables  = 1</span></span><br><span class="line"><span class="string">net.bridge.bridge-nf-call-ip6tables = 1</span></span><br><span class="line"><span class="string">net.ipv4.ip_forward                 = 1</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="built_in">sudo</span> sysctl --system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 安装 Containerd</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y containerd</span><br><span class="line"></span><br><span class="line"><span class="comment"># crictl https://github.com/kubernetes-sigs/cri-tools/tags</span></span><br><span class="line">VERSION=<span class="string">&quot;v1.30.1&quot;</span></span><br><span class="line">curl -L https://github.com/kubernetes-sigs/cri-tools/releases/download/<span class="variable">$VERSION</span>/crictl-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz --output crictl-<span class="variable">$&#123;VERSION&#125;</span>-linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">sudo</span> tar zxvf crictl-<span class="variable">$VERSION</span>-linux-amd64.tar.gz -C /usr/local/bin</span><br><span class="line"><span class="built_in">rm</span> -f crictl-<span class="variable">$VERSION</span>-linux-amd64.tar.gz</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;runtime-endpoint: unix:///run/containerd/containerd.sock&quot;</span> &gt; /etc/crictl.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 开启 CGroupV2</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/containerd</span><br><span class="line">containerd config default &gt; /etc/containerd/config.toml</span><br><span class="line">sed -i <span class="string">&#x27;s/SystemdCgroup = false/SystemdCgroup = true/&#x27;</span> /etc/containerd/config.toml</span><br><span class="line"><span class="built_in">cat</span> /etc/containerd/config.toml | grep SystemdCgroup</span><br><span class="line">systemctl restart containerd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. Ubuntu, Debian 安装 kubelet, kubeadm v1.28</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y apt-transport-https ca-certificates curl gpg</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/apt/keyrings</span><br><span class="line">curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | <span class="built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /&#x27;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/kubernetes.list</span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y kubelet kubeadm kubectl</span><br><span class="line"><span class="built_in">sudo</span> apt-mark hold kubelet kubeadm kubectl</span><br></pre></td></tr></table></figure>
+
+<h2 id="Wireguard-VPN"><a href="#Wireguard-VPN" class="headerlink" title="Wireguard VPN"></a>Wireguard VPN</h2><p><a target="_blank" rel="noopener" href="https://www.wireguard.com/">wireguard</a> 是一个开源的 VPN 协议，性能和安全都是顶尖的。</p>
+<p>安装很简单 <code>apt install wireguard</code> 即可。配置也比较简单，只是要提前规划好节点 IP 地址就行。</p>
+<p>这里提一下，国外有很多多设备互联的平台，都是基于 Wireguard 做的。所以 Wireguard 除了可以组建跨云的 K8S 集群之外，还可以把本地家庭网络里的移动设备、电脑、NAS 等设备和云上网络互联互通。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Wireguard 常用命令</span></span><br><span class="line">wg show <span class="comment"># 查看配置和状态</span></span><br><span class="line">wg genkey | <span class="built_in">tee</span> privatekey | wg pubkey &gt; publickey <span class="comment"># 生成公私钥对</span></span><br><span class="line"></span><br><span class="line">wg-quick up k8s_wg0 <span class="comment"># 启动服务</span></span><br><span class="line">wg-quick down k8s_wg0 <span class="comment"># 停止服务</span></span><br><span class="line">systemctl <span class="built_in">enable</span> wg-quick@k8s_wg0 <span class="comment"># 开机自启</span></span><br><span class="line">systemctl status wg-quick@k8s_wg0 <span class="comment"># 查看状态</span></span><br><span class="line">wg syncconf k8s_wg0 &lt;(wg-quick strip k8s_wg0) <span class="comment"># 热加载配置</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置单点结构"><a href="#配置单点结构" class="headerlink" title="配置单点结构"></a>配置单点结构</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这里选择使用 10.89.21.0/21 网段，总共有 2048 个IP，可以搭建一个 2000 个节点的集群，一般情况足够了。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># MTU 设置一般不需要，遇到性能问题，可以再调整，参考：https://gist.github.com/nitred/f16850ca48c48c79bf422e90ee5b9d95</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 有公网IP的机器作为服务端，需要知道其他全部节点的信息。</span></span><br><span class="line"><span class="comment"># node-01 的配置：</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt; /etc/wireguard/k8s_wg0.conf</span></span><br><span class="line"><span class="string">[Interface]</span></span><br><span class="line"><span class="string">PrivateKey = xxxx</span></span><br><span class="line"><span class="string">Address = 10.89.21.1/21</span></span><br><span class="line"><span class="string">ListenPort = 51870</span></span><br><span class="line"><span class="string">MTU = 1420</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.2/32</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.3/32</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.4/32</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.5/32</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 没有公网IP的机器作为客户端，只需要配置上服务端的信息即可</span></span><br><span class="line"><span class="comment"># node-02,03,04,05 的配置类似，改下自己的 Address IP 即可：</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt; /etc/wireguard/k8s_wg0.conf</span></span><br><span class="line"><span class="string">[Interface]</span></span><br><span class="line"><span class="string">PrivateKey = xxxx</span></span><br><span class="line"><span class="string">Address = 10.89.21.2/32</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.1/32</span></span><br><span class="line"><span class="string">Endpoint = &lt;公网IP&gt;:51870     # 这里也可以使用域名</span></span><br><span class="line"><span class="string">PersistentKeepalive = 25</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置网状结构"><a href="#配置网状结构" class="headerlink" title="配置网状结构"></a>配置网状结构</h3><p>网状配置略微复杂，每个服务端都需要配置全部的其他客户端 peer 信息。下面的例子是 node-01,02,03 有公网 IP 作为服务端，node-04,05 没有公网 IP 作为客户端。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 有公网 IP 的机器作为 服务端，需要知道其他 全部 节点的信息。</span></span><br><span class="line"><span class="comment"># node-01,02,03 的配置类似</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt; /etc/wireguard/k8s_wg0.conf</span></span><br><span class="line"><span class="string">[Interface]</span></span><br><span class="line"><span class="string">PrivateKey = xxxx</span></span><br><span class="line"><span class="string">Address = 10.89.21.1/21</span></span><br><span class="line"><span class="string">ListenPort = 51870</span></span><br><span class="line"><span class="string">MTU = 1420</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.2/32</span></span><br><span class="line"><span class="string">Endpoint = &lt;公网IP&gt;:51870</span></span><br><span class="line"><span class="string">PersistentKeepalive = 25</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.3/32</span></span><br><span class="line"><span class="string">Endpoint = &lt;公网IP&gt;:51870</span></span><br><span class="line"><span class="string">PersistentKeepalive = 25</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.4/32</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.5/32</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 客户端节点，只需要配置全部的服务端节点就行</span></span><br><span class="line"><span class="comment"># node04,05 的配置类似</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt; /etc/wireguard/k8s_wg0.conf</span></span><br><span class="line"><span class="string">[Interface]</span></span><br><span class="line"><span class="string">PrivateKey = xxxx</span></span><br><span class="line"><span class="string">Address = 10.89.21.4/32</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.1/21</span></span><br><span class="line"><span class="string">Endpoint = &lt;公网IP&gt;:51870</span></span><br><span class="line"><span class="string">PersistentKeepalive = 25</span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.2/21</span></span><br><span class="line"><span class="string">Endpoint = &lt;公网IP&gt;:51870</span></span><br><span class="line"><span class="string">PersistentKeepalive = 25</span></span><br><span class="line"><span class="string">[Peer]</span></span><br><span class="line"><span class="string">PublicKey = xxxx</span></span><br><span class="line"><span class="string">AllowedIPs = 10.89.21.3/21</span></span><br><span class="line"><span class="string">Endpoint = &lt;公网IP&gt;:51870</span></span><br><span class="line"><span class="string">PersistentKeepalive = 25</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Setup-K8S"><a href="#Setup-K8S" class="headerlink" title="Setup K8S"></a>Setup K8S</h2><p>部署 K8S 就比较简单了，使用 Kubeadm 就可以了。只是要注意几个地方：</p>
+<ol>
+<li>设置 kubelet 启动参数，指定 node ip</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改 /etc/default/kubelet，配置上当前节点分配的 IP 地址</span></span><br><span class="line">KUBELET_EXTRA_ARGS=<span class="string">&quot;--node-ip=10.89.21.1&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>设置 kubeadm 启动参数，指定 node ip</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">kubeadm config images pull --kubernetes-version=v1.28.12</span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF | sudo tee kubeadm-config.yaml</span></span><br><span class="line"><span class="string">apiVersion: kubeadm.k8s.io/v1beta3</span></span><br><span class="line"><span class="string">kind: InitConfiguration</span></span><br><span class="line"><span class="string">skipPhases:</span></span><br><span class="line"><span class="string">  - addon/kube-proxy</span></span><br><span class="line"><span class="string">localAPIEndpoint:</span></span><br><span class="line"><span class="string">  advertiseAddress: &quot;10.89.21.1&quot; # 这里要指定 k8s 主节点的 IP</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string">apiVersion: kubeadm.k8s.io/v1beta3</span></span><br><span class="line"><span class="string">kind: ClusterConfiguration</span></span><br><span class="line"><span class="string">networking:</span></span><br><span class="line"><span class="string">  serviceSubnet: &quot;10.90.0.0/16&quot; # svc 网段也可以提前规划好，避免冲突</span></span><br><span class="line"><span class="string">  podSubnet: &quot;10.91.0.0/16&quot;     # POD 网段也可以提前规划好，避免冲突</span></span><br><span class="line"><span class="string">kubernetesVersion: v1.28.12     # 指定安装的 K8S 版本</span></span><br><span class="line"><span class="string">controlPlaneEndpoint: &quot;10.89.21.1:6443&quot; # 这里要指定 k8s 主节点的 IP</span></span><br><span class="line"><span class="string">apiServer:</span></span><br><span class="line"><span class="string">  certSANs:</span></span><br><span class="line"><span class="string">    - &quot;35.35.35.35&quot;          # 如果要对外提供 k8s api-server 访问，这里可以填公网IP 或者 对外的域名，做到 k8s 证书里。</span></span><br><span class="line"><span class="string">    - &quot;abck8s-api-server.somedomain.com&quot;</span></span><br><span class="line"><span class="string">certificatesDir: &quot;/etc/kubernetes/pki&quot;</span></span><br><span class="line"><span class="string">imageRepository: &quot;registry.k8s.io&quot;</span></span><br><span class="line"><span class="string">clusterName: &quot;abck8s&quot;</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string">kind: KubeletConfiguration</span></span><br><span class="line"><span class="string">apiVersion: kubelet.config.k8s.io/v1beta1</span></span><br><span class="line"><span class="string">cgroupDriver: systemd  # 这里要指定使用 CgroupV2</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">kubeadm init --config=kubeadm-config.yaml</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>设置 Cilium 参数</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt; cilium.yaml</span></span><br><span class="line"><span class="string">k8sServiceHost: &quot;10.89.21.1&quot;</span></span><br><span class="line"><span class="string">k8sServicePort: &quot;6443&quot;</span></span><br><span class="line"><span class="string">cluster:</span></span><br><span class="line"><span class="string">  name: abck8s</span></span><br><span class="line"><span class="string">  id: 35</span></span><br><span class="line"><span class="string">operator:</span></span><br><span class="line"><span class="string">  replicas: 1</span></span><br><span class="line"><span class="string">ipam:</span></span><br><span class="line"><span class="string">  mode: &quot;kubernetes&quot;</span></span><br><span class="line"><span class="string">  operator:</span></span><br><span class="line"><span class="string">    clusterPoolIPv4PodCIDRList: [&quot;10.91.0.0/16&quot;]</span></span><br><span class="line"><span class="string">    clusterPoolIPv4MaskSize: 16</span></span><br><span class="line"><span class="string">hubble:</span></span><br><span class="line"><span class="string">  enabled: true</span></span><br><span class="line"><span class="string">nodePort:</span></span><br><span class="line"><span class="string">  enabled: true</span></span><br><span class="line"><span class="string">  range: &quot;30000,32767&quot;</span></span><br><span class="line"><span class="string">hostServices:</span></span><br><span class="line"><span class="string">  enabled: true</span></span><br><span class="line"><span class="string">autoDirectNodeRoutes: false  # node 节点的子网可能不同，这里要设置为 false</span></span><br><span class="line"><span class="string">tunnelProtocol: &quot;vxlan&quot; # tunnel 模式要开启，默认就是开启的</span></span><br><span class="line"><span class="string">routingMode: &quot;tunnel&quot;   # tunnel 模式要开启，默认就是开启的</span></span><br><span class="line"><span class="string">ipv4NativeRoutingCIDR: &quot;10.90.0.0/16&quot;</span></span><br><span class="line"><span class="string">kubeProxyReplacement: &quot;true&quot;</span></span><br><span class="line"><span class="string"># 这里看情况要不要开启3层加密：node, node2node, pod2pod</span></span><br><span class="line"><span class="string"># encryption:</span></span><br><span class="line"><span class="string">#   enabled: true</span></span><br><span class="line"><span class="string">#   type: wireguard</span></span><br><span class="line"><span class="string">#   nodeEncryption: true</span></span><br><span class="line"><span class="string">#   strictMode:</span></span><br><span class="line"><span class="string">#     enabled: true</span></span><br><span class="line"><span class="string">#     cidr: &quot;10.91.0.0/16&quot;</span></span><br><span class="line"><span class="string">#     allowRemoteNodeIdentities: true</span></span><br><span class="line"><span class="string">socketLB:</span></span><br><span class="line"><span class="string">  enabled: true</span></span><br><span class="line"><span class="string">  hostNamespaceOnly: true</span></span><br><span class="line"><span class="string">bpf:</span></span><br><span class="line"><span class="string">  lbExternalClusterIP: true</span></span><br><span class="line"><span class="string">daemon:</span></span><br><span class="line"><span class="string">  devices: [&quot;k8s_wg0&quot;]  # 这里要指定使用 wireguard 的网卡</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署</span></span><br><span class="line">helm upgrade --install cilium cilium/cilium --version 1.15.7 -f cilium.yaml --namespace kube-system</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查状态</span></span><br><span class="line">kubectl -n kube-system <span class="built_in">exec</span> ds/cilium -- cilium-dbg status --verbose</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="测试和验证"><a href="#测试和验证" class="headerlink" title="测试和验证"></a>测试和验证</h2><p>最后验证下，部署一个 nginx pod，然后访问一下，看看是否能访问到。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt; nginx-deploy.yaml</span></span><br><span class="line"><span class="string">apiVersion: apps/v1</span></span><br><span class="line"><span class="string">kind: Deployment</span></span><br><span class="line"><span class="string">metadata:</span></span><br><span class="line"><span class="string">  name: nginx-deploy</span></span><br><span class="line"><span class="string">spec:</span></span><br><span class="line"><span class="string">  replicas: 5</span></span><br><span class="line"><span class="string">  selector:</span></span><br><span class="line"><span class="string">    matchLabels:</span></span><br><span class="line"><span class="string">      app: nginx</span></span><br><span class="line"><span class="string">  template:</span></span><br><span class="line"><span class="string">    metadata:</span></span><br><span class="line"><span class="string">      labels:</span></span><br><span class="line"><span class="string">        app: nginx</span></span><br><span class="line"><span class="string">    spec:</span></span><br><span class="line"><span class="string">      containers:</span></span><br><span class="line"><span class="string">      - name: nginx</span></span><br><span class="line"><span class="string">        image: nginx:latest</span></span><br><span class="line"><span class="string">        ports:</span></span><br><span class="line"><span class="string">        - containerPort: 80</span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string">apiVersion: v1</span></span><br><span class="line"><span class="string">kind: Service</span></span><br><span class="line"><span class="string">metadata:</span></span><br><span class="line"><span class="string">  name: nginx-service</span></span><br><span class="line"><span class="string">spec:</span></span><br><span class="line"><span class="string">  type: NodePort</span></span><br><span class="line"><span class="string">  selector:</span></span><br><span class="line"><span class="string">    app: nginx</span></span><br><span class="line"><span class="string">  ports:</span></span><br><span class="line"><span class="string">    - protocol: TCP</span></span><br><span class="line"><span class="string">      port: 80</span></span><br><span class="line"><span class="string">      nodePort: 30080</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">kubectl apply -f nginx-deploy.yaml</span><br><span class="line">kubectl rollout restart deploy nginx-deploy</span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>原文作者: </span>
+    <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+  </p>
+  <p class="copyright-item">
+    <span>原文链接: </span>
+    <a href="https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/">https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/</a>
+  </p>
+  <p class="copyright-item">
+    <span>许可协议: </span>
+    
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+  </p>
+</div>
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+    <div class="post-tags">
+      
+      <a href="/tags/autodevops/">autodevops</a>
+      
+      <a href="/tags/kubernetes/">kubernetes</a>
+      
+    </div>
+    
+      
+  <nav class="post-nav">  
+      
+      
+      <a class="next" href="/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/">  
+        <span class="next-text nav-default">辨证录</span>  
+        <span class="prev-text nav-mobile">下一篇</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+      <div id="disqus_thread">  
+        <noscript>  
+          Please enable JavaScript to view the  
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>  
+        </noscript>  
+      </div>  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+  
+</div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/zeed-w-beez/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>
+      
+      &copy;
+      
+      2015 - 2024      
+    </span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+    
+  
+<script type="text/javascript">
+  var disqus_config = function() {
+    this.page.url = 'https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/';
+    this.page.identifier = '2024/08/10/autodevops/build-k8s-on-vpn/';
+    this.page.title = 'build k8s on vpn';
+  };
+  (function() {
+    var d = document,
+      s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+  
+    
+    
+    
+    
+    
+  
+
+  <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+
+</html>
