@@ -18,10 +18,12 @@
 
 <!-- Website description -->
 
-<meta name="description" content="As you do, I’m absolutely convinced that you will lay hold of a miracle-working power that will lift you up from confusion, misery, melancholy, and failure." />
+<meta name="description" content="include custom labels of k8s objects" />
 
 
 <!-- Website keywords -->
+
+<meta name="keywords" content="autodevops, kube-state-metrics, Miracle-working" />
 
 
 
@@ -37,7 +39,7 @@
 
 
 <!-- Canonical, good for google search engine -->
-<link rel="canonical" href="https://blogs.zeed.w.beez.com/tags/kubernetes/" />
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/" />
 
 <!-- Fancybox styling -->
 
@@ -63,7 +65,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":{"class":"toc","list_number":false,"min_depth":1,"max_depth":6},"fancybox":false,"latex":false};
 </script>
   
-  <title>kubernetes · Miracle-working</title>
+  <title>include custom labels of k8s objects - Miracle-working</title>
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -199,90 +201,112 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      include custom labels of k8s objects
+      
+    </h1>
 
-<section id="archive" class="archive">
+    <div class="post-meta">
+      <span class="post-time">
+        2024-09-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/autodevops/">autodevops</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
   
-  
-  <div class="archive-title tag">
-    <h2 class="archive-name">kubernetes</h2>
+
+  <div class="post-content">
+    
+    <p>最近有接触到一些带 GPU 的机器作为 K8S 的工作节点，因为使用了 GPU Operator 去管理驱动，所以需要为 kube-state-metrics 添加一些自定义的标签收集设置，才能比较方便的在 Prometheus 查询以及在 Grafana 中展示。</p>
+<p><img src="/images/kube-node-labels.png" alt="&quot;kube node labels&quot;"></p>
+<span id="more"></span>
+
+<p>设置的方式比较简单，通过给 kube-state-metrics 添加额外启动参数就可以收集了。</p>
+<p>因为我这里是使用的 Kube Prometheus Stack 的 Helm 进行部署的，所以相关的配置如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Configuration for kube-state-metrics subchart</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="attr">kube-state-metrics:</span></span><br><span class="line">  <span class="attr">extraArgs:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--metric-labels-allowlist=pods=[*],nodes=[nvidia.com/gpu.product,nvidia.com/gpu.family,nvidia.com/gpu.memory,nvidia.com/gpu.count,nvidia.com/cuda.driver-version.full,nvidia.com/cuda.runtime-version.full,nvidia.com/gpu.deploy.driver,nvidia.com/gpu-driver-upgrade-state,feature.node.kubernetes.io/system-os_release.ID,feature.node.kubernetes.io/system-os_release.VERSION_ID]</span></span><br></pre></td></tr></table></figure>
+
+<p>这样配置完之后，Prometheus 就可以查询到这 2 个额外的 <code>kube_pod_labels</code>，<code>kube_node_labels</code> 指标了。</p>
+<p>具体的实现方式这个 Pull Request：<a target="_blank" rel="noopener" href="https://github.com/kubernetes/kube-state-metrics/pull/1403/files">https://github.com/kubernetes/kube-state-metrics/pull/1403/files</a></p>
+
+    
   </div>
+
   
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>原文作者: </span>
+    <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+  </p>
+  <p class="copyright-item">
+    <span>原文链接: </span>
+    <a href="https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/">https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/</a>
+  </p>
+  <p class="copyright-item">
+    <span>许可协议: </span>
+    
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+  </p>
+</div>
+
+    
+
   
 
   
-  
-  
-
-  <div class="archive-post">
-    <span class="archive-post-time">
+  <footer class="post-footer">
+    
+    <div class="post-tags">
       
-      2024-08-20
+      <a href="/tags/autodevops/">autodevops</a>
       
-    </span>
-    <span class="archive-post-title">
-      <a href="/2024/08/20/autodevops/k8s-node-shell/" class="archive-post-link">
-        k8s node shell POD
-      </a>
-    </span>
-  </div>
-  
-  
-
-  <div class="archive-post">
-    <span class="archive-post-time">
+      <a href="/tags/kube-state-metrics/">kube-state-metrics</a>
       
-      2024-08-10
+    </div>
+    
       
-    </span>
-    <span class="archive-post-title">
-      <a href="/2024/08/10/autodevops/build-k8s-on-vpn/" class="archive-post-link">
-        build k8s on vpn
-      </a>
-    </span>
-  </div>
-  
-  
-
-  <div class="archive-post">
-    <span class="archive-post-time">
+  <nav class="post-nav">  
       
-      2019-10-29
       
-    </span>
-    <span class="archive-post-title">
-      <a href="/2019/10/29/autodevops/collection-logs-with-fluent-bit-on-kubernetes/" class="archive-post-link">
-        collection logs with fluent-bit on kubernetes
-      </a>
-    </span>
-  </div>
-  
-  
-
-  <div class="archive-post">
-    <span class="archive-post-time">
-      
-      2019-10-29
-      
-    </span>
-    <span class="archive-post-title">
-      <a href="/2019/10/29/autodevops/kubernetes/" class="archive-post-link">
-        kubernetes
-      </a>
-    </span>
-  </div>
-  
-</section>
-
-  
-  <nav class="pagination">  
-      
+      <a class="next" href="/2024/08/20/autodevops/k8s-node-shell/">  
+        <span class="next-text nav-default">k8s node shell POD</span>  
+        <span class="prev-text nav-mobile">下一篇</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
       
   </nav>  
   
 
+  </footer>
+  
+
+</article>
         </div>
           
+  <div class="comments" id="comments">  
+      
+      <div id="disqus_thread">  
+        <noscript>  
+          Please enable JavaScript to view the  
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>  
+        </noscript>  
+      </div>  
+      
+  </div>  
+  
 
       </div>
     </main>
@@ -385,9 +409,9 @@
   
 <script type="text/javascript">
   var disqus_config = function() {
-    this.page.url = '';
-    this.page.identifier = 'tags/kubernetes/index.html';
-    this.page.title = '';
+    this.page.url = 'https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/';
+    this.page.identifier = '2024/09/06/autodevops/include-custom-labels-of-k8s-objects/';
+    this.page.title = 'include custom labels of k8s objects';
   };
   (function() {
     var d = document,
