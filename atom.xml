@@ -6,7 +6,7 @@
   <link href="https://blogs.zeed.w.beez.com/atom.xml" rel="self"/>
   
   <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2024-09-06T07:02:55.761Z</updated>
+  <updated>2024-09-28T05:52:49.585Z</updated>
   <id>https://blogs.zeed.w.beez.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>幼幼新书</title>
+    <link href="https://blogs.zeed.w.beez.com/2024/09/28/%E4%B8%AD%E5%8C%BB/%E5%B9%BC%E5%B9%BC%E6%96%B0%E4%B9%A6/"/>
+    <id>https://blogs.zeed.w.beez.com/2024/09/28/%E4%B8%AD%E5%8C%BB/%E5%B9%BC%E5%B9%BC%E6%96%B0%E4%B9%A6/</id>
+    <published>2024-09-28T13:17:24.000Z</published>
+    <updated>2024-09-28T05:52:49.585Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;《幼幼新书》(全本)&lt;br&gt;作者：刘昉 朝代：宋 年份：公元1150年&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
+    
+    
+    <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
+    
+    <category term="刘昉" scheme="https://blogs.zeed.w.beez.com/tags/%E5%88%98%E6%98%89/"/>
+    
+  </entry>
+  
+  <entry>
     <title>include custom labels of k8s objects</title>
     <link href="https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/"/>
     <id>https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/</id>
     <published>2024-09-06T14:49:21.000Z</published>
-    <updated>2024-09-06T07:02:55.761Z</updated>
+    <updated>2024-09-28T05:52:49.562Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近有接触到一些带 GPU 的机器作为 K8S 的工作节点，因为使用了 GPU Operator 去管理驱动，所以需要为 kube-state-metrics 添加一些自定义的标签收集设置，才能比较方便的在 Prometheus 查询以及在 Grafana 中展示。&lt;/p&gt;
@@ -43,7 +64,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/08/20/autodevops/k8s-node-shell/"/>
     <id>https://blogs.zeed.w.beez.com/2024/08/20/autodevops/k8s-node-shell/</id>
     <published>2024-08-20T13:09:42.000Z</published>
-    <updated>2024-09-06T07:02:55.761Z</updated>
+    <updated>2024-09-28T05:52:49.562Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录一个 K8S 上用的比较多的 node shell POD ，可以获得完全的宿主机权限。&lt;/p&gt;</summary>
@@ -64,7 +85,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/"/>
     <id>https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/</id>
     <published>2024-08-10T15:40:32.000Z</published>
-    <updated>2024-09-06T07:02:55.761Z</updated>
+    <updated>2024-09-28T05:52:49.562Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近接触到一个走公网组 K8S 集群的需求，做了一些技术调研，这里做下总结和记录。&lt;/p&gt;
@@ -88,7 +109,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/"/>
     <id>https://blogs.zeed.w.beez.com/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/</id>
     <published>2024-07-09T09:42:42.000Z</published>
-    <updated>2024-09-06T07:02:55.785Z</updated>
+    <updated>2024-09-28T05:52:49.596Z</updated>
     
     
     <summary type="html">&lt;p&gt;《辨证录》(全本)&lt;br&gt;作者：陈士铎 朝代：清 年份：公元1644-1911年&lt;/p&gt;</summary>
@@ -111,7 +132,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/"/>
     <id>https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/</id>
     <published>2024-05-11T16:54:08.000Z</published>
-    <updated>2024-09-06T07:02:55.765Z</updated>
+    <updated>2024-09-28T05:52:49.564Z</updated>
     
     
     <summary type="html">&lt;p&gt;汇总记录一下常见的中医名词，以及自己的理解，方便查漏补缺。&lt;/p&gt;</summary>
@@ -130,7 +151,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/</id>
     <published>2024-01-29T14:33:19.000Z</published>
-    <updated>2024-09-06T07:02:55.789Z</updated>
+    <updated>2024-09-28T05:52:49.599Z</updated>
     
     
     <summary type="html">&lt;ul&gt;
@@ -155,7 +176,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/</id>
     <published>2024-01-29T14:29:19.000Z</published>
-    <updated>2024-09-06T07:02:55.789Z</updated>
+    <updated>2024-09-28T05:52:49.598Z</updated>
     
     
     <summary type="html">&lt;p&gt;《黄帝内经·灵枢》(全本)&lt;/p&gt;</summary>
@@ -176,7 +197,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/</id>
     <published>2024-01-29T14:24:19.000Z</published>
-    <updated>2024-09-06T07:02:55.789Z</updated>
+    <updated>2024-09-28T05:52:49.600Z</updated>
     
     
     <summary type="html">&lt;p&gt;《黄帝内经·素问》(全本)&lt;/p&gt;</summary>
@@ -197,7 +218,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%9A%BE%E7%BB%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%9A%BE%E7%BB%8F/</id>
     <published>2024-01-29T14:18:12.000Z</published>
-    <updated>2024-09-06T07:02:55.789Z</updated>
+    <updated>2024-09-28T05:52:49.597Z</updated>
     
     
     <summary type="html">&lt;p&gt;《难经》为《黄帝八十一难经》的简称，或称《八十一难》。旧题秦越人撰。&lt;/p&gt;</summary>
@@ -218,7 +239,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E5%A4%96%E7%BB%8F%E5%BE%AE%E8%A8%80/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E5%A4%96%E7%BB%8F%E5%BE%AE%E8%A8%80/</id>
     <published>2024-01-29T13:36:58.000Z</published>
-    <updated>2024-09-06T07:02:55.773Z</updated>
+    <updated>2024-09-28T05:52:49.574Z</updated>
     
     
     <summary type="html">&lt;p&gt;《外经微言》(全本)&lt;br&gt;作者：陈士铎 朝代：清 年份：公元1644-1911年&lt;/p&gt;</summary>
@@ -241,7 +262,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%9F%B3%E5%AE%A4%E7%A7%98%E5%BD%95/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%9F%B3%E5%AE%A4%E7%A7%98%E5%BD%95/</id>
     <published>2024-01-29T13:35:58.000Z</published>
-    <updated>2024-09-06T07:02:55.781Z</updated>
+    <updated>2024-09-28T05:52:49.591Z</updated>
     
     
     <summary type="html">&lt;p&gt;《石室秘录》(全本)&lt;br&gt;作者：陈士铎 朝代：清 年份：公元1644-1911年&lt;/p&gt;</summary>
@@ -264,7 +285,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E6%98%93%E7%BB%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E6%98%93%E7%BB%8F/</id>
     <published>2024-01-29T13:34:29.000Z</published>
-    <updated>2024-09-06T07:02:55.773Z</updated>
+    <updated>2024-09-28T05:52:49.585Z</updated>
     
     
     <summary type="html">&lt;p&gt;《易经》(全本)&lt;/p&gt;</summary>
@@ -283,7 +304,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%81%93%E5%BE%B7%E7%BB%8F/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%81%93%E5%BE%B7%E7%BB%8F/</id>
     <published>2024-01-29T13:33:18.000Z</published>
-    <updated>2024-09-06T07:02:55.785Z</updated>
+    <updated>2024-09-28T05:52:49.597Z</updated>
     
     
     <summary type="html">&lt;p&gt;《道德经》(全本)&lt;br&gt;作者：老子&lt;/p&gt;</summary>
@@ -302,7 +323,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E7%97%87%E7%8E%89%E5%87%BD/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E7%97%87%E7%8E%89%E5%87%BD/</id>
     <published>2024-01-29T13:32:58.000Z</published>
-    <updated>2024-09-06T07:02:55.781Z</updated>
+    <updated>2024-09-28T05:52:49.592Z</updated>
     
     
     <summary type="html">&lt;p&gt;《辨症玉函》(全本)&lt;br&gt;作者：陈士铎 朝代：清 年份：公元1644-1911年&lt;/p&gt;</summary>
@@ -325,7 +346,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%87%91%E5%8C%AE%E8%A6%81%E7%95%A5/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%87%91%E5%8C%AE%E8%A6%81%E7%95%A5/</id>
     <published>2024-01-29T13:31:58.000Z</published>
-    <updated>2024-09-06T07:02:55.785Z</updated>
+    <updated>2024-09-28T05:52:49.597Z</updated>
     
     
     <summary type="html">&lt;p&gt;《金匮要略方论》&lt;br&gt;汉·张仲景&lt;/p&gt;</summary>
@@ -348,7 +369,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E6%9C%AC%E8%8D%89%E6%96%B0%E7%BC%96/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E6%9C%AC%E8%8D%89%E6%96%B0%E7%BC%96/</id>
     <published>2024-01-29T13:28:58.000Z</published>
-    <updated>2024-09-06T07:02:55.777Z</updated>
+    <updated>2024-09-28T05:52:49.588Z</updated>
     
     
     <summary type="html">&lt;p&gt;《本草新编》(全本)&lt;br&gt;作者：陈士铎 朝代：清 年份：公元1644-1911年&lt;/p&gt;</summary>
@@ -371,7 +392,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/26/%E4%B8%AD%E5%8C%BB/%E4%BC%A4%E5%AF%92%E8%AE%BA/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/26/%E4%B8%AD%E5%8C%BB/%E4%BC%A4%E5%AF%92%E8%AE%BA/</id>
     <published>2024-01-26T15:05:20.000Z</published>
-    <updated>2024-09-06T07:02:55.765Z</updated>
+    <updated>2024-09-28T05:52:49.565Z</updated>
     
     
     <summary type="html">&lt;p&gt;《伤寒论》(全本)&lt;br&gt;汉 张仲景&lt;/p&gt;</summary>
@@ -394,7 +415,7 @@
     <link href="https://blogs.zeed.w.beez.com/2024/01/18/dotnet%20core/observability-with-otel/"/>
     <id>https://blogs.zeed.w.beez.com/2024/01/18/dotnet%20core/observability-with-otel/</id>
     <published>2024-01-18T10:14:33.000Z</published>
-    <updated>2024-09-06T07:02:55.765Z</updated>
+    <updated>2024-09-28T05:52:49.563Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近在写一个稍微复杂的 dotnet core web api 程序，里面有个比较耗时的任务，包含很多次循环和 DB 请求，就在想有没有办法优化一下。&lt;/p&gt;
@@ -415,7 +436,7 @@
     <link href="https://blogs.zeed.w.beez.com/2023/12/21/%E4%B8%AD%E5%8C%BB/%E5%8C%BB%E5%AD%A6%E8%A1%B7%E4%B8%AD%E5%8F%82%E8%A5%BF%E5%BD%95/"/>
     <id>https://blogs.zeed.w.beez.com/2023/12/21/%E4%B8%AD%E5%8C%BB/%E5%8C%BB%E5%AD%A6%E8%A1%B7%E4%B8%AD%E5%8F%82%E8%A5%BF%E5%BD%95/</id>
     <published>2023-12-21T17:04:30.000Z</published>
-    <updated>2024-09-06T07:02:55.773Z</updated>
+    <updated>2024-09-28T05:52:49.573Z</updated>
     
     
     <summary type="html">&lt;p&gt;《医学衷中参西录》全本&lt;br&gt;作者：张锡纯 朝代：清 年份：公元1909年&lt;/p&gt;</summary>
@@ -430,30 +451,6 @@
     <category term="医学衷中参西录" scheme="https://blogs.zeed.w.beez.com/tags/%E5%8C%BB%E5%AD%A6%E8%A1%B7%E4%B8%AD%E5%8F%82%E8%A5%BF%E5%BD%95/"/>
     
     <category term="张锡纯" scheme="https://blogs.zeed.w.beez.com/tags/%E5%BC%A0%E9%94%A1%E7%BA%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中医入门</title>
-    <link href="https://blogs.zeed.w.beez.com/2023/11/30/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/"/>
-    <id>https://blogs.zeed.w.beez.com/2023/11/30/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/</id>
-    <published>2023-11-30T10:39:09.000Z</published>
-    <updated>2024-09-06T07:02:55.765Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近一直在断断续续学习中医。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/%E6%B2%B3%E5%9B%BE%E6%B4%9B%E4%B9%A601.jpg&quot; alt=&quot;&amp;quot;河图洛书&amp;quot;&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
-    <category term="中医入门" scheme="https://blogs.zeed.w.beez.com/tags/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="中医计量" scheme="https://blogs.zeed.w.beez.com/tags/%E4%B8%AD%E5%8C%BB%E8%AE%A1%E9%87%8F/"/>
-    
-    <category term="伤寒论" scheme="https://blogs.zeed.w.beez.com/tags/%E4%BC%A4%E5%AF%92%E8%AE%BA/"/>
     
   </entry>
   
