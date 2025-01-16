@@ -248,7 +248,7 @@
  <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 注册</span></span><br><span class="line">services.Configure&lt;AppConfigOptions&gt;(Configuration.GetSection(<span class="string">&quot;AppConfig&quot;</span>));</span><br><span class="line"><span class="comment">// 然后直接在构造函数中通过注入使用</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">readonly</span> AppConfigOptions _appConfigOptions;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HomeController</span>(<span class="params">IOptions&lt;AppConfigOptions&gt; optionsAccessor</span>)</span>&#123;</span><br><span class="line">    _appConfigOptions = optionsAccessor.Value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>自定义配置文件</p>
- <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IWebHost <span class="title">BuildWebHost</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span> =&gt;</span><br><span class="line">    WebHost.CreateDefaultBuilder(args)</span><br><span class="line">        .ConfigureAppConfiguration((builderContext, config) =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            config.AddXmlFile(<span class="string">&quot;appsettings.xml&quot;</span>, optional: <span class="literal">true</span>, reloadOnChange: <span class="literal">true</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">        .UseStartup&lt;Startup&gt;()</span><br><span class="line">        .Build();</span><br></pre></td></tr></table></figure>
+ <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IWebHost <span class="title">BuildWebHost</span>(<span class="params"><span class="built_in">string</span>[] <span class="keyword">args</span></span>)</span> =&gt;</span><br><span class="line">    WebHost.CreateDefaultBuilder(<span class="keyword">args</span>)</span><br><span class="line">        .ConfigureAppConfiguration((builderContext, config) =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            config.AddXmlFile(<span class="string">&quot;appsettings.xml&quot;</span>, optional: <span class="literal">true</span>, reloadOnChange: <span class="literal">true</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">        .UseStartup&lt;Startup&gt;()</span><br><span class="line">        .Build();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>读取数据库里的配置</p>
 </li>
@@ -408,7 +408,7 @@
       
       &copy;
       
-      2015 - 2024      
+      2015 - 2025      
     </span>
 
     <span class="heart">
