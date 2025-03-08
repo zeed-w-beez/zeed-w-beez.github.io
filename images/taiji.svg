@@ -1,0 +1,31 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- 背景 -->
+  <!-- <rect width="400" height="400" fill="white" /> -->
+
+  <!-- 绘制太极图效果 -->
+  <!-- 大圆 -->
+  <circle cx="200" cy="200" r="200" fill="black" />
+
+  <!-- 上半部分白色半圆 -->
+  <path d="M200,0 A200,200 0 0 1 200,400" fill="white" />
+
+  <!-- 下半部分黑色半圆 -->
+  <path d="M200,0 A200,200 0 0 0 200,400" fill="black" />
+
+  <!-- 小白色圆 -->
+  <circle cx="200" cy="100" r="100" fill="white" />
+
+  <!-- 小黑色圆 -->
+  <circle cx="200" cy="300" r="100" fill="black" />
+
+  <!-- 白色小圆中的黑色小圆 -->
+  <circle cx="200" cy="100" r="20" fill="black" />
+
+  <!-- 黑色小圆中的白色小圆 -->
+  <circle cx="200" cy="300" r="20" fill="white" />
+
+  <!-- 添加文字说明 -->
+  <!-- <text x="200" y="50" font-size="20" text-anchor="middle" fill="black">夏至</text> -->
+  <!-- <text x="200" y="350" font-size="20" text-anchor="middle" fill="white">冬至</text> -->
+  <!-- <text x="200" y="200" font-size="16" text-anchor="middle" fill="gray">投影长度变化</text> -->
+</svg>

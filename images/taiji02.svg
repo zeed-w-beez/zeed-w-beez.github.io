@@ -1,0 +1,25 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+    <!-- X轴表示一年中的月份 -->
+    <line x1="50" y1="550" x2="750" y2="550" stroke="black" />
+    <text x="40" y="570" font-size="12">Jan</text>
+    <text x="140" y="570" font-size="12">Feb</text>
+    <text x="240" y="570" font-size="12">Mar</text>
+    <text x="340" y="570" font-size="12">Apr</text>
+    <text x="440" y="570" font-size="12">May</text>
+    <text x="540" y="570" font-size="12">Jun</text>
+    <text x="640" y="570" font-size="12">Jul</text>
+    <text x="740" y="570" font-size="12">Aug</text>
+    <text x="840" y="570" font-size="12">Sep</text>
+    <text x="940" y="570" font-size="12">Oct</text>
+    <text x="1040" y="570" font-size="12">Nov</text>
+    <text x="1140" y="570" font-size="12">Dec</text>
+
+    <!-- Y轴表示投影长度 -->
+    <line x1="50" y1="50" x2="50" y2="550" stroke="black" />
+    <text x="30" y="50" font-size="12">Max</text>
+    <text x="30" y="550" font-size="12">Min</text>
+
+    <!-- 假设的投影长度变化曲线 -->
+    <path d="M50,550 C150,450 250,300 350,250 C450,200 550,250 650,300 C750,350 750,450 750,550" stroke="blue"
+        fill="none" />
+</svg>

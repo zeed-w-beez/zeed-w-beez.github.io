@@ -1,0 +1,32 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <!-- 背景 -->
+    <rect width="200" height="200" fill="white" />
+
+    <!-- 日晷基座（倾斜15度的圆形） -->
+    <g transform="rotate(-15,100,100)">
+        <circle cx="100" cy="100" r="80" fill="#f0f0f0" stroke="#333333" stroke-width="5" />
+    </g>
+
+    <!-- 日晷指针（黑色细线，长度为基座半径） -->
+    <line x1="100" y1="100" x2="100" y2="20" stroke="black" stroke-width="2" />
+
+    <!-- 日晷基座上的刻度线（倾斜15度） -->
+    <g transform="rotate(-15,100,100)">
+        <!-- 12点方向 -->
+        <line x1="100" y1="20" x2="100" y2="40" stroke="#333" stroke-width="3" />
+        <!-- 3点方向 -->
+        <line x1="180" y1="100" x2="160" y2="100" stroke="#333" stroke-width="3" />
+        <!-- 6点方向 -->
+        <line x1="100" y1="180" x2="100" y2="160" stroke="#333" stroke-width="3" />
+        <!-- 9点方向 -->
+        <line x1="20" y1="100" x2="40" y2="100" stroke="#333" stroke-width="3" />
+    </g>
+
+    <!-- 添加文字说明（倾斜15度） -->
+    <g transform="rotate(-15,100,100)">
+        <text x="100" y="30" font-size="12" text-anchor="middle" fill="#333333">12</text>
+        <text x="170" y="110" font-size="12" text-anchor="middle" fill="#333333">3</text>
+        <text x="100" y="190" font-size="12" text-anchor="middle" fill="#333333">6</text>
+        <text x="30" y="110" font-size="12" text-anchor="middle" fill="#333333">9</text>
+    </g>
+</svg>
