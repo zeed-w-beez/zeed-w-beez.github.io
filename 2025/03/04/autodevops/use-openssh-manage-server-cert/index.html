@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="use-openssh-manage-server-cert" />
+
+
+<!-- Website keywords -->
+
+<meta name="keywords" content="autodevops, ansible, Miracle-working" />
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.1" />
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/" />
+
+<!-- Fancybox styling -->
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":{"class":"toc","list_number":false,"min_depth":1,"max_depth":6},"fancybox":false,"latex":false};
+</script>
+  
+  <title>use-openssh-manage-server-cert - Miracle-working</title>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        首页              </li>
+    </a>
+    
+    <a href="/archives">
+      <li class="mobile-menu-item">
+        
+        
+        归档              </li>
+    </a>
+    
+    <a href="/tags">
+      <li class="mobile-menu-item">
+        
+        
+        标签              </li>
+    </a>
+    
+    <a href="/categories">
+      <li class="mobile-menu-item">
+        
+        
+        分类              </li>
+    </a>
+    
+    <a href="/todo">
+      <li class="mobile-menu-item">
+        
+        
+        Todo              </li>
+    </a>
+    
+    <a href="/about">
+      <li class="mobile-menu-item">
+        
+        
+        关于              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Miracle-working</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              首页  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives">  
+              
+              
+              归档  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags">  
+              
+              
+              标签  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories">  
+              
+              
+              分类  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/todo">  
+              
+              
+              Todo  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about">  
+              
+              
+              关于  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      use-openssh-manage-server-cert
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2025-03-04
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/autodevops/">autodevops</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE%E4%BF%A1%E4%BB%BB%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%81%E4%B9%A6"><span class="toc-text">给服务器设置信任客户端证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BF%A1%E4%BB%BB%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%81%E4%B9%A6"><span class="toc-text">给客户端设置信任服务端证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87-Ansible-%E8%84%9A%E6%9C%AC%E6%9D%A5%E8%BF%9B%E8%A1%8C%E6%89%B9%E9%87%8F%E9%83%A8%E7%BD%B2"><span class="toc-text">通过 Ansible 脚本来进行批量部署</span></a></li></ol>
+    </div>
+  </div>
+  
+
+  <div class="post-content">
+    
+    <p>OpenSSH 证书登录提供了一种增强安全性的方法来验证用户或主机的身份，避免了传统密码认证可能带来的安全隐患。它包括单向（通常是客户端到服务器）和双向（客户端与服务器互相认证）两种认证方式。</p>
+<p><img src="/images/openssh-cert.png" alt="&quot;OpenSSH 双向证书验证&quot;"></p>
+<span id="more"></span>
+
+<p>这里记录一下如何使用 OpenSSH 的证书功能来进行多服务器的秘钥管理。</p>
+<h2 id="给服务器设置信任客户端证书"><a href="#给服务器设置信任客户端证书" class="headerlink" title="给服务器设置信任客户端证书"></a>给服务器设置信任客户端证书</h2><p>设置完成之后，可以实现：使用 <code>user_ca</code> 签发出的证书登录任意服务器。</p>
+<p>使用到的命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 生成CA密钥对：首先需要生成一个证书颁发机构（CA）的密钥对。</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -f user_ca -C user_ca</span><br><span class="line"><span class="comment"># 这个命令会生成2个文件：user_ca 和 user_ca.pub</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 为用户生成密钥对</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -f ssh_user_rsa_key</span><br><span class="line"><span class="comment"># 这个命令会生成2个文件：ssh_user_rsa_key 和 ssh_user_rsa_key.pub</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.签发证书：使用 `user_ca` 私钥对用户或主机公钥进行签名，生成相应的证书</span></span><br><span class="line">ssh-keygen -s user_ca -I dev@example.com -n user1,user2 -V +30d ssh_user_rsa_key.pub</span><br><span class="line"><span class="comment"># 这个命令会生成一个包含有效期的证书文件：`ssh_user_rsa_key-cert.pub`</span></span><br><span class="line"><span class="comment"># 可以使用这个命令查看证书的详细信息：</span></span><br><span class="line">ssh-keygen -L -f ssh_user_rsa_key-cert.pub</span><br><span class="line"></span><br><span class="line"><span class="comment">## 参数说明：</span></span><br><span class="line"><span class="comment">## -s : CA 指定应用于签名的 CA 私有密钥的文件名。</span></span><br><span class="line"><span class="comment">## -I : 证书的身份 ———— 用于标识用户或者服务器的字符串。</span></span><br><span class="line"><span class="comment">## -n : 指定证书将对身份验证有效的委托人列表（以逗号分隔）</span></span><br><span class="line"><span class="comment">## -V : 指定证书的有效期。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 在服务器的 `/etc/ssh/sshd_config` 中启用证书认证，并指定CA公钥的位置。</span></span><br><span class="line">TrustedUserCAKeys /etc/ssh/user_ca.pub</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 最后需要重启 SSHD 服务，才能生效</span></span><br><span class="line">systemctl restart sshd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="给客户端设置信任服务端证书"><a href="#给客户端设置信任服务端证书" class="headerlink" title="给客户端设置信任服务端证书"></a>给客户端设置信任服务端证书</h2><p>设置完成之后可以实现：服务器会向连接的所有人提供自己的证书。</p>
+<p>使用到的命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 生成CA密钥对：首先需要生成一个证书颁发机构（CA）的密钥对。</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -f host_ca -C host_ca</span><br><span class="line"><span class="comment"># 这个命令会生成2个文件：host_ca 和 host_ca.pub</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 为主机生成密钥对</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -f ssh_host_rsa_key</span><br><span class="line"><span class="comment"># 这个命令会生成2个文件：ssh_host_rsa_key 和 ssh_host_rsa_key.pub</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.签发证书：使用CA私钥对用户或主机公钥进行签名，生成相应的证书</span></span><br><span class="line">ssh-keygen -s host_ca -I host.example.com -h -n host.example.com -V +30d ssh_host_rsa_key.pub</span><br><span class="line"><span class="comment"># 这个命令会生成一个包含有效期的证书文件：ssh_host_rsa_key-cert.pub，可以使用这个命令查看证书的详细信息：</span></span><br><span class="line">ssh-keygen -L -f ssh_host_rsa_key-cert.pub</span><br><span class="line"></span><br><span class="line"><span class="comment">## 参数说明：</span></span><br><span class="line"><span class="comment">## -s : CA 指定应用于签名的 CA 私有密钥的文件名。</span></span><br><span class="line"><span class="comment">## -I : 证书的身份 ———— 用于标识用户或者服务器的字符串。</span></span><br><span class="line"><span class="comment">## -h : 指定此证书将是主机证书，而不是用户证书。</span></span><br><span class="line"><span class="comment">## -n : 指定证书将对身份验证有效的委托人列表（以逗号分隔）</span></span><br><span class="line"><span class="comment">## -V : 指定证书的有效期。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.1 在服务器端的 `/etc/ssh/ssh_config` 单独声明证书文件的位置</span></span><br><span class="line">HostCertificate /etc/ssh/ssh_host_rsa_key-cert.pub</span><br><span class="line"><span class="comment"># 4.2 重启服务器端的 SSHD 服务。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.1 在客户端的 `/etc/ssh/sshd_config` 中启用证书认证</span></span><br><span class="line">TrustedUserCAKeys /etc/ssh/host_ca.pub</span><br><span class="line"><span class="comment"># 5.2 在客户端的 `~/.ssh/known_hosts` 中信任服务器 CA 的公钥，还可以配置为模式匹配模式</span></span><br><span class="line">@cert-authority host1,host2,*.example.com ssh-rsa xxxx这里是 host_ca.pub 的内容xxxxx</span><br><span class="line"><span class="comment"># 5.3 最后需要重启客户端的 SSHD 服务，才能生效</span></span><br><span class="line">systemctl restart sshd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="通过-Ansible-脚本来进行批量部署"><a href="#通过-Ansible-脚本来进行批量部署" class="headerlink" title="通过 Ansible 脚本来进行批量部署"></a>通过 Ansible 脚本来进行批量部署</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下面是个单向的验证模式，只给服务器设置信任客户端证书CA。</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Manage</span> <span class="string">SSH</span> <span class="string">keys</span> <span class="string">and</span> <span class="string">certificates</span> <span class="string">using</span> <span class="string">OpenSSH</span></span><br><span class="line">  <span class="attr">hosts:</span> <span class="string">all</span></span><br><span class="line">  <span class="attr">gather_facts:</span> <span class="literal">no</span></span><br><span class="line">  <span class="attr">vars:</span></span><br><span class="line">    <span class="attr">user_ca_path:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; playbook_dir &#125;&#125;</span>/ssh/ansible_user_ca_key&quot;</span></span><br><span class="line">    <span class="attr">user_key_path:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; playbook_dir &#125;&#125;</span>/ssh/ansible_ssh_user_rsa_key&quot;</span></span><br><span class="line">    <span class="attr">user_pub_path:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; playbook_dir &#125;&#125;</span>/ssh/ansible_ssh_user_rsa_key.pub&quot;</span></span><br><span class="line">    <span class="attr">cert_validity_days:</span> <span class="string">+30d</span></span><br><span class="line">    <span class="comment"># cert_validity_days: &quot;-10d:-1d&quot; # 生成一个过去的时间进行验证</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">tasks:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span> <span class="string">the</span> <span class="string">Ansible</span> <span class="string">User</span> <span class="string">CA</span> <span class="string">and</span> <span class="string">cert</span></span><br><span class="line">      <span class="attr">delegate_to:</span> <span class="string">localhost</span></span><br><span class="line">      <span class="attr">openssh_keypair:</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; user_ca_path &#125;&#125;</span>&quot;</span></span><br><span class="line">        <span class="attr">type:</span> <span class="string">rsa</span></span><br><span class="line">        <span class="attr">size:</span> <span class="number">4096</span></span><br><span class="line">        <span class="attr">state:</span> <span class="string">present</span></span><br><span class="line">        <span class="attr">force:</span> <span class="literal">no</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Ensure</span> <span class="string">the</span> <span class="string">Ansible</span> <span class="string">User</span> <span class="string">key</span> <span class="string">exists</span></span><br><span class="line">      <span class="attr">delegate_to:</span> <span class="string">localhost</span></span><br><span class="line">      <span class="attr">openssh_keypair:</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; user_key_path &#125;&#125;</span>&quot;</span></span><br><span class="line">        <span class="attr">type:</span> <span class="string">rsa</span></span><br><span class="line">        <span class="attr">size:</span> <span class="number">4096</span></span><br><span class="line">        <span class="attr">state:</span> <span class="string">present</span></span><br><span class="line">        <span class="attr">force:</span> <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Configure</span> <span class="string">SSHD</span> <span class="string">on</span> <span class="string">target</span> <span class="string">servers</span></span><br><span class="line">  <span class="attr">hosts:</span> <span class="string">coreos</span></span><br><span class="line">  <span class="attr">become:</span> <span class="literal">yes</span></span><br><span class="line">  <span class="attr">vars:</span></span><br><span class="line">    <span class="attr">user_ca_pub_path:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; playbook_dir &#125;&#125;</span>/ssh/ansible_user_ca_key.pub&quot;</span></span><br><span class="line">    <span class="attr">user_key_path:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; playbook_dir &#125;&#125;</span>/ssh/ansible_ssh_user_rsa_key&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">tasks:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Copy</span> <span class="string">the</span> <span class="string">CA</span> <span class="string">certificate</span> <span class="string">to</span> <span class="string">the</span> <span class="string">target</span> <span class="string">server</span></span><br><span class="line">      <span class="attr">copy:</span></span><br><span class="line">        <span class="attr">src:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; user_ca_pub_path &#125;&#125;</span>&quot;</span></span><br><span class="line">        <span class="attr">dest:</span> <span class="string">&quot;/etc/ssh/trusted_ansible_user_ca_key.pub&quot;</span></span><br><span class="line">        <span class="attr">owner:</span> <span class="string">root</span></span><br><span class="line">        <span class="attr">group:</span> <span class="string">root</span></span><br><span class="line">        <span class="attr">mode:</span> <span class="string">&quot;0644&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Ensure</span> <span class="string">correct</span> <span class="string">configuration</span> <span class="string">in</span> <span class="string">sshd_config</span></span><br><span class="line">      <span class="attr">lineinfile:</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">/etc/ssh/sshd_config.d/62-ansible-user-ca.conf</span></span><br><span class="line">        <span class="attr">create:</span> <span class="literal">yes</span> <span class="comment"># 确保文件存在或创建新文件</span></span><br><span class="line">        <span class="attr">line:</span> <span class="string">&quot;TrustedUserCAKeys /etc/ssh/trusted_ansible_user_ca_key.pub&quot;</span></span><br><span class="line">        <span class="attr">state:</span> <span class="string">present</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Restart</span> <span class="string">SSHD</span> <span class="string">service</span> <span class="string">to</span> <span class="string">apply</span> <span class="string">changes</span></span><br><span class="line">      <span class="attr">systemd:</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">sshd</span></span><br><span class="line">        <span class="attr">state:</span> <span class="string">restarted</span></span><br><span class="line">        <span class="attr">enabled:</span> <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<p>参考文章：<a target="_blank" rel="noopener" href="https://goteleport.com/blog/how-to-configure-ssh-certificate-based-authentication/">https://goteleport.com/blog/how-to-configure-ssh-certificate-based-authentication/</a></p>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>原文作者: </span>
+    <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+  </p>
+  <p class="copyright-item">
+    <span>原文链接: </span>
+    <a href="https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/">https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/</a>
+  </p>
+  <p class="copyright-item">
+    <span>许可协议: </span>
+    
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+  </p>
+</div>
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+    <div class="post-tags">
+      
+      <a href="/tags/autodevops/">autodevops</a>
+      
+      <a href="/tags/ansible/">ansible</a>
+      
+    </div>
+    
+      
+  <nav class="post-nav">  
+      
+      
+      <a class="next" href="/2025/01/16/%E4%B8%AD%E5%8C%BB/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B8%80%E7%82%B9%E4%B8%AD%E5%8C%BB/">  
+        <span class="next-text nav-default">为什么要学一点中医</span>  
+        <span class="prev-text nav-mobile">下一篇</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+      <div id="disqus_thread">  
+        <noscript>  
+          Please enable JavaScript to view the  
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>  
+        </noscript>  
+      </div>  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+  
+</div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/zeed-w-beez/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>
+      
+      &copy;
+      
+      2015 - 2025      
+    </span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+    
+  
+<script type="text/javascript">
+  var disqus_config = function() {
+    this.page.url = 'https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/';
+    this.page.identifier = '2025/03/04/autodevops/use-openssh-manage-server-cert/';
+    this.page.title = 'use-openssh-manage-server-cert';
+  };
+  (function() {
+    var d = document,
+      s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+  
+    
+    
+    
+    
+    
+  
+
+  <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+
+</html>
