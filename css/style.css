@@ -620,15 +620,15 @@ h6 {
   height: 100%;
 }
 
-.header {
-  padding: 20px 20px;
-}
 .header:before, .header:after {
   content: " ";
   display: table;
 }
 .header:after {
   clear: both;
+}
+.header {
+  padding: 20px 20px;
 }
 .header .logo-wrapper {
   float: left;
@@ -654,6 +654,11 @@ h6 {
 }
 .header .site-navbar .menu .menu-item {
   display: inline-block;
+}
+.header .site-navbar .menu .menu-item + .menu-item {
+  margin-left: 10px;
+}
+.header .site-navbar .menu .menu-item {
   display: inline-block;
   vertical-align: middle;
   transform: translateZ(0);
@@ -661,9 +666,6 @@ h6 {
   box-shadow: 0 0 1px transparent;
   position: relative;
   overflow: hidden;
-}
-.header .site-navbar .menu .menu-item + .menu-item {
-  margin-left: 10px;
 }
 .header .site-navbar .menu .menu-item:before {
   content: "";
