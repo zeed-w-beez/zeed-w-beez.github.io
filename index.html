@@ -207,6 +207,54 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/2025/09/06/autodevops/k8s-renew-ca/">K8S 更换 CA 证书</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2025-09-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/autodevops/">autodevops</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+    
+    
+
+    
+    <p>证书是 K8S 集群内部通讯的必备配置。K8S 大规模使用到现在也有接近10年时间了，很多搭建的比较早的集群，CA 基本都快过期了，这里记录一下更换 CA 的步骤和注意事项。</p>
+    <div class="read-more">
+      <a href="/2025/09/06/autodevops/k8s-renew-ca/" class="read-more-link">阅读更多</a>
+    </div>
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/2025/07/09/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E4%B8%8B%E8%82%BA%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E7%97%85%E5%9B%A0%E4%B8%8E%E6%B2%BB%E7%96%97/">中医视角下肺癌的病机病因与治疗</a>
       
     </h1>
@@ -648,57 +696,6 @@
     <p>记录一个 K8S 上用的比较多的 node shell POD ，可以获得完全的宿主机权限。</p>
     <div class="read-more">
       <a href="/2024/08/20/autodevops/k8s-node-shell/" class="read-more-link">阅读更多</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/08/10/autodevops/build-k8s-on-vpn/">build k8s on vpn</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-08-10
-      </span>
-      
-      
-      <span class="post-category">
-        
-        <a href="/categories/autodevops/">autodevops</a>
-        
-      </span>
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <p>最近接触到一个走公网组 K8S 集群的需求，做了一些技术调研，这里做下总结和记录。</p>
-<p>实现方案是：先用 Wireguard VPN 软件把节点的网络打通，再正常安装 K8S 集群。</p>
-<p>这种做的优点是 Wireguard 组网之后，节点间的通讯就是加密的了，而且性能也不差。<br>还有就是如果多个节点都拥有公网 IP，可以组成网状 VPN，可用性和稳定性方面都有优势。</p>
-<p><img src="/images/wireguard-performance.png" alt="&quot;wireguard performance&quot;"></p>
-    <div class="read-more">
-      <a href="/2024/08/10/autodevops/build-k8s-on-vpn/" class="read-more-link">阅读更多</a>
     </div>
     
     

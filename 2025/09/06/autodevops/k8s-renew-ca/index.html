@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="K8S 更换 CA 证书" />
+
+
+<!-- Website keywords -->
+
+<meta name="keywords" content="devops, Miracle-working" />
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Miracle-working" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.1" />
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/" />
+
+<!-- Fancybox styling -->
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.1" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":{"class":"toc","list_number":false,"min_depth":1,"max_depth":6},"fancybox":false,"latex":false};
+</script>
+  
+  <title>K8S 更换 CA 证书 - Miracle-working</title>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Miracle-working</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        首页              </li>
+    </a>
+    
+    <a href="/archives">
+      <li class="mobile-menu-item">
+        
+        
+        归档              </li>
+    </a>
+    
+    <a href="/tags">
+      <li class="mobile-menu-item">
+        
+        
+        标签              </li>
+    </a>
+    
+    <a href="/categories">
+      <li class="mobile-menu-item">
+        
+        
+        分类              </li>
+    </a>
+    
+    <a href="/todo">
+      <li class="mobile-menu-item">
+        
+        
+        Todo              </li>
+    </a>
+    
+    <a href="/about">
+      <li class="mobile-menu-item">
+        
+        
+        关于              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Miracle-working</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              首页  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives">  
+              
+              
+              归档  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags">  
+              
+              
+              标签  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories">  
+              
+              
+              分类  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/todo">  
+              
+              
+              Todo  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about">  
+              
+              
+              关于  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      K8S 更换 CA 证书
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2025-09-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/autodevops/">autodevops</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%E8%AF%81%E4%B9%A6%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E7%94%A8%E5%A4%84"><span class="toc-text">先了解一下证书的分类和用处</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E7%9A%84%E9%80%9A%E8%AE%AF%E5%85%B3%E7%B3%BB%E5%A6%82%E4%B8%8B"><span class="toc-text">集群的通讯关系如下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E4%B8%BA%E8%BF%99%E4%BA%9B%E9%80%9A%E8%AE%AF%E4%B8%80%E8%88%AC%E9%83%BD%E6%98%AF%E5%8F%8C%E5%90%91%E9%AA%8C%E8%AF%81%EF%BC%8C%E6%89%80%E4%BB%A5%E6%83%B3%E6%88%90%E5%8A%9F%E9%80%9A%E8%AE%AF%EF%BC%8C%E5%BF%85%E9%A1%BB%E6%BB%A1%E8%B6%B32%E4%B8%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">因为这些通讯一般都是双向验证，所以想成功通讯，必须满足2个条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E4%BB%A5%E4%B8%8A%E6%9D%A1%E4%BB%B6%EF%BC%8C%E6%9B%B4%E6%96%B0-CA-%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%B0%B1%E6%98%AF"><span class="toc-text">基于以上条件，更新 CA 的步骤就是</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B"><span class="toc-text">详细的步骤如下</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">一、准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9B%B4%E6%96%B0-ETCD-CA-%E5%92%8C-%E8%AF%81%E4%B9%A6"><span class="toc-text">二、更新 ETCD CA 和 证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9B%B4%E6%96%B0-K8S-%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8-CA-bundle-%E8%AF%81%E4%B9%A6"><span class="toc-text">三、更新 K8S 组件使用 CA bundle 证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%9B%B4%E6%96%B0%E6%8E%A7%E5%88%B6%E8%8A%82%E7%82%B9%E4%BD%BF%E7%94%A8%E6%96%B0-CA-%E7%AD%BE%E5%8F%91%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%81%E4%B9%A6"><span class="toc-text">四、更新控制节点使用新 CA 签发的客户端证书</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%9C%80%E5%90%8E%E6%9B%B4%E6%96%B0%E5%85%B6%E4%BB%96%E5%9C%B0%E6%96%B9%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%81%E4%B9%A6"><span class="toc-text">五、最后更新其他地方使用到的客户端证书</span></a></li></ol></li></ol>
+    </div>
+  </div>
+  
+
+  <div class="post-content">
+    
+    <p>证书是 K8S 集群内部通讯的必备配置。K8S 大规模使用到现在也有接近10年时间了，很多搭建的比较早的集群，CA 基本都快过期了，这里记录一下更换 CA 的步骤和注意事项。</p>
+<span id="more"></span>
+
+<p>先给一下官方文档：<a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/tasks/tls/manual-rotation-of-ca-certificates/">https://kubernetes.io/zh-cn/docs/tasks/tls/manual-rotation-of-ca-certificates/</a></p>
+<h2 id="先了解一下证书的分类和用处"><a href="#先了解一下证书的分类和用处" class="headerlink" title="先了解一下证书的分类和用处"></a>先了解一下证书的分类和用处</h2><p>一个完整的 K8S 集群，总共需要<strong>2个 CA 证书</strong>。一个是 K8S 相关组件使用的，另一个是 ETCD 组件使用的。这2个CA 证书，会签发出其他客户端证书。</p>
+<p>CA 一般是10年-20年有效期；客户端证书一般是1年有效期，并且可以自动重新签发。</p>
+<h3 id="集群的通讯关系如下"><a href="#集群的通讯关系如下" class="headerlink" title="集群的通讯关系如下"></a>集群的通讯关系如下</h3><ol>
+<li><p>ETCD 默认只和 kube-apiserver 通信。如果有监控或者使用 Cilium 等组件，会产生额外的访问，需要一起更新掉相关证书。</p>
+<ul>
+<li>etcd &lt;-&gt; kube-apiserver</li>
+<li>etcd &lt;-&gt; Prometheus, Cilium</li>
+</ul>
+</li>
+<li><p>其他组件默认只和 kube-apiserver 通信。</p>
+<ul>
+<li>kube-apiserver &lt;-&gt; kube-controller-manager</li>
+<li>kube-apiserver &lt;-&gt; kube-scheduler</li>
+<li>kube-apiserver &lt;-&gt; kube-proxy</li>
+<li>kube-apiserver &lt;-&gt; kubelet</li>
+<li>kube-apiserver &lt;-&gt; kubectl</li>
+</ul>
+</li>
+</ol>
+<h3 id="因为这些通讯一般都是双向验证，所以想成功通讯，必须满足2个条件"><a href="#因为这些通讯一般都是双向验证，所以想成功通讯，必须满足2个条件" class="headerlink" title="因为这些通讯一般都是双向验证，所以想成功通讯，必须满足2个条件"></a>因为这些通讯一般都是双向验证，所以想成功通讯，必须满足2个条件</h3><ol>
+<li>信任 CA</li>
+<li>持有 CA 签发的有效证书</li>
+</ol>
+<h3 id="基于以上条件，更新-CA-的步骤就是"><a href="#基于以上条件，更新-CA-的步骤就是" class="headerlink" title="基于以上条件，更新 CA 的步骤就是"></a>基于以上条件，更新 CA 的步骤就是</h3><ol>
+<li>创建新的 CA</li>
+<li>同时信任新旧 CA （下面都叫 bundle CA ）</li>
+<li>使用新 CA 签发的证书</li>
+<li>删除旧 CA （部分地方可以跳过）</li>
+</ol>
+<h2 id="详细的步骤如下"><a href="#详细的步骤如下" class="headerlink" title="详细的步骤如下"></a>详细的步骤如下</h2><h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h3><ol>
+<li>创建新的 CA</li>
+<li>使用新的 CA 签发需要的全部证书</li>
+<li>把旧的 CA 追加到新 CA 里面</li>
+</ol>
+<h3 id="二、更新-ETCD-CA-和-证书"><a href="#二、更新-ETCD-CA-和-证书" class="headerlink" title="二、更新 ETCD CA 和 证书"></a>二、更新 ETCD CA 和 证书</h3><ol>
+<li><p>先备份 ETCD 数据</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看 ETCD 状态</span></span><br><span class="line">alias et=&#x27;etcdctl --endpoints=192.168.10.101:2379,192.168.10.102.2379,192.168.10.103.2379 --cacert=/etc/etcd/ssl/ca-etcd.pem --cert=/etc/etcd/ssl/cert-etcd.pem --key=/etc/etcd/ssl/cert-etcd-key.pem&#x27;</span><br><span class="line"></span><br><span class="line">et endpoint status -w table</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份 ETCD DB</span></span><br><span class="line">et1 snapshot save etcd-backup-$(date +%Y%m%d).db</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查备份文件</span></span><br><span class="line">et1 snapshot status etcd-backup-$(date +%Y%m%d).db --write-out=table</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 ETCD 使用 CA bundle 证书</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 先更新 ETCD 使用 CA bundle 证书，然后重启 ETCD 节点。【在每个 ETCD 节点上执行】</span></span><br><span class="line"></span><br><span class="line">--trusted-ca-file &quot;/etc/ssl/certs/ca-etcd-bundle.pem&quot; \</span><br><span class="line">--peer-trusted-ca-file &quot;/etc/ssl/certs/ca-etcd-bundle.pem&quot; \</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上一步做完之后，每个 ETCD 节点都同时信任新旧 CA 证书。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">现在可以更新客户端证书了。修改配置使用新的客户端证书，然后重启 ETCD 节点生效。</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2. 再使用新 CA 签发的客户端证书 `cert-etcd.pem` 和 `cert-etcd-key.pem`</span></span><br><span class="line">--client-cert-auth \</span><br><span class="line">--trusted-ca-file &quot;/etc/ssl/certs/ca-etcd-bundle.pem&quot; \       # 上一步的修改</span><br><span class="line">--cert-file &quot;/etc/ssl/certs/cert-etcd.pem&quot; \</span><br><span class="line">--key-file &quot;/etc/ssl/certs/cert-etcd-key.pem&quot; \</span><br><span class="line">--peer-client-cert-auth \</span><br><span class="line">--peer-trusted-ca-file &quot;/etc/ssl/certs/ca-etcd-bundle.pem&quot; \   # 上一步的修改</span><br><span class="line">--peer-cert-file &quot;/etc/ssl/certs/cert-etcd.pem&quot; \</span><br><span class="line">--peer-key-file &quot;/etc/ssl/certs/cert-etcd-key.pem&quot; \</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>到这里 ETCD 之间已经使用新的 CA 进行通讯了。但是 kube-apiserver 还是使用旧的 CA 证书和 ETCD 通讯。</p>
+</li>
+</ol>
+<h3 id="三、更新-K8S-组件使用-CA-bundle-证书"><a href="#三、更新-K8S-组件使用-CA-bundle-证书" class="headerlink" title="三、更新 K8S 组件使用 CA bundle 证书"></a>三、更新 K8S 组件使用 CA bundle 证书</h3><ol>
+<li><p>更新 kube-controller-manager</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">确认 Controller Manager 的主节点</span></span><br><span class="line">kubectl get lease -n kube-system</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ssh 到非主控节点，更新 kube-controller-manager.yaml 使用新 CA 证书</span></span><br><span class="line">vim /etc/kubernetes/manifests/kube-controller-manager.yaml</span><br><span class="line">- --cluster-signing-cert-file=/etc/kubernetes/ssl/new-ca/ca-kubernetes.pem # 保证使用的是新的 CA ，这里不能使用 Bundle CA</span><br><span class="line">- --cluster-signing-key-file=/etc/kubernetes/ssl/new-ca/ca-kubernetes-key.pem # 保证使用的是新的 CA key</span><br><span class="line">- --root-ca-file=/etc/kubernetes/ssl/new-ca/ca-kubernetes-bundle.pem # 老的和新的 bundle CA</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用 docker stop 来重启 Controller-Manager 容器。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在每一个节点上执行。保证主节点是最后一个做。</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查 Default 命名空间里的 ServiceAccount 证书，查看是否自动更新成 Bundle CA 证书。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启所有使用了 Service Account 的集群内服务：比如 coredns, kubeproxy 等。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 kube-apiserver 使用 Bundle CA 证书</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新 kube-apiserver.yaml 使用 Bundle CA 证书</span></span><br><span class="line">vim /etc/kubernetes/manifests/kube-apiserver.yaml</span><br><span class="line">- --client-ca-file=/etc/kubernetes/ssl/new-ca/ca-kubernetes-bundle.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 docker stop 来重启 API Server</span></span><br><span class="line"><span class="comment"># 在每一个节点上执行。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 kube-controller-manager 的 client-ca-file 使用新 CA 证书</p>
+   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这个证书是用于和 API Server 通信的，所以需要上一步完成之后，才做这一步。</span></span><br><span class="line">vim /etc/kubernetes/manifests/kube-controller-manager.yaml</span><br><span class="line">- --client-ca-file=/etc/kubernetes/ssl/new-ca/ca-kubernetes.pem  <span class="comment"># 保证使用的是新的 CA 证书</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在每一个节点上执行。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 kube-scheduler.yaml 使用 Bundle CA 证书</p>
+   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/kubernetes/scheduler.conf</span><br><span class="line">certificate-authority: /etc/kubernetes/ssl/new-ca/ca-kubernetes-bundle.pem</span><br><span class="line"><span class="comment"># 在每一个节点上执行。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 kubelet 节点使用 Bundle 证书</p>
+   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/kubernetes/kubelet.conf</span><br><span class="line">certificate-authority: /etc/kubernetes/ssl/new-ca/ca-kubernetes-bundle.pem</span><br><span class="line"><span class="comment"># 在每一个节点上执行。</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="四、更新控制节点使用新-CA-签发的客户端证书"><a href="#四、更新控制节点使用新-CA-签发的客户端证书" class="headerlink" title="四、更新控制节点使用新 CA 签发的客户端证书"></a>四、更新控制节点使用新 CA 签发的客户端证书</h3><p>更新到这里如果没有错误，后面就可以正常更新节点证书了。</p>
+<p>期间 API Server 会出现少量 非法的 beader token 错误，可以忽略。全部的 控制节点更新完成之后，这个错误就会消失。</p>
+<h3 id="五、最后更新其他地方使用到的客户端证书"><a href="#五、最后更新其他地方使用到的客户端证书" class="headerlink" title="五、最后更新其他地方使用到的客户端证书"></a>五、最后更新其他地方使用到的客户端证书</h3><p>比如 Prometheus 监控 ETCD 或者 Kubelet 用到的证书。</p>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>原文作者: </span>
+    <a href="https://blogs.zeed.w.beez.com">zeed-w-beez</a>
+  </p>
+  <p class="copyright-item">
+    <span>原文链接: </span>
+    <a href="https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/">https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/</a>
+  </p>
+  <p class="copyright-item">
+    <span>许可协议: </span>
+    
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+  </p>
+</div>
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+    <div class="post-tags">
+      
+      <a href="/tags/devops/">devops</a>
+      
+    </div>
+    
+      
+  <nav class="post-nav">  
+      
+      
+      <a class="next" href="/2025/07/09/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E4%B8%8B%E8%82%BA%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E7%97%85%E5%9B%A0%E4%B8%8E%E6%B2%BB%E7%96%97/">  
+        <span class="next-text nav-default">中医视角下肺癌的病机病因与治疗</span>  
+        <span class="prev-text nav-mobile">下一篇</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+      <div id="disqus_thread">  
+        <noscript>  
+          Please enable JavaScript to view the  
+          <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>  
+        </noscript>  
+      </div>  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:zeed.w.zhao@gmail.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a target="_blank" rel="noopener" href="https://github.com/zeed-w-beez" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+  
+</div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/zeed-w-beez/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    由 <a class="netlify-link" target="_blank" rel="noopener" href="https://www.netlify.com">netlify</a> 自动托管
+  </span>
+
+  <span class="copyright-year">
+    <span>
+      
+      &copy;
+      
+      2015 - 2025      
+    </span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">zeed-w-beez</span>
+  </span>
+
+  <span id="beian">
+  </span>
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+    
+  
+<script type="text/javascript">
+  var disqus_config = function() {
+    this.page.url = 'https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/';
+    this.page.identifier = '2025/09/06/autodevops/k8s-renew-ca/';
+    this.page.title = 'K8S 更换 CA 证书';
+  };
+  (function() {
+    var d = document,
+      s = d.createElement('script');
+
+    s.src = '//zeed-w-beez.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+  
+    
+    
+    
+    
+    
+  
+
+  <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
+</body>
+
+</html>

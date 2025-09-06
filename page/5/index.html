@@ -207,6 +207,58 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/2022/08/21/docker/loki-collection-nginx-logx/">loki collection nginx logs</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2022-08-21
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E6%9C%AF%E4%B8%9A%E6%9C%89%E4%B8%93%E6%94%BB/">术业有专攻</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+    
+    
+
+    
+    <p>之前日志服务用的较多的一般是 ELK ，但是对于小规模的使用 elk 则显得太重了，于是尝试用 loki+Promtail+grafana 来实现。</p>
+<p>这里的 <code>Loki</code> 类似 <code>elasticsearch</code> ，用于存储；<code>Promtail</code> 类似 Logstash 或者 Fluent，用于收集；Grafana 类似 Kibana，用于展示。</p>
+<p>Loki 受到了 <code>prometheus</code> 启发，对日志进行打标签的方式而非全文索引的方，而且也可以跟 kubernetes 集成。</p>
+<p><code>Like Prometheus, but for logs!</code></p>
+<p><img src="/images/loki-nginx-dashboard.png" alt="loki nginx dashboard"></p>
+    <div class="read-more">
+      <a href="/2022/08/21/docker/loki-collection-nginx-logx/" class="read-more-link">阅读更多</a>
+    </div>
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/2022/07/03/docker/prometheus-stack/">prometheus-stack</a>
       
     </h1>
@@ -639,56 +691,6 @@
 <p><img src="/images/helm-prometheus.png" alt="helm-prometheus"></p>
     <div class="read-more">
       <a href="/2019/10/29/autodevops/install-prometheus-with-helm/" class="read-more-link">阅读更多</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2019/10/29/autodevops/kubernetes/">kubernetes</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2019-10-29
-      </span>
-      
-      
-      <span class="post-category">
-        
-        <a href="/categories/autodevops/">autodevops</a>
-        
-      </span>
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <p>Kubernetes 的出现很大程度上抹平了运维工作的鸿沟，大大降低了老旧互联网企业和新兴小企业的运维成本，同时也为了转投“云”怀抱提供了可能。</p>
-<p>Kubernetes builds upon <a target="_blank" rel="noopener" href="http://queue.acm.org/detail.cfm?id=2898444">15 years of experience of running production workloads at Google</a>, combined with best-of-breed ideas and practices from the community.<br>Kubernetes 带着 Google 15年的生产环境运维管理经验，重新定义的容器编排的标准。原来运维也可以如此高效、优雅、让人着迷。</p>
-<p><img src="/images/kubernetes-flower.png" alt="kubernetes flower"></p>
-    <div class="read-more">
-      <a href="/2019/10/29/autodevops/kubernetes/" class="read-more-link">阅读更多</a>
     </div>
     
     
