@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP地址转换工具 - 双向转换</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .card {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .card:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        
+        input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .result {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+            display: none;
+        }
+        
+        .result.active {
+            display: block;
+        }
+        
+        .result-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .result-content {
+            white-space: pre-wrap;
+            font-family: monospace;
+            line-height: 1.8;
+        }
+        
+        .example {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: #27ae60;
+        }
+        
+        .cidr-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .cidr-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cidr-list li:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 600px) {
+            .input-group {
+                flex-direction: column;
+            }
+            
+            input, button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IP地址转换工具</h1>
+            <p class="subtitle">CIDR与IP范围相互转换</p>
+        </header>
+        
+        <!-- CIDR转IP范围 -->
+        <div class="card">
+            <h2>CIDR 转 IP 范围</h2>
+            <div class="input-group">
+                <input type="text" id="cidrInput" placeholder="例如：172.16.141.32/29" value="172.16.141.32/29">
+                <button onclick="convertCidrToIp()">转换</button>
+            </div>
+            <p class="example">示例：192.168.1.0/24, 10.0.0.0/16, 172.16.141.61/31</p>
+            
+            <div id="cidrResult" class="result">
+                <div class="result-title">转换结果：</div>
+                <div class="result-content" id="cidrOutput"></div>
+            </div>
+        </div>
+        
+        <!-- IP范围转CIDR -->
+        <div class="card">
+            <h2>IP 范围 转 CIDR</h2>
+            <div class="input-group">
+                <input type="text" id="startIp" placeholder="起始IP" value="172.16.141.168">
+                <span style="color: #666; font-weight: bold;">-</span>
+                <input type="text" id="endIp" placeholder="结束IP" value="172.16.141.180">
+                <button onclick="convertIpToCidr()">转换</button>
+            </div>
+            <p class="example">示例：172.16.141.61 - 172.16.141.66</p>
+            
+            <div id="rangeResult" class="result">
+                <div class="result-title">转换结果：</div>
+                <div id="rangeOutput"></div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>基于CIDR标准</p>
+        </footer>
+    </div>
+
+    <script>
+        // ==================== 工具函数 ====================
+        
+        // IP地址转整数（32位无符号）
+        function ipToInt(ip) {
+            const parts = ip.split('.').map(part => {
+                const num = parseInt(part, 10);
+                if (isNaN(num) || num < 0 || num > 255) {
+                    throw new Error(`无效的IP段: ${part}`);
+                }
+                return num;
+            });
+            
+            if (parts.length !== 4) {
+                throw new Error('IP地址必须包含4个段');
+            }
+            
+            return (parts[0] << 24 | parts[1] << 16 | parts[2] << 8 | parts[3]) >>> 0;
+        }
+
+        // 整数转IP地址
+        function intToIp(int) {
+            return [
+                (int >>> 24) & 0xFF,
+                (int >>> 16) & 0xFF,
+                (int >>> 8) & 0xFF,
+                int & 0xFF
+            ].join('.');
+        }
+
+        // 计算网络掩码的十进制值
+        function prefixToMask(prefix) {
+            if (prefix === 0) return 0;
+            return (~0 << (32 - prefix)) >>> 0;
+        }
+
+        // 计算掩码的前缀长度
+        function maskToPrefix(maskInt) {
+            // 计算掩码中1的个数
+            let count = 0;
+            let mask = maskInt;
+            while (mask > 0) {
+                if (mask & 1) count++;
+                mask = mask >>> 1;
+            }
+            return count;
+        }
+
+        // ==================== CIDR转IP范围 ====================
+        
+        function convertCidrToIp() {
+            const cidrInput = document.getElementById('cidrInput').value.trim();
+            if (!cidrInput) {
+                alert('请输入CIDR地址');
+                return;
+            }
+            
+            try {
+                const [ipStr, prefixStr] = cidrInput.split('/');
+                if (!prefixStr) {
+                    throw new Error('缺少前缀长度（例如：192.168.1.0/24）');
+                }
+                
+                const prefix = parseInt(prefixStr, 10);
+                
+                if (isNaN(prefix) || prefix < 0 || prefix > 32) {
+                    throw new Error('无效的前缀长度（必须是0-32之间的整数）');
+                }
+                
+                const ipParts = ipStr.split('.').map(part => parseInt(part, 10));
+                if (ipParts.length !== 4 || ipParts.some(part => isNaN(part) || part < 0 || part > 255)) {
+                    throw new Error('无效的IP地址');
+                }
+                
+                // 将IP转换为整数
+                const ipInt = ipToInt(ipStr);
+                
+                // 计算网络掩码
+                const mask = prefixToMask(prefix);
+                
+                // 计算网络地址和广播地址
+                const network = (ipInt & mask) >>> 0;
+                const broadcast = (network | (~mask >>> 0)) >>> 0;
+                
+                // 计算可用IP范围
+                let firstHost, lastHost;
+                if (prefix <= 30) {
+                    firstHost = network + 1;
+                    lastHost = broadcast - 1;
+                } else if (prefix === 31) {
+                    // /31 特殊规则（点对点链路）
+                    firstHost = network;
+                    lastHost = broadcast;
+                } else { // /32
+                    firstHost = network;
+                    lastHost = network;
+                }
+                
+                // 计算IP数量
+                const totalIps = Math.pow(2, 32 - prefix);
+                const usableIps = prefix <= 30 ? totalIps - 2 : totalIps;
+                
+                // 构建结果
+                const result = `
+CIDR: ${cidrInput}
+网络地址: ${intToIp(network)}
+广播地址: ${intToIp(broadcast)}
+可用IP范围: ${intToIp(firstHost)} - ${intToIp(lastHost)}
+子网掩码: ${intToIp(mask)}
+总IP数: ${totalIps}
+可用IP数: ${usableIps}
+                `;
+                
+                document.getElementById('cidrOutput').textContent = result;
+                document.getElementById('cidrResult').classList.add('active');
+                
+            } catch (error) {
+                document.getElementById('cidrOutput').textContent = `错误: ${error.message}`;
+                document.getElementById('cidrResult').classList.add('active');
+            }
+        }
+
+        // ==================== IP范围转CIDR ====================
+        
+        function convertIpToCidr() {
+            const startIp = document.getElementById('startIp').value.trim();
+            const endIp = document.getElementById('endIp').value.trim();
+            const resultContent = document.getElementById('rangeOutput');
+            
+            try {
+                // 输入验证与转换
+                const start = ipToInt(startIp);
+                const end = ipToInt(endIp);
+                
+                if (start > end) {
+                    throw new Error('起始IP不能大于结束IP');
+                }
+                
+                // 执行核心转换
+                const cidrs = ipRangeToCidr(start, end);
+                
+                if (cidrs.length === 0) {
+                    throw new Error('无法转换为CIDR格式');
+                }
+                
+                // 构建结果展示
+                let resultHtml = `
+                    <p><strong>IP范围:</strong> ${startIp} - ${endIp}</p>
+                    <p><strong>覆盖的CIDR块（共${cidrs.length}个）:</strong></p>
+                    <ul class="cidr-list">
+                `;
+                
+                cidrs.forEach(cidr => {
+                    resultHtml += `<li>${cidr}</li>`;
+                });
+                
+                resultHtml += `</ul>`;
+                resultContent.innerHTML = resultHtml;
+                document.getElementById('rangeResult').classList.add('active');
+                
+            } catch (error) {
+                resultContent.innerHTML = `<p class="error">错误: ${error.message}</p>`;
+                document.getElementById('rangeResult').classList.add('active');
+            }
+        }
+
+        // 核心算法：IP范围转最少CIDR块
+        function ipRangeToCidr(start, end) {
+            const cidrs = [];
+            let currentStart = start;
+            
+            while (currentStart <= end) {
+                // 1. 计算当前剩余范围大小
+                const rangeSize = end - currentStart + 1;
+                
+                // 2. 找到最大的k使得2^k ≤ rangeSize
+                let k = 0;
+                while ((1 << (k + 1)) <= rangeSize) {
+                    k++;
+                }
+                
+                // 3. 计算currentStart的末尾零数量（可扩展的最大2的幂次）
+                let temp = currentStart;
+                let trailingZeros = 0;
+                while ((temp & 1) === 0 && trailingZeros < 32) {
+                    trailingZeros++;
+                    temp = temp >>> 1;
+                }
+                
+                // 4. 确定实际块大小（取k和trailingZeros的最小值）
+                const actualK = Math.min(k, trailingZeros);
+                const blockSize = 1 << actualK;
+                const prefixLength = 32 - actualK;
+                
+                // 5. 添加CIDR块并移动起始位置
+                cidrs.push(`${intToIp(currentStart)}/${prefixLength}`);
+                currentStart += blockSize;
+            }
+            
+            return cidrs;
+        }
+
+        // 页面加载时自动执行示例转换
+        window.addEventListener('DOMContentLoaded', () => {
+            // 自动执行CIDR转IP的示例
+            convertCidrToIp();
+            
+            // 自动执行IP转CIDR的示例
+            convertIpToCidr();
+        });
+    </script>
+</body>
+</html>

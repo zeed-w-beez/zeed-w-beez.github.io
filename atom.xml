@@ -1,46 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Miracle-working</title>
-  
-  <subtitle>Stay Hungry. Stay Foolish.</subtitle>
-  <link href="https://blogs.zeed.w.beez.com/atom.xml" rel="self"/>
-  
-  <link href="https://blogs.zeed.w.beez.com/"/>
-  <updated>2026-06-16T06:07:39.593Z</updated>
-  <id>https://blogs.zeed.w.beez.com/</id>
-  
   <author>
     <name>zeed-w-beez</name>
-    
   </author>
-  
   <generator uri="https://hexo.io/">Hexo</generator>
-  
+  <id>https://blogs.zeed.w.beez.com/</id>
+  <link href="https://blogs.zeed.w.beez.com/" rel="alternate"/>
+  <link href="https://blogs.zeed.w.beez.com/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, zeed-w-beez</rights>
+  <subtitle>Stay Hungry. Stay Foolish.</subtitle>
+  <title>Miracle-working</title>
+  <updated>2026-06-16T08:46:29.556Z</updated>
   <entry>
-    <title>context7本地知识库</title>
-    <link href="https://blogs.zeed.w.beez.com/2026/01/20/context7%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93/"/>
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <id>https://blogs.zeed.w.beez.com/2026/01/20/context7%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93/</id>
+    <link href="https://blogs.zeed.w.beez.com/2026/01/20/context7%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93/"/>
     <published>2026-01-20T08:46:52.000Z</published>
-    <updated>2026-06-16T06:07:39.593Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近在尝试写一些鸿蒙应用，但是大模型对鸿蒙的 ArkTS 语法支持不是很好，但是鸿蒙官方网站的文档写的很详细，而且在&lt;a href=&quot;https://gitee.com/openharmony/docs&quot;&gt;gitee&lt;/a&gt;找到了一份比较全的鸿蒙文档，就想着起一个本地的 Context7 帮助 AI 理解 ArkTS 的语法和使用。&lt;/p&gt;</summary>
-    
-    
-    
-    
+    <summary>
+      <![CDATA[<p>最近在尝试写一些鸿蒙应用，但是大模型对鸿蒙的 ArkTS 语法支持不是很好，但是鸿蒙官方网站的文档写的很详细，而且在<a href="https://gitee.com/openharmony/docs">gitee</a>找到了一份比较全的鸿蒙文档，就想着起一个本地的 Context7 帮助 AI 理解 ArkTS 的语法和使用。</p>]]>
+    </summary>
+    <title>context7本地知识库</title>
+    <updated>2026-06-16T08:46:29.556Z</updated>
   </entry>
-  
   <entry>
-    <title>如何理解先天八卦和后天八卦的区别</title>
-    <link href="https://blogs.zeed.w.beez.com/2025/11/07/ai/%E5%85%88%E5%A4%A9%E5%85%AB%E5%8D%A6%E5%92%8C%E5%90%8E%E5%A4%A9%E5%85%AB%E5%8D%A6/"/>
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
+    <category term="ai" scheme="https://blogs.zeed.w.beez.com/categories/ai/"/>
+    <category term="ai" scheme="https://blogs.zeed.w.beez.com/tags/ai/"/>
+    <category term="随想" scheme="https://blogs.zeed.w.beez.com/tags/%E9%9A%8F%E6%83%B3/"/>
     <id>https://blogs.zeed.w.beez.com/2025/11/07/ai/%E5%85%88%E5%A4%A9%E5%85%AB%E5%8D%A6%E5%92%8C%E5%90%8E%E5%A4%A9%E5%85%AB%E5%8D%A6/</id>
+    <link href="https://blogs.zeed.w.beez.com/2025/11/07/ai/%E5%85%88%E5%A4%A9%E5%85%AB%E5%8D%A6%E5%92%8C%E5%90%8E%E5%A4%A9%E5%85%AB%E5%8D%A6/"/>
     <published>2025-11-07T09:01:11.000Z</published>
-    <updated>2026-06-16T06:07:39.592Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;偶然使用 AI 解惑，感觉回答的很好，就记录一下。使用 AI 帮忙学习奇怪的知识真实方便。&lt;/p&gt;
-&lt;style&gt;
+    <summary>
+      <![CDATA[<p>偶然使用 AI 解惑，感觉回答的很好，就记录一下。使用 AI 帮忙学习奇怪的知识真实方便。</p>
+<style>
 
   #container {
 
@@ -48,7 +44,7 @@
     /* padding: 0; */
     /* box-sizing: border-box; */
 
-    font-family: &quot;Microsoft YaHei&quot;, &quot;SimSun&quot;, serif;
+    font-family: "Microsoft YaHei", "SimSun", serif;
     line-height: 1.6;
     color: #333;
     background-color: #f9f5e9;
@@ -128,7 +124,7 @@
   .gua-symbol {
     font-size: 40px;
     margin: 5px 0;
-    font-family: &quot;SimSun&quot;, serif;
+    font-family: "SimSun", serif;
   }
 
   /* 五行和洛书数样式 */
@@ -213,7 +209,7 @@
 
   .taiji-circle::before,
   .taiji-circle::after {
-    content: &quot;&quot;;
+    content: "";
     position: absolute;
     width: 20%;
     height: 20%;
@@ -310,538 +306,441 @@
     margin-top: 10px;
     text-align: center;
   }
-&lt;/style&gt;
+</style>
 
-&lt;div id=&quot;container&quot;&gt;
-  &lt;h2 id=&quot;h2&quot;&gt;后天八卦图&lt;/h3&gt;
-  &lt;!-- &lt;div class=&quot;description&quot;&gt;
-    &lt;p&gt;
-      后天八卦，又称文王八卦，描述的是宇宙在时空中的演化规律。此图采用传统&quot;南上北下&quot;布局，与古籍记载一致。
-    &lt;/p&gt;
-    &lt;p class=&quot;note&quot;&gt;注：传统八卦图以南为上，与现代地图以北为上不同&lt;/p&gt;
-  &lt;/div&gt; --&gt;
-  &lt;div class=&quot;bagua-container&quot;&gt;
-    &lt;!-- 方位指示 --&gt;
-    &lt;div class=&quot;direction north&quot;&gt;北&lt;/div&gt;
-    &lt;div class=&quot;direction south&quot;&gt;南&lt;/div&gt;
-    &lt;div class=&quot;direction east&quot;&gt;西&lt;/div&gt;
-    &lt;div class=&quot;direction west&quot;&gt;东&lt;/div&gt;
-    &lt;!-- 离卦 - 南（上方） --&gt;
-    &lt;div class=&quot;gua fire&quot; style=&quot;grid-column: 2; grid-row: 1&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;离&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☲&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;火 | 洛书数: 9&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;火、日、显现&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 坤卦 - 西南（右上） --&gt;
-    &lt;div class=&quot;gua earth&quot; style=&quot;grid-column: 3; grid-row: 1&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;坤&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☷&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;土 | 洛书数: 2&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;包容、奉献、滋养&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 兑卦 - 西（右中） --&gt;
-    &lt;div class=&quot;gua metal&quot; style=&quot;grid-column: 3; grid-row: 2&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;兑&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☱&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;金 | 洛书数: 7&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;泽、悦、收获&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 乾卦 - 西北（右下方） --&gt;
-    &lt;div class=&quot;gua metal&quot; style=&quot;grid-column: 3; grid-row: 3&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;乾&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☰&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;金 | 洛书数: 6&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;刚健、搏斗、交替&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 中宫 --&gt;
-    &lt;div class=&quot;center earth&quot;&gt;
-      &lt;div class=&quot;taiji-container&quot;&gt;
-        &lt;div class=&quot;taiji-circle&quot;&gt;
-          &lt;div class=&quot;yin-dot&quot;&gt;&lt;/div&gt;
-          &lt;div class=&quot;yang-dot&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;center-text&quot;&gt;中宫 土 | 5&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 巽卦 - 东南（左上方） --&gt;
-    &lt;div class=&quot;gua wood&quot; style=&quot;grid-column: 1; grid-row: 1&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;巽&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☴&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;木 | 洛书数: 4&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;风、齐、成长&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 震卦 - 东（左中） --&gt;
-    &lt;div class=&quot;gua wood&quot; style=&quot;grid-column: 1; grid-row: 2&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;震&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☳&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;木 | 洛书数: 3&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;震动、唤醒、萌发&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 艮卦 - 东北（左下方） --&gt;
-    &lt;div class=&quot;gua earth&quot; style=&quot;grid-column: 1; grid-row: 3&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;艮&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☶&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;土 | 洛书数: 8&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;山、止、终始&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- 坎卦 - 北（下方） --&gt;
-    &lt;div class=&quot;gua water&quot; style=&quot;grid-column: 2; grid-row: 3&quot;&gt;
-      &lt;div class=&quot;gua-name&quot;&gt;坎&lt;/div&gt;
-      &lt;div class=&quot;gua-symbol&quot;&gt;☵&lt;/div&gt;
-      &lt;div class=&quot;gua-info&quot;&gt;水 | 洛书数: 1&lt;/div&gt;
-      &lt;div class=&quot;gua-meaning&quot;&gt;险陷、归藏、劳碌&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</summary>
-    
-    
-    
-    <category term="ai" scheme="https://blogs.zeed.w.beez.com/categories/ai/"/>
-    
-    
-    <category term="ai" scheme="https://blogs.zeed.w.beez.com/tags/ai/"/>
-    
-    <category term="随想" scheme="https://blogs.zeed.w.beez.com/tags/%E9%9A%8F%E6%83%B3/"/>
-    
+<div id="container">
+  <h2 id="h2">后天八卦图</h3>
+  <!-- <div class="description">
+    <p>
+      后天八卦，又称文王八卦，描述的是宇宙在时空中的演化规律。此图采用传统"南上北下"布局，与古籍记载一致。
+    </p>
+    <p class="note">注：传统八卦图以南为上，与现代地图以北为上不同</p>
+  </div> -->
+  <div class="bagua-container">
+    <!-- 方位指示 -->
+    <div class="direction north">北</div>
+    <div class="direction south">南</div>
+    <div class="direction east">西</div>
+    <div class="direction west">东</div>
+    <!-- 离卦 - 南（上方） -->
+    <div class="gua fire" style="grid-column: 2; grid-row: 1">
+      <div class="gua-name">离</div>
+      <div class="gua-symbol">☲</div>
+      <div class="gua-info">火 | 洛书数: 9</div>
+      <div class="gua-meaning">火、日、显现</div>
+    </div>
+    <!-- 坤卦 - 西南（右上） -->
+    <div class="gua earth" style="grid-column: 3; grid-row: 1">
+      <div class="gua-name">坤</div>
+      <div class="gua-symbol">☷</div>
+      <div class="gua-info">土 | 洛书数: 2</div>
+      <div class="gua-meaning">包容、奉献、滋养</div>
+    </div>
+    <!-- 兑卦 - 西（右中） -->
+    <div class="gua metal" style="grid-column: 3; grid-row: 2">
+      <div class="gua-name">兑</div>
+      <div class="gua-symbol">☱</div>
+      <div class="gua-info">金 | 洛书数: 7</div>
+      <div class="gua-meaning">泽、悦、收获</div>
+    </div>
+    <!-- 乾卦 - 西北（右下方） -->
+    <div class="gua metal" style="grid-column: 3; grid-row: 3">
+      <div class="gua-name">乾</div>
+      <div class="gua-symbol">☰</div>
+      <div class="gua-info">金 | 洛书数: 6</div>
+      <div class="gua-meaning">刚健、搏斗、交替</div>
+    </div>
+    <!-- 中宫 -->
+    <div class="center earth">
+      <div class="taiji-container">
+        <div class="taiji-circle">
+          <div class="yin-dot"></div>
+          <div class="yang-dot"></div>
+        </div>
+      </div>
+      <div class="center-text">中宫 土 | 5</div>
+    </div>
+    <!-- 巽卦 - 东南（左上方） -->
+    <div class="gua wood" style="grid-column: 1; grid-row: 1">
+      <div class="gua-name">巽</div>
+      <div class="gua-symbol">☴</div>
+      <div class="gua-info">木 | 洛书数: 4</div>
+      <div class="gua-meaning">风、齐、成长</div>
+    </div>
+    <!-- 震卦 - 东（左中） -->
+    <div class="gua wood" style="grid-column: 1; grid-row: 2">
+      <div class="gua-name">震</div>
+      <div class="gua-symbol">☳</div>
+      <div class="gua-info">木 | 洛书数: 3</div>
+      <div class="gua-meaning">震动、唤醒、萌发</div>
+    </div>
+    <!-- 艮卦 - 东北（左下方） -->
+    <div class="gua earth" style="grid-column: 1; grid-row: 3">
+      <div class="gua-name">艮</div>
+      <div class="gua-symbol">☶</div>
+      <div class="gua-info">土 | 洛书数: 8</div>
+      <div class="gua-meaning">山、止、终始</div>
+    </div>
+    <!-- 坎卦 - 北（下方） -->
+    <div class="gua water" style="grid-column: 2; grid-row: 3">
+      <div class="gua-name">坎</div>
+      <div class="gua-symbol">☵</div>
+      <div class="gua-info">水 | 洛书数: 1</div>
+      <div class="gua-meaning">险陷、归藏、劳碌</div>
+    </div>
+  </div>
+</div>]]>
+    </summary>
+    <title>如何理解先天八卦和后天八卦的区别</title>
+    <updated>2026-06-16T08:46:29.555Z</updated>
   </entry>
-  
   <entry>
-    <title>伤寒论方剂整理</title>
-    <link href="https://blogs.zeed.w.beez.com/2025/09/25/%E4%B8%AD%E5%8C%BB/%E4%BC%A4%E5%AF%92%E8%AE%BA%E6%96%B9%E5%89%82%E6%95%B4%E7%90%86/"/>
-    <id>https://blogs.zeed.w.beez.com/2025/09/25/%E4%B8%AD%E5%8C%BB/%E4%BC%A4%E5%AF%92%E8%AE%BA%E6%96%B9%E5%89%82%E6%95%B4%E7%90%86/</id>
-    <published>2025-09-25T14:54:30.000Z</published>
-    <updated>2026-06-16T06:07:39.596Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;汉代与现代剂量换算核心规则&quot;&gt;&lt;a href=&quot;#汉代与现代剂量换算核心规则&quot; class=&quot;headerlink&quot; title=&quot;汉代与现代剂量换算核心规则&quot;&gt;&lt;/a&gt;汉代与现代剂量换算核心规则&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;重量单位&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;1两 &amp;#x3D; 15克&lt;/strong&gt;（这是最常用的标准，源于《中医方剂学》教材。也有学者考证为13.8克，但15克是临床通用标准）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1斤 &amp;#x3D; 16两 &amp;#x3D; 240克&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1铢 &amp;#x3D; 1&amp;#x2F;24两 ≈ 0.625克&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1分 &amp;#x3D; 4铢 &amp;#x3D; 1&amp;#x2F;4两 ≈ 3.75克&lt;/strong&gt;（汉代“分”为重量单位，与后世作为比例单位的“分”不同）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;容量单位&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;1斗 &amp;#x3D; 10升 &amp;#x3D; 20000毫升&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1升 &amp;#x3D; 10合 &amp;#x3D; 200毫升&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1合 &amp;#x3D; 20毫升&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;数量单位&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;杏仁、桃仁、栀子等&lt;/strong&gt;：通常10个约重3-4克。例如，杏仁70个，约重25克。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;大枣、乌梅等&lt;/strong&gt;：按枚计算。一枚大枣约重3-5克。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;石膏&lt;/strong&gt;：如鸡子大一块，约重60-80克。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;特殊剂量&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;方寸匕&lt;/strong&gt;：古代量取药末的器具，一方寸匕约等于现代2-3克（草木药末）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;一钱匕&lt;/strong&gt;：约为一方寸匕的一半，约1-1.5克。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="伤寒论" scheme="https://blogs.zeed.w.beez.com/tags/%E4%BC%A4%E5%AF%92%E8%AE%BA/"/>
-    
     <category term="张仲景" scheme="https://blogs.zeed.w.beez.com/tags/%E5%BC%A0%E4%BB%B2%E6%99%AF/"/>
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2025/09/25/%E4%B8%AD%E5%8C%BB/%E4%BC%A4%E5%AF%92%E8%AE%BA%E6%96%B9%E5%89%82%E6%95%B4%E7%90%86/</id>
+    <link href="https://blogs.zeed.w.beez.com/2025/09/25/%E4%B8%AD%E5%8C%BB/%E4%BC%A4%E5%AF%92%E8%AE%BA%E6%96%B9%E5%89%82%E6%95%B4%E7%90%86/"/>
+    <published>2025-09-25T14:54:30.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="汉代与现代剂量换算核心规则"><a href="#汉代与现代剂量换算核心规则" class="headerlink" title="汉代与现代剂量换算核心规则"></a>汉代与现代剂量换算核心规则</h2><ol>
+<li><p><strong>重量单位</strong>：</p>
+<ul>
+<li><strong>1两 &#x3D; 15克</strong>（这是最常用的标准，源于《中医方剂学》教材。也有学者考证为13.8克，但15克是临床通用标准）。</li>
+<li><strong>1斤 &#x3D; 16两 &#x3D; 240克</strong></li>
+<li><strong>1铢 &#x3D; 1&#x2F;24两 ≈ 0.625克</strong></li>
+<li><strong>1分 &#x3D; 4铢 &#x3D; 1&#x2F;4两 ≈ 3.75克</strong>（汉代“分”为重量单位，与后世作为比例单位的“分”不同）</li>
+</ul>
+</li>
+<li><p><strong>容量单位</strong>：</p>
+<ul>
+<li><strong>1斗 &#x3D; 10升 &#x3D; 20000毫升</strong></li>
+<li><strong>1升 &#x3D; 10合 &#x3D; 200毫升</strong></li>
+<li><strong>1合 &#x3D; 20毫升</strong></li>
+</ul>
+</li>
+<li><p><strong>数量单位</strong>：</p>
+<ul>
+<li><strong>杏仁、桃仁、栀子等</strong>：通常10个约重3-4克。例如，杏仁70个，约重25克。</li>
+<li><strong>大枣、乌梅等</strong>：按枚计算。一枚大枣约重3-5克。</li>
+<li><strong>石膏</strong>：如鸡子大一块，约重60-80克。</li>
+</ul>
+</li>
+<li><p><strong>特殊剂量</strong>：</p>
+<ul>
+<li><strong>方寸匕</strong>：古代量取药末的器具，一方寸匕约等于现代2-3克（草木药末）。</li>
+<li><strong>一钱匕</strong>：约为一方寸匕的一半，约1-1.5克。</li>
+</ul>
+</li>
+</ol>]]>
+    </summary>
+    <title>伤寒论方剂整理</title>
+    <updated>2026-06-16T08:46:29.559Z</updated>
   </entry>
-  
   <entry>
-    <title>K8S 更换 CA 证书</title>
-    <link href="https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/"/>
-    <id>https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/</id>
-    <published>2025-09-06T14:53:38.000Z</published>
-    <updated>2026-06-16T06:07:39.593Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;证书是 K8S 集群内部通讯的必备配置。K8S 大规模使用到现在也有接近10年时间了，很多搭建的比较早的集群，CA 基本都快过期了，这里记录一下更换 CA 的步骤和注意事项。&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
-    
-    
     <category term="devops" scheme="https://blogs.zeed.w.beez.com/tags/devops/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/</id>
+    <link href="https://blogs.zeed.w.beez.com/2025/09/06/autodevops/k8s-renew-ca/"/>
+    <published>2025-09-06T14:53:38.000Z</published>
+    <summary>
+      <![CDATA[<p>证书是 K8S 集群内部通讯的必备配置。K8S 大规模使用到现在也有接近10年时间了，很多搭建的比较早的集群，CA 基本都快过期了，这里记录一下更换 CA 的步骤和注意事项。</p>]]>
+    </summary>
+    <title>K8S 更换 CA 证书</title>
+    <updated>2026-06-16T08:46:29.556Z</updated>
   </entry>
-  
   <entry>
-    <title>中医视角下肺癌的病机病因与治疗</title>
-    <link href="https://blogs.zeed.w.beez.com/2025/07/09/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E4%B8%8B%E8%82%BA%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E7%97%85%E5%9B%A0%E4%B8%8E%E6%B2%BB%E7%96%97/"/>
-    <id>https://blogs.zeed.w.beez.com/2025/07/09/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E4%B8%8B%E8%82%BA%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E7%97%85%E5%9B%A0%E4%B8%8E%E6%B2%BB%E7%96%97/</id>
-    <published>2025-07-09T09:39:48.000Z</published>
-    <updated>2026-06-16T06:07:39.596Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;问：你能从中医的角度讲一下对肺癌的看法吗？ 应该如何辨别？有哪些早期症状？应该如何辨证施治？如何判断并且是好转还是加重？&lt;/p&gt;
-&lt;p&gt;答：&lt;/p&gt;
-&lt;p&gt;好的，我们从中医的角度来谈谈肺癌（中医多称为“肺积”、“息贲”等）。中医对肺癌的认识与现代医学不同，更侧重于整体观和辨证论治，认为其发生与内在脏腑功能失调、正气亏虚以及外邪侵袭、情志不畅、饮食劳倦等因素导致的气血痰瘀毒互结有关。&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="中医入门" scheme="https://blogs.zeed.w.beez.com/tags/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/"/>
-    
     <category term="中医理论" scheme="https://blogs.zeed.w.beez.com/tags/%E4%B8%AD%E5%8C%BB%E7%90%86%E8%AE%BA/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2025/07/09/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E4%B8%8B%E8%82%BA%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E7%97%85%E5%9B%A0%E4%B8%8E%E6%B2%BB%E7%96%97/</id>
+    <link href="https://blogs.zeed.w.beez.com/2025/07/09/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E4%B8%8B%E8%82%BA%E7%99%8C%E7%9A%84%E7%97%85%E6%9C%BA%E7%97%85%E5%9B%A0%E4%B8%8E%E6%B2%BB%E7%96%97/"/>
+    <published>2025-07-09T09:39:48.000Z</published>
+    <summary>
+      <![CDATA[<p>问：你能从中医的角度讲一下对肺癌的看法吗？ 应该如何辨别？有哪些早期症状？应该如何辨证施治？如何判断并且是好转还是加重？</p>
+<p>答：</p>
+<p>好的，我们从中医的角度来谈谈肺癌（中医多称为“肺积”、“息贲”等）。中医对肺癌的认识与现代医学不同，更侧重于整体观和辨证论治，认为其发生与内在脏腑功能失调、正气亏虚以及外邪侵袭、情志不畅、饮食劳倦等因素导致的气血痰瘀毒互结有关。</p>]]>
+    </summary>
+    <title>中医视角下肺癌的病机病因与治疗</title>
+    <updated>2026-06-16T08:46:29.559Z</updated>
   </entry>
-  
   <entry>
-    <title>用贝叶斯理论理解生命的本质</title>
-    <link href="https://blogs.zeed.w.beez.com/2025/04/12/%E8%B4%9D%E5%8F%B6%E6%96%AF/%E7%94%A8%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%90%86%E8%AE%BA%E7%90%86%E8%A7%A3%E7%94%9F%E5%91%BD%E7%9A%84%E6%9C%AC%E8%B4%A8/"/>
-    <id>https://blogs.zeed.w.beez.com/2025/04/12/%E8%B4%9D%E5%8F%B6%E6%96%AF/%E7%94%A8%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%90%86%E8%AE%BA%E7%90%86%E8%A7%A3%E7%94%9F%E5%91%BD%E7%9A%84%E6%9C%AC%E8%B4%A8/</id>
-    <published>2025-04-12T13:36:11.000Z</published>
-    <updated>2026-06-16T06:07:39.630Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;贝叶斯理论是一种关于概率的理论，它认为事件的概率是可以根据已有的知识进行更新的。&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="贝叶斯" scheme="https://blogs.zeed.w.beez.com/categories/%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    
-    
     <category term="贝叶斯" scheme="https://blogs.zeed.w.beez.com/tags/%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2025/04/12/%E8%B4%9D%E5%8F%B6%E6%96%AF/%E7%94%A8%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%90%86%E8%AE%BA%E7%90%86%E8%A7%A3%E7%94%9F%E5%91%BD%E7%9A%84%E6%9C%AC%E8%B4%A8/</id>
+    <link href="https://blogs.zeed.w.beez.com/2025/04/12/%E8%B4%9D%E5%8F%B6%E6%96%AF/%E7%94%A8%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%90%86%E8%AE%BA%E7%90%86%E8%A7%A3%E7%94%9F%E5%91%BD%E7%9A%84%E6%9C%AC%E8%B4%A8/"/>
+    <published>2025-04-12T13:36:11.000Z</published>
+    <summary>
+      <![CDATA[<p>贝叶斯理论是一种关于概率的理论，它认为事件的概率是可以根据已有的知识进行更新的。</p>]]>
+    </summary>
+    <title>用贝叶斯理论理解生命的本质</title>
+    <updated>2026-06-16T08:46:29.593Z</updated>
   </entry>
-  
   <entry>
-    <title>use-openssh-manage-server-cert</title>
-    <link href="https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/"/>
-    <id>https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/</id>
-    <published>2025-03-04T09:50:40.000Z</published>
-    <updated>2026-06-16T06:07:39.593Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;OpenSSH 证书登录提供了一种增强安全性的方法来验证用户或主机的身份，避免了传统密码认证可能带来的安全隐患。它包括单向（通常是客户端到服务器）和双向（客户端与服务器互相认证）两种认证方式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/openssh-cert.png&quot; alt=&quot;&amp;quot;OpenSSH 双向证书验证&amp;quot;&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
-    
-    
     <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
-    
     <category term="ansible" scheme="https://blogs.zeed.w.beez.com/tags/ansible/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/</id>
+    <link href="https://blogs.zeed.w.beez.com/2025/03/04/autodevops/use-openssh-manage-server-cert/"/>
+    <published>2025-03-04T09:50:40.000Z</published>
+    <summary>
+      <![CDATA[<p>OpenSSH 证书登录提供了一种增强安全性的方法来验证用户或主机的身份，避免了传统密码认证可能带来的安全隐患。它包括单向（通常是客户端到服务器）和双向（客户端与服务器互相认证）两种认证方式。</p>
+<p><img src="/images/openssh-cert.png" alt="&quot;OpenSSH 双向证书验证&quot;"></p>]]>
+    </summary>
+    <title>use-openssh-manage-server-cert</title>
+    <updated>2026-06-16T08:46:29.556Z</updated>
   </entry>
-  
   <entry>
-    <title>为什么要学一点中医</title>
-    <link href="https://blogs.zeed.w.beez.com/2025/01/16/%E4%B8%AD%E5%8C%BB/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B8%80%E7%82%B9%E4%B8%AD%E5%8C%BB/"/>
-    <id>https://blogs.zeed.w.beez.com/2025/01/16/%E4%B8%AD%E5%8C%BB/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B8%80%E7%82%B9%E4%B8%AD%E5%8C%BB/</id>
-    <published>2025-01-16T14:17:32.000Z</published>
-    <updated>2026-06-16T06:07:39.596Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这是一篇中医的劝学文章，希望能让有缘的你读完这篇文章之后有那么一点点兴趣去了解一下中医。&lt;/p&gt;
-&lt;h2 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h2&gt;&lt;p&gt;我在之前的博客 &lt;a href=&quot;/2023/11/30/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/&quot; title=&quot;中医入门&quot;&gt;中医入门&lt;/a&gt; 里写过学中医的原因：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;带小孩子（两岁多）去医院看病，排队、抽血、输液、拿药。小孩子闹，医生忙，医院里人多到都没地方坐着输液。呵呵！&lt;/li&gt;
-&lt;li&gt;步入中年之后，上有老下有小，不可能有啥风吹草动都跑去医院。现在的医院人太多，而且太“冰冷”。&lt;/li&gt;
-&lt;li&gt;不想把血汗钱都交给医院。病了之后、老了之后希望能有尊严的活着。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;再有就是我心目中的中医一直很厉害，只是现在传承出了问题。好中医很少，能遇到的就更少了。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;所以就自己学，不要把世界让给那些你讨厌的人。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;收获满满&quot;&gt;&lt;a href=&quot;#收获满满&quot; class=&quot;headerlink&quot; title=&quot;收获满满&quot;&gt;&lt;/a&gt;收获满满&lt;/h3&gt;&lt;p&gt;到目前接触和学习中医有大概 3 年多了，自己感觉收获非常大。&lt;/p&gt;
-&lt;p&gt;总结下来就是 2 个字：&lt;code&gt;信心&lt;/code&gt; ———— 小病自己治，大病不担心。&lt;/p&gt;
-&lt;p&gt;这里的小病就是平常的感冒发烧咳嗽之类的，严重点的像慢性病胃病、失眠、便秘、鼻炎、过敏等等，大病最大就是癌症那些了。&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="中医入门" scheme="https://blogs.zeed.w.beez.com/tags/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/"/>
-    
     <category term="中医分享" scheme="https://blogs.zeed.w.beez.com/tags/%E4%B8%AD%E5%8C%BB%E5%88%86%E4%BA%AB/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2025/01/16/%E4%B8%AD%E5%8C%BB/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B8%80%E7%82%B9%E4%B8%AD%E5%8C%BB/</id>
+    <link href="https://blogs.zeed.w.beez.com/2025/01/16/%E4%B8%AD%E5%8C%BB/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B8%80%E7%82%B9%E4%B8%AD%E5%8C%BB/"/>
+    <published>2025-01-16T14:17:32.000Z</published>
+    <summary>
+      <![CDATA[<p>这是一篇中医的劝学文章，希望能让有缘的你读完这篇文章之后有那么一点点兴趣去了解一下中医。</p>
+<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>我在之前的博客 <a href="/2023/11/30/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%85%A5%E9%97%A8/" title="中医入门">中医入门</a> 里写过学中医的原因：</p>
+<ol>
+<li>带小孩子（两岁多）去医院看病，排队、抽血、输液、拿药。小孩子闹，医生忙，医院里人多到都没地方坐着输液。呵呵！</li>
+<li>步入中年之后，上有老下有小，不可能有啥风吹草动都跑去医院。现在的医院人太多，而且太“冰冷”。</li>
+<li>不想把血汗钱都交给医院。病了之后、老了之后希望能有尊严的活着。</li>
+</ol>
+<p>再有就是我心目中的中医一直很厉害，只是现在传承出了问题。好中医很少，能遇到的就更少了。</p>
+<blockquote>
+<p>所以就自己学，不要把世界让给那些你讨厌的人。</p>
+</blockquote>
+<h3 id="收获满满"><a href="#收获满满" class="headerlink" title="收获满满"></a>收获满满</h3><p>到目前接触和学习中医有大概 3 年多了，自己感觉收获非常大。</p>
+<p>总结下来就是 2 个字：<code>信心</code> ———— 小病自己治，大病不担心。</p>
+<p>这里的小病就是平常的感冒发烧咳嗽之类的，严重点的像慢性病胃病、失眠、便秘、鼻炎、过敏等等，大病最大就是癌症那些了。</p>]]>
+    </summary>
+    <title>为什么要学一点中医</title>
+    <updated>2026-06-16T08:46:29.559Z</updated>
   </entry>
-  
   <entry>
-    <title>AI的好处</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/12/03/ai/AI%E7%9A%84%E5%A5%BD%E5%A4%84/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/12/03/ai/AI%E7%9A%84%E5%A5%BD%E5%A4%84/</id>
-    <published>2024-12-03T09:42:30.000Z</published>
-    <updated>2026-06-16T06:07:39.592Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;现在 AI 的发展可谓如火如荼。我作为一个程序员，除了在日常工作中会使用 AI 助手，在日常生活里也越来越多的会使用 AI 。&lt;/p&gt;
-&lt;p&gt;以前想到一些奇奇怪怪的问题，有的时候懒得查就跳过了，现在都会去 AI 上问问（我手机上安装了 7 个 AI APP）。&lt;/p&gt;
-&lt;p&gt;这里记录一下偶然想到的，AI 助手除了帮助我们之外，还有哪些额外的好处？&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="ai" scheme="https://blogs.zeed.w.beez.com/categories/ai/"/>
-    
-    
     <category term="ai" scheme="https://blogs.zeed.w.beez.com/tags/ai/"/>
-    
     <category term="随想" scheme="https://blogs.zeed.w.beez.com/tags/%E9%9A%8F%E6%83%B3/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/12/03/ai/AI%E7%9A%84%E5%A5%BD%E5%A4%84/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/12/03/ai/AI%E7%9A%84%E5%A5%BD%E5%A4%84/"/>
+    <published>2024-12-03T09:42:30.000Z</published>
+    <summary>
+      <![CDATA[<p>现在 AI 的发展可谓如火如荼。我作为一个程序员，除了在日常工作中会使用 AI 助手，在日常生活里也越来越多的会使用 AI 。</p>
+<p>以前想到一些奇奇怪怪的问题，有的时候懒得查就跳过了，现在都会去 AI 上问问（我手机上安装了 7 个 AI APP）。</p>
+<p>这里记录一下偶然想到的，AI 助手除了帮助我们之外，还有哪些额外的好处？</p>]]>
+    </summary>
+    <title>AI的好处</title>
+    <updated>2026-06-16T08:46:29.555Z</updated>
   </entry>
-  
   <entry>
-    <title>神农本草经</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/10/22/%E4%B8%AD%E5%8C%BB/%E7%A5%9E%E5%86%9C%E6%9C%AC%E8%8D%89%E7%BB%8F/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/10/22/%E4%B8%AD%E5%8C%BB/%E7%A5%9E%E5%86%9C%E6%9C%AC%E8%8D%89%E7%BB%8F/</id>
-    <published>2024-10-22T19:43:00.000Z</published>
-    <updated>2026-06-16T06:07:39.620Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《神农本草经》 约着成于东汉时代以前。&lt;br&gt;三卷。原言已佚，散见《经史证类备急本草》中，今有清．孙星衍等辑本若干种。&lt;br&gt;本书收药物 365 种，分为上、中、下三品，是后汉以前药物学的总结。&lt;br&gt;学术价值：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;文献价值：我国现存最早之药学著作。&lt;/li&gt;
-&lt;li&gt;理论价值：初步奠定了药学理论之基础。&lt;/li&gt;
-&lt;li&gt;实用价值：记载之药物，大多朴实有验，历用不衰。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
     <category term="神农本草经" scheme="https://blogs.zeed.w.beez.com/tags/%E7%A5%9E%E5%86%9C%E6%9C%AC%E8%8D%89%E7%BB%8F/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/10/22/%E4%B8%AD%E5%8C%BB/%E7%A5%9E%E5%86%9C%E6%9C%AC%E8%8D%89%E7%BB%8F/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/10/22/%E4%B8%AD%E5%8C%BB/%E7%A5%9E%E5%86%9C%E6%9C%AC%E8%8D%89%E7%BB%8F/"/>
+    <published>2024-10-22T19:43:00.000Z</published>
+    <summary>
+      <![CDATA[<p>《神农本草经》 约着成于东汉时代以前。<br>三卷。原言已佚，散见《经史证类备急本草》中，今有清．孙星衍等辑本若干种。<br>本书收药物 365 种，分为上、中、下三品，是后汉以前药物学的总结。<br>学术价值：</p>
+<ul>
+<li>文献价值：我国现存最早之药学著作。</li>
+<li>理论价值：初步奠定了药学理论之基础。</li>
+<li>实用价值：记载之药物，大多朴实有验，历用不衰。</li>
+</ul>]]>
+    </summary>
+    <title>神农本草经</title>
+    <updated>2026-06-16T08:46:29.583Z</updated>
   </entry>
-  
   <entry>
-    <title>幼幼新书</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/09/28/%E4%B8%AD%E5%8C%BB/%E5%B9%BC%E5%B9%BC%E6%96%B0%E4%B9%A6/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/09/28/%E4%B8%AD%E5%8C%BB/%E5%B9%BC%E5%B9%BC%E6%96%B0%E4%B9%A6/</id>
-    <published>2024-09-28T13:17:24.000Z</published>
-    <updated>2026-06-16T06:07:39.614Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《幼幼新书》(全本)&lt;br&gt;作者：刘昉 朝代：宋 年份：公元1150年&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
     <category term="刘昉" scheme="https://blogs.zeed.w.beez.com/tags/%E5%88%98%E6%98%89/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/09/28/%E4%B8%AD%E5%8C%BB/%E5%B9%BC%E5%B9%BC%E6%96%B0%E4%B9%A6/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/09/28/%E4%B8%AD%E5%8C%BB/%E5%B9%BC%E5%B9%BC%E6%96%B0%E4%B9%A6/"/>
+    <published>2024-09-28T13:17:24.000Z</published>
+    <summary>
+      <![CDATA[<p>《幼幼新书》(全本)<br>作者：刘昉 朝代：宋 年份：公元1150年</p>]]>
+    </summary>
+    <title>幼幼新书</title>
+    <updated>2026-06-16T08:46:29.576Z</updated>
   </entry>
-  
   <entry>
-    <title>include custom labels of k8s objects</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/</id>
-    <published>2024-09-06T14:49:21.000Z</published>
-    <updated>2026-06-16T06:07:39.593Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近有接触到一些带 GPU 的机器作为 K8S 的工作节点，因为使用了 GPU Operator 去管理驱动，所以需要为 kube-state-metrics 添加一些自定义的标签收集设置，才能比较方便的在 Prometheus 查询以及在 Grafana 中展示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/kube-node-labels.png&quot; alt=&quot;&amp;quot;kube node labels&amp;quot;&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
-    
-    
     <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
-    
     <category term="kube-state-metrics" scheme="https://blogs.zeed.w.beez.com/tags/kube-state-metrics/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/09/06/autodevops/include-custom-labels-of-k8s-objects/"/>
+    <published>2024-09-06T14:49:21.000Z</published>
+    <summary>
+      <![CDATA[<p>最近有接触到一些带 GPU 的机器作为 K8S 的工作节点，因为使用了 GPU Operator 去管理驱动，所以需要为 kube-state-metrics 添加一些自定义的标签收集设置，才能比较方便的在 Prometheus 查询以及在 Grafana 中展示。</p>
+<p><img src="/images/kube-node-labels.png" alt="&quot;kube node labels&quot;"></p>]]>
+    </summary>
+    <title>include custom labels of k8s objects</title>
+    <updated>2026-06-16T08:46:29.556Z</updated>
   </entry>
-  
   <entry>
-    <title>k8s node shell POD</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/08/20/autodevops/k8s-node-shell/"/>
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2024/08/20/autodevops/k8s-node-shell/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/08/20/autodevops/k8s-node-shell/"/>
     <published>2024-08-20T13:09:42.000Z</published>
-    <updated>2026-06-16T06:07:39.593Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;记录一个 K8S 上用的比较多的 node shell POD ，可以获得完全的宿主机权限。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
-    
-    
-    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
-    
-    <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
-    
+    <summary>
+      <![CDATA[<p>记录一个 K8S 上用的比较多的 node shell POD ，可以获得完全的宿主机权限。</p>]]>
+    </summary>
+    <title>k8s node shell POD</title>
+    <updated>2026-06-16T08:46:29.556Z</updated>
   </entry>
-  
   <entry>
-    <title>build k8s on vpn</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/"/>
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
+    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
+    <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
     <id>https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/08/10/autodevops/build-k8s-on-vpn/"/>
     <published>2024-08-10T15:40:32.000Z</published>
-    <updated>2026-06-16T06:07:39.592Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近接触到一个走公网组 K8S 集群的需求，做了一些技术调研，这里做下总结和记录。&lt;/p&gt;
-&lt;p&gt;实现方案是：先用 Wireguard VPN 软件把节点的网络打通，再正常安装 K8S 集群。&lt;/p&gt;
-&lt;p&gt;这种做的优点是 Wireguard 组网之后，节点间的通讯就是加密的了，而且性能也不差。&lt;br&gt;还有就是如果多个节点都拥有公网 IP，可以组成网状 VPN，可用性和稳定性方面都有优势。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/wireguard-performance.png&quot; alt=&quot;&amp;quot;wireguard performance&amp;quot;&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/categories/autodevops/"/>
-    
-    
-    <category term="autodevops" scheme="https://blogs.zeed.w.beez.com/tags/autodevops/"/>
-    
-    <category term="kubernetes" scheme="https://blogs.zeed.w.beez.com/tags/kubernetes/"/>
-    
+    <summary>
+      <![CDATA[<p>最近接触到一个走公网组 K8S 集群的需求，做了一些技术调研，这里做下总结和记录。</p>
+<p>实现方案是：先用 Wireguard VPN 软件把节点的网络打通，再正常安装 K8S 集群。</p>
+<p>这种做的优点是 Wireguard 组网之后，节点间的通讯就是加密的了，而且性能也不差。<br>还有就是如果多个节点都拥有公网 IP，可以组成网状 VPN，可用性和稳定性方面都有优势。</p>
+<p><img src="/images/wireguard-performance.png" alt="&quot;wireguard performance&quot;"></p>]]>
+    </summary>
+    <title>build k8s on vpn</title>
+    <updated>2026-06-16T08:46:29.555Z</updated>
   </entry>
-  
   <entry>
-    <title>辨证录</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/</id>
-    <published>2024-07-09T09:42:42.000Z</published>
-    <updated>2026-06-16T06:07:39.626Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《辨证录》(全本)&lt;br&gt;作者：陈士铎 朝代：清 年份：公元 1644-1911 年&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
     <category term="陈士铎" scheme="https://blogs.zeed.w.beez.com/tags/%E9%99%88%E5%A3%AB%E9%93%8E/"/>
-    
     <category term="辨证录" scheme="https://blogs.zeed.w.beez.com/tags/%E8%BE%A8%E8%AF%81%E5%BD%95/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/07/09/%E4%B8%AD%E5%8C%BB/%E8%BE%A8%E8%AF%81%E5%BD%95/"/>
+    <published>2024-07-09T09:42:42.000Z</published>
+    <summary>
+      <![CDATA[<p>《辨证录》(全本)<br>作者：陈士铎 朝代：清 年份：公元 1644-1911 年</p>]]>
+    </summary>
+    <title>辨证录</title>
+    <updated>2026-06-16T08:46:29.588Z</updated>
   </entry>
-  
   <entry>
-    <title>中医名词汇总</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/</id>
-    <published>2024-05-11T16:54:08.000Z</published>
-    <updated>2026-06-16T06:07:39.596Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;汇总记录一下常见的中医名词，以及自己的理解，方便查漏补缺。&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="中医名词汇总" scheme="https://blogs.zeed.w.beez.com/tags/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/05/11/%E4%B8%AD%E5%8C%BB/%E4%B8%AD%E5%8C%BB%E5%90%8D%E8%AF%8D%E6%B1%87%E6%80%BB/"/>
+    <published>2024-05-11T16:54:08.000Z</published>
+    <summary>
+      <![CDATA[<p>汇总记录一下常见的中医名词，以及自己的理解，方便查漏补缺。</p>]]>
+    </summary>
+    <title>中医名词汇总</title>
+    <updated>2026-06-16T08:46:29.559Z</updated>
   </entry>
-  
   <entry>
-    <title>黄帝内经-简介</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/</id>
-    <published>2024-01-29T14:33:19.000Z</published>
-    <updated>2026-06-16T06:07:39.628Z</updated>
-    
-    
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/&quot; title=&quot;黄帝内经-简介&quot;&gt;黄帝内经-简介&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/&quot; title=&quot;黄帝内经-素问&quot;&gt;黄帝内经-素问&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/&quot; title=&quot;黄帝内经-灵枢&quot;&gt;黄帝内经-灵枢&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
     <category term="黄帝内经-简介" scheme="https://blogs.zeed.w.beez.com/tags/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/"/>
+    <published>2024-01-29T14:33:19.000Z</published>
+    <summary>
+      <![CDATA[<ul>
+<li><a href="/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%AE%80%E4%BB%8B/" title="黄帝内经-简介">黄帝内经-简介</a></li>
+<li><a href="/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/" title="黄帝内经-素问">黄帝内经-素问</a></li>
+<li><a href="/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/" title="黄帝内经-灵枢">黄帝内经-灵枢</a></li>
+</ul>]]>
+    </summary>
+    <title>黄帝内经-简介</title>
+    <updated>2026-06-16T08:46:29.590Z</updated>
   </entry>
-  
   <entry>
-    <title>黄帝内经-灵枢</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/</id>
-    <published>2024-01-29T14:29:19.000Z</published>
-    <updated>2026-06-16T06:07:39.628Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《黄帝内经·灵枢》(全本)&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
     <category term="黄帝内经-灵枢" scheme="https://blogs.zeed.w.beez.com/tags/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%81%B5%E6%9E%A2/"/>
+    <published>2024-01-29T14:29:19.000Z</published>
+    <summary>
+      <![CDATA[<p>《黄帝内经·灵枢》(全本)</p>]]>
+    </summary>
+    <title>黄帝内经-灵枢</title>
+    <updated>2026-06-16T08:46:29.590Z</updated>
   </entry>
-  
   <entry>
-    <title>黄帝内经-素问</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/</id>
-    <published>2024-01-29T14:24:19.000Z</published>
-    <updated>2026-06-16T06:07:39.630Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《黄帝内经·素问》(全本)&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
     <category term="黄帝内经-素问" scheme="https://blogs.zeed.w.beez.com/tags/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F-%E7%B4%A0%E9%97%AE/"/>
+    <published>2024-01-29T14:24:19.000Z</published>
+    <summary>
+      <![CDATA[<p>《黄帝内经·素问》(全本)</p>]]>
+    </summary>
+    <title>黄帝内经-素问</title>
+    <updated>2026-06-16T08:46:29.592Z</updated>
   </entry>
-  
   <entry>
-    <title>素问要旨论</title>
-    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%B4%A0%E9%97%AE%E8%A6%81%E6%97%A8%E8%AE%BA/"/>
-    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%B4%A0%E9%97%AE%E8%A6%81%E6%97%A8%E8%AE%BA/</id>
-    <published>2024-01-29T14:18:12.000Z</published>
-    <updated>2026-06-16T06:07:39.621Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;朝代：金&lt;/p&gt;
-&lt;p&gt;作者：刘完素&lt;/p&gt;
-&lt;p&gt;年份：公元1115-1234年&lt;/p&gt;</summary>
-    
-    
-    
+    <author>
+      <name>zeed-w-beez</name>
+    </author>
     <category term="中医" scheme="https://blogs.zeed.w.beez.com/categories/%E4%B8%AD%E5%8C%BB/"/>
-    
-    
     <category term="经典" scheme="https://blogs.zeed.w.beez.com/tags/%E7%BB%8F%E5%85%B8/"/>
-    
     <category term="素问要旨论" scheme="https://blogs.zeed.w.beez.com/tags/%E7%B4%A0%E9%97%AE%E8%A6%81%E6%97%A8%E8%AE%BA/"/>
-    
+    <id>https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%B4%A0%E9%97%AE%E8%A6%81%E6%97%A8%E8%AE%BA/</id>
+    <link href="https://blogs.zeed.w.beez.com/2024/01/29/%E4%B8%AD%E5%8C%BB/%E7%B4%A0%E9%97%AE%E8%A6%81%E6%97%A8%E8%AE%BA/"/>
+    <published>2024-01-29T14:18:12.000Z</published>
+    <summary>
+      <![CDATA[<p>朝代：金</p>
+<p>作者：刘完素</p>
+<p>年份：公元1115-1234年</p>]]>
+    </summary>
+    <title>素问要旨论</title>
+    <updated>2026-06-16T08:46:29.584Z</updated>
   </entry>
-  
 </feed>

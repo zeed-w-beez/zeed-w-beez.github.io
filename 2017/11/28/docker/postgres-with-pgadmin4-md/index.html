@@ -113,11 +113,11 @@
         分类              </li>
     </a>
     
-    <a href="/todo">
+    <a href="/h5">
       <li class="mobile-menu-item">
         
         
-        Todo              </li>
+        H5              </li>
     </a>
     
     <a href="/about">
@@ -176,10 +176,10 @@
         </li>  
         
         <li class="menu-item">  
-          <a class="menu-item-link" href="/todo">  
+          <a class="menu-item-link" href="/h5">  
               
               
-              Todo  
+              H5  
               
           </a>  
         </li>  
@@ -244,7 +244,7 @@
 <h2 id="Docker-镜像加速"><a href="#Docker-镜像加速" class="headerlink" title="Docker 镜像加速"></a>Docker 镜像加速</h2><p>在 Docker Daemon 里可以添加 Registry 配置，或者修改 &#x2F;etc&#x2F;docker&#x2F;daemon.json 配置。重启生效。</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;https://dockerhub.azk8s.cn/&quot;</span><span class="punctuation">,</span><span class="string">&quot;https://registry.docker-cn.com&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Docker-起-postgres-pgadmin4"><a href="#Docker-起-postgres-pgadmin4" class="headerlink" title="Docker 起 postgres + pgadmin4"></a>Docker 起 postgres + pgadmin4</h2><p>直接去 <a target="_blank" rel="noopener" href="https://hub.docker.com/_/postgres/" title="library/postgres">docker-postgres</a> <a target="_blank" rel="noopener" href="https://hub.docker.com/r/dpage/pgadmin4/" title="pgadmin4">docker-pgadmin4</a> 上照着文档执行命令就可以了。</p>
+<h2 id="Docker-起-postgres-pgadmin4"><a href="#Docker-起-postgres-pgadmin4" class="headerlink" title="Docker 起 postgres + pgadmin4"></a>Docker 起 postgres + pgadmin4</h2><p>直接去 <a target="_blank" rel="noopener" href="https://hub.docker.com/_/postgres/" title="library&#x2F;postgres">docker-postgres</a> <a target="_blank" rel="noopener" href="https://hub.docker.com/r/dpage/pgadmin4/" title="pgadmin4">docker-pgadmin4</a> 上照着文档执行命令就可以了。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull postgres:alpine</span><br><span class="line">docker run --name pgsql -e POSTGRES_PASSWORD=password -d postgres:alpine</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull dpage/pgadmin4</span><br><span class="line">docker run --name pgadmin -p 80:80 \</span><br><span class="line">-e &quot;PGADMIN_DEFAULT_EMAIL=user@domain.com&quot; \ # 登录website要使用的账号和密码</span><br><span class="line">-e &quot;PGADMIN_DEFAULT_PASSWORD=SuperSecret&quot; \</span><br><span class="line">-d dpage/pgadmin4</span><br></pre></td></tr></table></figure>
@@ -266,7 +266,7 @@
 <li><p>更新于 2020年3月15日14:36:11</p>
 </li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://hub.docker.com/_/postgres/" title="library/postgres">docker-postgres</a> 官方推荐使用 <code>postgres</code> + <code>adminer</code></p>
+<p><a target="_blank" rel="noopener" href="https://hub.docker.com/_/postgres/" title="library&#x2F;postgres">docker-postgres</a> 官方推荐使用 <code>postgres</code> + <code>adminer</code></p>
 <p>使用如下 <code>stack.yml</code> 文件</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动命令 docker stack deploy postgres -c stack.yml</span></span><br><span class="line"><span class="comment"># 执行的时候可能会需要先执行 `docker swarm init`</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 访问 localhost:8080</span></span><br><span class="line"><span class="comment"># user/password 是 postgres/postgres</span></span><br><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.7&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">postgres:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">postgres</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">&quot;5432&quot;</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">POSTGRES_PASSWORD:</span> <span class="string">postgres</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;postgres-data:/var/lib/postgresql/data&quot;</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">app_net</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">adminer:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">adminer</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">app_net</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">app_net:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">postgres-data:</span></span><br></pre></td></tr></table></figure>
 
@@ -276,8 +276,10 @@
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> tester <span class="keyword">WITH</span> PASSWORD <span class="string">&#x27;test_password&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> DATABASE &quot;test_database&quot; <span class="keyword">to</span> tester;</span><br></pre></td></tr></table></figure>
 
 <ol>
-<li>Postgresql 给用户添加只读权限<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Grant usage/select to a single table</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CONNECT</span> <span class="keyword">ON</span> DATABASE mydb <span class="keyword">TO</span> xxx;</span><br><span class="line"><span class="comment">-- This assumes you&#x27;re actually connected to mydb..</span></span><br><span class="line"><span class="keyword">GRANT</span> USAGE <span class="keyword">ON</span> SCHEMA public <span class="keyword">TO</span> xxx;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> mytable <span class="keyword">TO</span> xxx;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Multiple tables/views (PostgreSQL 9.0+)</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> <span class="keyword">ALL</span> TABLES <span class="keyword">IN</span> SCHEMA public <span class="keyword">TO</span> xxx;</span><br></pre></td></tr></table></figure></li>
+<li>Postgresql 给用户添加只读权限</li>
 </ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Grant usage/select to a single table</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CONNECT</span> <span class="keyword">ON</span> DATABASE mydb <span class="keyword">TO</span> xxx;</span><br><span class="line"><span class="comment">-- This assumes you&#x27;re actually connected to mydb..</span></span><br><span class="line"><span class="keyword">GRANT</span> USAGE <span class="keyword">ON</span> SCHEMA public <span class="keyword">TO</span> xxx;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> mytable <span class="keyword">TO</span> xxx;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Multiple tables/views (PostgreSQL 9.0+)</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> <span class="keyword">ALL</span> TABLES <span class="keyword">IN</span> SCHEMA public <span class="keyword">TO</span> xxx;</span><br></pre></td></tr></table></figure>
+
 
     
   </div>
@@ -412,6 +414,7 @@
 </div>
 
 
+
 <div class="copyright">
   <span class="power-by">
     由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
@@ -474,8 +477,22 @@
     
   
 
-  <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+
+
+
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+
 <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/"></script>
+
 
 
   <script type="text/javascript" src="/js/src/even.js?v=2.11.1"></script>
