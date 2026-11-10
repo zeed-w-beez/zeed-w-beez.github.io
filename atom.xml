@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, zeed-w-beez</rights>
   <subtitle>Stay Hungry. Stay Foolish.</subtitle>
   <title>Miracle-working</title>
-  <updated>2026-08-05T06:04:10.567Z</updated>
+  <updated>2026-11-10T09:00:54.235Z</updated>
   <entry>
     <author>
       <name>zeed-w-beez</name>
@@ -26,7 +26,7 @@
 <h2 id="第一阶段：看山是山，看水是水"><a href="#第一阶段：看山是山，看水是水" class="headerlink"]]>
     </summary>
     <title>学习中医的三个阶段</title>
-    <updated>2026-08-05T06:04:10.567Z</updated>
+    <updated>2026-11-10T09:00:54.235Z</updated>
   </entry>
   <entry>
     <author>
@@ -53,7 +53,7 @@
 <h2 id="核心目的"><a href="#核心目的" class="headerlink" title="核心目的"></a>核心目的</h2><p>该手册旨在指导欧洲被占领区的<strong>普通平民</strong>（而非受过训练的特工）如何利用手边日常物品和”不合作”的态度，对轴心国占领当局及其生产、行政、交通、通信体系实施小规模、低风险、难以追查的破坏与阻挠，从而拖累敌方战争机器、打击敌方士气。</p>]]>
     </summary>
     <title>简单破坏性手册</title>
-    <updated>2026-08-05T06:04:10.598Z</updated>
+    <updated>2026-11-10T09:00:54.263Z</updated>
   </entry>
   <entry>
     <author>
@@ -66,7 +66,7 @@
       <![CDATA[<p>最近在尝试写一些鸿蒙应用，但是大模型对鸿蒙的 ArkTS 语法支持不是很好，但是鸿蒙官方网站的文档写的很详细，而且在<a href="https://gitee.com/openharmony/docs">gitee</a>找到了一份比较全的鸿蒙文档，就想着起一个本地的 Context7 帮助 AI 理解 ArkTS 的语法和使用。</p>]]>
     </summary>
     <title>context7本地知识库</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.225Z</updated>
   </entry>
   <entry>
     <author>
@@ -436,7 +436,7 @@
 </div>]]>
     </summary>
     <title>如何理解先天八卦和后天八卦的区别</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.224Z</updated>
   </entry>
   <entry>
     <author>
@@ -482,7 +482,7 @@
 </ol>]]>
     </summary>
     <title>伤寒论方剂整理</title>
-    <updated>2026-08-05T06:04:10.559Z</updated>
+    <updated>2026-11-10T09:00:54.228Z</updated>
   </entry>
   <entry>
     <author>
@@ -497,7 +497,7 @@
       <![CDATA[<p>证书是 K8S 集群内部通讯的必备配置。K8S 大规模使用到现在也有接近10年时间了，很多搭建的比较早的集群，CA 基本都快过期了，这里记录一下更换 CA 的步骤和注意事项。</p>]]>
     </summary>
     <title>K8S 更换 CA 证书</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.225Z</updated>
   </entry>
   <entry>
     <author>
@@ -515,7 +515,7 @@
 <p>好的，我们从中医的角度来谈谈肺癌（中医多称为“肺积”、“息贲”等）。中医对肺癌的认识与现代医学不同，更侧重于整体观和辨证论治，认为其发生与内在脏腑功能失调、正气亏虚以及外邪侵袭、情志不畅、饮食劳倦等因素导致的气血痰瘀毒互结有关。</p>]]>
     </summary>
     <title>中医视角下肺癌的病机病因与治疗</title>
-    <updated>2026-08-05T06:04:10.558Z</updated>
+    <updated>2026-11-10T09:00:54.227Z</updated>
   </entry>
   <entry>
     <author>
@@ -530,7 +530,7 @@
       <![CDATA[<p>贝叶斯理论是一种关于概率的理论，它认为事件的概率是可以根据已有的知识进行更新的。</p>]]>
     </summary>
     <title>用贝叶斯理论理解生命的本质</title>
-    <updated>2026-08-05T06:04:10.598Z</updated>
+    <updated>2026-11-10T09:00:54.263Z</updated>
   </entry>
   <entry>
     <author>
@@ -547,7 +547,7 @@
 <p><img src="/images/openssh-cert.png" alt="&quot;OpenSSH 双向证书验证&quot;"></p>]]>
     </summary>
     <title>use-openssh-manage-server-cert</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.225Z</updated>
   </entry>
   <entry>
     <author>
@@ -576,7 +576,7 @@
 <p>这里的小病就是平常的感冒发烧咳嗽之类的，严重点的像慢性病胃病、失眠、便秘、鼻炎、过敏等等，大病最大就是癌症那些了。</p>]]>
     </summary>
     <title>为什么要学一点中医</title>
-    <updated>2026-08-05T06:04:10.558Z</updated>
+    <updated>2026-11-10T09:00:54.227Z</updated>
   </entry>
   <entry>
     <author>
@@ -594,7 +594,7 @@
 <p>这里记录一下偶然想到的，AI 助手除了帮助我们之外，还有哪些额外的好处？</p>]]>
     </summary>
     <title>AI的好处</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.224Z</updated>
   </entry>
   <entry>
     <author>
@@ -615,7 +615,7 @@
 </ul>]]>
     </summary>
     <title>神农本草经</title>
-    <updated>2026-08-05T06:04:10.587Z</updated>
+    <updated>2026-11-10T09:00:54.252Z</updated>
   </entry>
   <entry>
     <author>
@@ -631,7 +631,7 @@
       <![CDATA[<p>《幼幼新书》(全本)<br>作者：刘昉 朝代：宋 年份：公元1150年</p>]]>
     </summary>
     <title>幼幼新书</title>
-    <updated>2026-08-05T06:04:10.578Z</updated>
+    <updated>2026-11-10T09:00:54.245Z</updated>
   </entry>
   <entry>
     <author>
@@ -648,7 +648,7 @@
 <p><img src="/images/kube-node-labels.png" alt="&quot;kube node labels&quot;"></p>]]>
     </summary>
     <title>include custom labels of k8s objects</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.225Z</updated>
   </entry>
   <entry>
     <author>
@@ -664,7 +664,7 @@
       <![CDATA[<p>记录一个 K8S 上用的比较多的 node shell POD ，可以获得完全的宿主机权限。</p>]]>
     </summary>
     <title>k8s node shell POD</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.225Z</updated>
   </entry>
   <entry>
     <author>
@@ -683,7 +683,7 @@
 <p><img src="/images/wireguard-performance.png" alt="&quot;wireguard performance&quot;"></p>]]>
     </summary>
     <title>build k8s on vpn</title>
-    <updated>2026-08-05T06:04:10.555Z</updated>
+    <updated>2026-11-10T09:00:54.224Z</updated>
   </entry>
   <entry>
     <author>
@@ -700,7 +700,7 @@
       <![CDATA[<p>《辨证录》(全本)<br>作者：陈士铎 朝代：清 年份：公元 1644-1911 年</p>]]>
     </summary>
     <title>辨证录</title>
-    <updated>2026-08-05T06:04:10.593Z</updated>
+    <updated>2026-11-10T09:00:54.258Z</updated>
   </entry>
   <entry>
     <author>
@@ -715,7 +715,7 @@
       <![CDATA[<p>汇总记录一下常见的中医名词，以及自己的理解，方便查漏补缺。</p>]]>
     </summary>
     <title>中医名词汇总</title>
-    <updated>2026-08-05T06:04:10.558Z</updated>
+    <updated>2026-11-10T09:00:54.227Z</updated>
   </entry>
   <entry>
     <author>
@@ -735,7 +735,7 @@
 </ul>]]>
     </summary>
     <title>黄帝内经-简介</title>
-    <updated>2026-08-05T06:04:10.595Z</updated>
+    <updated>2026-11-10T09:00:54.260Z</updated>
   </entry>
   <entry>
     <author>
@@ -751,6 +751,6 @@
       <![CDATA[<p>《黄帝内经·灵枢》(全本)</p>]]>
     </summary>
     <title>黄帝内经-灵枢</title>
-    <updated>2026-08-05T06:04:10.595Z</updated>
+    <updated>2026-11-10T09:00:54.260Z</updated>
   </entry>
 </feed>
